@@ -1,0 +1,16 @@
+.product-controllers span {
+  min-width: 40px;
+  display: inline-block;
+  text-align: center;
+}
+.price-wrapper {
+  min-width: 80px !important;
+}
+.product-list-wrapper {
+  margin-top: 10px;
+}
+.total-price {
+  font-weight: 700;
+  height: 43px;
+  background-color: #dcdcdc !important;
+}
