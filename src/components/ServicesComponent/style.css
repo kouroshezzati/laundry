@@ -1,45 +1,54 @@
 section.services {
-  background-color: #b8d9fb;
+  background-color: #00ff80;
   position: relative;
   padding: 150px 0;
 }
+
 section.services h2 {
   font-size: 50px;
   margin-top: 0;
 }
+
 section.services .badges .badge-link {
   display: block;
   margin-bottom: 25px;
 }
+
 section.services .badges .badge-link:last-child {
   margin-bottom: 0;
 }
+
 section.services .badges .badge-link img {
   height: 60px;
 }
+
 @media (min-width: 768px) {
   section.services .badges .badge-link {
     display: inline-block;
     margin-bottom: 0;
   }
 }
+
 @media (min-width: 768px) {
   section.services h2 {
     font-size: 70px;
   }
 }
+
 .service-icon {
   font-size: 2em;
 }
+
 .service-text {
   font-weight: 800;
 }
+
 .service {
   margin: 30px 0;
 }
 
 .test {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  border-radius: 2%;
 }

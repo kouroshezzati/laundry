@@ -28,7 +28,7 @@ export const SliderComponent = translate('translations')(
                 color="primary"
                 className={classes.button}
               >
-                <NavLink className="nav-button" to="/order/">
+                <NavLink style={{ color: '#fff' }} to="/order/">
                   {t('Order now')}
                 </NavLink>
               </Button>
