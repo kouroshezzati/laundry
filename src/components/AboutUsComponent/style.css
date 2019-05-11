@@ -43,10 +43,10 @@ section.about-us .feature-item i {
 
 .description {
   font-size: 1.2em;
-  color: black;
+  color: grey;
   font-weight: 400;
   text-align: justify;
 }
 section.about-us {
-  background: #69c3b3;
+  background: #b3ffff;
 }
