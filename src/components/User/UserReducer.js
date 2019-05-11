@@ -26,7 +26,6 @@ export default (state = { isLoggedin: false }, action) => {
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       const _state = {
-        ...state,
         ...action.response,
         isFetching: false,
         message: undefined,

@@ -13,7 +13,13 @@ const callApi = callAPI => {
       return Promise.resolve(response.data);
     })
     .catch(err => {
-      return Promise.reject(err.response.data);
+      if(err.response){
+        return Promise.reject(err.response.data);
+      }else if(err.message){
+        return Promise.reject(err.message)
+      }else{
+        return Promise.reject(err)
+      }
     });
 };
 
