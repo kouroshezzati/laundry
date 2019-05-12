@@ -67,7 +67,7 @@ class LoginComponent extends Component {
           <div className="form-group">
             <input
               ref={this.password}
-              type="text"
+              type="password"
               required
               placeholder="Password"
               className="form-control"

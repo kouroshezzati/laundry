@@ -12,7 +12,10 @@ import {
   USER_SIGNOUT,
   FORGOTTEN_REQUEST,
   FORGOTTEN_SUCCESS,
-  FORGOTTEN_FAILURE
+  FORGOTTEN_FAILURE,
+  RESET_PASSWORD_REQUEST,
+  RESET_PASSWORD_SUCCESS,
+  RESET_PASSWORD_FAILURE
 } from './UserConstants';
 
 export const sendResetPasswordCode = email => {
@@ -21,7 +24,20 @@ export const sendResetPasswordCode = email => {
       types: [FORGOTTEN_REQUEST, FORGOTTEN_SUCCESS, FORGOTTEN_FAILURE],
       config: {
         url: `${API_ROOT}/auth/forgot-password`,
-        data: { email },
+        data: { email, url: `http://bubbelsonline.nl/reset-password` },
+        method: 'post'
+      }
+    }
+  };
+}
+
+export const resetPassword = data => {
+  return {
+    [CALL_API]: {
+      types: [RESET_PASSWORD_REQUEST, RESET_PASSWORD_SUCCESS, RESET_PASSWORD_FAILURE],
+      config: {
+        url: `${API_ROOT}/auth/reset-password`,
+        data: { ...data },
         method: 'post'
       }
     }

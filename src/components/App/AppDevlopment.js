@@ -14,6 +14,7 @@ import Order from '../../pages/Order/OrderContainer';
 import Invoice from '../../pages/Invoice/InvoiceContainer';
 import User from '../../pages/User/UserComponent';
 import ForgottenPasswordPage from '../../pages/ForgottenPassword/ForgottenPasswordPageComponent';
+import ResetPasswordPageComponent from '../../pages/ResetPasswordPage/ResetPasswordPageComponent';
 
 const store = configureStore();
 
@@ -33,6 +34,7 @@ class App extends Component {
               <Route path="/invoice/" component={Invoice} />
               <Route path="/user/" component={User} />
               <Route path="/forgotten-password/" component={ForgottenPasswordPage} />
+              <Route path="/reset-password/" component={ResetPasswordPageComponent} />
             </Switch>
           </Router>
         </I18nextProvider>

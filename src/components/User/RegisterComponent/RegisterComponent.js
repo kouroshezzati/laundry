@@ -30,14 +30,6 @@ const theme = createMuiTheme({
   }
 });
 
-export const isInValidConfirmPassword = (formApi, name) => {
-  return (
-    formApi.submits > 0 &&
-    (!formApi.values[name] ||
-      formApi.values.password !== formApi.values.confirm_password)
-  );
-};
-
 class RegisterComponent extends Component {
   constructor(props) {
     super(props);

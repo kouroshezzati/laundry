@@ -82,7 +82,7 @@ class ForgetPasswordComponent extends Component {
               </Button>
             </MuiThemeProvider>
           </div>
-          <div class="text-center"><small style={{ color: 'red' }}>{forgottenPasswordMessage}</small></div>
+          <div className="text-center"><small style={{ color: 'red' }}>{forgottenPasswordMessage}</small></div>
         </form>
       </React.Fragment>
     );
