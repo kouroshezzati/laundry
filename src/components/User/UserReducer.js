@@ -8,11 +8,15 @@ import {
   UPDATE_USER_FAILURE,
   UPDATE_USER_REQUEST,
   UPDATE_USER_SUCCESS,
-  USER_SIGNOUT
+  USER_SIGNOUT,
+  FORGOTTEN_FAILURE,
+  FORGOTTEN_REQUEST
 } from './UserConstants';
 
 export default (state = { isLoggedin: false }, action) => {
   switch (action.type) {
+    case FORGOTTEN_FAILURE: 
+      return { ...state, forgottenPasswordMessage: '', isFetching: false };
     case USER_SIGNOUT:
       return { ...state, user: undefined, isLoggedin: false };
     case UPDATE_USER_SUCCESS:
@@ -37,6 +41,7 @@ export default (state = { isLoggedin: false }, action) => {
     case REGISTER_FAILURE:
       return { isFetching: false, ...action };
     case UPDATE_USER_REQUEST:
+    case FORGOTTEN_REQUEST:
     case LOGIN_REQUEST:
     case REGISTER_REQUEST:
       return { ...state, isFetching: true };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import {withRouter } from 'react-router-dom';
 import {
   withStyles,
   MuiThemeProvider,
@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import green from '@material-ui/core/colors/green';
 import './style.css';
 import { connect } from 'react-redux';
-import { login } from '../UserActions';
-import { LOGIN_SUCCESS } from '../UserConstants';
+import { sendResetPasswordCode } from '../UserActions';
+import { FORGOTTEN_FAILURE } from '../UserConstants';
 import { translate } from 'react-i18next';
 
 const styles = theme => ({
@@ -28,70 +28,61 @@ const theme = createMuiTheme({
   }
 });
 
-class LoginComponent extends Component {
+class ForgetPasswordComponent extends Component {
   constructor(props) {
     super(props);
     this.email = React.createRef();
-    this.password = React.createRef();
+    this.state = {forgottenPasswordMessage : ''};
   }
   onSubmit = event => {
     event.preventDefault();
     const _data = {
-      password: this.password.current.value,
       email: this.email.current.value
     };
-    if (!_data.email || !_data.password) {
+    if (!_data.email) {
       return;
     }
-    const { login, history, location } = this.props;
-    login(_data.email, _data.password).then(data => {
-      if (data.type === LOGIN_SUCCESS && location.pathname === '/login/') {
-        history.push('/');
+    this.props.sendResetPasswordCode(_data.email)
+    .then(data => {
+      if(data.type === FORGOTTEN_FAILURE){
+        this.setState({forgottenPasswordMessage: data.message})
+      }else{
+        this.setState({
+          forgottenPasswordMessage: 'Check your email. please!'
+        });
       }
-    });
+
+    })
   };
   render() {
-    const { classes, t, message, location } = this.props;
+    const { classes, t } = this.props;
+    const {forgottenPasswordMessage} = this.state;
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit} id="form2">
           <div className="form-group">
             <input
-              type="text"
+              type="email"
               required
               ref={this.email}
               className="form-control"
-              placeholder="Email or Username"
+              placeholder="Email"
             />
-          </div>
-          <div className="form-group">
-            <input
-              ref={this.password}
-              type="text"
-              required
-              placeholder="Password"
-              className="form-control"
-            />
-            {message && <small style={{ color: 'red' }}>{message}</small>}
           </div>
           <div className="form-group">
             <MuiThemeProvider theme={theme}>
               <Button
+                fullWidth
                 type="submit"
                 variant="contained"
                 color="primary"
                 className={classes.margin}
               >
-                {t('Submit')}
+                {t('Send email')}
               </Button>
             </MuiThemeProvider>
-            {location.pathname === '/login/' && (
-              <NavLink className="float-right" to="/">
-                {t('Home')}
-              </NavLink>
-            )}
           </div>
-          <div style={{textAlign: 'center'}}><NavLink to="/forgotten-password">{t('Forgotten password?')}</NavLink></div>
+          <div class="text-center"><small style={{ color: 'red' }}>{forgottenPasswordMessage}</small></div>
         </form>
       </React.Fragment>
     );
@@ -99,6 +90,6 @@ class LoginComponent extends Component {
 }
 
 export default connect(
-  state => ({ ...state.user }),
-  { login }
-)(translate('translations')(withRouter(withStyles(styles)(LoginComponent))));
+  state => ({...state.user}),
+  { sendResetPasswordCode }
+)(translate('translations')(withRouter(withStyles(styles)(ForgetPasswordComponent))));

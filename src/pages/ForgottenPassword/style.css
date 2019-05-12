@@ -1,0 +1,8 @@
+.form-wrapper {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.forget-password-form-wrapper{
+  min-width: 280px;
+}

@@ -9,8 +9,24 @@ import {
   LOGIN_FAILURE,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
-  USER_SIGNOUT
+  USER_SIGNOUT,
+  FORGOTTEN_REQUEST,
+  FORGOTTEN_SUCCESS,
+  FORGOTTEN_FAILURE
 } from './UserConstants';
+
+export const sendResetPasswordCode = email => {
+  return {
+    [CALL_API]: {
+      types: [FORGOTTEN_REQUEST, FORGOTTEN_SUCCESS, FORGOTTEN_FAILURE],
+      config: {
+        url: `${API_ROOT}/auth/forgot-password`,
+        data: { email },
+        method: 'post'
+      }
+    }
+  };
+}
 
 export const register = data => {
   return {

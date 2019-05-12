@@ -66,7 +66,6 @@ export class NavbarLoggedIn extends Component {
   render() {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location } = this.props;
-    console.log('the maatch is', this.props);
     return (
       <nav
         className={`navbar navbar-expand-lg navbar-light fixed-top ${
