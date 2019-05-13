@@ -6,7 +6,7 @@ import HomeComponent from '../HomeComponent/HomeComponent';
 import ContactPage from '../../pages/ContactUs/';
 import PriceListContainer from '../PriceList/PriceListContainer';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStore from '../../store/configStore';
 import Register from '../../pages/Register/';
 import Login from '../../pages/Login/';
@@ -15,6 +15,7 @@ import Invoice from '../../pages/Invoice/InvoiceContainer';
 import User from '../../pages/User/UserComponent';
 import ForgottenPasswordPage from '../../pages/ForgottenPassword/ForgottenPasswordPageComponent';
 import ResetPasswordPageComponent from '../../pages/ResetPasswordPage/ResetPasswordPageComponent';
+import { PrivateRoute } from '../../utils/components';
 
 const store = configureStore();
 
@@ -32,11 +33,7 @@ class App extends Component {
               <Route path="/login/" component={Login} />
               <Route path="/order/" component={Order} />
               <Route path="/invoice/" component={Invoice} />
-              <PrivateRoute
-                path="/user/"
-                component={User}
-                jwt={store.getState().user.jwt}
-              />
+              <PrivateRoute path="/user/" component={User} />
               <Route
                 path="/forgotten-password/"
                 component={ForgottenPasswordPage}
@@ -54,11 +51,3 @@ class App extends Component {
 }
 
 export default App;
-export const PrivateRoute = ({ component: Component, jwt, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      jwt ? <Component {...props} /> : <Redirect to="/login" />
-    }
-  />
-);

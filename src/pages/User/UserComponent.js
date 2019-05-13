@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import SidebarComponent from './SidebarComponent';
 import './style.css';
 import UserInfoComponent from '../../components/User/UserInfo/UserInfoContainer';
 import { connect } from 'react-redux';
+import { PrivateRoute } from '../../utils/components';
 
 export class UserComponent extends Component {
   render() {
@@ -15,7 +15,7 @@ export class UserComponent extends Component {
             <SidebarComponent match={match} />
           </div>
           <div className="container-wrapper">
-            <Route
+            <PrivateRoute
               path={`${match.url}/change_information/`}
               component={props => (
                 <Pager
@@ -34,7 +34,7 @@ export class UserComponent extends Component {
 }
 
 UserComponent = connect(
-  state => ({}),
+  state => ({...state.user}),
   {}
 )(UserComponent);
 
