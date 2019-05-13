@@ -34,7 +34,9 @@ class PriceListComponent extends Component {
             return (
               <div key={Math.random()} className="list-group">
                 {value &&
-                  value !== 'null' && (
+                  value !== 'null' &&
+                  value !== undefined &&
+                  value !== 'undefined' && (
                     <button
                       type="button"
                       className="list-group-item list-group-item-action active"
@@ -50,8 +52,12 @@ class PriceListComponent extends Component {
                       key={product.id}
                       className="list-group-item list-group-item-action"
                     >
-                      <div className="float-left">{product.name}</div>
-                      <div className="float-right">{product.price}</div>
+                      <div className="float-left">
+                        {product.name}
+                      </div>
+                      <div className="float-right">
+                        {product.price}
+                      </div>
                     </button>
                   ))}
               </div>
