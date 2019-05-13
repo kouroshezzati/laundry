@@ -42,7 +42,7 @@ export class InvoiceComponent extends Component {
               )}
             </div>
             <ProductList invoice />
-            {!user.isLoggedin && (
+            {!user.jwt && (
               <div className="row m-2">
                 <div className="col-md-6">
                   <Register />
@@ -52,7 +52,7 @@ export class InvoiceComponent extends Component {
                 </div>
               </div>
             )}
-            {user.isLoggedin &&
+            {user.jwt &&
               !this.state.editUserInfo && (
                 <UserInfo
                   user={user}

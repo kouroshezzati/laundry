@@ -34,7 +34,7 @@ export class UserComponent extends Component {
 }
 
 UserComponent = connect(
-  state => ({ ...state.user }),
+  state => ({}),
   {}
 )(UserComponent);
 

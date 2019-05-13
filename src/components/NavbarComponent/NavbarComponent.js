@@ -68,8 +68,8 @@ class NavBarComponent extends Component {
   };
   render() {
     const show = this.state.mnuShow ? 'show' : '';
-    const { t, location, isLoggedin } = this.props;
-    if (isLoggedin) {
+    const { t, location, jwt } = this.props;
+    if (jwt) {
       return <NavbarLoggedIn {...this.props} />;
     }
     return (

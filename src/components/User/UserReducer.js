@@ -13,17 +13,16 @@ import {
   FORGOTTEN_REQUEST
 } from './UserConstants';
 
-export default (state = { isLoggedin: false }, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case FORGOTTEN_FAILURE: 
       return { ...state, forgottenPasswordMessage: '', isFetching: false };
     case USER_SIGNOUT:
-      return { ...state, user: undefined, isLoggedin: false };
+      return {};
     case UPDATE_USER_SUCCESS:
       return {
         ...state,
         user: action.response,
-        isLoggedin: true,
         message: undefined,
         isFetching: false
       };
@@ -32,8 +31,7 @@ export default (state = { isLoggedin: false }, action) => {
       const _state = {
         ...action.response,
         isFetching: false,
-        message: undefined,
-        isLoggedin: true
+        message: undefined
       };
       return _state;
     case UPDATE_USER_FAILURE:

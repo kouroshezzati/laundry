@@ -45,11 +45,18 @@ class LoginComponent extends Component {
     }
     const { login, history, location } = this.props;
     login(_data.email, _data.password).then(data => {
-      if (data.type === LOGIN_SUCCESS && location.pathname === '/login/') {
+      if (data.type === LOGIN_SUCCESS && location.pathname.includes('login')) {
         history.push('/');
       }
     });
   };
+  componentDidMount(){
+    const {jwt, history} = this.props;
+    if (jwt) {
+      history.push('/');
+    }
+  }
+
   render() {
     const { classes, t, message, location } = this.props;
     return (
@@ -85,7 +92,7 @@ class LoginComponent extends Component {
                 {t('Submit')}
               </Button>
             </MuiThemeProvider>
-            {location.pathname === '/login/' && (
+            {location.pathname.includes('login') && (
               <NavLink className="float-right" to="/">
                 {t('Home')}
               </NavLink>
