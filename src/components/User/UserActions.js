@@ -57,8 +57,9 @@ export const register = data => {
   };
 };
 
-export const userUpdate = data => dispatch => {
-  if (!data.id) {
+export const userUpdate = data => (dispatch, getState) => {
+  const {user} = getState();
+  if (!data.id || !user.jwt) {
     return dispatch({ type: UPDATE_USER_FAILURE });
   }
   return dispatch({
@@ -67,7 +68,10 @@ export const userUpdate = data => dispatch => {
       config: {
         url: `${API_ROOT}/users/${data.id}`,
         data,
-        method: 'put'
+        method: 'put',
+        headers: {
+          Authorization: `Bearer ${user.jwt}`
+        }
       }
     }
   });

@@ -39,7 +39,7 @@ export default (state = { isLoggedin: false }, action) => {
     case UPDATE_USER_FAILURE:
     case LOGIN_FAILURE:
     case REGISTER_FAILURE:
-      return { isFetching: false, ...action };
+      return { ...state, isFetching: false, ...action };
     case UPDATE_USER_REQUEST:
     case FORGOTTEN_REQUEST:
     case LOGIN_REQUEST:

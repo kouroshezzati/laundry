@@ -37,7 +37,7 @@ export class UserInfo extends Component {
     event.preventDefault();
     const { user, userUpdate, onSaveHandler } = this.props;
     userUpdate({
-      id: user.id,
+      id: user._id,
       email: this.email.current.value,
       username: this.username.current.value,
       mobile: this.mobile.current.value,
