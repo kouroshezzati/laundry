@@ -23,10 +23,17 @@ const reducer = (
     case PRODUCTS_FAILURE:
       return { ...state, isFetching: false, products: [] };
     case PRODUCTS_SUCCESS:
-      let products = _.groupBy(action.response, 'category.name');
+      let intactProducts = _.map(action.response, (value, index) => {
+        if(!value.type){
+          delete value.type;
+        }
+        return value
+      });
+
+      let products = _.groupBy(intactProducts, 'category.name');
       return {
         ...state,
-        intactProducts: action.response,
+        intactProducts,
         isFetching: false,
         products
       };

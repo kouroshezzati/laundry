@@ -39,7 +39,7 @@ export class ProductList extends Component {
           return (
             <div key={Math.random()} className="col-md-6">
               <ul key={Math.random()} className="list-group">
-                {key !== 'null' && <Product name={key} parent />}
+                {key !== '' && key !== 'null' && key !== 'undefined' && <Product name={key} parent />}
                 {_products.map(product => (
                   <Product key={product.id} {...product} />
                 ))}
