@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Product from './Product';
 import { translate } from 'react-i18next';
+import {connect} from 'react-redux';
 
 export class ProductList extends Component {
   render() {
-    const { products, invoice, t, selectedProducts } = this.props;
+    const { products, invoice, t, selectedProducts, intactProducts } = this.props;
     if (invoice) {
       let total = 0;
       return (
@@ -19,12 +20,13 @@ export class ProductList extends Component {
               className="list-group"
               style={{ boxShadow: '1px 1px 2px' }}
             >
-              {_.map(products, (_products, key) =>
-                _products.map(product => {
-                  total += product.price * (selectedProducts[product.id] || 0);
-                  return <Product key={product.id} {...product} />;
-                })
-              )}
+              {_.map(selectedProducts, (value, id) => {
+                const _product = intactProducts.find(
+                  value => value.id === id
+                );
+                total += _product.price * (value || 0);
+                return <Product key={id} {..._product} />;
+              })}
               <li className="list-group-item total-price">
                 <span>{`${t('Total amount')}: $${total}`}</span>
               </li>
@@ -52,4 +54,6 @@ export class ProductList extends Component {
   }
 }
 
-export default translate('translations')(ProductList);
+export default translate('translations')(
+  connect(state => ({ ...state.products }))(ProductList)
+);

@@ -33,10 +33,7 @@ class PriceListComponent extends Component {
           {_.map(selectedCategory, (list, value) => {
             return (
               <div key={Math.random()} className="list-group">
-                {value &&
-                  value !== 'null' &&
-                  value !== undefined &&
-                  value !== 'undefined' && (
+                {value && (
                     <button
                       type="button"
                       className="list-group-item list-group-item-action active"
