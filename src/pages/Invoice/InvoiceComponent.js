@@ -18,8 +18,13 @@ export class InvoiceComponent extends Component {
   saveHandler = isSave => {
     this.setState({ editUserInfo: false });
   };
+  
+  paymentHandler = () => {
+    this.props.addOrders();
+  }
+
   render() {
-    const { user, t, pickupDate, deliverDate } = this.props;
+    const { jwt, user, t, pickupDate, deliverDate} = this.props;
     return (
       <React.Fragment>
         <div className="vh-100 d-flex align-content-center flex-wrap fancy-bg">
@@ -42,7 +47,7 @@ export class InvoiceComponent extends Component {
               )}
             </div>
             <ProductList invoice />
-            {!user.jwt && (
+            {!jwt && (
               <div className="row m-2">
                 <div className="col-md-6">
                   <Register />
@@ -52,18 +57,17 @@ export class InvoiceComponent extends Component {
                 </div>
               </div>
             )}
-            {user.jwt &&
-              !this.state.editUserInfo && (
-                <UserInfo
-                  user={user}
-                  t={t}
-                  onHandleEditUserClick={e =>
-                    this.setState({ editUserInfo: true })
-                  }
-                />
-              )}
+            {jwt && !this.state.editUserInfo && (
+              <UserInfo
+                {...user}
+                t={t}
+                onHandleEditUserClick={e =>
+                  this.setState({ editUserInfo: true })
+                }
+              />
+            )}
             {this.state.editUserInfo && (
-              <UserInfoForm user={user.user} onSaveHandler={this.saveHandler} />
+              <UserInfoForm user={user} onSaveHandler={this.saveHandler} />
             )}
             <div className="mt-3 row ">
               <div className="col-md-6 mb-2">
@@ -74,8 +78,13 @@ export class InvoiceComponent extends Component {
                 </NavLink>
               </div>
               <div className="col-md-6 mb-2">
-                <NavLink className="nav-button" to="/">
-                  <Button fullWidth color="primary" variant="contained">
+                <NavLink className="nav-button" to="/user/my_orders">
+                  <Button
+                    fullWidth
+                    onClick={e => this.paymentHandler()}
+                    color="primary"
+                    variant="contained"
+                  >
                     {t('Payment')}
                   </Button>
                 </NavLink>
@@ -89,28 +98,28 @@ export class InvoiceComponent extends Component {
 }
 
 const UserInfo = props => {
-  const { user, t, onHandleEditUserClick } = props;
+  const { username, email, mobile, zipcode, address, t, onHandleEditUserClick } = props;
   return (
     <div className="row m-1 user-info">
       <div className="col-md-4">
         <span className="label">{t('Username')}:</span>
-        {user.user.username}
+        {username}
       </div>
       <div className="col-md-4">
         <span className="label">{t('Email')}:</span>
-        {user.user.email}
+        {email}
       </div>
       <div className="col-md-4">
         <span className="label">{t('Mobile')}:</span>
-        {user.user.mobile}
+        {mobile}
       </div>
       <div className="col-md-8">
         <span className="label">{t('Address')}:</span>
-        {user.user.address}
+        {address}
       </div>
       <div className="col-md-4">
         <span className="label">{t('Zipcode')}:</span>
-        {user.user.zipcode || ''}
+        {zipcode || ''}
       </div>
       <div className="col-md-12">
         <Button
