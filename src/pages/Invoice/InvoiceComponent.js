@@ -27,7 +27,7 @@ export class InvoiceComponent extends Component {
     const { jwt, user, t, pickupDate, deliverDate} = this.props;
     return (
       <React.Fragment>
-        <div className="vh-100 d-flex align-content-center flex-wrap fancy-bg">
+        <div className=" d-flex align-content-center flex-wrap fancy-bg">
           <NavbarComponent />
           <div className="invoice-form-wrapper mx-auto p-2">
             <div className="row date-information">

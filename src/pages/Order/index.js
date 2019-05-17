@@ -36,9 +36,9 @@ export class index extends Component {
     const isFormFilled = deliverDate && selectedProductNumbers > 0;
     return (
       <React.Fragment>
-        <div className="vh-100 d-flex align-content-center flex-wrap fancy-bg">
+        <div className="d-flex align-content-center flex-wrap fancy-bg">
           <NavbarComponent />
-          <div className="order-form-wrapper mx-auto p-2">
+          <div className="order-form-wrapper form-wrapper mx-auto p-2">
             <div className="date-picker-wrapper row">
               <div className="col-6">
                 <DatePicker
