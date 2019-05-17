@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
 import NavbarLoggedIn from './NavbarLoggedIn';
+import logo from '../../assets/images/logo_64.png';
 
 const styles = theme => ({
   root: {
@@ -81,7 +82,15 @@ class NavBarComponent extends Component {
       >
         <div className="container">
           {location.pathname !== '/' && (
-            <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
+            <NavLink
+              className="nav-link navbar-brand js-scroll-trigger"
+              to="/"
+            >
+              <img
+                className="main-logo"
+                alt="bubbles online lundry"
+                src={logo}
+              />
               {t('Bubbles')}
             </NavLink>
           )}
@@ -91,7 +100,12 @@ class NavBarComponent extends Component {
               className="navbar-brand js-scroll-trigger"
               href="#page-top"
             >
-              Bubbles
+              <img
+                className="main-logo"
+                alt="bubbles online lundry"
+                src={logo}
+              />
+              {t('Bubbles')}
             </a>
           )}
           <button
@@ -140,7 +154,10 @@ class NavBarComponent extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/contact/"
+                >
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -153,12 +170,18 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/register/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/register/"
+                >
                   {t('register')}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/login/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/login/"
+                >
                   {t('login')}
                 </NavLink>
               </li>

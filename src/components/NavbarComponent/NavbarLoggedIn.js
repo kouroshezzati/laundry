@@ -12,6 +12,8 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/images/logo_64.png';
+
 library.add(faHome);
 
 export class NavbarLoggedIn extends Component {
@@ -75,9 +77,15 @@ export class NavbarLoggedIn extends Component {
       >
         <div className="container">
           {location.pathname !== '/' && (
-            <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
-              {t('Bubbles')}
-            </NavLink>
+            <React.Fragment>
+              <img className="main-logo" alt="bubbles online lundry" src={logo} />
+              <NavLink
+                className="nav-link navbar-brand js-scroll-trigger"
+                to="/"
+              >
+                {t('Bubbles')}
+              </NavLink>
+            </React.Fragment>
           )}
           {location.pathname === '/' && (
             <a
@@ -85,7 +93,8 @@ export class NavbarLoggedIn extends Component {
               className="navbar-brand js-scroll-trigger"
               href="#page-top"
             >
-              Bubbles
+              <img className="main-logo" alt="bubbles online lundry" src={logo} />
+              {t('Bubbles')}
             </a>
           )}
           <button
@@ -134,7 +143,10 @@ export class NavbarLoggedIn extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/contact/"
+                >
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -152,7 +164,9 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
+                    aria-owns={
+                      this.state.open ? 'menu-list-grow' : undefined
+                    }
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >
@@ -216,7 +230,9 @@ export class NavbarLoggedIn extends Component {
                 </NavLink>
               </li>
               <li className="nav-item d-lg-none">
-                <div href="" onClick={e => this.handleSignOut()}>{t('Log out')}</div>
+                <div href="" onClick={e => this.handleSignOut()}>
+                  {t('Log out')}
+                </div>
               </li>
             </ul>
           </div>

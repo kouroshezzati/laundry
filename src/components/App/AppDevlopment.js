@@ -4,7 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '../../i18n';
 import HomeComponent from '../HomeComponent/HomeComponent';
 import ContactPage from '../../pages/ContactUs/';
-import PriceListContainer from '../PriceList/PriceListContainer';
+import PriceList from '../../pages/PriceList/';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStore from '../../store/configStore';
@@ -28,7 +28,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={HomeComponent} />
               <Route path="/contact/" component={ContactPage} />
-              <Route path="/price_list/" component={PriceListContainer} />
+              <Route path="/price_list/" component={PriceList} />
               <Route path="/register/" component={Register} />
               <Route path="/login/" component={Login} />
               <Route path="/order/" component={Order} />

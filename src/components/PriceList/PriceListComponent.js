@@ -1,8 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@material-ui/core';
 import _ from 'lodash';
-import { isArray } from 'util';
+import { withStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import './style.css';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
+
+const styles = theme => ({
+  root: {
+    width: '100%'
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular
+  },
+  MuiList: {
+    root: {
+      width: '100%'
+    }
+  },
+  fullWidthMenu: {
+    width: '100%'
+  },
+  productName: { position: 'absolute' },
+  productPrice: { position: 'absolute', right: '10px' }
+});
 
 class PriceListComponent extends Component {
   componentDidMount() {
@@ -13,61 +42,41 @@ class PriceListComponent extends Component {
     this.props.selectCategory(value);
   };
   render() {
-    const { products, selectedCategory } = this.props;
+    const { products, classes } = this.props;
     if (!products || products.length === 0) return <React.Fragment />;
     return (
-      <React.Fragment>
-        <div className="button-list">
-          {_.map(products, (key, value) => (
-            <Button
-              variant="contained"
-              color="primary"
-              key={value}
-              onClick={e => this.selectCategory(value)}
-            >
-              {value}
-            </Button>
-          ))}
-        </div>
-        <div className="product-list">
-          {_.map(selectedCategory, (list, value) => {
-            return (
-              <div key={Math.random()} className="list-group">
-                {value && (
-                    <button
-                      type="button"
-                      className="list-group-item list-group-item-action active"
-                    >
-                      {value}
-                    </button>
-                  )}
-                {isArray(list) &&
-                  list.length > 0 &&
-                  list.map(product => (
-                    <button
-                      type="button"
-                      key={product.id}
-                      className="list-group-item list-group-item-action"
-                    >
-                      <div className="float-left">
-                        {product.name}
-                      </div>
-                      <div className="float-right">
-                        {product.price}
-                      </div>
-                    </button>
+      <div className={classes.root}>
+        {_.map(products, (categorizedProducts, category) => {
+          return (
+            <ExpansionPanel key={category}>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography className={classes.heading}>
+                  {category}
+                </Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <List className={classes.fullWidthMenu}>
+                  {categorizedProducts.map(_product => (
+                    <ListItem button key={_product.id}>
+                      <ListItemText>{_product.name}</ListItemText>
+                      <ListItemSecondaryAction>
+                        {_product.price}
+                      </ListItemSecondaryAction>
+                    </ListItem>
                   ))}
-              </div>
-            );
-          })}
-        </div>
-      </React.Fragment>
+                </List>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+          );
+        })}
+      </div>
     );
   }
 }
 
 PriceListComponent.propTypes = {
+  classes: PropTypes.object.isRequired,
   fetchProducts: PropTypes.func.isRequired
 };
 
-export default PriceListComponent;
+export default withStyles(styles)(PriceListComponent);
