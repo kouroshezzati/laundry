@@ -1,6 +1,4 @@
-section.about-us .section-heading {
-  margin-bottom: 100px;
-}
+
 section.about-us .section-heading h2 {
   margin-top: 0;
 }
@@ -12,15 +10,6 @@ section.about-us .device-container,
 section.about-us .feature-item {
   max-width: 325px;
   margin: 0 auto;
-}
-
-section.about-us .device-container {
-  margin-bottom: 100px;
-}
-@media (min-width: 992px) {
-  section.about-us .device-container {
-    margin-bottom: 0;
-  }
 }
 
 section.about-us .feature-item {
@@ -47,6 +36,8 @@ section.about-us .feature-item i {
   font-weight: 400;
   text-align: justify;
 }
+
 section.about-us {
-  background: #b3ffff;
+  padding: 35px 0;
+  background: linear-gradient(to left, #a3d1ff, #b3fffb);
 }
