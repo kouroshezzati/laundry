@@ -5,7 +5,7 @@ import { AboutUsComponent } from '../AboutUsComponent/AboutUsComponent';
 import { ServicesComponent } from '../ServicesComponent/ServicesComponent';
 import NavBarComponent from '../NavbarComponent/NavbarComponent';
 import { SliderComponent } from '../SliderComponent/SliderComponent';
-
+import ExtraInfoComponent from '../ExtraInfo/ExtraInfoComponent';
 class HomeComponent extends Component {
   render() {
     return (
@@ -14,6 +14,7 @@ class HomeComponent extends Component {
         <SliderComponent />
         <ServicesComponent />
         <AboutUsComponent />
+        <ExtraInfoComponent />
         <FooterComponent />
       </React.Fragment>
     );

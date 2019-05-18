@@ -78,7 +78,11 @@ export class NavbarLoggedIn extends Component {
         <div className="container">
           {location.pathname !== '/' && (
             <React.Fragment>
-              <img className="main-logo" alt="bubbles online lundry" src={logo} />
+              <img
+                className="main-logo"
+                alt="bubbles online lundry"
+                src={logo}
+              />
               <NavLink
                 className="nav-link navbar-brand js-scroll-trigger"
                 to="/"
@@ -93,7 +97,11 @@ export class NavbarLoggedIn extends Component {
               className="navbar-brand js-scroll-trigger"
               href="#page-top"
             >
-              <img className="main-logo" alt="bubbles online lundry" src={logo} />
+              <img
+                className="main-logo"
+                alt="bubbles online lundry"
+                src={logo}
+              />
               {t('Bubbles')}
             </a>
           )}
@@ -132,12 +140,12 @@ export class NavbarLoggedIn extends Component {
                     <Link
                       activeClass="active"
                       className="nav-link js-scroll-trigger"
-                      to="about-us"
+                      to="extra-info"
                       spy={true}
                       smooth="easeInOutQuart"
                       duration={1000}
                     >
-                      {t('About us')}
+                      {t('read more')}
                     </Link>
                   </li>
                 </React.Fragment>
