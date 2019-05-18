@@ -136,7 +136,7 @@ class NavBarComponent extends Component {
                       smooth="easeInOutQuart"
                       duration={1000}
                     >
-                      {t('Service')}
+                      {t('Services')}
                     </Link>
                   </li>
                   <li className="nav-item">

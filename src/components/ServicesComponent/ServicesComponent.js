@@ -13,28 +13,28 @@ export const ServicesComponent = props => {
     <section className="services text-center" id="services">
       <div className="container">
         <div className="row">
-          <div className="col-md-4 service">
-            <img alt="laundry online" src={laundryService} className="test" />
+          <div className="col-sm-6 col-md-4 service">
+            <img alt="laundry online" src={laundryService} className="service-image" />
             <p className="service-text">Lundry wash & Fold</p>
           </div>
-          <div className="col-md-4 service">
-            <img alt="laundry online" src={slideImg4} className="test" />
+          <div className="col-sm-6 col-md-4 service">
+            <img alt="laundry online" src={slideImg4} className="service-image" />
             <p className="service-text">Dry Clean</p>
           </div>
-          <div className="col-md-4 service">
-            <img alt="laundry online" src={images} className="test" />
+          <div className="col-sm-6 col-md-4 service">
+            <img alt="laundry online" src={images} className="service-image" />
             <p className="service-text">Press</p>
           </div>
-          <div className="col-md-4 service">
-            <img alt="laundry online" src={dovomi} className="test" />
+          <div className="col-sm-6 col-md-4 service">
+            <img alt="laundry online" src={dovomi} className="service-image" />
             <p className="service-text">Bedroom</p>
           </div>
-          <div className="col-md-4 service">
-            <img alt="laundry online" src={house} className="test" />
+          <div className="col-sm-6 col-md-4 service">
+            <img alt="laundry online" src={house} className="service-image" />
             <p className="service-text">House Hold</p>
           </div>
-          <div className="col-md-4 service">
-            <img alt="laundry online" src={carpet} className="test" />
+          <div className="col-sm-6 col-md-4 service">
+            <img alt="laundry online" src={carpet} className="service-image" />
             <p className="service-text">Carpets</p>
           </div>
         </div>
