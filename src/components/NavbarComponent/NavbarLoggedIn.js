@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import classnames from 'classnames';
 import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 import Grow from '@material-ui/core/Grow';
@@ -13,17 +13,19 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/images/logo_64.png';
+import './style.css';
 
 library.add(faHome);
 
 export class NavbarLoggedIn extends Component {
   constructor(props) {
     super(props);
-    this.state = { mnuShow: false, open: false };
+    this.state = { mnuShow: false, open: false, navbarColor: false };
     this.closeMnu = this.closeMnu.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
     Events.scrollEvent.register('begin', () => {
       this.closeMnu();
     });
@@ -35,7 +37,17 @@ export class NavbarLoggedIn extends Component {
   componentWillUnmount() {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
+    window.removeEventListener('scroll', this.handleScroll);
   }
+  handleScroll = e => {
+    console.log('the event is', window.pageYOffset);
+    const servicesOffset = document.getElementById('services').offsetTop;
+    if (servicesOffset < window.pageYOffset) {
+      this.setState({ navbarColor: true });
+    } else {
+      this.setState({ navbarColor: false });
+    }
+  };
 
   toggleShow() {
     this.setState({ mnuShow: !this.state.mnuShow });
@@ -70,16 +82,20 @@ export class NavbarLoggedIn extends Component {
     const { t, location } = this.props;
     return (
       <nav
-        className={`navbar navbar-expand-lg navbar-light fixed-top ${
-          this.props.navBarShrink
-        }`}
+        className={classnames(
+          `navbar navbar-expand-lg navbar-light fixed-top`,
+          this.state.navbarColor ? 'colored' : ''
+        )}
         id="mainNav"
       >
         <div className="container">
           {location.pathname !== '/' && (
             <React.Fragment>
               <img
-                className="main-logo"
+                className={classnames(
+                  'main-logo',
+                  this.state.navbarColor ? '' : 'big-logo'
+                )}
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -98,7 +114,10 @@ export class NavbarLoggedIn extends Component {
               href="#page-top"
             >
               <img
-                className="main-logo"
+                className={classnames(
+                  'main-logo',
+                  this.state.navbarColor ? '' : 'big-logo'
+                )}
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -145,7 +164,7 @@ export class NavbarLoggedIn extends Component {
                       smooth="easeInOutQuart"
                       duration={1000}
                     >
-                      {t('read more')}
+                      {t('information')}
                     </Link>
                   </li>
                 </React.Fragment>

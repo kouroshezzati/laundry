@@ -151,6 +151,18 @@ class NavBarComponent extends Component {
                       {t('About us')}
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link
+                      activeClass="active"
+                      className="nav-link js-scroll-trigger"
+                      to="extra-info"
+                      spy={true}
+                      smooth="easeInOutQuart"
+                      duration={1000}
+                    >
+                      {t('information')}
+                    </Link>
+                  </li>
                 </React.Fragment>
               )}
               <li className="nav-item">
