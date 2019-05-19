@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import classnames from 'classnames';
 import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import { translate } from 'react-i18next';
 import { NavLink, withRouter } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
 import NavbarLoggedIn from './NavbarLoggedIn';
 import logo from '../../assets/images/logo_64.png';
+import './style.css';
 
 const styles = theme => ({
   root: {
@@ -21,11 +22,12 @@ const styles = theme => ({
 class NavBarComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { mnuShow: false, open: false };
+    this.state = { mnuShow: false, open: false, navbarColor: false };
     this.closeMnu = this.closeMnu.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
     Events.scrollEvent.register('begin', () => {
       this.closeMnu();
     });
@@ -37,6 +39,7 @@ class NavBarComponent extends Component {
   componentWillUnmount() {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   toggleShow() {
@@ -67,6 +70,18 @@ class NavBarComponent extends Component {
   handleSignOut = () => {
     this.props.signout();
   };
+
+  handleScroll = e => {
+    if (this.props.location.pathname !== '/') {
+      return;
+    }
+    const servicesOffset = document.getElementById('services').offsetTop;
+    if (servicesOffset <= window.pageYOffset) {
+      this.setState({ navbarColor: true });
+    } else {
+      this.setState({ navbarColor: false });
+    }
+  };
   render() {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
@@ -75,19 +90,20 @@ class NavBarComponent extends Component {
     }
     return (
       <nav
-        className={`navbar navbar-expand-lg navbar-light fixed-top ${
-          this.props.navBarShrink
-        }`}
+        className={classnames(
+          `navbar navbar-expand-lg navbar-light fixed-top`,
+          this.state.navbarColor ? 'colored' : ''
+        )}
         id="mainNav"
       >
         <div className="container">
           {location.pathname !== '/' && (
-            <NavLink
-              className="nav-link navbar-brand js-scroll-trigger"
-              to="/"
-            >
+            <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
               <img
-                className="main-logo"
+                className={classnames(
+                  'main-logo',
+                  this.state.navbarColor ? '' : 'big-logo'
+                )}
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -101,7 +117,10 @@ class NavBarComponent extends Component {
               href="#page-top"
             >
               <img
-                className="main-logo"
+                className={classnames(
+                  'main-logo',
+                  this.state.navbarColor ? '' : 'big-logo'
+                )}
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -166,10 +185,7 @@ class NavBarComponent extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -182,18 +198,12 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/register/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/register/">
                   {t('register')}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/login/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/login/">
                   {t('login')}
                 </NavLink>
               </li>

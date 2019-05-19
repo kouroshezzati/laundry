@@ -40,9 +40,11 @@ export class NavbarLoggedIn extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
   handleScroll = e => {
-    console.log('the event is', window.pageYOffset);
+    if (this.props.location.pathname !== '/') {
+      return;
+    }
     const servicesOffset = document.getElementById('services').offsetTop;
-    if (servicesOffset < window.pageYOffset) {
+    if (servicesOffset <= window.pageYOffset) {
       this.setState({ navbarColor: true });
     } else {
       this.setState({ navbarColor: false });
@@ -170,10 +172,7 @@ export class NavbarLoggedIn extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -191,9 +190,7 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={
-                      this.state.open ? 'menu-list-grow' : undefined
-                    }
+                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >
