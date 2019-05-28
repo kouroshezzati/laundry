@@ -1,9 +1,12 @@
 .main-logo {
-  height: 42px;
+  height: 55px;
   transition: height .3s ease-out;
 }
-.big-logo {
-  height: 55px;
+#mainNav.colored .main-logo{
+  height: 42px;
+}
+#mainNav.colored .navbar-brand {
+  padding: 0
 }
 .navbar-icon {
   font-size: 1.2em;

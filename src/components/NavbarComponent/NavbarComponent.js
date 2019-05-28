@@ -92,18 +92,20 @@ class NavBarComponent extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor ? 'colored' : ''
+          this.state.navbarColor || location.pathname !== '/'
+            ? 'colored'
+            : ''
         )}
         id="mainNav"
       >
         <div className="container">
           {location.pathname !== '/' && (
-            <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
+            <NavLink
+              className="nav-link navbar-brand js-scroll-trigger"
+              to="/"
+            >
               <img
-                className={classnames(
-                  'main-logo',
-                  this.state.navbarColor ? '' : 'big-logo'
-                )}
+                className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -117,10 +119,7 @@ class NavBarComponent extends Component {
               href="#page-top"
             >
               <img
-                className={classnames(
-                  'main-logo',
-                  this.state.navbarColor ? '' : 'big-logo'
-                )}
+                className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -185,7 +184,10 @@ class NavBarComponent extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/contact/"
+                >
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -198,12 +200,18 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/register/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/register/"
+                >
                   {t('register')}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/login/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/login/"
+                >
                   {t('login')}
                 </NavLink>
               </li>
