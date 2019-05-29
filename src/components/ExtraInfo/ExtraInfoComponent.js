@@ -12,15 +12,22 @@ export class ExtraInfoComponent extends Component {
             <div className="col-md-12">
               <h3>{t('Did you know')}</h3>
               <hr />
-              <p className="text-center">
+              <p className="main-text">
                 {t(`Bed bugs are not something that we think of every day ,
                     but the fact is that they can be in our bed covers, pillow 
                     quilts , sofa covers & in our clothing , it can give you skin rash
                     small red bumps , surrounded by blisters or hives;
+                      one of the ways that you can get rid of them 
+                    we recommend to have your bed covers, Sofa covers washed
+                    by porfesional  since the correct tempruter and correct wash detergent
+                    is essential to get the best results.
+                    our recomendation is 2 times a year wash for, pillow, comforter ,
+                    over mattress and sofa covers
+
                     `)}
               </p>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 mb-3">
               <h5>{t('Pick up & Drop Time')}</h5>
               <hr />
               <p className="text-center">
