@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/images/logo_64.png';
 import './style.css';
+import ste from 'scroll-to-element';
 
 library.add(faHome);
 
@@ -25,6 +26,10 @@ export class NavbarLoggedIn extends Component {
   }
 
   componentDidMount() {
+    const { hash } = this.props.location;
+    if (hash) {
+      ste(hash);
+    }
     window.addEventListener('scroll', this.handleScroll);
     Events.scrollEvent.register('begin', () => {
       this.closeMnu();
@@ -86,7 +91,7 @@ export class NavbarLoggedIn extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor ? 'colored' : ''
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : ''
         )}
         id="mainNav"
       >
@@ -94,10 +99,7 @@ export class NavbarLoggedIn extends Component {
           {location.pathname !== '/' && (
             <React.Fragment>
               <img
-                className={classnames(
-                  'main-logo',
-                  this.state.navbarColor ? '' : 'big-logo'
-                )}
+                className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -116,10 +118,7 @@ export class NavbarLoggedIn extends Component {
               href="#page-top"
             >
               <img
-                className={classnames(
-                  'main-logo',
-                  this.state.navbarColor ? '' : 'big-logo'
-                )}
+                className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />

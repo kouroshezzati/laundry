@@ -1,13 +1,22 @@
 .main-logo {
-  height: 80px;
+  height: 110px;
   transition: height .3s ease-out;
 }
 .big-logo {
   height: 110px;
 }
+#mainNav.colored .main-logo{
+  height: 70px;
+}
+#mainNav.colored .navbar-brand {
+  padding: 0
+}
 .navbar-icon {
   font-size: 1.2em;
   color: white;
+}
+a.nav-link{
+  font-weight: 700;
 }
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);

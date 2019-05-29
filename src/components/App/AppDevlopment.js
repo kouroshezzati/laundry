@@ -13,6 +13,7 @@ import Login from '../../pages/Login/';
 import Order from '../../pages/Order/OrderContainer';
 import Invoice from '../../pages/Invoice/InvoiceContainer';
 import User from '../../pages/User/UserComponent';
+import DateComponent from '../../pages/Order/DateComponent';
 import ForgottenPasswordPage from '../../pages/ForgottenPassword/ForgottenPasswordPageComponent';
 import ResetPasswordPageComponent from '../../pages/ResetPasswordPage/ResetPasswordPageComponent';
 import { PrivateRoute } from '../../utils/components';
@@ -32,6 +33,7 @@ class App extends Component {
               <Route path="/register/" component={Register} />
               <Route path="/login/" component={Login} />
               <Route path="/order/" component={Order} />
+              <Route path="/date/" component={DateComponent} />
               <Route path="/invoice/" component={Invoice} />
               <PrivateRoute path="/user/" component={User} />
               <Route

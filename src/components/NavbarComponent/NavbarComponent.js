@@ -9,6 +9,8 @@ import { signout } from '../User/UserActions';
 import NavbarLoggedIn from './NavbarLoggedIn';
 import logo from '../../assets/images/logo_65.png';
 import './style.css';
+import InnerSections from './InnerSections';
+import ste from 'scroll-to-element';
 
 const styles = theme => ({
   root: {
@@ -27,6 +29,10 @@ class NavBarComponent extends Component {
   }
 
   componentDidMount() {
+    const {hash} = this.props.location;
+    if (hash) {
+      ste(hash);
+    }
     window.addEventListener('scroll', this.handleScroll);
     Events.scrollEvent.register('begin', () => {
       this.closeMnu();
@@ -92,7 +98,7 @@ class NavBarComponent extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor ? 'colored' : ''
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : ''
         )}
         id="mainNav"
       >
@@ -100,10 +106,7 @@ class NavBarComponent extends Component {
           {location.pathname !== '/' && (
             <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
               <img
-                className={classnames(
-                  'main-logo',
-                  this.state.navbarColor ? '' : 'big-logo'
-                )}
+                className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -117,10 +120,7 @@ class NavBarComponent extends Component {
               href="#page-top"
             >
               <img
-                className={classnames(
-                  'main-logo',
-                  this.state.navbarColor ? '' : 'big-logo'
-                )}
+                className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />
@@ -144,46 +144,7 @@ class NavBarComponent extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              {location.pathname === '/' && (
-                <React.Fragment>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="services"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('Services')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="about-us"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('About us')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="extra-info"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('information')}
-                    </Link>
-                  </li>
-                </React.Fragment>
-              )}
+              <InnerSections {...this.props} />
               <li className="nav-item">
                 <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
