@@ -1,13 +1,13 @@
 .main-logo {
-  height: 42px;
+  height: 80px;
   transition: height .3s ease-out;
 }
 .big-logo {
-  height: 55px;
+  height: 110px;
 }
 .navbar-icon {
   font-size: 1.2em;
-  color: #ffffff;
+  color: white;
 }
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
@@ -24,28 +24,28 @@
   padding-bottom: 0px;
 }
 #mainNav .navbar-brand {
-  color: #fdcc52;
+  color: black;
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }
 #mainNav .navbar-brand:hover,
 #mainNav .navbar-brand:focus {
-  color: #fcbd20;
+  color: #adff42;
 }
 #mainNav .navbar-toggler {
-  font-size: 12px;
+  font-size: 18px;
   padding: 8px 10px;
   color: #222222;
 }
 #mainNav .navbar-nav > li > a {
-  font-size: 11px;
+  font-size: 17px;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 #mainNav .navbar-nav > li > a.active {
-  color: #fdcc52 !important;
+  color: #adff42 !important;
   background-color: transparent;
 }
 #mainNav .navbar-nav > li > a.active:hover {
@@ -80,7 +80,7 @@
   }
   #mainNav .navbar-nav > li > a:hover,
   #mainNav .navbar-nav > li > a:focus:hover {
-    color: white;
+    color: #ff8533;
   }
   #mainNav.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);

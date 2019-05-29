@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
 import NavbarLoggedIn from './NavbarLoggedIn';
-import logo from '../../assets/images/logo_64.png';
+import logo from '../../assets/images/logo_65.png';
 import './style.css';
 
 const styles = theme => ({
@@ -107,7 +107,7 @@ class NavBarComponent extends Component {
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('Bubbles')}
+              {t('')}
             </NavLink>
           )}
           {location.pathname === '/' && (
@@ -124,7 +124,7 @@ class NavBarComponent extends Component {
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('Bubbles')}
+              {t('')}
             </a>
           )}
           <button

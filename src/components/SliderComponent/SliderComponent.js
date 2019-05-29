@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { translate } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit
@@ -22,7 +21,7 @@ export const SliderComponent = translate('translations')(
         <div className="container h-100">
           <div className="row h-100">
             <div className="header-content mx-auto my-auto text-center">
-              <h2>Just order right now </h2>
+              <h1>Just order right now </h1>
               <Button
                 variant="contained"
                 color="primary"

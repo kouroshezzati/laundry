@@ -6,9 +6,9 @@ header.masthead {
   color: white;
   background: url('./img/bg-pattern.png'), #7b4397;
   background: url('./img/bg-pattern.png'),
-    -webkit-linear-gradient(to left, #43ad86, #55aeb8);
+    -webkit-linear-gradient(to left, #3497c5, #5567b8);
   background: url('./img/bg-pattern.png'),
-    linear-gradient(to left, #43ad86, #55aeb8);
+    linear-gradient(to left, #7d5ec4, #406ab9);
 }
 header.masthead .header-content {
   max-width: 700px;

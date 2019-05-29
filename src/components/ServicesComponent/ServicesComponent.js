@@ -14,7 +14,7 @@ export const ServicesComponent = props => {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-md-4 service">
-            <img alt="laundry online" src={laundryService} className="service-image" />
+            <img alt="laundry online" src={dovomi} className="service-image" />
             <p className="service-text">Lundry wash & Fold</p>
           </div>
           <div className="col-sm-6 col-md-4 service">
