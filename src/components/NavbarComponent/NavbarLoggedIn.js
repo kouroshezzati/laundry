@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/images/logo_64.png';
 import './style.css';
+import ste from 'scroll-to-element';
 
 library.add(faHome);
 
@@ -25,6 +26,10 @@ export class NavbarLoggedIn extends Component {
   }
 
   componentDidMount() {
+    const { hash } = this.props.location;
+    if (hash) {
+      ste(hash);
+    }
     window.addEventListener('scroll', this.handleScroll);
     Events.scrollEvent.register('begin', () => {
       this.closeMnu();
@@ -166,10 +171,7 @@ export class NavbarLoggedIn extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -187,9 +189,7 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={
-                      this.state.open ? 'menu-list-grow' : undefined
-                    }
+                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >

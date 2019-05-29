@@ -9,6 +9,8 @@ import { signout } from '../User/UserActions';
 import NavbarLoggedIn from './NavbarLoggedIn';
 import logo from '../../assets/images/logo_64.png';
 import './style.css';
+import InnerSections from './InnerSections';
+import ste from 'scroll-to-element';
 
 const styles = theme => ({
   root: {
@@ -27,6 +29,10 @@ class NavBarComponent extends Component {
   }
 
   componentDidMount() {
+    const {hash} = this.props.location;
+    if (hash) {
+      ste(hash);
+    }
     window.addEventListener('scroll', this.handleScroll);
     Events.scrollEvent.register('begin', () => {
       this.closeMnu();
@@ -92,18 +98,13 @@ class NavBarComponent extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor || location.pathname !== '/'
-            ? 'colored'
-            : ''
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : ''
         )}
         id="mainNav"
       >
         <div className="container">
           {location.pathname !== '/' && (
-            <NavLink
-              className="nav-link navbar-brand js-scroll-trigger"
-              to="/"
-            >
+            <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
               <img
                 className="main-logo"
                 alt="bubbles online lundry"
@@ -143,51 +144,9 @@ class NavBarComponent extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              {location.pathname === '/' && (
-                <React.Fragment>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="services"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('Services')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="about-us"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('About us')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="extra-info"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('information')}
-                    </Link>
-                  </li>
-                </React.Fragment>
-              )}
+              <InnerSections {...this.props} />
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -200,18 +159,12 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/register/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/register/">
                   {t('register')}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/login/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/login/">
                   {t('login')}
                 </NavLink>
               </li>
