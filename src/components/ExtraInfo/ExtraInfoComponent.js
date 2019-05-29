@@ -22,9 +22,7 @@ export class ExtraInfoComponent extends Component {
                     by porfesional  since the correct tempruter and correct wash detergent
                     is essential to get the best results.
                     our recomendation is 2 times a year wash for, pillow, comforter ,
-                    over mattress and sofa covers
-
-                    `)}
+                    over mattress and sofa covers`)}
               </p>
             </div>
             <div className="col-md-4 mb-3">
