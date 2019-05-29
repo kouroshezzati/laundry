@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Product from './Product';
 import { translate } from 'react-i18next';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 export class ProductList extends Component {
   render() {
-    const { products, invoice, t, selectedProducts, intactProducts } = this.props;
+    const {
+      products,
+      invoice,
+      t,
+      selectedProducts,
+      intactProducts
+    } = this.props;
     if (invoice) {
       let total = 0;
       return (
@@ -21,9 +27,10 @@ export class ProductList extends Component {
               style={{ boxShadow: '1px 1px 2px' }}
             >
               {_.map(selectedProducts, (value, id) => {
-                const _product = intactProducts.find(
-                  value => value.id === id
-                );
+                const _product = intactProducts.find(value => value.id === id);
+                if (!_product) {
+                  return <React.Fragment />;
+                }
                 total += _product.price * (value || 0);
                 return <Product key={id} {..._product} />;
               })}
@@ -41,7 +48,9 @@ export class ProductList extends Component {
           return (
             <div key={Math.random()} className="col-md-6">
               <ul key={Math.random()} className="list-group">
-                {key !== '' && key !== 'null' && key !== 'undefined' && <Product name={key} parent />}
+                {key !== '' && key !== 'null' && key !== 'undefined' && (
+                  <Product name={key} parent />
+                )}
                 {_products.map(product => (
                   <Product key={product.id} {...product} />
                 ))}
