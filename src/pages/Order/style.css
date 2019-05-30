@@ -1,0 +1,16 @@
+.order-form-wrapper {
+  background-color: white;
+  width: 90%;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.list-group-item {
+  padding: 0.3rem 0.5rem !important;
+}
+.parent {
+  font-weight: 600;
+}
+.order-form-wrapper .date-picker-wrapper .react-datepicker__input-container,
+.order-form-wrapper .date-picker-wrapper .react-datepicker-wrapper {
+  width: 100%;
+}

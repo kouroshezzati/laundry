@@ -1,0 +1,9 @@
+section.extra-info {
+  padding: 40px 0;
+  background: linear-gradient(to left, #aef5dd, #8fbdfa);
+}
+
+section.extra-info .main-text{
+  text-align: center;
+  margin-bottom: 100px;
+}

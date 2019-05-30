@@ -1,0 +1,29 @@
+.container-wrapper {
+  float: right;
+  padding: 27px 10px;
+  max-width: 79%;
+}
+.sidebar {
+  background-color: rgba(29, 29, 29, 0.897);
+  min-width: 19%;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  user-select: none;
+}
+
+nav.side-nav-bar.navbar {
+  background-color: rgb(247, 227, 191);
+}
+a.active > li {
+  background-color: #4c4c4c;
+}
+a > li {
+  color: whitesmoke;
+}
+.nav-item > a.active {
+  font-weight: 700;
+}

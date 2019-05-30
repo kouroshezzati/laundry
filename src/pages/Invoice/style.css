@@ -1,0 +1,24 @@
+.invoice-form-wrapper {
+  background-color: white;
+  width: 90%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 60px;
+}
+.user-info {
+  box-shadow: 1px 1px 4px;
+  padding: 7px;
+}
+.user-info .label {
+  font-size: 1em;
+  font-weight: 500;
+  margin-right: 5px;
+}
+.user-info div {
+  margin: 0.3em 0;
+}
+.date-information {
+  text-align: center;
+  font-size: 1.01em;
+  font-weight: 500;
+}
