@@ -110,7 +110,6 @@ class NavBarComponent extends Component {
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('')}
             </NavLink>
           )}
           {location.pathname === '/' && (
@@ -124,7 +123,6 @@ class NavBarComponent extends Component {
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('')}
             </a>
           )}
           <button
