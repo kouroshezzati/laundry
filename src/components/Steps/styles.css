@@ -1,0 +1,8 @@
+.step {
+  border-radius: 50%;
+}
+.step img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}

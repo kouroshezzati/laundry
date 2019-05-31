@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 
-import laundryService from './img/laundry-service.jpg';
 import slideImg4 from './img/slide-img4.png';
 import images from './img/images.jpg';
 import dovomi from './img/dovomi.jpg';

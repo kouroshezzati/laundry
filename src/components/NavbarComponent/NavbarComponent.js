@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import { translate } from 'react-i18next';
 import { NavLink, withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
