@@ -24,7 +24,7 @@ export const SliderComponent = translate('translations')(
               <h1>Just order right now </h1>
               <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 className={classes.button}
               >
                 <NavLink style={{ color: '#fff' }} to="/date/">

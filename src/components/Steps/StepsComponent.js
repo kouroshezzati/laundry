@@ -11,16 +11,16 @@ export class StepComponent extends Component {
       <section id="steps">
         <div className="container">
           <div className="row">
-            <div className="col-md-3 step">
+            <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={images} />
             </div>
-            <div className="col-md-3 step">
+            <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={dovomi} />
             </div>
-            <div className="col-md-3 step">
+            <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={house} />
             </div>
-            <div className="col-md-3 step">
+            <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={carpet} />
             </div>
           </div>
