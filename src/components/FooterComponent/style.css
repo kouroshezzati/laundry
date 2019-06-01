@@ -25,3 +25,7 @@ footer ul li a:active,
 footer ul li a.active {
   text-decoration: none;
 }
+
+.copy-right {
+  margin-top: 20px;
+}
