@@ -1,0 +1,32 @@
+[
+  {
+      "id": 1,
+      "name": "The Busy Professional (5 Shirts)",
+      "price": 12.5,
+      "category": {
+        "id": 1,
+        "name": "Dry & CLEAN"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 1,
+    "name": "T-shirt",
+    "price": 12.5,
+    "category": {
+      "id": 1,
+      "name": "Dry & CLEAN"
+    },
+    "type": "expensive"
+  },
+  {
+    "id": 1,
+    "name": "Carpet",
+    "price": 105,
+    "category": {
+      "id": 1,
+      "name": "ESPECIAL OFFER"
+    },
+    "type": "expensive"
+  }
+]
