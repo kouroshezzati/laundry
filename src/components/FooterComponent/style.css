@@ -29,3 +29,19 @@ footer ul li a.active {
 .copy-right {
   margin-top: 20px;
 }
+.icons-footer{
+  font-size: 0.9em;
+}
+.bank-icons{
+  text-align: left;
+}
+.social-icons{
+  text-align: right;
+}
+
+@media (max-width: 768px){
+  .bank-icons, .social-icons{
+    text-align: center;
+    padding: 10px 0;
+  }
+}

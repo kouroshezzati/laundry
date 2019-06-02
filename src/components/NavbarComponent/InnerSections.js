@@ -51,17 +51,17 @@ export class InnerSections extends Component {
         <React.Fragment>
           <li className="nav-item">
             <NavLink className="nav-link js-scroll-trigger" to="/#services">
-              {t('Services')}
+              {t('services')}
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link js-scroll-trigger" to="/#about-us">
-              {t('About us')}
+              {t('about us')}
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link js-scroll-trigger" to="/#extra-info">
-              {t('Information')}
+              {t('information')}
             </NavLink>
           </li>
         </React.Fragment>

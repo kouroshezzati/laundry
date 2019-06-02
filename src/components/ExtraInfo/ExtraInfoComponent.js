@@ -15,26 +15,21 @@ export class ExtraInfoComponent extends Component {
               <h3>{t('Pick up & Drop Time')}</h3>
               <hr />
               <p className="text-center">
-                {t(`Monday to Saturday 9am to 18.00
-                    we also offer after opening hours urgent delivery, please contact us.
-                    `)}
+                {t(`pickup.description`)}
               </p>
             </div>
             <div className="col-md-4">
               <h3>{t('Offers & subscription')}</h3>
               <hr />
               <p className="text-center">
-                {t(`10 % Discount for our first time users
-                  Gold Member
-                  Pearl Member
-                  `)}
+                {t(`offers.description`)}
               </p>
             </div>
             <div className="col-md-4">
               <h3>{t('Delivery Charges')}</h3>
               <hr />
               <p className="text-center">
-                {t(`Free Delivery Above 22.oo Euro`)}
+                {t(`delivery.description`)}
               </p>
             </div>
           </div>

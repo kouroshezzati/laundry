@@ -11,22 +11,29 @@ import {
   faTwitter,
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
+import { translate } from 'react-i18next';
+import {ContactInfo} from '../ContactUsComponent/ContactUsComponent';
 
-export const FooterComponent = props => {
+let FooterComponent = props => {
+  const { t } = props;
   return (
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 icons-footer bank-icons">
             <FontAwesomeIcon icon={faCcPaypal} className="m-1" size="2x" />
-            <FontAwesomeIcon icon={faCcMastercard} className="m-1" size="2x" />
+            <FontAwesomeIcon
+              icon={faCcMastercard}
+              className="m-1"
+              size="2x"
+            />
             <FontAwesomeIcon icon={faCcVisa} className="m-1" size="2x" />
             <FontAwesomeIcon icon={faCcAmazonPay} className="m-1" size="2x" />
           </div>
-          <div className="col-md-4">
-            Address:Platina weg 25 2544 EZ S-Gravenhage
+          <div className="col-md-4"> 
+            <ContactInfo {...props} />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 icons-footer social-icons">
             <FontAwesomeIcon
               icon={faFacebookSquare}
               className="m-1"
@@ -44,3 +51,5 @@ export const FooterComponent = props => {
     </footer>
   );
 };
+
+export default translate('translations')(FooterComponent);

@@ -2,6 +2,9 @@
   height: 110px;
   transition: height .3s ease-out;
 }
+#mainNav {
+  user-select: none;
+}
 .big-logo {
   height: 110px;
 }

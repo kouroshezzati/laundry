@@ -98,7 +98,7 @@ class RegisterComponent extends Component {
               className={classnames('form-control')}
               required
               ref={this.username}
-              placeholder="User name"
+              placeholder={t('User name')}
             />
           </div>
           <div className="form-group">
@@ -106,12 +106,12 @@ class RegisterComponent extends Component {
               className={classnames('form-control')}
               required
               ref={this.email}
-              placeholder="Email"
+              placeholder={t('Email')}
               type="email"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
             />
             <small id="emailHelp" className="form-text text-muted">
-              {t("We'll never share your email with anyone else.")}
+              {t("email.privacy")}
             </small>
           </div>
           <div className="form-group">
@@ -122,7 +122,7 @@ class RegisterComponent extends Component {
                 this.checkPasswords() ? 'is-invalid' : ''
               )}
               ref={this.password}
-              placeholder="Password"
+              placeholder={t('Password')}
               type="password"
             />
           </div>
@@ -134,7 +134,7 @@ class RegisterComponent extends Component {
                 this.checkPasswords() ? 'is-invalid' : ''
               )}
               type="password"
-              placeholder="Confirm the password"
+              placeholder={t('Confirm the password')}
               required
               style={{
                 border: this.checkPasswords() ? '1px solid #dc3545' : ''
@@ -151,7 +151,7 @@ class RegisterComponent extends Component {
               required
               ref={this.mobile}
               className={classnames('form-control')}
-              placeholder="Mobile"
+              placeholder={t('Mobile')}
               type="mobile"
             />
           </div>
@@ -160,7 +160,7 @@ class RegisterComponent extends Component {
               required
               className={classnames('form-control')}
               ref={this.address}
-              placeholder="address"
+              placeholder={t('Address')}
               type="text"
             />
           </div>

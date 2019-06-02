@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ForgetPasswordComponent from '../../components/User/ForgetPassword/ForgetPasswordComponent';
-import { FooterComponent } from '../../components/FooterComponent/FooterComponent';
+import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import './style.css';
 import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 
