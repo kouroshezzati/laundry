@@ -52,5 +52,7 @@ export default {
   Order: '!Order',
   order: '!order',
   'Your message has been sent': '!Your message has been sent',
-  'Kvk nummer': '!Kvk nummer'
+  'Kvk nummer': '!Kvk nummer',
+  Date: '!Date',
+  'Check out': '!Check out'
 };
