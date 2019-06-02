@@ -47,12 +47,14 @@ export default {
   Subject: '!Subject',
   Message: '!Message',
   'Just order right now': '!Just order right now',
-  'Picker date': '!Picker date',
+  'Pickup date': '!Pickup date',
   'Deliver date': '!Deliver date',
   Order: '!Order',
   order: '!order',
   'Your message has been sent': '!Your message has been sent',
   'Kvk nummer': '!Kvk nummer',
   Date: '!Date',
-  'Check out': '!Check out'
+  'Check out': '!Check out',
+  'Back to Order': '!Back to Order',
+  'Payment': '!Payment'
 };
