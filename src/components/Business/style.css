@@ -1,0 +1,17 @@
+#business {
+  background: rgb(202, 219, 193);
+}
+
+.business-img-wrapper {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.business-img-wrapper img {
+  width: 100%;
+}
+
+.business-message {
+  text-align: justify;
+  margin-bottom: 16px;
+}

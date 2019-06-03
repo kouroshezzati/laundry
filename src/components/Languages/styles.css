@@ -1,0 +1,8 @@
+.switch-language-wrapper {
+  color: white;
+  cursor: pointer;
+}
+.switch-language-wrapper .active-lang{
+  font-weight: 700;
+}
+

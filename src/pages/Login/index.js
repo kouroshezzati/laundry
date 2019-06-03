@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginComponent from '../../components/User/LoginComponent/LoginComponent';
-import { FooterComponent } from '../../components/FooterComponent/FooterComponent';
+import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import './style.css';
 import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 

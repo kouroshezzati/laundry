@@ -91,7 +91,9 @@ export class NavbarLoggedIn extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor || location.pathname !== '/' ? 'colored' : ''
+          this.state.navbarColor || location.pathname !== '/'
+            ? 'colored'
+            : ''
         )}
         id="mainNav"
       >
@@ -171,7 +173,10 @@ export class NavbarLoggedIn extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/contact/"
+                >
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -189,7 +194,9 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
+                    aria-owns={
+                      this.state.open ? 'menu-list-grow' : undefined
+                    }
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >

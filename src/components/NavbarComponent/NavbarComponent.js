@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import { translate } from 'react-i18next';
 import { NavLink, withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
@@ -11,6 +11,7 @@ import logo from '../../assets/images/logo_65.png';
 import './style.css';
 import InnerSections from './InnerSections';
 import ste from 'scroll-to-element';
+import Language from '../Languages/LanguageComponent';
 
 const styles = theme => ({
   root: {
@@ -98,19 +99,23 @@ class NavBarComponent extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor || location.pathname !== '/' ? 'colored' : ''
+          this.state.navbarColor || location.pathname !== '/'
+            ? 'colored'
+            : ''
         )}
         id="mainNav"
       >
         <div className="container">
           {location.pathname !== '/' && (
-            <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
+            <NavLink
+              className="nav-link navbar-brand js-scroll-trigger"
+              to="/"
+            >
               <img
                 className="main-logo"
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('')}
             </NavLink>
           )}
           {location.pathname === '/' && (
@@ -124,7 +129,6 @@ class NavBarComponent extends Component {
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('')}
             </a>
           )}
           <button
@@ -146,7 +150,10 @@ class NavBarComponent extends Component {
             <ul className="navbar-nav ml-auto">
               <InnerSections {...this.props} />
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/contact/"
+                >
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -159,18 +166,25 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/register/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/register/"
+                >
                   {t('register')}
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/login/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/login/"
+                >
                   {t('login')}
                 </NavLink>
               </li>
             </ul>
           </div>
         </div>
+        <Language />
       </nav>
     );
   }

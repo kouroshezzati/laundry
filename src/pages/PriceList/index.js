@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FooterComponent } from '../../components/FooterComponent/FooterComponent';
+import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 import PriceListComponent from "../../components/PriceList/PriceListContainer";
 import './style.css';

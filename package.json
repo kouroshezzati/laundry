@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@material-ui/core": "^3.9.3",
@@ -13,7 +14,8 @@
     "classnames": "^2.2.6",
     "date-fns": "^1.30.1",
     "font-awesome": "^4.7.0",
-    "i18next": "^11.7.0",
+    "i18next": "^11.10.2",
+    "i18next-browser-languagedetector": "^3.0.1",
     "jquery": "^3.4.0",
     "lodash": "^4.17.11",
     "material-ui": "^0.20.2",
@@ -21,7 +23,7 @@
     "react": "^16.8.6",
     "react-datepicker": "^2.5.0",
     "react-dom": "^16.8.6",
-    "react-i18next": "^7.11.1",
+    "react-i18next": "^9.0.10",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -31,7 +33,8 @@
     "redux-localstorage-simple": "^2.1.6",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "scroll-to-element": "^2.0.3"
+    "scroll-to-element": "^2.0.3",
+    "styled-components": "^4.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

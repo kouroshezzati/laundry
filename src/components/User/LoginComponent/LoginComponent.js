@@ -68,7 +68,7 @@ class LoginComponent extends Component {
               required
               ref={this.email}
               className="form-control"
-              placeholder="Email or Username"
+              placeholder={t("Email or Username")}
             />
           </div>
           <div className="form-group">
@@ -76,7 +76,7 @@ class LoginComponent extends Component {
               ref={this.password}
               type="password"
               required
-              placeholder="Password"
+              placeholder={t("Password")}
               className="form-control"
             />
             {message && <small style={{ color: 'red' }}>{message}</small>}

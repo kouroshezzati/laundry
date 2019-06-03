@@ -32,7 +32,7 @@ export class DateComponent extends Component {
           <div className="date-picker-wrapper row">
             <div className="col-6">
               <DatePicker
-                placeholderText={t('Picker date')}
+                placeholderText={t('Pickup date')}
                 selected={_pD}
                 onChange={date => {
                   this.setDate(date, PICKUP_DATE);

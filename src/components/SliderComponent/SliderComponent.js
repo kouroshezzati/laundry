@@ -21,16 +21,16 @@ export const SliderComponent = translate('translations')(
         <div className="container h-100">
           <div className="row h-100">
             <div className="header-content mx-auto my-auto text-center">
-              <h1>Just order right now </h1>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                <NavLink style={{ color: '#fff' }} to="/date/">
+              <h1>{t('Just order right now')}</h1>
+              <NavLink style={{ color: '#fff' }} to="/date/">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className={classes.button}
+                >
                   {t('Order now')}
-                </NavLink>
-              </Button>
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>

@@ -12,6 +12,7 @@ import green from '@material-ui/core/colors/green';
 import { API_ROOT } from '../../constants/index.js';
 import './style.css';
 import Snackbar from '../../utils/Snackbar/SnackbarComponent';
+import { translate } from 'react-i18next';
 
 const styles = theme => ({
   margin: {
@@ -62,7 +63,7 @@ export class ContactUsComponent extends Component {
       });
   };
   render() {
-    const { classes } = this.props;
+    const { classes, t } = this.props;
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit} id="form2">
@@ -71,7 +72,7 @@ export class ContactUsComponent extends Component {
               ref={this.name}
               type="text"
               required
-              placeholder="Name"
+              placeholder={t('Name')}
               className={classnames('form-control')}
             />
           </div>
@@ -81,10 +82,10 @@ export class ContactUsComponent extends Component {
               required
               ref={this.email}
               className={classnames('form-control')}
-              placeholder="Email"
+              placeholder={t('Email')}
             />
             <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
+              {t('email.privacy')}
             </small>
           </div>
           <div className="form-group">
@@ -93,7 +94,7 @@ export class ContactUsComponent extends Component {
               className={classnames('form-control')}
               type="text"
               ref={this.subject}
-              placeholder="Subject"
+              placeholder={t('Subject')}
             />
           </div>
           <div className="form-group">
@@ -101,7 +102,7 @@ export class ContactUsComponent extends Component {
               className={classnames('form-control')}
               required
               ref={this.body}
-              placeholder="Message"
+              placeholder={t('Message')}
             />
           </div>
           <div className="form-group">
@@ -112,17 +113,17 @@ export class ContactUsComponent extends Component {
                 color="primary"
                 className={classes.margin}
               >
-                Submit
+                {t('Submit')}
               </Button>
             </MuiThemeProvider>
             <NavLink className="float-right" to="/">
-              Back
+              {t('Back')}
             </NavLink>
           </div>
         </form>
         <Snackbar
           onHandlerClose={e => this.setState({ snackBar: false })}
-          snackbarMessage={'Your message has been sent'}
+          snackbarMessage="Your message has been sent"
           isSnackbarOpen={this.state.snackBar}
         />
       </React.Fragment>
@@ -130,4 +131,28 @@ export class ContactUsComponent extends Component {
   }
 }
 
-export default withStyles(styles)(ContactUsComponent);
+export const ContactInfo = props => {
+  const { t, contactUs } = props;
+  return (
+    <div className={contactUs ? 'contact-information' : ''}>
+      <div className="contact-record">
+        <span className="key">{t('Address')}:</span>
+        <span className="value">Platina weg 25 2544 EZ S-Gravenhage</span>
+      </div>
+      <div className="contact-record">
+        <span className="key">{t('Kvk nummer')}:</span>
+        <span className="value">74639757</span>
+      </div>
+      <div className="contact-record">
+        <span className="key">{t('telephone')}:</span>
+        <span className="value">
+          <a href="tel:+31 626 142 889">+31 626 142 889</a>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default translate('translations')(
+  withStyles(styles)(ContactUsComponent)
+);
