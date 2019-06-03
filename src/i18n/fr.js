@@ -19,7 +19,7 @@ export default {
   'Pick up & Drop Time': '!Pick up & Drop Time',
   'Offers & subscription': '!Offers & subscription',
   'Delivery Charges': '!Delivery Charges',
-  'Order now': '!Order now',
+  'Order now': 'bestel nu',
   'aboutus.description': `!aboutus.description`,
   'pickup.description': `!pickup.description`,
   'offers.description': `!offers.description`,
