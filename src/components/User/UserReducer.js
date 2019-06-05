@@ -29,7 +29,7 @@ export default (state = {}, action) => {
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       const _state = {
-        ...action.response,
+        jwt: action.response.id,
         isFetching: false,
         message: undefined
       };

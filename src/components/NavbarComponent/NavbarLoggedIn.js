@@ -91,25 +91,22 @@ export class NavbarLoggedIn extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor || location.pathname !== '/'
-            ? 'colored'
-            : ''
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : ''
         )}
         id="mainNav"
       >
         <div className="container">
           {location.pathname !== '/' && (
             <React.Fragment>
-              <img
-                className="main-logo"
-                alt="bubbles online lundry"
-                src={logo}
-              />
               <NavLink
                 className="nav-link navbar-brand js-scroll-trigger"
                 to="/"
               >
-                {t('Bubbles')}
+                <img
+                  className="main-logo"
+                  alt="bubbles online lundry"
+                  src={logo}
+                />
               </NavLink>
             </React.Fragment>
           )}
@@ -124,7 +121,6 @@ export class NavbarLoggedIn extends Component {
                 alt="bubbles online lundry"
                 src={logo}
               />
-              {t('Bubbles')}
             </a>
           )}
           <button
@@ -173,10 +169,7 @@ export class NavbarLoggedIn extends Component {
                 </React.Fragment>
               )}
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -194,9 +187,7 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={
-                      this.state.open ? 'menu-list-grow' : undefined
-                    }
+                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >
