@@ -5,7 +5,7 @@
 
 .contact-form-wrapper {
   width: 50%;
-  background: #c1c1c1b8;
+  background: #c1c1c1b8!important;
 }
 .fancy-bg {
   background: linear-gradient(to left, #4ecc9d, #73ecf9);

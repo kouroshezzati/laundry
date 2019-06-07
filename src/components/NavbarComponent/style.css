@@ -19,7 +19,7 @@
   color: white;
 }
 a.nav-link{
-  font-weight: 700;
+  font-weight: 500;
 }
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
@@ -51,7 +51,7 @@ a.nav-link{
   color: #222222;
 }
 #mainNav .navbar-nav > li > a {
-  font-size: 17px;
+  font-size: 1em;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   letter-spacing: 2px;
   text-transform: uppercase;
