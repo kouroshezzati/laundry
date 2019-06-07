@@ -1,3 +1,8 @@
+.contact-us-log img {
+  height: 110px;
+  margin-top: 25%;
+}
+
 .contact-form-wrapper {
   width: 50%;
 }
@@ -20,5 +25,8 @@
 @media (max-width: 768px) {
   .contact-form-wrapper {
     width: 80%;
+  }
+  .contact-us-log img {
+    margin-top: 0;
   }
 }

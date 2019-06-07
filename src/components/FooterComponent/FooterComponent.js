@@ -15,7 +15,7 @@ import { translate } from 'react-i18next';
 import {ContactInfo} from '../ContactUsComponent/ContactUsComponent';
 
 let FooterComponent = props => {
-  const { t } = props;
+  // const { t } = props;
   return (
     <footer>
       <div className="container">

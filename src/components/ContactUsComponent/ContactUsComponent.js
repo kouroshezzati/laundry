@@ -116,7 +116,7 @@ export class ContactUsComponent extends Component {
                 {t('Submit')}
               </Button>
             </MuiThemeProvider>
-            <NavLink className="float-right" to="/">
+            <NavLink className="float-right p-1" to="/">
               {t('Back')}
             </NavLink>
           </div>
