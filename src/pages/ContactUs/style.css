@@ -1,5 +1,11 @@
+.contact-us-log img {
+  height: 110px;
+  margin-top: 25%;
+}
+
 .contact-form-wrapper {
   width: 50%;
+  background: #c1c1c1b8;
 }
 .fancy-bg {
   background: linear-gradient(to left, #4ecc9d, #73ecf9);
@@ -20,5 +26,8 @@
 @media (max-width: 768px) {
   .contact-form-wrapper {
     width: 80%;
+  }
+  .contact-us-log img {
+    margin-top: 0;
   }
 }

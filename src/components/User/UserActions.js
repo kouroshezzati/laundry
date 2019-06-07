@@ -29,12 +29,16 @@ export const sendResetPasswordCode = email => {
       }
     }
   };
-}
+};
 
 export const resetPassword = data => {
   return {
     [CALL_API]: {
-      types: [RESET_PASSWORD_REQUEST, RESET_PASSWORD_SUCCESS, RESET_PASSWORD_FAILURE],
+      types: [
+        RESET_PASSWORD_REQUEST,
+        RESET_PASSWORD_SUCCESS,
+        RESET_PASSWORD_FAILURE
+      ],
       config: {
         url: `${API_ROOT}/auth/reset-password`,
         data: { ...data },
@@ -42,7 +46,7 @@ export const resetPassword = data => {
       }
     }
   };
-}
+};
 
 export const register = data => {
   return {
@@ -58,7 +62,7 @@ export const register = data => {
 };
 
 export const userUpdate = data => (dispatch, getState) => {
-  const {user} = getState();
+  const { user } = getState();
   if (!data.id || !user.jwt) {
     return dispatch({ type: UPDATE_USER_FAILURE });
   }
@@ -78,12 +82,18 @@ export const userUpdate = data => (dispatch, getState) => {
 };
 
 export const login = (identifier, password) => {
+  let _identifier = {};
+  if (identifier && identifier.includes('@')) {
+    _identifier.email = identifier;
+  } else {
+    _identifier.username = identifier;
+  }
   return {
     [CALL_API]: {
       types: [LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE],
       config: {
-        url: `${API_ROOT}/auth/local`,
-        data: { identifier, password },
+        url: `${API_ROOT}/Customers/login`,
+        data: { ..._identifier, password },
         method: 'post'
       }
     }
