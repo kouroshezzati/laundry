@@ -1,10 +1,10 @@
 #business {
-  background: rgb(202, 219, 193);
+  background: rgb(255, 200, 148);
 }
 
 .business-img-wrapper {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .business-img-wrapper img {

@@ -28,5 +28,35 @@
       "name": "ESPECIAL OFFER"
     },
     "type": "expensive"
-  }
+  },
+{
+  "id": 3,
+  "name": "dd",
+  "price": 105,
+  "category": {
+    "id": 13,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 5,
+  "name": "cc",
+  "price": 105,
+  "category": {
+    "id": 15,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 6,
+  "name": "rr",
+  "price": 105,
+  "category": {
+    "id": 16,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+}
 ]

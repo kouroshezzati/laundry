@@ -1,12 +1,12 @@
 .main-logo {
-  height: 110px;
+  height: 140px;
   transition: height .3s ease-out;
 }
 #mainNav {
   user-select: none;
 }
 .big-logo {
-  height: 110px;
+  height: 140px;
 }
 #mainNav.colored .main-logo{
   height: 70px;

@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
 import { translate } from 'react-i18next';
-import slideImg4 from './img/slide-img4.png';
 import images from './img/images.jpg';
 import dovomi from './img/dovomi.jpg';
 import house from './img/house.jpg';
 import carpet from './img/carpet.jpg';
-
+import slide from './img/slide.jpg';
+import bed from './img/bed.jpg';
 class ServicesComponent extends React.Component {
   render() {
     const { t } = this.props;
@@ -25,7 +25,7 @@ class ServicesComponent extends React.Component {
             <div className="col-sm-6 col-md-4 service">
               <img
                 alt="laundry online"
-                src={slideImg4}
+                src={slide}
                 className="service-image"
               />
               <p className="service-text">{t('Dry Clean')}</p>
@@ -40,8 +40,8 @@ class ServicesComponent extends React.Component {
             </div>
             <div className="col-sm-6 col-md-4 service">
               <img
-                alt="laundry online"
-                src={dovomi}
+                alt="bed"
+                src={bed}
                 className="service-image"
               />
               <p className="service-text">{t('Bedroom')}</p>
