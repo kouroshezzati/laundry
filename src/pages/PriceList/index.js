@@ -8,7 +8,7 @@ export class index extends Component {
     return (
       <Page>
         <div className="main-section align-content-center flex-wrap fancy-bg">
-          <div className="pricelist-wrapper form-wrapper mx-auto p-2">
+          <div className="pricelist-wrapper m-2 form-wrapper mx-auto p-2">
             <PriceListComponent />
           </div>
         </div>
