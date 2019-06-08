@@ -1,0 +1,11 @@
+.page-container{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+.main-section {
+  flex: 1;
+}
+#root{
+  height: 100%
+}

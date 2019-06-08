@@ -26,7 +26,7 @@ export class DateComponent extends Component {
       _dD = new Date(deliverDate);
     }
     return (
-      <div className="d-flex align-content-center flex-wrap fancy-bg">
+      <div className="main-section align-content-center flex-wrap fancy-bg">
         <NavbarComponent />
         <div className="order-form-wrapper form-wrapper mx-auto p-2">
           <div className="date-picker-wrapper row">

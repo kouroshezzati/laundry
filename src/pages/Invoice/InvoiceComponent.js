@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import UserInfoForm from '../../components/User/UserInfo/UserInfoContainer';
 import moment from 'moment';
 import { NavLink } from 'react-router-dom';
-import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
+import Page from '../index';
 
 export class InvoiceComponent extends Component {
   constructor(props) {
@@ -26,9 +26,8 @@ export class InvoiceComponent extends Component {
   render() {
     const { jwt, user, t, pickupDate, deliverDate} = this.props;
     return (
-      <React.Fragment>
+      <Page>
         <div className=" d-flex align-content-center flex-wrap fancy-bg">
-          <NavbarComponent />
           <div className="invoice-form-wrapper mx-auto p-2">
             <div className="row date-information">
               {pickupDate && (
@@ -92,7 +91,7 @@ export class InvoiceComponent extends Component {
             </div>
           </div>
         </div>
-      </React.Fragment>
+      </Page>
     );
   }
 }

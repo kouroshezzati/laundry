@@ -3,19 +3,18 @@ import RegisterComponent from '../../components/User/RegisterComponent/RegisterC
 import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import './style.css';
 import NavBarComponent from '../../components/NavbarComponent/NavbarComponent';
+import Page from '../index';
 
 export class index extends Component {
   render() {
     return (
-      <React.Fragment>
+      <Page>
         <div className="vh-100 d-flex align-content-center flex-wrap fancy-bg">
-          <NavBarComponent />
           <div className="register-wrapper mx-auto p-2">
             <RegisterComponent />
           </div>
         </div>
-        <FooterComponent />
-      </React.Fragment>
+      </Page>
     );
   }
 }
