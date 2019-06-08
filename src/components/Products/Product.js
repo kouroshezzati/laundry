@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Fab from '@material-ui/core/Fab';
+import { Button } from '@material-ui/core';
 import { Add, Remove } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import { ADD_PRODUCT, REMOVE_PRODUCT } from './ProductActions';
@@ -10,7 +10,8 @@ import './style.css';
 const styles = theme => ({
   extendedIcon: {
     width: '35px',
-    height: '32px'
+    height: '32px',
+    minWidth: '52px'
   }
 });
 
@@ -37,25 +38,25 @@ class Product extends Component {
         <li className="list-group-item">
           <span className="float-left">{name}</span>
           <span className="float-right product-controllers">
-            <Fab
+            <Button
               size="small"
               color="secondary"
-              aria-label="Add"
+              variant="contained"
               onClick={e => this.setNumber(id, REMOVE_PRODUCT)}
               className={classes.extendedIcon}
             >
               <Remove />
-            </Fab>
+            </Button>
             <span>{productNumbers}</span>
-            <Fab
+            <Button
               size="small"
               color="primary"
-              aria-label="Add"
+              variant="contained"
               className={classes.extendedIcon}
               onClick={e => this.setNumber(id, ADD_PRODUCT)}
             >
               <Add />
-            </Fab>
+            </Button>
             <span className="price-wrapper">
               ${productPrice * productNumbers}
             </span>
