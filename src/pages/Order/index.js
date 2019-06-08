@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import _ from 'lodash';
 import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 import { translate } from 'react-i18next';
+import Page from '../index';
 
 export class index extends Component {
   componentDidMount() {
@@ -22,10 +23,9 @@ export class index extends Component {
     });
     const isFormFilled = selectedProductNumbers > 0;
     return (
-      <React.Fragment>
-        <div className="d-flex align-content-center flex-wrap fancy-bg">
-          <NavbarComponent />
-          <div className="order-form-wrapper form-wrapper mx-auto p-2">
+      <Page>
+        <div className="main-section align-content-center flex-wrap fancy-bg">
+          <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
             <ProductList />
             <div className="mt-2 row ">
               <div className="col-md-6 mb-2">
@@ -57,8 +57,7 @@ export class index extends Component {
             </div>
           </div>
         </div>
-        <FooterComponent />
-      </React.Fragment>
+      </Page>
     );
   }
 }

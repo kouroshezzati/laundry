@@ -9,7 +9,6 @@
 }
 .fancy-bg {
   background: linear-gradient(to left, #4ecc9d, #73ecf9);
-  min-height: 100vh;
 }
 .contact-record .key {
   font-weight: 600;
@@ -30,4 +29,8 @@
   .contact-us-log img {
     margin-top: 0;
   }
+}
+.map-wrapper {
+  height: 275px!important;
+  background: red;
 }

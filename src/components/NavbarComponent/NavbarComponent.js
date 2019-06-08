@@ -98,10 +98,11 @@ class NavBarComponent extends Component {
     return (
       <nav
         className={classnames(
-          `navbar navbar-expand-lg navbar-light fixed-top`,
+          `navbar navbar-expand-lg navbar-light`,
           this.state.navbarColor || location.pathname !== '/'
             ? 'colored'
-            : ''
+            : '',
+          location.pathname === '/'? 'fixed-top': ''
         )}
         id="mainNav"
       >

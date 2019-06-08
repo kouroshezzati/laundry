@@ -17,13 +17,17 @@
     "i18next": "^11.10.2",
     "i18next-browser-languagedetector": "^3.0.1",
     "jquery": "^3.4.0",
+    "leaflet": "^1.5.1",
     "lodash": "^4.17.11",
     "material-ui": "^0.20.2",
     "moment": "^2.22.2",
+    "pigeon-maps": "^0.13.0",
     "react": "^16.8.6",
     "react-datepicker": "^2.5.0",
     "react-dom": "^16.8.6",
+    "react-google-maps": "^9.4.5",
     "react-i18next": "^9.0.10",
+    "react-leaflet": "^2.3.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -57,5 +61,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://www.bubblesonline.nl/"
+  "homepage": "http://www.bubblesonline.nl/",
+  "devDependencies": {
+    "react-openlayers": "^0.2.1"
+  }
 }

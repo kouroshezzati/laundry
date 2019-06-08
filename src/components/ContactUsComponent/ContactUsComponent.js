@@ -134,7 +134,12 @@ export class ContactUsComponent extends Component {
 export const ContactInfo = props => {
   const { t, contactUs } = props;
   return (
-    <div className={contactUs ? 'contact-information' : ''}>
+    <div
+      className={classnames(
+        contactUs ? 'contact-information' : '',
+        'text-center'
+      )}
+    >
       <div className="contact-record">
         <span className="key">{t('Address')}:</span>
         <span className="value">Platina weg 25 2544 EZ S-Gravenhage</span>
