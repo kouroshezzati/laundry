@@ -14,3 +14,9 @@
 .order-form-wrapper .date-picker-wrapper .react-datepicker-wrapper {
   width: 100%;
 }
+
+.pickup-img {
+  height: 30%;
+  width: 30%;
+  margin: 0 auto;
+}

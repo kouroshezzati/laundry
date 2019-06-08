@@ -25,7 +25,7 @@ export class index extends Component {
     return (
       <Page>
         <div className="main-section align-content-center flex-wrap fancy-bg">
-          <div className="order-form-wrapper form-wrapper mx-auto p-2">
+          <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
             <ProductList />
             <div className="mt-2 row ">
               <div className="col-md-6 mb-2">
