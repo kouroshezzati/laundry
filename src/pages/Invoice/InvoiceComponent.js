@@ -28,7 +28,7 @@ export class InvoiceComponent extends Component {
     return (
       <Page>
         <div className=" d-flex align-content-center flex-wrap fancy-bg">
-          <div className="invoice-form-wrapper mx-auto p-2">
+          <div className="invoice-form-wrapper m-2 mx-auto p-2">
             <div className="row date-information">
               {pickupDate && (
                 <div className="col-md-6">
