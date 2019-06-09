@@ -34,11 +34,16 @@ class RegisterComponent extends Component {
   constructor(props) {
     super(props);
     this.email = React.createRef();
+    this.firstName = React.createRef();
+    this.lastName = React.createRef();
     this.username = React.createRef();
     this.address = React.createRef();
     this.mobile = React.createRef();
     this.password = React.createRef();
     this.confirm_password = React.createRef();
+    this.country = React.createRef();
+    this.city = React.createRef();
+
     this.state = { snackBar: false, isSubmitted: false, message: '' };
   }
   onSubmit = event => {

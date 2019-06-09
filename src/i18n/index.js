@@ -1,15 +1,15 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import enWords from './en';
-import frWords from './fr';
+import duWords from './du';
 
 i18n.use(LanguageDetector).init({
   resources: {
     en: {
       translations: enWords
     },
-    fr: {
-      translations: frWords
+    du: {
+      translations: duWords
     }
   },
   fallbackLng: 'en',

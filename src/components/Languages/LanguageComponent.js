@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import './styles.css';
+import enImg from '../../assets/images/united-kingdom.png'
+import duImg from '../../assets/images/netherlands.png'
 
 export class LanguageComponent extends Component {
   changeLanguageTo = lang => {
@@ -15,14 +17,14 @@ export class LanguageComponent extends Component {
           className={i18n.language === 'en-US' ? 'active-lang' : ''}
           onClick={e => this.changeLanguageTo('en-US')}
         >
-          En
+          <img alt="laundry" src={enImg} />
         </span>
-        |
+        {' '}
         <span
-          className={i18n.language === 'fr-FR' ? 'active-lang' : ''}
-          onClick={e => this.changeLanguageTo('fr-FR')}
+          className={i18n.language === 'du' ? 'active-lang' : ''}
+          onClick={e => this.changeLanguageTo('du')}
         >
-          Fr
+          <img alt="laundry" src={duImg} />
         </span>
       </div>
     );
