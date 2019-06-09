@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './styles.css';
 import images from '../ServicesComponent/img/images.jpg';
-import dovomi from '../ServicesComponent/img/dovomi.jpg';
+import legecy from '../ServicesComponent/img/legecy.png';
 import house from '../ServicesComponent/img/house.jpg';
 import carpet from '../ServicesComponent/img/carpet.jpg';
-import basket from '../ServicesComponent/img/basket.jpg';
-import wash from '../ServicesComponent/img/wash.png';
+import basket2 from '../ServicesComponent/img/basket2.png';
+import washi from '../ServicesComponent/img/washi.jpg';
 import deliver from '../ServicesComponent/img/deliver.png';
 export class StepComponent extends Component {
   render() {
@@ -14,13 +14,13 @@ export class StepComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-3 col-sm-6 step">
-              <img alt="laundry" src={basket} />
+              <img alt="laundry" src={basket2} />
             </div>
             <div className="col-md-3 col-sm-6 step">
-              <img alt="laundry" src={dovomi} />
+              <img alt="laundry" src={legecy} />
             </div>
             <div className="col-md-3 col-sm-6 step">
-              <img alt="laundry" src={wash} />
+              <img alt="laundry" src={washi} />
             </div>
             <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={deliver} />

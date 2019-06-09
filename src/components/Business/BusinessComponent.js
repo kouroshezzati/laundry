@@ -16,7 +16,7 @@ export class BusinessComponent extends Component {
             </div>
             <div className="col-md-6">
               <p className="business-message">
-                <h2>{t('Business description')}</h2>
+                <h2>{t('Bedrijven')}</h2>
                 BUBBLES  is gespecialiseerd in het reinigen en beheren van textile voor :
                 Restaurants, Hotels ,Casino ,en bedrijven , denkt u hierbij aan het reinigen
                 En stomen van bedlinnen ,bedgoed, tafellinnen, keukenlinnen etc.
@@ -26,7 +26,7 @@ export class BusinessComponent extends Component {
                 De belangrijkste kenmerken van ons bedrijf ,proberen we zo goed 
                 Mogelijk uwproducten in zijn werk te nemen.
                 We zorgen ervoor dat deze open zomilieuvriendelijk mogelijke manierworden gereinigd.<br></br>
-                ACTIE : voor grote aantal kg wasbeurt  geldt  20% korting  
+                <h5>ACTIE:voor grote aantal kg wasbeurt geldt 20% korting</h5>  
               </p>
               <Button variant="contained" color="secondary">
                 {t('Special order')}

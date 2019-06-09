@@ -10,6 +10,26 @@
       "type": "cheap"
   },
   {
+    "id": 1,
+    "name": "The Busy Professional (5 Shirts)",
+    "price": 12.5,
+    "category": {
+      "id": 11,
+      "name": "Underweare"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 1,
+    "name": "The asdfas Professional (5 Shirts)",
+    "price": 12.5,
+    "category": {
+      "id": 11,
+      "name": "Underweare"
+    },
+      "type": "cheap"
+  },
+  {
     "id": 2,
     "name": "T-shirt",
     "price": 12.5,

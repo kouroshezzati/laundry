@@ -5,7 +5,7 @@ import images from './img/images.jpg';
 import dovomi from './img/dovomi.jpg';
 import house from './img/house.jpg';
 import carpet from './img/carpet.jpg';
-import slide from './img/slide.jpg';
+import suit from './img/suit.jpg';
 import bed from './img/bed.jpg';
 class ServicesComponent extends React.Component {
   render() {
@@ -25,7 +25,7 @@ class ServicesComponent extends React.Component {
             <div className="col-sm-6 col-md-4 service">
               <img
                 alt="laundry online"
-                src={slide}
+                src={suit}
                 className="service-image"
               />
               <p className="service-text">{t('Dry Clean')}</p>
