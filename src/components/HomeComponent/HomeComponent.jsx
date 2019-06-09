@@ -17,9 +17,9 @@ class HomeComponent extends Component {
         <SliderComponent />
         <ServicesComponent />
         <AboutUsComponent />
-        <StepsComponent />
-        <ExtraInfoComponent />
         <BusinessComponent />
+        <ExtraInfoComponent />
+        <StepsComponent />
         <FooterComponent />
       </React.Fragment>
     );
