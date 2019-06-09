@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import './style.css';
 
 import ProductList from '../../components/Products/ProductListContainer';
 import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
 import _ from 'lodash';
-import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 import { translate } from 'react-i18next';
 import Page from '../index';
 

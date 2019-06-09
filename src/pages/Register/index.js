@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import RegisterComponent from '../../components/User/RegisterComponent/RegisterComponent';
-import FooterComponent from '../../components/FooterComponent/FooterComponent';
 import './style.css';
-import NavBarComponent from '../../components/NavbarComponent/NavbarComponent';
 import Page from '../index';
 
 export class index extends Component {
