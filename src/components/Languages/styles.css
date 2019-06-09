@@ -2,7 +2,17 @@
   color: white;
   cursor: pointer;
 }
+.switch-language-wrapper img{
+  height: 17px;
+  width: 22px;
+}
 .switch-language-wrapper .active-lang{
   font-weight: 700;
 }
+.switch-language-wrapper .active-lang img{
+  cursor: auto;
+  height: 25px;
+  width: 25px;
+}
+
 
