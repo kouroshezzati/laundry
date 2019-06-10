@@ -46,7 +46,7 @@ export default {
   Name: 'Naam',
   Subject: 'Onderwerpen',
   Message: 'Bericht',
-  'Just order right now': 'Bestel gewoon nu',
+  'Just order right now': 'Bestellen',
   'Pickup date': 'Ophaaldatum',
   'Deliver date': 'Lever datum',
   Order: 'bestellen',

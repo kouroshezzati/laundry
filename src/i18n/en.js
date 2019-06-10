@@ -69,4 +69,5 @@ export default {
   'Check out': 'Check out',
   'Back to Order': 'Back to Order',
   Payment: 'Payment'
+  
 };
