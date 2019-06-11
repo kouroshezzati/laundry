@@ -237,7 +237,7 @@ class NavbarLoggedIn extends Component {
                 </NavLink>
               </li>
               <li className="nav-item d-lg-none">
-                <div href="" onClick={e => this.handleSignOut()}>
+                <div onClick={e => this.handleSignOut()}>
                   {t('Log out')}
                 </div>
               </li>

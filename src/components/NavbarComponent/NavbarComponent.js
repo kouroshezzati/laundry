@@ -102,7 +102,7 @@ class NavBarComponent extends Component {
           this.state.navbarColor || location.pathname !== '/'
             ? 'colored'
             : '',
-          location.pathname === '/'? 'fixed-top': ''
+          location.pathname === '/' ? 'fixed-top' : ''
         )}
         id="mainNav"
       >
@@ -175,12 +175,12 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="nav-link js-scroll-trigger"
-                  href="#"
+                  to="/login/"
                 >
                   {t('login')}
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
