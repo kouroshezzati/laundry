@@ -26,7 +26,7 @@ export class BusinessComponent extends Component {
                 De belangrijkste kenmerken van ons bedrijf ,proberen we zo goed 
                 Mogelijk uwproducten in zijn werk te nemen.
                 We zorgen ervoor dat deze open zomilieuvriendelijk mogelijke manierworden gereinigd.<br></br>
-                <h5>ACTIE:voor grote aantal kg wasbeurt geldt 20% korting</h5>  
+                <h6>ACTIE:</h6>voor grote aantal kg wasbeurt geldt 20% korting 
               </p>
               <Button variant="contained" color="secondary">
                 {t('Special order')}
