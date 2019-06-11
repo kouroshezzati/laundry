@@ -15,10 +15,18 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/images/logo_64.png';
 import './style.css';
 import ste from 'scroll-to-element';
+import InnerSections from './InnerSections';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  button: {
+    fontSize: '.45em'
+  }
+});
 
 library.add(faHome);
 
-export class NavbarLoggedIn extends Component {
+class NavbarLoggedIn extends Component {
   constructor(props) {
     super(props);
     this.state = { mnuShow: false, open: false, navbarColor: false };
@@ -86,14 +94,12 @@ export class NavbarLoggedIn extends Component {
   };
   render() {
     const show = this.state.mnuShow ? 'show' : '';
-    const { t, location } = this.props;
+    const { classes, t, location } = this.props;
     return (
       <nav
         className={classnames(
-          `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor || location.pathname !== '/'
-            ? 'colored'
-            : '',
+          `navbar navbar-expand-lg navbar-light`,
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : '',
           location.pathname === '/' ? 'fixed-top' : ''
         )}
         id="mainNav"
@@ -143,39 +149,9 @@ export class NavbarLoggedIn extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              {location.pathname === '/' && (
-                <React.Fragment>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="services"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('Services')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="extra-info"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('information')}
-                    </Link>
-                  </li>
-                </React.Fragment>
-              )}
+              <InnerSections {...this.props} />
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -193,9 +169,8 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={
-                      this.state.open ? 'menu-list-grow' : undefined
-                    }
+                    className={classes.button}
+                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >
@@ -271,4 +246,66 @@ export class NavbarLoggedIn extends Component {
   }
 }
 
-export default NavbarLoggedIn;
+class ServicesMenu extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {open: false}
+  }
+  render() {
+    const {t, classes} = this.props;
+    return (
+      <div>
+        <Button
+          buttonRef={node => {
+            this.anchorEl = node;
+          }}
+          className={classes.button}
+          aria-owns={this.state.open ? 'menu-list-grow' : undefined}
+          aria-haspopup="true"
+          onClick={this.handleToggle}
+        >
+          <FontAwesomeIcon className="navbar-icon" icon="home" />
+        </Button>
+        <Popper
+          open={this.state.open}
+          anchorEl={this.anchorEl}
+          transition
+          disablePortal
+        >
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id="menu-list-grow"
+              style={{
+                transformOrigin:
+                  placement === 'bottom' ? 'center top' : 'center bottom'
+              }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={this.handleClose}>
+                  <MenuList>
+                    <NavLink to="/user/change_information">
+                      <MenuItem onClick={this.handleClose}>
+                        {t('Change information')}
+                      </MenuItem>
+                    </NavLink>
+                    <NavLink to="/user/my_orders">
+                      <MenuItem onClick={this.handleClose}>
+                        {t('My orders')}
+                      </MenuItem>
+                    </NavLink>
+                    <MenuItem onClick={e => this.handleSignOut()}>
+                      {t('Logout')}
+                    </MenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      </div>
+    );
+  }
+}
+ServicesMenu = withStyles(styles)(ServicesMenu)
+export default withStyles(styles)(NavbarLoggedIn);

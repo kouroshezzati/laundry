@@ -46,7 +46,7 @@ export class ProductList extends Component {
       <div className="row product-list-wrapper">
         {_.map(products, (_products, key) => {
           return (
-            <div key={Math.random()} className="col-md-6">
+            <div key={Math.random()} className="col-md-12">
               <ul key={Math.random()} className="list-group">
                 {key !== '' && key !== 'null' && key !== 'undefined' && (
                   <Product name={key} parent />
