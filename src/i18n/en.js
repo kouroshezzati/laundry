@@ -68,6 +68,9 @@ export default {
   Date: 'Date',
   'Check out': 'Check out',
   'Back to Order': 'Back to Order',
-  Payment: 'Payment'
-  
+  Payment: 'Payment',
+  'Change information': 'Change information',
+  'My orders': 'My orders',
+  'Log out': 'Log out',
+  'Logout': 'Logout'
 };
