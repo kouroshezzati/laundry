@@ -5,6 +5,7 @@
 .switch-language-wrapper img{
   height: 17px;
   width: 22px;
+  border-radius: 3px;
 }
 .switch-language-wrapper .active-lang{
   font-weight: 700;
