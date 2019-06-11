@@ -11,7 +11,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../assets/images/logo_64.png';
+import logo from '../../assets/images/logo_65.png';
 import './style.css';
 import ste from 'scroll-to-element';
 import { NavLink, withRouter } from 'react-router-dom';
