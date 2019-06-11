@@ -4,8 +4,8 @@ export default {
   contact: 'contact',
   Contact: 'Contact',
   information: 'informatie',
-  'About us': '!over ons',
-  'about us': '!over ons',
+  'About us': 'over ons',
+  'about us': 'over ons',
   login: 'inlogen',
   register: 'registreren',
   Press: 'druk op',
@@ -20,7 +20,15 @@ export default {
   'Offers & subscription': 'aanbiedingen & abonnement',
   'Delivery Charges': 'Verzendkosten',
   'Order now': 'bestel nu',
-  'aboutus.description': `!over ons.Omschrijving`,
+  'aboutus.description': `Ons bedrijf biedt een professionele oplossing voor uw dagelijkse was. Wij verzorgen uw was met 100%
+  groene stroom. Wij proberen zoveel mogelijk milieuvriendelijke producten te gebruiken. Wij bieden u de
+  beste service en prijs voor al uw huishoudelijke en zakelijke was.
+  Onze medewerkers zijn gespecialiseerd in het herkennen van elk textielsoort en werken erg hygiënisch.
+  Onze topprioriteit is daarom ook het optimale uit de was halen.
+  Wij belonen onze members doormiddel van een puntensysteem , zodat u optimaal kunt genieten voor
+  het bedrag waarvoor u betaald heeft.
+  Wij willen u ervan verzekeren dat wij tijdig uw was komen ophalen en uw schone was laten bezorgen.
+  Wees gerust om contact met ons op te nemen voor overige vragen.`,
   'pickup.description': `oppakken.Omschrijving`,
   'offers.description': `aanbiedingen.Omschrijving`,
   'delivery.description': `levering.Omschrijving`,
@@ -46,15 +54,16 @@ export default {
   Name: 'Naam',
   Subject: 'Onderwerpen',
   Message: 'Bericht',
-  'Just order right now': 'Bestel gewoon nu',
+  'Just order right now': 'Bestellen',
   'Pickup date': 'Ophaaldatum',
   'Deliver date': 'Lever datum',
   Order: 'bestellen',
   order: 'bestellen',
   'Your message has been sent': 'Je bericht is verzonden',
   'Kvk number': 'Kvk nummer',
-  Date: '!Datum',
+  Date: 'Datum',
   'Check out': 'Uitchecken',
   'Back to Order': 'Terug naar bestelling',
-  'Payment': 'Betaling'
+  'Payment': 'Betaling',
+  'suits': '!suit'
 };

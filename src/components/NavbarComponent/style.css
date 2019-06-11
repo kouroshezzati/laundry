@@ -58,6 +58,7 @@ a.nav-link{
 }
 #mainNav .navbar-nav > li > a.active {
   color: #adff42 !important;
+  font-weight: 900;
   background-color: transparent;
 }
 #mainNav .navbar-nav > li > a.active:hover {
@@ -113,4 +114,22 @@ a.nav-link{
   #mainNav.navbar-shrink .navbar-nav > li > a:focus:hover {
     color: #fdcc52;
   }
+}
+.menuButton {
+  background: transparent;
+  border: none;
+}
+.menuButton .nav-item a.nav-link:hover {
+  color: #ff8533;
+}
+.menuButton .nav-item a.nav-link {
+  padding-top: 2px;
+  font-size: 1.25em;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 991px){
+  .menuButton .nav-item a.nav-link {
+    color: #222222;
+  }
+
 }

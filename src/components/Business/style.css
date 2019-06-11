@@ -1,5 +1,5 @@
 #business {
-  background: #ff8533
+  background: #ebb758
 }
 
 .business-img-wrapper {
@@ -12,6 +12,8 @@
 }
 
 .business-message {
-  text-align: justify;
+  text-align: justify; 
   margin-bottom: 16px;
+  
 }
+

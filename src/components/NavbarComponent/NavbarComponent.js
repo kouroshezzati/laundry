@@ -93,7 +93,7 @@ class NavBarComponent extends Component {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
     if (jwt) {
-      return <NavbarLoggedIn {...this.props} />;
+      return <NavbarLoggedIn  />;
     }
     return (
       <nav
@@ -175,12 +175,12 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
+                <a
                   className="nav-link js-scroll-trigger"
-                  to="/login/"
+                  href="#"
                 >
                   {t('login')}
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>

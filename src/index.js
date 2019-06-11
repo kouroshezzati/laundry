@@ -6,9 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const pickTheme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  },
   palette: {
     secondary: {
-      main: '#FF5733'
+      main: '#ff751a'
+    },
+    primary: {
+      main: '#3333ff'
     }
   }
 });

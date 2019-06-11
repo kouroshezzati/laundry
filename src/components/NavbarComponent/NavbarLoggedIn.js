@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
-import { NavLink } from 'react-router-dom';
+import { Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
@@ -15,10 +14,22 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/images/logo_64.png';
 import './style.css';
 import ste from 'scroll-to-element';
+import { NavLink, withRouter } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import InnerSections from './InnerSections';
+import { connect } from 'react-redux';
+import { signout } from '../User/UserActions';
+import {translate} from 'react-i18next';
+
+const styles = theme => ({
+  button: {
+    fontSize: '.45em'
+  }
+});
 
 library.add(faHome);
 
-export class NavbarLoggedIn extends Component {
+class NavbarLoggedIn extends Component {
   constructor(props) {
     super(props);
     this.state = { mnuShow: false, open: false, navbarColor: false };
@@ -86,14 +97,12 @@ export class NavbarLoggedIn extends Component {
   };
   render() {
     const show = this.state.mnuShow ? 'show' : '';
-    const { t, location } = this.props;
+    const { classes, t, location } = this.props;
     return (
       <nav
         className={classnames(
-          `navbar navbar-expand-lg navbar-light fixed-top`,
-          this.state.navbarColor || location.pathname !== '/'
-            ? 'colored'
-            : '',
+          `navbar navbar-expand-lg navbar-light`,
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : '',
           location.pathname === '/' ? 'fixed-top' : ''
         )}
         id="mainNav"
@@ -143,39 +152,9 @@ export class NavbarLoggedIn extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              {location.pathname === '/' && (
-                <React.Fragment>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="services"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('Services')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      activeClass="active"
-                      className="nav-link js-scroll-trigger"
-                      to="extra-info"
-                      spy={true}
-                      smooth="easeInOutQuart"
-                      duration={1000}
-                    >
-                      {t('information')}
-                    </Link>
-                  </li>
-                </React.Fragment>
-              )}
+              <InnerSections {...this.props} />
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('Contact')}
                 </NavLink>
               </li>
@@ -193,9 +172,8 @@ export class NavbarLoggedIn extends Component {
                     buttonRef={node => {
                       this.anchorEl = node;
                     }}
-                    aria-owns={
-                      this.state.open ? 'menu-list-grow' : undefined
-                    }
+                    className={classes.button}
+                    aria-owns={this.state.open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleToggle}
                   >
@@ -271,4 +249,8 @@ export class NavbarLoggedIn extends Component {
   }
 }
 
-export default NavbarLoggedIn;
+export default connect(
+  state => ({ ...state.user }),
+  { signout }
+)(withStyles(styles)(withRouter(translate('translations')(NavbarLoggedIn))));
+

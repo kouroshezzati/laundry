@@ -1,82 +1,662 @@
 [
   {
       "id": 1,
-      "name": "The Busy Professional (5 Shirts)",
-      "price": 12.5,
+      "name": "SHIRT / POLO ",
+      "price": 3.50,
       "category": {
         "id": 11,
-        "name": "Dry & CLEAN"
-    },
-      "type": "cheap"
-  },
-  {
-    "id": 1,
-    "name": "The Busy Professional (5 Shirts)",
-    "price": 12.5,
-    "category": {
-      "id": 11,
-      "name": "Underweare"
-    },
-      "type": "cheap"
-  },
-  {
-    "id": 1,
-    "name": "The asdfas Professional (5 Shirts)",
-    "price": 12.5,
-    "category": {
-      "id": 11,
-      "name": "Underweare"
+        "name": "DRY & CLEAN"
     },
       "type": "cheap"
   },
   {
     "id": 2,
-    "name": "T-shirt",
-    "price": 12.5,
+    "name": "VEST ",
+    "price": 4.95,
     "category": {
-      "id": 12,
-      "name": "Dry & CLEAN"
+      "id": 22,
+      "name": "DRY & CLEAN"
+  },
+    "type": "cheap"
+},
+{
+  "id": 3,
+  "name": "BLOUSE ",
+  "price": 5.95,
+  "category": {
+    "id": 33,
+    "name": "DRY & CLEAN"
+},
+  "type": "cheap"
+},
+{
+  "id": 4,
+  "name": "SILK / TOP ",
+  "price": 7.95,
+  "category": {
+    "id": 44,
+    "name": "DRY & CLEAN"
+},
+  "type": "cheap"
+},
+{
+  "id": 5,
+  "name": "JACKET / BLAZER ",
+  "price": 9.50,
+  "category": {
+    "id": 55,
+    "name": "DRY & CLEAN"
+},
+  "type": "cheap"
+},
+  {
+    "id": 6,
+    "name": "BODY WARMER",
+    "price": 12.50,
+    "category": {
+      "id": 66,
+      "name": "OUTER WEAR"
     },
-    "type": "expensive"
+      "type": "cheap"
   },
   {
-    "id": 3,
+    "id": 7,
+    "name": "JACKET",
+    "price": 15.95,
+    "category": {
+      "id": 77,
+      "name": "OUTER WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 8,
+    "name": "LONG WINTER JACKET",
+    "price": 21.95,
+    "category": {
+      "id": 88,
+      "name": "OUTER WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 9,
+    "name": "SKI PANTS",
+    "price": 10.95,
+    "category": {
+      "id": 99,
+      "name": "OUTER WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 10,
+    "name": "SKI JACKET",
+    "price": 19.95,
+    "category": {
+      "id": 1010,
+      "name": "OUTER WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 11,
+    "name": "SKI OVERALL",
+    "price": 18.95,
+    "category": {
+      "id": 1111,
+      "name": "OUTER WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 12,
+    "name": "IRONING SHIRT MINIMUM 4 PCS (PER PC)",
+    "price": 2.95,
+    "category": {
+      "id": 1212,
+      "name": "PRESS"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 13,
+    "name": "The Busy Professional (5 Shirts)",
+    "price": 12.8,
+    "category": {
+      "id": 1313,
+      "name": "HOUSE HOLD"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 14,
+    "name": "SUIT  (2 PIECES)",
+    "price": 15.95,
+    "category": {
+      "id": 1414,
+      "name": "SUITS"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 15,
+    "name": "SUIT  (3 PIECES)",
+    "price": 21.95,
+    "category": {
+      "id": 1515,
+      "name": "SUITS"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 16,
+    "name": "SCARF ",
+    "price": 4.95,
+    "category": {
+      "id": 1616,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 17,
+    "name": "HAT ",
+    "price": 4.95,
+    "category": {
+      "id": 1717,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 18,
+    "name": "TIE ",
+    "price": 4.95,
+    "category": {
+      "id": 1818,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 19,
+    "name": "GLOVES ",
+    "price": 4.95,
+    "category": {
+      "id": 1919,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 20,
+    "name": "JABOT ",
+    "price": 4.95,
+    "category": {
+      "id": 2020,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 21,
+    "name": "SWEATER ",
+    "price": 6.95,
+    "category": {
+      "id": 2121,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 22,
+    "name": "JERSEY ",
+    "price": 6.95,
+    "category": {
+      "id": 2222,
+      "name": "ACCESSORIES & KNIT WEAR"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 23,
+    "name": "ALL KIND OF PANTS",
+    "price": 6.95,
+    "category": {
+      "id": 2323,
+      "name": "BOTTOMS"
+    },
+      "type": "cheap"
+  }, 
+  {
+    "id": 24,
+    "name": "SKIRT MINI / SHORT ",
+    "price": 7.50,
+    "category": {
+      "id": 2424,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 25,
+    "name": "SKIRT LONG",
+    "price": 9.50,
+    "category": {
+      "id": 2525,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 26,
+    "name": "SKIRT SHORT SILK",
+    "price": 12.50,
+    "category": {
+      "id": 2626,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 27,
+    "name": "SKIRT LONG SILK",
+    "price": 14.50,
+    "category": {
+      "id": 2727,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 28,
+    "name": "DRESS SHORT",
+    "price": 8.95,
+    "category": {
+      "id": 2828,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 29,
+    "name": "DRESS LONG",
+    "price": 12.95,
+    "category": {
+      "id": 2929,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 30,
+    "name": "DRESS SHORT SILK",
+    "price": 14.95,
+    "category": {
+      "id": 3030,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 31,
+    "name": "DRESS LONG SILK",
+    "price": 16.95,
+    "category": {
+      "id": 3131,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 32,
+    "name": "WEDDING DRESS FROM 95.00 (PLEASE CONTACT US)",
+    "price": 95.00,
+    "category": {
+      "id": 3232,
+      "name": "DRESSES & SKIRTS"
+    },
+      "type": "CHEAP"
+  },
+  {
+    "id": 33,
+    "name": "WASH & FOLD (6 KG)",
+    "price": 22.00,
+    "category": {
+      "id": 3333,
+      "name": "LAUNDRY WASH & FOLD"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 34,
+    "name": "WASH & FOLD (12 KG)",
+    "price": 32.00,
+    "category": {
+      "id": 3434,
+      "name": "LAUNDRY WASH & FOLD"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 35,
+    "name": "WASH & FOLD (18 KG)",
+    "price": 42.00,
+    "category": {
+      "id": 3535,
+      "name": "LAUNDRY WASH & FOLD"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 36,
+    "name": "PILLOW FEATHER / DOWN",
+    "price": 21.95,
+    "category": {
+      "id": 3636,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 37,
+    "name": "PILLOW SYNTHETIC",
+    "price": 13.95,
+    "category": {
+      "id": 3737,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 38,
+    "name": "QUILT ONE PERSON",
+    "price": 9.95,
+    "category": {
+      "id": 3838,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 39,
+    "name": "QUILT TWO PERSON",
+    "price": 11.95,
+    "category": {
+      "id": 3939,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 40,
+    "name": "QUILT TWIN",
+    "price": 14.95,
+    "category": {
+      "id": 4040,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 41,
+    "name": "BLANKET (ONE PERSON)",
+    "price": 11.95,
+    "category": {
+      "id": 4141,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 42,
+    "name": "BLANKET (TWO PERSON)",
+    "price": 13.95,
+    "category": {
+      "id": 4242,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 43,
+    "name": "OVER MATTRESS (ONE PERSON)",
+    "price": 29.95,
+    "category": {
+      "id": 4343,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 44,
+    "name": "OVER MATTRESS (TWO PERSON)",
+    "price": 39.95,
+    "category": {
+      "id": 4444,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 45,
+    "name": "OVER MATTRESS TWIN",
+    "price": 49.95,
+    "category": {
+      "id": 4545,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 46,
+    "name": "COMFORTER WOOL / SYNTETIC (ONE PERSON)",
+    "price": 16.95,
+    "category": {
+      "id": 4646,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 47,
+    "name": "COMFORTER WOOL / SYNTETIC (TWO PERSON)",
+    "price": 21.95,
+    "category": {
+      "id": 4747,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 48,
+    "name": "COMFORTER WOOL / SYNTETIC (TWIN)",
+    "price": 28.95,
+    "category": {
+      "id": 4848,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 49,
+    "name": "COMFORTER FEATHER / DOWN (ONE PERSON)",
+    "price": 21.95,
+    "category": {
+      "id": 4949,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 50,
+    "name": "COMFORTER FEATHER / DOWN (TWO PERSON)",
+    "price": 27.95,
+    "category": {
+      "id": 5050,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 51,
+    "name": "COMFORTER / FEATHER / DOWN (TWIN)",
+    "price": 34.95,
+    "category": {
+      "id": 5151,
+      "name": "BEDROOM"
+    },
+      "type": "cheap"
+  },
+  {
+    "id": 52,
     "name": "Carpet",
     "price": 105,
     "category": {
-      "id": 13,
+      "id": 5252,
       "name": "ESPECIAL OFFER"
     },
     "type": "expensive"
   },
 {
-  "id": 3,
-  "name": "dd",
-  "price": 105,
+  "id": 53,
+  "name": "LAUNDRY WASH & FOLD (10 KG)",
+  "price": 22.00,
   "category": {
-    "id": 13,
+    "id": 5333,
     "name": "ESPECIAL OFFER"
   },
   "type": "expensive"
 },
 {
-  "id": 5,
-  "name": "cc",
-  "price": 105,
+  "id": 54,
+  "name": "SHIRTS (3 PIECES)",
+  "price": 9.95,
   "category": {
-    "id": 15,
+    "id": 5454,
     "name": "ESPECIAL OFFER"
   },
   "type": "expensive"
 },
 {
-  "id": 6,
-  "name": "rr",
-  "price": 105,
+  "id": 55,
+  "name": "ALL KIND OF PANTS",
+  "price": 5.95,
   "category": {
-    "id": 16,
+    "id": 5555,
     "name": "ESPECIAL OFFER"
   },
   "type": "expensive"
+},
+{
+  "id": 56,
+  "name": "SKIRT MINI",
+  "price": 7.95,
+  "category": {
+    "id": 5656,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 57,
+  "name": "SKIRT LONG",
+  "price": 9.95,
+  "category": {
+    "id": 5757,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 58,
+  "name": "SUITS (2 SET)",
+  "price": 14.95,
+  "category": {
+    "id": 5858,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 59,
+  "name": "BLOUSE (2 PIECES)",
+  "price": 9.95,
+  "category": {
+    "id": 5959,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 60,
+  "name": "DUVET (1 PERSON)",
+  "price": 18.50,
+  "category": {
+    "id": 6060,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 61,
+  "name": "DUVET (2 PERSON)",
+  "price": 22.50,
+  "category": {
+    "id": 6161,
+    "name": "ESPECIAL OFFER"
+  },
+  "type": "expensive"
+},
+{
+  "id": 62,
+  "name": "SOFA COVER(ONE SEATER)",
+  "price": 17.50,
+  "category": {
+    "id": 6262,
+    "name": "HOUSE HOLD"
+  },
+  "type": "cheap"
+},
+{
+  "id": 63,
+  "name": "SOFA COVER(TWO SEATER)",
+  "price": 29.50 ,
+  "category": {
+    "id": 6363,
+    "name": "HOUSE HOLD"
+  },
+  "type": "cheap"
+},
+{
+  "id": 64,
+  "name": "SOFA COVER(THREE SEATER)",
+  "price": 39.50 ,
+  "category": {
+    "id": 6464,
+    "name": "HOUSE HOLD"
+  },
+  "type": "cheap"
+},
+{
+  "id": 65,
+  "name": "CURTAIN PER SQM FROM",
+  "price": 3.95,
+  "category": {
+    "id": 6565,
+    "name": "HOUSE HOLD"
+  },
+  "type": "cheap"
+},
+{
+  "id": 66,
+  "name": "HAND MADE CARPETS CLEANING PER (SQM)",
+  "price": 14.95,
+  "category": {
+    "id": 6666,
+    "name": "CARPETS"
+  },
+  "type": "cheap"
 }
 ]

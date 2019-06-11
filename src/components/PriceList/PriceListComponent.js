@@ -12,6 +12,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
+import {translate} from 'react-i18next';
 
 const styles = theme => ({
   root: {
@@ -42,7 +43,7 @@ class PriceListComponent extends Component {
     this.props.selectCategory(value);
   };
   render() {
-    const { products, classes } = this.props;
+    const { products, classes, t } = this.props;
     if (!products || products.length === 0) return <React.Fragment />;
     return (
       <div className={classes.root}>
@@ -51,14 +52,14 @@ class PriceListComponent extends Component {
             <ExpansionPanel key={category}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography className={classes.heading}>
-                  {category}
+                  {t(String(category).toLowerCase()).toUpperCase()}
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <List className={classes.fullWidthMenu}>
                   {categorizedProducts.map(_product => (
                     <ListItem button key={_product.id}>
-                      <ListItemText>{_product.name}</ListItemText>
+                      <ListItemText>{t(String(_product.name).toLowerCase())}</ListItemText>
                       <ListItemSecondaryAction>
                         {_product.price}
                       </ListItemSecondaryAction>
@@ -79,4 +80,4 @@ PriceListComponent.propTypes = {
   fetchProducts: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(PriceListComponent);
+export default translate('translations')(withStyles(styles)(PriceListComponent));

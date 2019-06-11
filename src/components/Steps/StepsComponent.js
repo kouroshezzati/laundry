@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import './styles.css';
-import images from '../ServicesComponent/img/images.jpg';
 import legecy from '../ServicesComponent/img/legecy.png';
-import house from '../ServicesComponent/img/house.jpg';
-import carpet from '../ServicesComponent/img/carpet.jpg';
 import basket2 from '../ServicesComponent/img/basket2.png';
 import washi from '../ServicesComponent/img/washi.jpg';
 import deliver from '../ServicesComponent/img/deliver.png';
