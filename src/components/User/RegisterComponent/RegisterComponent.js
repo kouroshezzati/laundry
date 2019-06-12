@@ -38,11 +38,13 @@ class RegisterComponent extends Component {
     this.lastName = React.createRef();
     this.username = React.createRef();
     this.address = React.createRef();
-    this.mobile = React.createRef();
+    this.phone = React.createRef();
     this.password = React.createRef();
     this.confirm_password = React.createRef();
     this.country = React.createRef();
     this.city = React.createRef();
+    this.apartment = React.createRef();
+    this.zip = React.createRef();
 
     this.state = { snackBar: false, isSubmitted: false, message: '' };
   }
@@ -52,15 +54,22 @@ class RegisterComponent extends Component {
     const _data = {
       username: this.username.current.value,
       email: this.email.current.value,
-      mobile: this.mobile.current.value,
       password: this.password.current.value,
-      address: this.address.current.value
+      firstName: this.firstName.current.value,
+      lastName: this.lastName.current.value,
+      address: this.address.current.value,
+      apartment: this.apartment.current.value,
+      city: this.city.current.value,
+      country: this.country.current.value,
+      zip: this.country.current.value,
+      phone: this.country.current.value,
+      companyName: this.country.current.value
     };
     if (
       !_data.email ||
       !_data.username ||
       !_data.address ||
-      !_data.mobile ||
+      !_data.phone ||
       !_data.password ||
       this.confirm_password.current.value !== _data.password
     ) {
@@ -74,7 +83,7 @@ class RegisterComponent extends Component {
       if (data.type === REGISTER_SUCCESS) {
         this.username.current.value = '';
         this.email.current.value = '';
-        this.mobile.current.value = '';
+        this.phone.current.value = '';
         this.password.current.value = '';
         this.confirm_password.current.value = '';
         this.address.current.value = '';
@@ -154,10 +163,10 @@ class RegisterComponent extends Component {
           <div className="form-group">
             <input
               required
-              ref={this.mobile}
+              ref={this.phone}
               className={classnames('form-control')}
-              placeholder={t('Mobile')}
-              type="mobile"
+              placeholder={t('Phone')}
+              type="phone"
             />
           </div>
           <div className="form-group">

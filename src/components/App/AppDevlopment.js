@@ -17,6 +17,7 @@ import DateComponent from '../../pages/Order/DateComponent';
 import ForgottenPasswordPage from '../../pages/ForgottenPassword/ForgottenPasswordPageComponent';
 import ResetPasswordPageComponent from '../../pages/ResetPasswordPage/ResetPasswordPageComponent';
 import { PrivateRoute } from '../../utils/components';
+import ServicesComponent from '../../pages/Services/ServicesComponent';
 
 const store = configureStore();
 
@@ -43,6 +44,10 @@ class App extends Component {
               <Route
                 path="/reset-password/"
                 component={ResetPasswordPageComponent}
+              />
+              <Route
+               path="/services/:name"
+               component={ServicesComponent}
               />
             </Switch>
           </Router>

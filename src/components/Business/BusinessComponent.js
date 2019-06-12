@@ -15,19 +15,25 @@ export class BusinessComponent extends Component {
               <img alt="laundry" src={dovomi} />
             </div>
             <div className="col-md-6">
-              <p className="business-message">
+              <div className="business-message">
                 <h2>{t('Bedrijven')}</h2>
-                BUBBLES  is gespecialiseerd in het reinigen en beheren van textile voor :
-                Restaurants, Hotels ,Casino ,en bedrijven , denkt u hierbij aan het reinigen
-                En stomen van bedlinnen ,bedgoed, tafellinnen, keukenlinnen etc.
-                Bubbles heft een eigen  breng en haal service 6 dagen per week,
-                We bieden ook  een huurservices voor  tafellinnen,bedlinnen naast 
-                Deskundigheid ( een eerste vereiste ) ,senlheid en betrouwbaarheid
-                De belangrijkste kenmerken van ons bedrijf ,proberen we zo goed 
-                Mogelijk uwproducten in zijn werk te nemen.
-                We zorgen ervoor dat deze open zomilieuvriendelijk mogelijke manierworden gereinigd.<br></br>
-                ACTIE:voor grote aantal kg wasbeurt geldt 20% korting 
-              </p>
+                <p>
+                  BUBBLES is gespecialiseerd in het reinigen en beheren van
+                  textile voor : Restaurants, Hotels ,Casino ,en bedrijven ,
+                  denkt u hierbij aan het reinigen En stomen van bedlinnen
+                  ,bedgoed, tafellinnen, keukenlinnen etc. Bubbles heft een
+                  eigen breng en haal service 6 dagen per week, We bieden
+                  ook een huurservices voor tafellinnen,bedlinnen naast
+                  Deskundigheid ( een eerste vereiste ) ,senlheid en
+                  betrouwbaarheid De belangrijkste kenmerken van ons bedrijf
+                  ,proberen we zo goed Mogelijk uwproducten in zijn werk te
+                  nemen. We zorgen ervoor dat deze open zomilieuvriendelijk
+                  mogelijke manierworden gereinigd.
+                </p>
+                <h5>
+                  ACTIE:voor grote aantal kg wasbeurt geldt 20% korting
+                </h5>
+              </div>
               <Button variant="contained" color="secondary">
                 {t('Special order')}
               </Button>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
+import ServicesMenu from './ServicesMenuComponent';
 
 export class InnerSections extends Component {
   render() {
@@ -9,16 +10,7 @@ export class InnerSections extends Component {
       return (
         <React.Fragment>
           <li className="nav-item">
-            <Link
-              activeClass="active"
-              className="nav-link js-scroll-trigger"
-              to="services"
-              spy={true}
-              smooth="easeInOutQuart"
-              duration={1000}
-            >
-              {t('Services')}
-            </Link>
+            <ServicesMenu />
           </li>
           <li className="nav-item">
             <Link
@@ -49,11 +41,7 @@ export class InnerSections extends Component {
     } else {
       return (
         <React.Fragment>
-          <li className="nav-item">
-            <NavLink className="nav-link js-scroll-trigger" to="/#services">
-              {t('services')}
-            </NavLink>
-          </li>
+          <ServicesMenu />
           <li className="nav-item">
             <NavLink className="nav-link js-scroll-trigger" to="/#about-us">
               {t('about us')}

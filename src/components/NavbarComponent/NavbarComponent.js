@@ -93,7 +93,7 @@ class NavBarComponent extends Component {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
     if (jwt) {
-      return <NavbarLoggedIn {...this.props} />;
+      return <NavbarLoggedIn  />;
     }
     return (
       <nav
@@ -102,7 +102,7 @@ class NavBarComponent extends Component {
           this.state.navbarColor || location.pathname !== '/'
             ? 'colored'
             : '',
-          location.pathname === '/'? 'fixed-top': ''
+          location.pathname === '/' ? 'fixed-top' : ''
         )}
         id="mainNav"
       >

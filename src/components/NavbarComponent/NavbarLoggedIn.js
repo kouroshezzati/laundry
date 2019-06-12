@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { Link, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
-import { NavLink } from 'react-router-dom';
+import { Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
@@ -12,11 +11,15 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../assets/images/logo_64.png';
+import logo from '../../assets/images/logo_65.png';
 import './style.css';
 import ste from 'scroll-to-element';
-import InnerSections from './InnerSections';
+import { NavLink, withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import InnerSections from './InnerSections';
+import { connect } from 'react-redux';
+import { signout } from '../User/UserActions';
+import { translate } from 'react-i18next';
 
 const styles = theme => ({
   button: {
@@ -234,9 +237,7 @@ class NavbarLoggedIn extends Component {
                 </NavLink>
               </li>
               <li className="nav-item d-lg-none">
-                <div href="" onClick={e => this.handleSignOut()}>
-                  {t('Log out')}
-                </div>
+                <div onClick={e => this.handleSignOut()}>{t('Log out')}</div>
               </li>
             </ul>
           </div>
@@ -246,66 +247,7 @@ class NavbarLoggedIn extends Component {
   }
 }
 
-class ServicesMenu extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {open: false}
-  }
-  render() {
-    const {t, classes} = this.props;
-    return (
-      <div>
-        <Button
-          buttonRef={node => {
-            this.anchorEl = node;
-          }}
-          className={classes.button}
-          aria-owns={this.state.open ? 'menu-list-grow' : undefined}
-          aria-haspopup="true"
-          onClick={this.handleToggle}
-        >
-          <FontAwesomeIcon className="navbar-icon" icon="home" />
-        </Button>
-        <Popper
-          open={this.state.open}
-          anchorEl={this.anchorEl}
-          transition
-          disablePortal
-        >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              id="menu-list-grow"
-              style={{
-                transformOrigin:
-                  placement === 'bottom' ? 'center top' : 'center bottom'
-              }}
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={this.handleClose}>
-                  <MenuList>
-                    <NavLink to="/user/change_information">
-                      <MenuItem onClick={this.handleClose}>
-                        {t('Change information')}
-                      </MenuItem>
-                    </NavLink>
-                    <NavLink to="/user/my_orders">
-                      <MenuItem onClick={this.handleClose}>
-                        {t('My orders')}
-                      </MenuItem>
-                    </NavLink>
-                    <MenuItem onClick={e => this.handleSignOut()}>
-                      {t('Logout')}
-                    </MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-        </Popper>
-      </div>
-    );
-  }
-}
-ServicesMenu = withStyles(styles)(ServicesMenu)
-export default withStyles(styles)(NavbarLoggedIn);
+export default connect(
+  state => ({ ...state.user }),
+  { signout }
+)(withStyles(styles)(withRouter(translate('translations')(NavbarLoggedIn))));
