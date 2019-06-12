@@ -1,24 +1,25 @@
 .main-logo {
   height: 150px;
-  transition: height .2s ease-out;
+  transition: height 0.2s ease-out;
 }
 #mainNav {
   user-select: none;
+  text-align: center;
 }
 .big-logo {
   height: 150px;
 }
-#mainNav.colored .main-logo{
+#mainNav.colored .main-logo {
   height: 70px;
 }
 #mainNav.colored .navbar-brand {
-  padding: 0
+  padding: 0;
 }
 .navbar-icon {
   font-size: 3.2em;
   color: white;
 }
-a.nav-link{
+a.nav-link {
   font-weight: 800;
 }
 #mainNav {
@@ -36,10 +37,7 @@ a.nav-link{
   padding-bottom: 0px;
 }
 #mainNav .navbar-brand {
-  color: rgb(0, 0, 0);
-  font-family: 'Georgia', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 200;
-  letter-spacing: 1px;
+  margin: 0 auto;
 }
 #mainNav .navbar-brand:hover,
 #mainNav .navbar-brand:focus {
@@ -127,9 +125,16 @@ a.nav-link{
   font-size: 1.25em;
   color: rgba(255, 255, 255, 0.7);
 }
-@media (max-width: 991px){
+@media (max-width: 991px) {
   .menuButton .nav-item a.nav-link {
     color: #222222;
   }
-
+  .main-logo {
+    height: 70px;
+    padding-left: 35px;
+  }
+  .switch-language-wrapper {
+    position: absolute;
+    top: 24px;
+  }
 }

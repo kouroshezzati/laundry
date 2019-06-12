@@ -19,7 +19,7 @@ import { withStyles } from '@material-ui/core/styles';
 import InnerSections from './InnerSections';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
-import {translate} from 'react-i18next';
+import { translate } from 'react-i18next';
 
 const styles = theme => ({
   button: {
@@ -237,9 +237,7 @@ class NavbarLoggedIn extends Component {
                 </NavLink>
               </li>
               <li className="nav-item d-lg-none">
-                <div onClick={e => this.handleSignOut()}>
-                  {t('Log out')}
-                </div>
+                <div onClick={e => this.handleSignOut()}>{t('Log out')}</div>
               </li>
             </ul>
           </div>
@@ -253,4 +251,3 @@ export default connect(
   state => ({ ...state.user }),
   { signout }
 )(withStyles(styles)(withRouter(translate('translations')(NavbarLoggedIn))));
-
