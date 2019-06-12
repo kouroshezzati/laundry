@@ -142,11 +142,12 @@ export const ContactInfo = props => {
     >
       <div className="contact-record">
         <span className="key">{t('Address')}:</span>
-        <span className="value">Platina weg 25 2544 EZ S-Gravenhage</span>
+        <span className="value">Platina weg 25 </span><br></br>2544 EZ - S-Gravenhage
       </div>
       <div className="contact-record">
         <span className="key">{t('Kvk nummer')}:</span>
-        <span className="value">74639757</span>
+        <span className="value">74639757</span><br></br>
+        <span className="value">Email:Info@bubblesonline.nl</span>
       </div>
       <div className="contact-record">
         <span className="key">{t('telephone')}:</span>

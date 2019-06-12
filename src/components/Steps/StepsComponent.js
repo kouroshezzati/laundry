@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './styles.css';
-import legecy from '../ServicesComponent/img/legecy.png';
-import basket2 from '../ServicesComponent/img/basket2.png';
+import legecy from '../ServicesComponent/img/legecy.jpg';
+import basket2 from '../ServicesComponent/img/basket2.jpg';
 import washi from '../ServicesComponent/img/washi.jpg';
 import deliver from '../ServicesComponent/img/deliver.png';
 export class StepComponent extends Component {
