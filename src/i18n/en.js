@@ -83,5 +83,8 @@ export default {
   'First name': 'First name',
   'Last name': 'Last name',
   'Country': 'Country',
-  'Apartment': 'Apartment'
+  'Apartment': 'Apartment',
+  'dry & clean': '!dry & clean',
+  'outer wear': '!outer wear',
+  'laundry wash & fold': '!laundry wash & fold'
 };
