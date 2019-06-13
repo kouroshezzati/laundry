@@ -23,7 +23,6 @@ const store = configureStore();
 
 class App extends Component {
   render() {
-    alert();
     return (
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
