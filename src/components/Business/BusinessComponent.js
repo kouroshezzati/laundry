@@ -31,7 +31,7 @@ export class BusinessComponent extends Component {
                   mogelijke manierworden gereinigd.
                 </p>
                 <h5>
-                  ACTIE:voor grote aantal kg wasbeurt geldt 20% korting
+                  ACTIE: voor grote aantal kg wasbeurt geldt 20% korting
                 </h5>
               </div>
               <Button variant="contained" color="secondary">

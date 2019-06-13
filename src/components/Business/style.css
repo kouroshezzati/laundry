@@ -2,6 +2,11 @@
   background: #ebb758;
   color: #fff;
 }
+#business h5 {
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: justify;
+}
 
 .business-img-wrapper {
   text-align: center;
@@ -13,8 +18,5 @@
 }
 
 .business-message {
-  text-align: justify; 
   margin-bottom: 16px;
-  
 }
-
