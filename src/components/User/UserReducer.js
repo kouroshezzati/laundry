@@ -12,10 +12,11 @@ import {
   FORGOTTEN_FAILURE,
   FORGOTTEN_REQUEST
 } from './UserConstants';
+import Customer from './Customer';
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case FORGOTTEN_FAILURE: 
+    case FORGOTTEN_FAILURE:
       return { ...state, forgottenPasswordMessage: '', isFetching: false };
     case USER_SIGNOUT:
       return {};
@@ -29,7 +30,7 @@ export default (state = {}, action) => {
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       const _state = {
-        jwt: action.response.id,
+        ...Customer.build({ jwt: action.response.id }),
         isFetching: false,
         message: undefined
       };

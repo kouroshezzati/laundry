@@ -53,7 +53,7 @@ export const register = data => {
     [CALL_API]: {
       types: [REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE],
       config: {
-        url: `${API_ROOT}/auth/local/register`,
+        url: `${API_ROOT}/Customers`,
         data: { ...data },
         method: 'post'
       }
