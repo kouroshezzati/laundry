@@ -36,7 +36,10 @@ export class ProductList extends Component {
                 return <Product key={id} {..._product} />;
               })}
               <li className="list-group-item total-price">
-                <span>{`${t('Total amount')}: $${Math.round(total * 100)/100}`}</span>
+                <span>
+                  {`${t('Total amount')}: `}&euro;
+                  {`${Math.round(total * 100) / 100}`}
+                </span>
               </li>
             </ul>
           </div>
