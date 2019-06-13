@@ -3,7 +3,7 @@ import './styles.css';
 import legecy from '../ServicesComponent/img/legecy.jpg';
 import basket2 from '../ServicesComponent/img/basket2.jpg';
 import washi from '../ServicesComponent/img/washi.jpg';
-import deliver from '../ServicesComponent/img/deliver.png';
+import step4 from '../ServicesComponent/img/step4.jpg';
 export class StepComponent extends Component {
   render() {
     return (
@@ -20,7 +20,7 @@ export class StepComponent extends Component {
               <img alt="laundry" src={washi} />
             </div>
             <div className="col-md-3 col-sm-6 step">
-              <img alt="laundry" src={deliver} />
+              <img alt="laundry" src={step4} />
             </div>
           </div>
         </div>

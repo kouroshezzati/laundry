@@ -1,9 +1,9 @@
 #business {
-  background: #ebb758;
+  background: #ee8e12;
   color: #fff;
 }
 #business h5 {
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 600;
   text-align: justify;
 }
@@ -12,7 +12,7 @@
   text-align: center;
   padding-bottom: 10px;
 }
-
+ 
 .business-img-wrapper img {
   width: 100%;
 }
