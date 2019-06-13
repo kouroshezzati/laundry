@@ -110,4 +110,7 @@ export default {
   'jacket/blazer':'jas / blazer',
   'all kind of pants':'Alle soorten broeken',
   'bedroom':'slaapkamer',
+  'pillow synthetic':'Kussen synthetisch',
+  'quilt one person':'Deken een persoon',
+  'quilt two person':'Deken twee persoonen',
 };

@@ -19,20 +19,18 @@ export class BusinessComponent extends Component {
                 <h2>{t('Bedrijven')}</h2>
                 <p>
                   BUBBLES is gespecialiseerd in het reinigen en beheren van
-                  textile voor : Restaurants, Hotels ,Casino ,en bedrijven ,
+                  textile voor:Restaurants,Hotels,Casino,en bedrijven,
                   denkt u hierbij aan het reinigen En stomen van bedlinnen
-                  ,bedgoed, tafellinnen, keukenlinnen etc. Bubbles heft een
+                  ,bedgoed,tafellinnen,keukenlinnen etc.Bubbles heft een
                   eigen breng en haal service 6 dagen per week, We bieden
                   ook een huurservices voor tafellinnen,bedlinnen naast
-                  Deskundigheid ( een eerste vereiste ) ,senlheid en
+                  Deskundigheid(een eerste vereiste),senlheid en
                   betrouwbaarheid De belangrijkste kenmerken van ons bedrijf
                   ,proberen we zo goed Mogelijk uwproducten in zijn werk te
-                  nemen. We zorgen ervoor dat deze open zomilieuvriendelijk
-                  mogelijke manierworden gereinigd.
-                </p>
-                <h5>
+                  nemen.We zorgen ervoor dat deze open zomilieuvriendelijk
+                  mogelijke manierworden gereinigd.<br></br>
                   ACTIE:voor grote aantal kg wasbeurt geldt 20% korting
-                </h5>
+                </p>
               </div>
               <Button variant="contained" color="secondary">
                 {t('Special order')}
