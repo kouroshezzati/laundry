@@ -120,16 +120,6 @@
       "type": "cheap"
   },
   {
-    "id": 13,
-    "name": "The Busy Professional (5 Shirts)",
-    "price": 12.8,
-    "category": {
-      "id": 1313,
-      "name": "HOUSE HOLD"
-    },
-      "type": "cheap"
-  },
-  {
     "id": 14,
     "name": "SUIT  (2 PIECES)",
     "price": 15.95,
