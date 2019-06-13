@@ -58,7 +58,7 @@ class Product extends Component {
               <Add />
             </Button>
             <span className="price-wrapper">
-              ${productPrice * productNumbers}
+              &euro;{productPrice * productNumbers}
             </span>
           </span>
         </li>

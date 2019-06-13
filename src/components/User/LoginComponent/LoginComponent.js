@@ -89,7 +89,7 @@ class LoginComponent extends Component {
                 color="primary"
                 className={classes.margin}
               >
-                {t('Submit')}
+                {t('Login')}
               </Button>
             </MuiThemeProvider>
             {location.pathname.includes('login') && (

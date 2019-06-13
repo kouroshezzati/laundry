@@ -27,12 +27,14 @@ export class BusinessComponent extends Component {
                   Deskundigheid(een eerste vereiste),senlheid en
                   betrouwbaarheid De belangrijkste kenmerken van ons bedrijf
                   ,proberen we zo goed Mogelijk uwproducten in zijn werk te
-                  nemen.We zorgen ervoor dat deze open zomilieuvriendelijk
-                  mogelijke manierworden gereinigd.<br></br>
-                  ACTIE:voor grote aantal kg wasbeurt geldt 20% korting
+                  nemen. We zorgen ervoor dat deze open zomilieuvriendelijk
+                  mogelijke manierworden gereinigd.
                 </p>
+                <h5>
+                  ACTIE: voor grote aantal kg wasbeurt geldt 20% korting
+                </h5>
               </div>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="pirmary" fullWidth>
                 {t('Special order')}
               </Button>
             </div>

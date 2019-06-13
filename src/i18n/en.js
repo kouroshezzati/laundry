@@ -7,7 +7,9 @@ export default {
   'About us': 'About us',
   'about us': 'about us',
   login: 'login',
+  Login: 'Login',
   register: 'register',
+  Register: 'Register',
   Press: 'Press',
   Bedroom: 'Bedroom',
   Carpets: 'Carpets',
@@ -72,5 +74,17 @@ export default {
   'Change information': 'Change information',
   'My orders': 'My orders',
   'Log out': 'Log out',
-  'Logout': 'Logout'
+  'Logout': 'Logout',
+  'Company name': 'Company name',
+  'Phone': 'Phone',
+  'Zip/Postcode': 'Zip/Postcode',
+  'Apartmant': 'Apartment',
+  'City': 'City',
+  'First name': 'First name',
+  'Last name': 'Last name',
+  'Country': 'Country',
+  'Apartment': 'Apartment',
+  'dry & clean': '!dry & clean',
+  'outer wear': '!outer wear',
+  'laundry wash & fold': '!laundry wash & fold'
 };
