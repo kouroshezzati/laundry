@@ -27,15 +27,16 @@ export class ProductList extends Component {
               style={{ boxShadow: '1px 1px 2px' }}
             >
               {_.map(selectedProducts, (value, id) => {
+                id = parseInt(id, 10);
                 const _product = intactProducts.find(value => value.id === id);
                 if (!_product) {
-                  return <React.Fragment />;
+                  return <React.Fragment key={id} />;
                 }
                 total += _product.price * (value || 0);
                 return <Product key={id} {..._product} />;
               })}
               <li className="list-group-item total-price">
-                <span>{`${t('Total amount')}: $${total}`}</span>
+                <span>{`${t('Total amount')}: $${Math.round(total * 100)/100}`}</span>
               </li>
             </ul>
           </div>
