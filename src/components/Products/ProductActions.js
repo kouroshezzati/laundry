@@ -1,5 +1,12 @@
-import { ADD_PRODUCT_FAILURE, ADD_PRODUCT_SUCCESS, ADD_PRODUCT_REQUEST, ADD_PRODUCT_NUMBER_REQUEST, ADD_PRODUCT_NUMBER_SUCCESS, ADD_PRODUCT_NUMBER_FAILURE } from "./ProductConstants";
-import { CALL_API, API_ROOT } from "../../constants";
+import {
+  ADD_PRODUCT_FAILURE,
+  ADD_PRODUCT_SUCCESS,
+  ADD_PRODUCT_REQUEST,
+  ADD_PRODUCT_NUMBER_REQUEST,
+  ADD_PRODUCT_NUMBER_SUCCESS,
+  ADD_PRODUCT_NUMBER_FAILURE
+} from './ProductConstants';
+import { CALL_API, API_ROOT } from '../../constants';
 import _ from 'lodash';
 
 export const ADD_PRODUCT = 'ADD_PRODUCT';
@@ -24,7 +31,7 @@ const addOrder = product_id => (dispatch, getState) => {
   });
 };
 
-const addProductNumber = (product_id, number, order_id) => dispatch =>{
+const addProductNumber = (product_id, number, order_id) => dispatch => {
   return dispatch({
     [CALL_API]: {
       types: [
@@ -46,12 +53,10 @@ const addProductNumber = (product_id, number, order_id) => dispatch =>{
 };
 
 export const addOrders = () => async (dispatch, getState) => {
-  const selectedProducts = getState()
-    .products
-    .selectedProducts;
+  const selectedProducts = getState().products.selectedProducts;
   const result = await dispatch(addOrder());
 
-  if(result.type === ADD_PRODUCT_FAILURE){
+  if (result.type === ADD_PRODUCT_FAILURE) {
     return;
   }
   const orderId = getState().products.ordered.id;
@@ -61,4 +66,4 @@ export const addOrders = () => async (dispatch, getState) => {
       dispatch(addProductNumber(id, number, orderId));
     })
   );
-}
+};

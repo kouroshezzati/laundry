@@ -29,7 +29,7 @@ class Product extends Component {
       intactProducts
     } = this.props;
     if (parent) {
-      return <li className="list-group-item parent">{name}</li>;
+      return <li className="list-group-item parent">{name.toUpperCase()}</li>;
     } else {
       const productNumbers = selectedProducts[id] || 0;
       const productPrice =
