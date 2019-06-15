@@ -70,7 +70,6 @@ export default {
   Payment: 'Betaling',
   suits: 'pakken',
   'accessories & knit wear': 'Accessoires en gebreide kleding',
-  'body warmer': 'Body warmer',
   jacket: 'Jas',
   'long winter jacket': 'Lange winter Jas',
   'ski pants': 'Ski broek',
