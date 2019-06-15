@@ -38,7 +38,7 @@ export class ProductList extends Component {
               <li className="list-group-item total-price">
                 <span>
                   {`${t('Total amount')}: `}&euro;
-                  {`${Math.round(total * 100) / 100}`}
+                  {` ${Math.round(total * 100) / 100}`}
                 </span>
               </li>
             </ul>

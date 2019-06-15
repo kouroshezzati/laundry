@@ -58,7 +58,7 @@ class Product extends Component {
               <Add />
             </Button>
             <span className="price-wrapper">
-              &euro;{Math.round(productPrice * productNumbers * 100) / 100}
+              &euro; {Math.round(productPrice * productNumbers * 100) / 100}
             </span>
           </span>
         </li>
