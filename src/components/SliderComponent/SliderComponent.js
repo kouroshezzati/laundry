@@ -22,15 +22,18 @@ export const SliderComponent = translate('translations')(
           <div className="row h-100">
             <div className="header-content mx-auto my-auto text-center">
               <h2>{t('LAUNDRY PICK UP & DROP OFF')}</h2>
+                    <h5>{t('FREE DELIVERY')}</h5><br></br>
+                        {t('ABOVE 22,00 EURO')}<br></br>
               <NavLink style={{ color: '#fff' }} to="/date/">
                 <Button
                   variant="contained"
                   color="secondary"
                   className={classes.button}
                 >
-                  {t('Order now')}
+                  {t('ORDER')}
                 </Button>
-              </NavLink>
+              </NavLink><br></br>
+              {t('PRIJZEN ZIJN INCLUSIEF B.T.W')}
             </div>
           </div>
         </div>

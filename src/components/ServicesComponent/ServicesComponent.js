@@ -20,7 +20,7 @@ class ServicesComponent extends React.Component {
                 src={dovomi}
                 className="service-image"
               />
-              <p className="service-text">{t('Lundry wash & Fold')}</p>
+              <p className="service-text">{t('LAUNDRY')}<br></br>{t('WASH & FOLD')}</p>
             </div>
             <div className="col-sm-6 col-md-4 service">
               <img
@@ -28,7 +28,7 @@ class ServicesComponent extends React.Component {
                 src={suit}
                 className="service-image"
               />
-              <p className="service-text">{t('Dry Clean')}</p>
+              <p className="service-text">{t('DRY CLEAN')}</p>
             </div>
             <div className="col-sm-6 col-md-4 service">
               <img
@@ -36,7 +36,7 @@ class ServicesComponent extends React.Component {
                 src={images}
                 className="service-image"
               />
-              <p className="service-text">{t('Press')}</p>
+              <p className="service-text">{t('PRESS')}</p>
             </div>
             <div className="col-sm-6 col-md-4 service">
               <img
@@ -44,11 +44,11 @@ class ServicesComponent extends React.Component {
                 src={bed}
                 className="service-image"
               />
-              <p className="service-text">{t('Bedroom')}</p>
+              <p className="service-text">{t('BEDROOM')}<br></br>{t('TEXTILES')}</p>
             </div>
             <div className="col-sm-6 col-md-4 service">
               <img alt="laundry online" src={house} className="service-image" />
-              <p className="service-text">{t('House Hold')}</p>
+              <p className="service-text">{t('HOUSE HOLD')}<br></br>{t('TEXTILES')}</p>
             </div>
             <div className="col-sm-6 col-md-4 service">
               <img
@@ -56,7 +56,7 @@ class ServicesComponent extends React.Component {
                 src={carpet}
                 className="service-image"
               />
-              <p className="service-text">{t('Carpets')}</p>
+              <p className="service-text">{t('CARPET CLEANING')}</p>
             </div>
           </div>
         </div>

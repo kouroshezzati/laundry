@@ -16,7 +16,7 @@ export class BusinessComponent extends Component {
             </div>
             <div className="col-md-6">
               <div className="business-message">
-                <h2>{t('Bedrijven')}</h2>
+                <h2>{t('BEDRIJVEN')}</h2>
                 <p>
                   BUBBLES is gespecialiseerd in het reinigen en beheren van
                   textile voor:Restaurants,Hotels,Casino,en bedrijven,
@@ -35,7 +35,7 @@ export class BusinessComponent extends Component {
                 </h5>
               </div>
               <Button variant="contained" color="pirmary" fullWidth>
-                {t('Special order')}
+                {t('SPECIAL ORDER')}
               </Button>
             </div>
           </div>

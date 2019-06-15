@@ -8,7 +8,8 @@ let AboutUsComponent = props => {
     <section className="about-us" id="about-us">
       <div className="container">
         <div className="section-heading text-center">
-          <h2>{t('About us')}</h2>
+          <h2>{t('ABOUT US')}</h2>
+                
           <hr />
           <p className="description">{t('aboutus.description')}</p>
         </div>

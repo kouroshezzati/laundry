@@ -1,6 +1,7 @@
 
 section.about-us .section-heading h2 {
   margin-top: 0;
+  color: #ffffff;
 }
 section.about-us .section-heading p {
   margin-bottom: 0;
@@ -32,12 +33,12 @@ section.about-us .feature-item i {
 
 .description {
   font-size: 1.2em;
-  color: grey;
+  color: white;
   font-weight: 400;
   text-align: justify;
 }
 
 section.about-us {
   padding: 35px 0;
-  background: linear-gradient(to left, #a3d1ff, #b3fffb);
+  background: linear-gradient(to left, #0300d1, #4d24ff);
 }
