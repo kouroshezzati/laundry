@@ -31,7 +31,7 @@ export default (state = {}, action) => {
     case UPDATE_USER_SUCCESS:
       return {
         ...state,
-        user: action.response,
+        ...action.response,
         message: undefined,
         isFetching: false
       };

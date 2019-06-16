@@ -66,18 +66,18 @@ export const register = data => {
 
 export const userUpdate = data => (dispatch, getState) => {
   const { user } = getState();
-  if (!data.id || !user.jwt) {
+  if (!user.id || !user.jwt) {
     return dispatch({ type: UPDATE_USER_FAILURE });
   }
   return dispatch({
     [CALL_API]: {
       types: [UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, UPDATE_USER_FAILURE],
       config: {
-        url: `${API_ROOT}/users/${data.id}`,
+        url: `${API_ROOT}/Customers/${user.id}`,
         data,
-        method: 'put',
+        method: 'patch',
         headers: {
-          Authorization: `Bearer ${user.jwt}`
+          Authorization: user.jwt
         }
       }
     }

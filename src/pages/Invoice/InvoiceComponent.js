@@ -66,7 +66,7 @@ export class InvoiceComponent extends Component {
             )}
             {this.state.editUserInfo && (
               <UserInfoForm
-                user={this.props}
+                {...this.props}
                 onSaveHandler={this.saveHandler}
               />
             )}

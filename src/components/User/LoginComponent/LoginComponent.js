@@ -10,7 +10,7 @@ import green from '@material-ui/core/colors/green';
 import './style.css';
 import { connect } from 'react-redux';
 import { login, getCustomer } from '../UserActions';
-import { LOGIN_SUCCESS } from '../UserConstants';
+import { LOGIN_SUCCESS, GET_CUSTOMER_SUCCESS } from '../UserConstants';
 import { translate } from 'react-i18next';
 
 const styles = theme => ({
@@ -45,9 +45,14 @@ class LoginComponent extends Component {
     }
     const { getCustomer, login, history, location } = this.props;
     login(_data.email, _data.password).then(data => {
-      if (data.type === LOGIN_SUCCESS && location.pathname.includes('login')) {
+      if (data.type === LOGIN_SUCCESS) {
         getCustomer(data.response.userId).then(customerData => {
-          history.push('/');
+          if (
+            customerData.type === GET_CUSTOMER_SUCCESS &&
+            location.pathname.includes('login')
+          ) {
+            history.push('/');
+          }
         });
       }
     });
