@@ -18,13 +18,13 @@ export class InvoiceComponent extends Component {
   saveHandler = isSave => {
     this.setState({ editUserInfo: false });
   };
-  
+
   paymentHandler = () => {
     this.props.addOrders();
-  }
+  };
 
   render() {
-    const { jwt, user, t, pickupDate, deliverDate} = this.props;
+    const { jwt, t, pickupDate, deliverDate } = this.props;
     return (
       <Page>
         <div className=" d-flex align-content-center flex-wrap fancy-bg">
@@ -58,15 +58,17 @@ export class InvoiceComponent extends Component {
             )}
             {jwt && !this.state.editUserInfo && (
               <UserInfo
-                {...user}
-                t={t}
+                {...this.props}
                 onHandleEditUserClick={e =>
                   this.setState({ editUserInfo: true })
                 }
               />
             )}
             {this.state.editUserInfo && (
-              <UserInfoForm user={user} onSaveHandler={this.saveHandler} />
+              <UserInfoForm
+                user={this.props}
+                onSaveHandler={this.saveHandler}
+              />
             )}
             <div className="mt-3 row ">
               <div className="col-md-6 mb-2">
@@ -97,9 +99,31 @@ export class InvoiceComponent extends Component {
 }
 
 const UserInfo = props => {
-  const { username, email, mobile, zipcode, address, t, onHandleEditUserClick } = props;
+  const {
+    username,
+    email,
+    phone,
+    zip,
+    address,
+    t,
+    firstName,
+    apartment,
+    lastName,
+    country,
+    city,
+    companyName,
+    onHandleEditUserClick
+  } = props;
   return (
     <div className="row m-1 user-info">
+      <div className="col-md-4">
+        <span className="label">{t('First name')}:</span>
+        {firstName}
+      </div>
+      <div className="col-md-4">
+        <span className="label">{t('last Name')}:</span>
+        {lastName}
+      </div>
       <div className="col-md-4">
         <span className="label">{t('Username')}:</span>
         {username}
@@ -109,16 +133,32 @@ const UserInfo = props => {
         {email}
       </div>
       <div className="col-md-4">
-        <span className="label">{t('Mobile')}:</span>
-        {mobile}
+        <span className="label">{t('Country')}:</span>
+        {country}
+      </div>
+      <div className="col-md-4">
+        <span className="label">{t('City')}:</span>
+        {city}
       </div>
       <div className="col-md-8">
         <span className="label">{t('Address')}:</span>
         {address}
       </div>
       <div className="col-md-4">
+        <span className="label">{t('Apartment')}:</span>
+        {apartment}
+      </div>
+      <div className="col-md-4">
+        <span className="label">{t('Phone')}:</span>
+        {phone}
+      </div>
+      <div className="col-md-4">
         <span className="label">{t('Zipcode')}:</span>
-        {zipcode || ''}
+        {zip || ''}
+      </div>
+      <div className="col-md-4">
+        <span className="label">{t('Company name')}:</span>
+        {companyName}
       </div>
       <div className="col-md-12">
         <Button

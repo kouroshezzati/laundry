@@ -15,7 +15,10 @@ import {
   FORGOTTEN_FAILURE,
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
-  RESET_PASSWORD_FAILURE
+  RESET_PASSWORD_FAILURE,
+  GET_CUSTOMER_REQUEST,
+  GET_CUSTOMER_SUCCESS,
+  GET_CUSTOMER_FAILURE
 } from './UserConstants';
 
 export const sendResetPasswordCode = email => {
@@ -98,6 +101,28 @@ export const login = (identifier, password) => {
       }
     }
   };
+};
+
+export const getCustomer = id => (dispatch, getState) => {
+  const { user } = getState();
+  if (!user.jwt) {
+    return dispatch({
+      type: GET_CUSTOMER_REQUEST,
+      message: 'There is no token!'
+    });
+  }
+  return dispatch({
+    [CALL_API]: {
+      types: [GET_CUSTOMER_REQUEST, GET_CUSTOMER_SUCCESS, GET_CUSTOMER_FAILURE],
+      config: {
+        url: `${API_ROOT}/Customers/${id}`,
+        method: 'get',
+        headers: {
+          Authorization: user.jwt
+        }
+      }
+    }
+  });
 };
 
 export const signout = () => ({
