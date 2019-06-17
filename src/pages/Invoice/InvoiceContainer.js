@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Invoice from './InvoiceComponent';
-import { addOrders } from '../../components/Products/ProductActions';
+import * as orderActions from '../Order/OrderActions';
 
 export default connect(
   state => ({
@@ -8,5 +8,5 @@ export default connect(
     ...state.user,
     ...state.order
   }),
-  { addOrders }
+  { ...orderActions }
 )(Invoice);

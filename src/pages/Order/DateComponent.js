@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { PICKUP_DATE, DELIVER_DATE } from './OrderActions';
+import { PICKUP_DATE, DELIVER_DATE } from './OrderConstants';
 import { addDays } from 'date-fns';
 import { translate } from 'react-i18next';
 import { setDate } from './OrderActions';

@@ -7,8 +7,12 @@ import './style.css';
 import Button from '@material-ui/core/Button';
 import UserInfoForm from '../../components/User/UserInfo/UserInfoContainer';
 import moment from 'moment';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import Page from '../index';
+import {
+  ADD_ORDER_SUCCESS,
+  ADD_INVOICE_SUCCESS
+} from '../Order/OrderConstants';
 
 export class InvoiceComponent extends Component {
   constructor(props) {
@@ -20,7 +24,16 @@ export class InvoiceComponent extends Component {
   };
 
   paymentHandler = () => {
-    this.props.addOrders();
+    const { resetOrderAndSelectedProducts, addOrder, addInvoice } = this.props;
+    addOrder().then(data => {
+      if (data.type === ADD_ORDER_SUCCESS) {
+        addInvoice().then(_data => {
+          if (_data.type === ADD_INVOICE_SUCCESS) {
+            resetOrderAndSelectedProducts();
+          }
+        });
+      }
+    });
   };
 
   render() {
@@ -65,10 +78,7 @@ export class InvoiceComponent extends Component {
               />
             )}
             {this.state.editUserInfo && (
-              <UserInfoForm
-                {...this.props}
-                onSaveHandler={this.saveHandler}
-              />
+              <UserInfoForm {...this.props} onSaveHandler={this.saveHandler} />
             )}
             <div className="mt-3 row ">
               <div className="col-md-6 mb-2">
@@ -79,16 +89,14 @@ export class InvoiceComponent extends Component {
                 </NavLink>
               </div>
               <div className="col-md-6 mb-2">
-                <NavLink className="nav-button" to="/user/my_orders">
-                  <Button
-                    fullWidth
-                    onClick={e => this.paymentHandler()}
-                    color="primary"
-                    variant="contained"
-                  >
-                    {t('Payment')}
-                  </Button>
-                </NavLink>
+                <Button
+                  fullWidth
+                  onClick={e => this.paymentHandler()}
+                  color="primary"
+                  variant="contained"
+                >
+                  {t('Payment')}
+                </Button>
               </div>
             </div>
           </div>
@@ -172,4 +180,4 @@ const UserInfo = props => {
     </div>
   );
 };
-export default translate('translations')(InvoiceComponent);
+export default withRouter(translate('translations')(InvoiceComponent));

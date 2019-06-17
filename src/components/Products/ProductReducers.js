@@ -6,7 +6,12 @@ import {
 } from '../PriceList/PriceListActions';
 import _ from 'lodash';
 import { ADD_PRODUCT, REMOVE_PRODUCT } from './ProductActions';
-import { ADD_PRODUCT_REQUEST, ADD_PRODUCT_FAILURE, ADD_PRODUCT_SUCCESS, ADD_PRODUCT_NUMBER_SUCCESS, ADD_PRODUCT_NUMBER_FAILURE, ADD_PRODUCT_NUMBER_REQUEST } from './ProductConstants';
+import {
+  ADD_PRODUCT_REQUEST,
+  ADD_PRODUCT_FAILURE,
+  ADD_PRODUCT_SUCCESS,
+  RESET_SELECTED_PRODUCTS
+} from './ProductConstants';
 
 const reducer = (
   state = {
@@ -20,34 +25,27 @@ const reducer = (
   action
 ) => {
   switch (action.type) {
-    case ADD_PRODUCT_NUMBER_SUCCESS:
-      return {
-        ...state,
-        isFetching: false,
-        productNumberAdded: [...state.productNumberAdded, action.response]
-      };
+    case RESET_SELECTED_PRODUCTS:
+      return { ...state, selectedProducts: {} };
     case ADD_PRODUCT_SUCCESS:
-      return {...state, isFetching: false, ordered: action.response}
+      return { ...state, isFetching: false, ordered: action.response };
     case ADD_PRODUCT_REQUEST:
-    case ADD_PRODUCT_NUMBER_REQUEST:
     case PRODUCTS_REQUEST:
       return { ...state, isFetching: true };
-    case ADD_PRODUCT_NUMBER_FAILURE:
+    case ADD_PRODUCT_FAILURE:
       return {
         ...state,
         isFetching: false,
-        addProductNumberMessage: action.response
+        addProductMessage: action.response
       };
-    case ADD_PRODUCT_FAILURE:
-      return {...state, isFetching:false, addProductMessage: action.response}
     case PRODUCTS_FAILURE:
       return { ...state, isFetching: false, products: [] };
     case PRODUCTS_SUCCESS:
       let intactProducts = _.map(action.response, (value, index) => {
-        if(!value.type){
+        if (!value.type) {
           delete value.type;
         }
-        return value
+        return value;
       });
 
       let products = _.groupBy(intactProducts, 'category.name');
