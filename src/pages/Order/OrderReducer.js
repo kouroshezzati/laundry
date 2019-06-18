@@ -1,4 +1,9 @@
-import { PICKUP_DATE, DELIVER_DATE, RESET_ORDER } from './OrderConstants';
+import {
+  PICKUP_DATE,
+  DELIVER_DATE,
+  RESET_ORDER,
+  CHANGE_DESCRIPTION
+} from './OrderConstants';
 import {
   ADD_INVOICE_SUCCESS,
   ADD_INVOICE_FAILURE,
@@ -10,7 +15,9 @@ import {
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case RESET_ORDER: 
+    case CHANGE_DESCRIPTION:
+      return { ...state, description: action.description };
+    case RESET_ORDER:
       return {};
     case ADD_INVOICE_SUCCESS:
       return {
