@@ -34,14 +34,12 @@ class ServicesMenu extends Component {
           ref={node => {
             this.anchorEl = node;
           }}
-          className="menuButton"
+          className="menuButton nav-link js-scroll-trigger"
           aria-owns={this.state.open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={this.handleToggle}
         >
-          <li className="nav-item">
-            <a className="nav-link js-scroll-trigger"> {t('services')}</a>
-          </li>
+          {t('services')}
         </button>
         <Popper
           open={this.state.open}

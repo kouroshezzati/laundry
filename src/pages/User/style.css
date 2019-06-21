@@ -27,3 +27,11 @@ a > li {
 .nav-item > a.active {
   font-weight: 700;
 }
+.sidebar-wrapper{
+  padding: 0!important;
+}
+.user-panel-wrapper{
+  background-color: #D6D6D5;
+  overflow: auto;
+  height: 100vh;
+}

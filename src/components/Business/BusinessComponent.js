@@ -34,7 +34,7 @@ export class BusinessComponent extends Component {
                   ACTIE: voor grote aantal kg wasbeurt geldt 20% korting
                 </h5>
               </div>
-              <Button variant="contained" color="pirmary" fullWidth>
+              <Button variant="contained" color="primary" fullWidth>
                 {t('SPECIAL ORDER')}
               </Button>
             </div>

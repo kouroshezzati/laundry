@@ -1,6 +1,6 @@
 .main-logo {
   height: 150px;
-  transition: height 0.2s ease-out; 
+  transition: height 0.2s ease-out;
 }
 #mainNav {
   user-select: none;
@@ -138,4 +138,10 @@ a.nav-link {
     position: absolute;
     top: 24px;
   }
+}
+button.menuButton {
+  color: rgba(255, 255, 255, 0.7)!important;
+  font-size: 1.35em;
+  font-weight: 900;
+  padding-top: 2px;
 }

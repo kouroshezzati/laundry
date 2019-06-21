@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchProducts } from '../../components/PriceList/PriceListActions';
+import * as priceListActions from '../../components/PriceList/PriceListActions';
+import * as orderActions from './OrderActions';
+
 import Order from './index';
 
 export default connect(
@@ -7,5 +9,5 @@ export default connect(
     ...state.order,
     selectedProducts: state.products.selectedProducts
   }),
-  { fetchProducts }
+  { ...priceListActions, ...orderActions }
 )(Order);

@@ -1,0 +1,20 @@
+.order-item {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 14px 0;
+}
+.order-item > div {
+  background: #e0d5bc
+}
+.product-wrapper {
+  background-color: #c9f3a7;
+  border-top: 1px solid rgb(0, 0, 0);
+}
+.table-header {
+  font-weight: 700;
+  color: #393939;
+  border-bottom: 1px solid rgb(163, 161, 161);
+}
+.my-orders-wrapper{
+  background-color: rgb(214, 214, 214);
+}
