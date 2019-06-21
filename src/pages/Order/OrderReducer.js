@@ -12,13 +12,19 @@ import {
   ADD_ORDER_SUCCESS,
   ADD_ORDER_FAILURE
 } from './OrderConstants';
+import orderListReducer from '../../components/OrderList/OrderListReducer';
+import {
+  MY_ORDER_FAILURE,
+  MY_ORDER_REQUEST,
+  MY_ORDER_SUCCESS
+} from '../../components/OrderList/OrderListActions';
 
 export default (state = {}, action) => {
   switch (action.type) {
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
     case RESET_ORDER:
-      return {};
+      return { ...state, pickupDate: '', deliverDate: '', orderId: undefined };
     case ADD_INVOICE_SUCCESS:
       return {
         ...state,
@@ -48,6 +54,10 @@ export default (state = {}, action) => {
       };
     case DELIVER_DATE:
       return { ...state, deliverDate: action.date.toString() };
+    case MY_ORDER_FAILURE:
+    case MY_ORDER_REQUEST:
+    case MY_ORDER_SUCCESS:
+      return orderListReducer(state, action);
     default:
       return state;
   }
