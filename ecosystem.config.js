@@ -1,10 +1,10 @@
 module.exports = {
   apps : [{
     name: 'laundry',
-    script: 'server.js',
+    script: 'npx',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
-    args: '',
+    args: 'serve build -s -l 3001',
     instances: 1,
     autorestart: true,
     watch: false,
