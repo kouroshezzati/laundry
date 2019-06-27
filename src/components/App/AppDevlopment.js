@@ -18,6 +18,7 @@ import ForgottenPasswordPage from '../../pages/ForgottenPassword/ForgottenPasswo
 import ResetPasswordPageComponent from '../../pages/ResetPasswordPage/ResetPasswordPageComponent';
 import { PrivateRoute } from '../../utils/components';
 import ServicesComponent from '../../pages/Services/ServicesComponent';
+import PrivacyPolicy from '../../pages/PrivacyPolicy';
 
 const store = configureStore();
 
@@ -36,6 +37,7 @@ class App extends Component {
               <Route path="/order/" component={Order} />
               <Route path="/date/" component={DateComponent} />
               <Route path="/invoice/" component={Invoice} />
+              <Route path="/privacy-policy/" component={PrivacyPolicy} />
               <PrivateRoute path="/user/" component={User} />
               <Route
                 path="/forgotten-password/"

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
-import ServicesMenu from './ServicesMenuComponent';
 
 export class InnerSections extends Component {
   render() {
@@ -9,9 +8,6 @@ export class InnerSections extends Component {
     if (location.pathname === '/') {
       return (
         <React.Fragment>
-          <li className="nav-item">
-            <ServicesMenu />
-          </li>
           <li className="nav-item">
             <Link
               activeClass="active"
@@ -36,20 +32,57 @@ export class InnerSections extends Component {
               {t('information')}
             </Link>
           </li>
+          <li>
+            <NavLink
+              className="nav-link js-scroll-trigger"
+              to="/privacy-policy"
+            >
+              {t('Privacy policy')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link js-scroll-trigger"
+              to="/term-of-conditions"
+            >
+              {t('term of conditions')}
+            </NavLink>
+          </li>
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
-          <ServicesMenu />
           <li className="nav-item">
-            <NavLink className="nav-link js-scroll-trigger" to="/#about-us">
+            <NavLink
+              className="nav-link js-scroll-trigger"
+              to="/#about-us"
+            >
               {t('about us')}
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link js-scroll-trigger" to="/#extra-info">
+            <NavLink
+              className="nav-link js-scroll-trigger"
+              to="/#extra-info"
+            >
               {t('information')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link js-scroll-trigger"
+              to="/privacy-policy"
+            >
+              {t('privacy policy')}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link js-scroll-trigger"
+              to="/term-of-conditions"
+            >
+              {t('term of conditions')}
             </NavLink>
           </li>
         </React.Fragment>

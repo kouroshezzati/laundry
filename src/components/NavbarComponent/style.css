@@ -15,6 +15,9 @@
 #mainNav.colored .navbar-brand {
   padding: 0;
 }
+#mainNav.colored .navbar-nav > li {
+  padding: 0;
+}
 .navbar-icon {
   font-size: 3.2em;
   color: white;
@@ -47,6 +50,9 @@ a.nav-link {
   font-size: 18px;
   padding: 8px 10px;
   color: #222222;
+}
+#mainNav .navbar-nav > li {
+  padding-top: 41px;
 }
 #mainNav .navbar-nav > li > a {
   font-size: 1em;
@@ -140,7 +146,7 @@ a.nav-link {
   }
 }
 button.menuButton {
-  color: rgba(255, 255, 255, 0.7)!important;
+  color: rgba(255, 255, 255, 0.7) !important;
   font-size: 1.35em;
   font-weight: 900;
   padding-top: 2px;
