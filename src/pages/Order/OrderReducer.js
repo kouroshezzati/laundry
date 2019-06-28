@@ -2,7 +2,9 @@ import {
   PICKUP_DATE,
   DELIVER_DATE,
   RESET_ORDER,
-  CHANGE_DESCRIPTION
+  CHANGE_DESCRIPTION,
+  DELIVER_TIME,
+  PICKUP_TIME
 } from './OrderConstants';
 import {
   ADD_INVOICE_SUCCESS,
@@ -19,7 +21,7 @@ import {
   MY_ORDER_SUCCESS
 } from '../../components/OrderList/OrderListActions';
 
-export default (state = {}, action) => {
+export default (state = { pickupTime: '', deliverTime: '' }, action) => {
   switch (action.type) {
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
@@ -54,6 +56,10 @@ export default (state = {}, action) => {
       };
     case DELIVER_DATE:
       return { ...state, deliverDate: action.date.toString() };
+    case DELIVER_TIME:
+      return { ...state, deliverTime: action.date.toString() };
+    case PICKUP_TIME:
+      return { ...state, pickupTime: action.date };
     case MY_ORDER_FAILURE:
     case MY_ORDER_REQUEST:
     case MY_ORDER_SUCCESS:

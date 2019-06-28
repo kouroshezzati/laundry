@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
+import DatePicker, { CalendarContainer } from 'react-datepicker';
+import { setHours, setMinutes } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
-import { PICKUP_DATE, DELIVER_DATE } from './OrderConstants';
-import { addDays } from 'date-fns';
+import {
+  PICKUP_DATE,
+  DELIVER_DATE,
+  PICKUP_TIME,
+  DELIVER_TIME
+} from './OrderConstants';
 import { translate } from 'react-i18next';
 import { setDate } from './OrderActions';
 import { connect } from 'react-redux';
@@ -12,51 +17,105 @@ import { NavLink } from 'react-router-dom';
 import Page from '../index';
 import pickupImg from '../../assets/images/pickup.png';
 
+export const DateTimeComponent = ({
+  labelText,
+  onSetDateHandler,
+  dateType,
+  ...props
+}) => {
+  return (
+    <div className="row">
+      <div className="col-md-5 date-label-wrapper">
+        <label htmlFor={dateType}>{labelText}</label>
+      </div>
+      <div className="col-md-7">
+        <DatePicker
+          {...props}
+          id={dateType}
+          placeholderText={labelText}
+          withPortal
+          onChange={date => {
+            onSetDateHandler(date, dateType);
+          }}
+          className="mt-2 mb-2 form-control text-center"
+        />
+      </div>
+    </div>
+  );
+};
+
 export class DateComponent extends Component {
   setDate = (date, type) => {
     this.props.setDate(date, type);
   };
 
   render() {
-    const { pickupDate, deliverDate, t } = this.props;
-    let _pD, _dD;
-    if (pickupDate) {
-      _pD = new Date(pickupDate);
-    }
-    if (deliverDate) {
-      _dD = new Date(deliverDate);
-    }
+    const { pickupDate, pickupTime, deliverDate, deliverTime, t } = this.props;
+    const minTime = setHours(setMinutes(new Date(), 0), 9);
+    const maxTime = setHours(setMinutes(new Date(), 0), 17);
+    let _pD = pickupDate ? new Date(pickupDate) : undefined;
+    let _pT = pickupTime ? new Date(pickupTime) : minTime;
+    let _dD = deliverDate ? new Date(deliverDate) : undefined;
+    let _dT = deliverTime ? new Date(deliverTime) : minTime;
+
+    console.log(deliverTime, pickupDate);
     return (
       <Page>
         <div className="main-section align-content-center flex-wrap fancy-bg">
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
-            <div className="row"><img alt="laundry" className="pickup-img" src={pickupImg} /></div>
+            <div className="row">
+              <img alt="laundry" className="pickup-img" src={pickupImg} />
+            </div>
             <div className="date-picker-wrapper row">
-              <div className="col-6">
-                <DatePicker
-                  placeholderText={t('Pickup date')}
+              <div className="col-md-6">
+                <DateTimeComponent
+                  labelText={t('Pickup date')}
+                  dateType={PICKUP_DATE}
                   selected={_pD}
-                  onChange={date => {
-                    this.setDate(date, PICKUP_DATE);
-                  }}
                   minDate={new Date()}
-                  className="mt-2 mb-2 form-control text-center"
-                  showTimeSelect
-                  dateFormat="MMMM d, yyyy h:mm aa"
+                  dateFormat="MMMM d, yyyy"
+                  onSetDateHandler={this.setDate}
                 />
               </div>
-              <div className="col-6">
-                <DatePicker
-                  placeholderText={t('Deliver date')}
-                  className="mt-2 mb-2 form-control text-center"
-                  selected={_dD}
-                  minDate={addDays(pickupDate, 1)}
-                  onChange={date => {
-                    this.setDate(date, DELIVER_DATE);
-                  }}
-                  disabled={!pickupDate}
+              <div className="col-md-6">
+                <DateTimeComponent
+                  labelText={t('Pickup time')}
+                  dateType={PICKUP_TIME}
+                  selected={_pT}
                   showTimeSelect
-                  dateFormat="MMMM d, yyyy h:mm aa"
+                  showTimeSelectOnly
+                  timeIntervals={60}
+                  timeFormat="HH:mm"
+                  dateFormat="HH:mm"
+                  minTime={minTime}
+                  maxTime={maxTime}
+                  onSetDateHandler={this.setDate}
+                />
+              </div>
+              <div className="col-md-6">
+                <DateTimeComponent
+                  labelText={t('Deliver date')}
+                  dateType={DELIVER_DATE}
+                  selected={_dD}
+                  minDate={_pD}
+                  dateFormat="MMMM d, yyyy"
+                  onSetDateHandler={this.setDate}
+                />
+              </div>
+              <div className="col-md-6">
+                <DateTimeComponent
+                  labelText={t('Deliver time')}
+                  dateType={DELIVER_TIME}
+                  selected={_dT}
+                  setMin
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={60}
+                  timeFormat="HH:mm"
+                  dateFormat="HH:mm"
+                  minTime={setHours(setMinutes(new Date(), 0), 9)}
+                  maxTime={setHours(setMinutes(new Date(), 0), 17)}
+                  onSetDateHandler={this.setDate}
                 />
               </div>
               <div className="col-md-6 mb-2">
