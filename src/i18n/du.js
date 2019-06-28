@@ -4,11 +4,11 @@ export default {
   contact: 'contact',
   Contact: 'Contact',
   information: 'informatie',
-  'ABOUT US': 'OVERONS',
+  'ABOUT US': 'OVER ONS',
   login: 'inlogen',
   register: 'registreren',
   PRESS: 'STRIJK SERVICE',
-  Bedroom: 'Slaapkamer',
+  bedroom: 'Slaapkamer',
   Carpets: 'tapijten',
   'price list': 'prijslijst',
   'special order': 'speciale bestelling',
@@ -18,16 +18,17 @@ export default {
   'Pick up & Drop Time': 'Oppakken & afzetten Tijd ',
   'Offers & subscription': 'aanbiedingen & abonnement',
   'Delivery Charges': 'Verzendkosten',
-  'ORDER': 'bESTELLEN',
-  'aboutus.description': `Ons bedrijf biedt een professionele oplossing voor uw dagelijkse was. Wij verzorgen uw was met 100%
-  groene stroom. Wij proberen zoveel mogelijk milieuvriendelijke producten te gebruiken. Wij bieden u de
-  beste service en prijs voor al uw huishoudelijke en zakelijke was.
-  Onze medewerkers zijn gespecialiseerd in het herkennen van elk textielsoort en werken erg hygiënisch.
-  Onze topprioriteit is daarom ook het optimale uit de was halen.
-  Wij belonen onze members doormiddel van een puntensysteem , zodat u optimaal kunt genieten voor
-  het bedrag waarvoor u betaald heeft.
-  Wij willen u ervan verzekeren dat wij tijdig uw was komen ophalen en uw schone was laten bezorgen.
-  Wees gerust om contact met ons op te nemen voor overige vragen.`,
+  'ORDER': 'BESTELLEN',
+  'aboutus.description': `Ons bedrijf biedt een professionele oplossing voor uw dagelijkse was. We werken met 100%
+  groene stroom en gebruiken zoveel mogelijk milieuvriendelijke producten. We bieden u de
+  beste service en prijs voor zowel uw huishoudelijke &amp; zakelijke was.
+  Onze medewerkers zijn gespecialiseerd in het herkennen van elke soort textiel en
+  beschikken over een grote kennis op het gebied van hygiëne.
+  Met een kortingskaart waarop u punten kunt verzamelen, belonen we u om zo optimaal
+  mogelijk te genieten van het bedrag dat u betaalt. Wij verzekeren u dat wij uw was op tijd
+  komen ophalen, en uw schone was op tijd bezorgen.
+  Voor vragen verzoeken wij u contact met ons op te nemen.
+  .`,
   'pickup.description': `Maandag tot zaterdag 9:00 tot Zaterdag 18:00
   Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons
   op.`,
@@ -35,7 +36,15 @@ export default {
   Gouden Member
   Parel Member`,
   'delivery.description': `Gratis bezorging vanaf 22.00 Euro`,
-  'business.description': `bedrijf.Omschrijving`,
+  'business.description': `BUBBLES is gespecialiseerd in het reinigen en beheren van linnen voor
+    Restaurants, Hotels, Casino’s . Bedlinnen, Beddengoed, Tafellinnen,
+    Keukenlinnen .
+    Het reinigen en stomen gebeurt op de meest milieuvriendelijke manier.
+    De belangrijkste kenmerken bij de bedrijfsvoering van BUBBLES zijn
+    deskundigheid, snelheid en betrouwbaarheid.
+    BUBBLES verzorgt zes dagen per week het halen en brengen van het linnen.
+    Het is ook mogelijk om tafellinnen en bedlinnen te huren.`,
+  'business.description.tip': 'ACTIE: voor het reinigen van grote partijen geldt een korting van 20%.',
   'Special order': 'Speciale bestelling',
   'address.description': `adres Omschrijving`,
   'User name': 'Gebruikersnaam',
@@ -75,10 +84,10 @@ export default {
   'ski pants': 'Ski broek',
   'ski jacket': 'ski jas',
   'ski overall': 'ski overall',
-  'ironing shirt minimum 4 pcs(per pc)':
-    'Strijken shirt minimum 4 stuks(per stuk)',
-  'scarf': 'Sjaal',
-  hat: 'hoed',
+  'ironing shirt minimum 4 pcs (per pc)': 'Strijken shirt minimum 4 stuks(per stuk)',
+
+  scarf: 'SJAAL',
+  Hat: 'hoed',
   tie: 'Stropdas',
   gloves: 'Handschoenen',
   jabot: 'jabot',
@@ -123,13 +132,61 @@ export default {
   'First name': 'First name',
   'Last name': 'Last name',
   Country: 'Country',
-  'dry & clean': '!dry & clean',
-  'outer wear': '!outer wear',
-  'WASH & FOLD':'WASSEN & VOUWEN',
-  'LAUNDRY PICK UP & DROP OFF':'STOMERIJ & WASSERIJ',
-  'FREE DELIVERY':'GRATIS OPHALEN EN BEZORGEN',
-  'ABOVE 22,00 EURO':'VAN AF 22.00 EURO',
-  'CARPET CLEANING':'TAPIJT REINIGEN',
-  'TEXTILES':'TEXTIEL',
-  'About us':'OVERONS',
+  'dry & clean': 'Stomerij',
+  'outer wear': 'Buitenkleding',
+  'WASH & FOLD': 'WASSEN & VOUWEN',
+  'LAUNDRY PICK UP & DROP OFF': 'STOMERIJ & WASSERIJ',
+  'FREE DELIVERY': 'GRATIS OPHALEN EN BEZORGEN',
+  'ABOVE 22,00 EURO': 'VAN AF 22,00 EURO',
+  'CARPET CLEANING': 'TAPIJT REINIGEN',
+  'TEXTILES': 'TEXTIEL',
+  'About us': 'OVERONS',
+  'PRICES INCLUSIVE V.A.T': 'PRIJZEN ZIJN INCLUSIEF B.T.W',
+  'laundry wash & fold': 'Wasserij wassen en vouwen',
+  'Bag up all your dirty clothes': 'Pak al je vuile kleren op',
+  'We pick up your clothes':'We pakken je kleren op',
+  'We clean your clothes':'We maken je kleren schoon',
+  'BUSINESSES':'BEDRIJVEN',
+  'We deliver clean,folded clothes':'We leveren schone, opgevouwen kleding',
+  'First name':'Naam',
+  'Last name':'Achter naam',
+  'City':'Stad',
+  'info.description':'info.description',
+  hat:'hat',
+  'shirt / polo':'Overhemd / Polo',
+  'jacket / blazer':'jas / blazer',
+  'suit (2 pieces)':'pakken (2 sets)',
+  hat:'hoed',
+  'skirt mini / short':'rok kort',
+ 'wash & fold (6 kg)':'wassen en vouwen (6 kg)',
+ 'wash & fold (12 kg)':'wassen en vouwen (12 kg)',
+ 'wash & fold (18 kg)':'wassen en vouwen (18 kg)',
+ 'pillow feather / down':'Kussen veren',
+ 'pillow synthetic':'Kussen synthetisch',
+ 'quilt one person':'Deken (een persoon)',
+ 'quilt two person':'Deken (twee personen)',
+'comforter / feather / down (twin)':'Donsdeken Tweeling',
+'comforter feather / down (two person)':'Donsdeken (twee personen)',
+'comforter feather / down (one person)':'Donsdeken (één persoon)',
+'comforter wool / syntetic (twin)':'Wollendeken synthetisch tweeling',
+'comforter wool / syntetic (two person)':'Wollendeken synthetisch (twee personen)',
+'comforter wool / syntetic (one person)':'Wollendeken synthetisch (een persoon)',
+'over mattress twin':'Over Matras Tweeling',
+'over mattress (two person)':'Over Matras dik (2 personen)',
+'over mattress (one person)':'Over Matras dik (1 persoon)',
+'laundry wash & fold (10 kg)':'wassen en vouwen (10 kg)',
+'shirts (3 pieces)':'overhemd (3 stuk)',
+'suits (2 set)':'pakken (2 set)',
+'blouse (3 pieces)':'blouse (3 stuks)',
+'skirt mini':'jurk kort',
+'skirt long':'jurk lang',
+'special offer':'aanbiedingen',
+'duvet (1 person)':'dekbed (1 persoon)',
+'duvet (2 person)':'dekbed (2 persoons)',
+'suit  (2 pieces)':'Pakken (2 sets)',
+'suit  (3 pieces)':'Pakken (3 sets)',
+'BUSINESS ORDER':'bedrijf bestellen',
+'SPECIAL OFFER':'AANBIEDINGEN',
+'SPECIAL ORDER':'BESTELLEN'
+
 };

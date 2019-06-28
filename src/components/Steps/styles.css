@@ -9,6 +9,10 @@
   border-radius: 50%;
   max-width: 270px;
 }
+.step .step-title{
+  font-weight: 600;
+  margin-bottom: 2px;
+}
 @media (max-width: 768px) {
 
 }

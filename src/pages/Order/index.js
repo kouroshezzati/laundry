@@ -29,7 +29,7 @@ export class index extends Component {
               <div className="col-md-6 mb-2">
                 <NavLink className="nav-button" to="/date">
                   <Button fullWidth color="secondary" variant="contained">
-                    {t('Date')}
+                    {t('back to Date')}
                   </Button>
                 </NavLink>
               </div>

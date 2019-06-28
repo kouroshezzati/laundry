@@ -1,14 +1,16 @@
 .order-form-wrapper {
-  background-color: white;
+  background-color: rgb(16, 13, 184);
   width: 90%;
-  border: 1px solid gray;
+  border: 1px solid rgb(243, 117, 0);
   border-radius: 3px;
+ 
 }
 .list-group-item {
   padding: 0.3rem 0.5rem !important;
 }
 .parent {
-  font-weight: 600;
+  font-weight: 900;
+  color: rgba(255, 123, 0, 0.774);
 }
 .order-form-wrapper .date-picker-wrapper .react-datepicker__input-container,
 .order-form-wrapper .date-picker-wrapper .react-datepicker-wrapper {
@@ -19,4 +21,6 @@
   height: 30%;
   width: 30%;
   margin: 0 auto;
+  
+
 }

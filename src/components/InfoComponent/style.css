@@ -1,0 +1,23 @@
+#info {
+    background-color: #00ff62b7;
+    color: white
+}
+
+section#info {
+    padding: 50px 0;
+}
+
+.bug1 {
+    height: 300px;
+    width: 500px;
+}
+
+.bug3 {
+    height: 300px;
+    width: 500px;
+}
+
+.bug2 {
+    height: 300px;
+    width: 500px;
+}

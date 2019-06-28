@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import { Button } from '@material-ui/core';
 import './style.css';
+import specialoffer from '../ServicesComponent/img/special-offer.gif';
 
-export class ExtraInfoComponent extends Component {
+export class extrainfo  extends Component {
   render() {
     const { t } = this.props;
     return (
-      <section className="extra-info" id="extra-info">
-        <div className="container text-center">
-          <div className="row section-heading">
-            <div className="col-md-12">
+      <section id="special-order">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 special-offer-img-wrapper">
+              <img alt="laundry" src={specialoffer} />
             </div>
-            <div className="col-md-4">
-              <h3>{t('Pick up & Drop Time')}</h3>
-              <hr />
-              <p className="text-center">
-                {t(`pickup.description`)}
-              </p>
-            </div>
-            <div className="col-md-4">
-              <h3>{t('Offers & subscription')}</h3>
-              <hr />
-              <p className="text-center">
-                {t(`offers.description`)}
-              </p>
-            </div>
-            <div className="col-md-4">
-              <h3>{t('Delivery Charges')}</h3>
-              <hr />
-              <p className="text-center">
-                {t(`delivery.description`)}
-              </p>
+            <div className="col-md-6">
+              <div className="special-offer-message">
+                <h2>{t('SPECIAL OFFER')}</h2>
+              </div>
+              <Button variant="contained" color="primary" fullWidth>
+                {t('SPECIAL ORDER')}
+              </Button>
             </div>
           </div>
         </div>
@@ -39,4 +29,4 @@ export class ExtraInfoComponent extends Component {
   }
 }
 
-export default translate('translations')(ExtraInfoComponent);
+export default translate('translations')(extrainfo);

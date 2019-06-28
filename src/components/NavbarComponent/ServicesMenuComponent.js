@@ -62,22 +62,10 @@ class ServicesMenu extends Component {
                 <ClickAwayListener onClickAway={this.handleClose}>
                   <MenuList>
                     <NavLink to="/services/laundry_wash_and_fold">
-                      <MenuItem>{t('Lundry wash & Fold')}</MenuItem>
-                    </NavLink>
-                    <NavLink to="/services/dry_clean">
-                      <MenuItem>{t('Dry Clean')}</MenuItem>
-                    </NavLink>
-                    <NavLink to="/services/press">
-                      <MenuItem>{t('Press')}</MenuItem>
-                    </NavLink>
-                    <NavLink to="/services/bedroom">
-                      <MenuItem>{t('Bedroom')}</MenuItem>
-                    </NavLink>
-                    <NavLink to="/services/house_hold">
-                      <MenuItem>{t('House Hold')}</MenuItem>
+                      <MenuItem>{t('DID YOU KNOW?')}</MenuItem>
                     </NavLink>
                     <NavLink to="/services/carpets">
-                      <MenuItem>{t('Carpets')}</MenuItem>
+                      <MenuItem>{t('CARPETS')}</MenuItem>
                     </NavLink>
                   </MenuList>
                 </ClickAwayListener>

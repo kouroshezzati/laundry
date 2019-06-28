@@ -8,6 +8,7 @@ import { SliderComponent } from '../SliderComponent/SliderComponent';
 import ExtraInfoComponent from '../ExtraInfo/ExtraInfoComponent';
 import StepsComponent from '../Steps/StepsComponent';
 import BusinessComponent from '../Business/BusinessComponent';
+import InfoComponent from '../InfoComponent/InfoComponent';
 
 class HomeComponent extends Component {
   render() {
@@ -20,6 +21,7 @@ class HomeComponent extends Component {
         <BusinessComponent />
         <ExtraInfoComponent />
         <StepsComponent />
+        <InfoComponent />
         <FooterComponent />
       </React.Fragment>
     );

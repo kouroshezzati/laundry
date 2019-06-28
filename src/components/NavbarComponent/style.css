@@ -95,7 +95,7 @@ a.nav-link {
   }
   #mainNav.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
-    background-color: white;
+    background-color: rgb(0, 132, 255);
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #222222;

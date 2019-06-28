@@ -33,7 +33,7 @@ export const SliderComponent = translate('translations')(
                   {t('ORDER')}
                 </Button>
               </NavLink><br></br>
-              {t('PRIJZEN ZIJN INCLUSIEF B.T.W')}
+              {t('PRICES INCLUSIVE V.A.T')}
             </div>
           </div>
         </div>

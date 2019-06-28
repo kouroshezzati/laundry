@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import { Button } from '@material-ui/core';
 import './style.css';
-import dovomi from '../ServicesComponent/img/dovomi.jpg';
+import galoo from '../ServicesComponent/img/galoo.jpg';
 
 export class BusinessComponent extends Component {
   render() {
@@ -12,30 +12,20 @@ export class BusinessComponent extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 business-img-wrapper">
-              <img alt="laundry" src={dovomi} />
+              <img alt="laundry" src={galoo} />
             </div>
             <div className="col-md-6">
               <div className="business-message">
-                <h2>{t('BEDRIJVEN')}</h2>
+                <h2>{t('BUSINESSES')}</h2>
                 <p>
-                  BUBBLES is gespecialiseerd in het reinigen en beheren van
-                  textile voor:Restaurants,Hotels,Casino,en bedrijven,
-                  denkt u hierbij aan het reinigen En stomen van bedlinnen
-                  ,bedgoed,tafellinnen,keukenlinnen etc.Bubbles heft een
-                  eigen breng en haal service 6 dagen per week, We bieden
-                  ook een huurservices voor tafellinnen,bedlinnen naast
-                  Deskundigheid(een eerste vereiste),senlheid en
-                  betrouwbaarheid De belangrijkste kenmerken van ons bedrijf
-                  ,proberen we zo goed Mogelijk uwproducten in zijn werk te
-                  nemen. We zorgen ervoor dat deze open zomilieuvriendelijk
-                  mogelijke manierworden gereinigd.
+                  {t('business.description')}
                 </p>
                 <h5>
-                  ACTIE: voor grote aantal kg wasbeurt geldt 20% korting
+                {t('business.description.tip')}
                 </h5>
               </div>
-              <Button variant="contained" color="pirmary" fullWidth>
-                {t('SPECIAL ORDER')}
+              <Button variant="contained" color="primary" fullWidth>
+                {t('BUSINESS ORDER')}
               </Button>
             </div>
           </div>

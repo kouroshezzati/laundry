@@ -22,22 +22,30 @@ export default {
   'Offers & subscription': 'Offers & subscription',
   'Delivery Charges': 'Delivery Charges',
   'Order now': 'Order now',
-  'aboutus.description': `Our company offers porfesional sloution for your day to day lundary
-            & Dry cleaning ,useing ECO frindly products where possible, offering
-            best service and prices for domestic household & Busineses . we make
-            sure each client gets individual wash load,higeen & knolwedge of
-            each diffrent textile is our biggest priority in order to get best
-            results for your wash. we offer membership and points award conccept
-            for our clients in order to make sure our offer is the best value
-            for money. we make sure to pick up and deliver your wash on time and
-            offer a friendly service. Please do not hesitaite to contact us for
-            further information.`,
+  'aboutus.description': `Our company offers professional solution for your daily laundry and dry cleaning, using ECO
+  friendly products where possible. We offer best service and prices for household &amp;
+  businesses. We make sure each client gets an individual laundry load.
+  Our biggest priority is to get the best results for your laundry. We offer our clients a discount
+  card to make sure our offer is best value for money. We make sure to pick up and deliver
+  your laundry on time .
+  Please do not hesitate to contact us for further information. 
+  `,
   'pickup.description': `Monday to Saturday 9am to 18.00
                     we also offer after opening hours urgent delivery, please contact us.
                     `,
   'offers.description': `10 % Discount for our first time users Gold Member Pearl Member`,
   'delivery.description': `Free Delivery Above 22.oo Euro`,
-  'business.description': `business description`,
+  'business.description': `BUBBLES is specialized in cleaning and managing linen for Restaurants, Hotels,
+    Casino’s . ( Linen bed sheets, table cloths, kitchen towels )
+    Our wash processes is done in most environment friendly way, with quality
+    Control on each individual wash load.
+    The main characteristics of BUBBLES are professionalism, speed and reliability.
+    BUBBLES provide your business with pick up &amp; drop of service and will make
+    sure you have your products on time.
+    We can also offer your business different kinds of linen and table cloths for
+    rent.
+    Offer: for large quantities of wash load we offer 20% discount.`,
+  'business.description.tip': 'Offer: for large quantities of wash load we offer 20% discount.',
   'Special order': `Special order`,
   'address.description': `Address:Platina weg 25 2544 EZ S-Gravenhage`,
   'User name': 'Username',
@@ -84,7 +92,56 @@ export default {
   'Last name': 'Last name',
   'Country': 'Country',
   'Apartment': 'Apartment',
-  'dry & clean': '!dry & clean',
-  'outer wear': '!outer wear',
-  'laundry wash & fold': '!laundry wash & fold'
+  'dry & clean': 'dry & clean',
+  'outer wear': 'outer wear',
+  'laundry wash & fold': 'laundry wash & fold',
+  'Bag up all your dirty clothes': 'Bag up all your dirty clothes',
+  scarf: 'scarf',
+  'info.description': `Bed bugs are not something that we think of every day ,
+  but the fact is that they can be in our bed covers, pillow
+  quilts , sofa covers & in our clothing , it can give you skin rash
+  small red bumps , surrounded by blisters or hives;
+  one of the ways that you can get rid of them
+  we recommend to have your bed covers, Sofa covers washed
+  by porfesional since the correct tempruter and correct wash detergent
+  is essential to get the best results.
+  our recomendation is 2 times a year wash for, pillow, comforter ,
+  over mattress and sofa covers`,
+  'silk / top': 'Zijde / Top',
+  'jacket / blazer': 'jacket / blazer',
+  'suit (2 pieces)': 'suit (2 pieces)',
+  hat: 'hat',
+  'skirt mini / short': 'skirt mini / short',
+  'wash & fold (6 kg)': 'wash & fold (6 kg)',
+  'wash & fold (12 kg)': 'wash & fold (12 kg)',
+  'wash & fold (18 kg)': 'wash & fold (18 kg)',
+  'pillow feather / down': 'pillow feather / down',
+  'pillow synthetic': 'pillow synthetic',
+  'quilt one person': 'quilt one person',
+  'quilt two person': 'quilt two person',
+  'comforter / feather / down (twin)': 'comforter / feather / down (twin)',
+  'comforter feather / down (two person)': 'comforter feather / down (two person)',
+  'comforter feather / down (one person)': 'comforter feather / down (one person)',
+  'comforter wool / syntetic (twin)': 'comforter wool / syntetic (twin)',
+  'comforter wool / syntetic (two person)': 'comforter wool / syntetic (two person)',
+  'comforter wool / syntetic (one person)': 'comforter wool / syntetic (one person)',
+  'over mattress twin': 'over mattress twin',
+  'over mattress (two person)': 'over mattress (two person)',
+  'over mattress (one person)': 'over mattress (one person)',
+  'laundry wash & fold (10 kg)': 'laundry wash & fold (10 kg)',
+  'shirts (3 pieces)': 'shirts (3 pieces)',
+  'suits (2 set)': 'suits (2 set)',
+  'blouse (3 pieces)': 'blouse (3 pieces)',
+  'skirt mini': 'skirt mini',
+  'skirt long': 'skirt long',
+  'special offer': 'special offer',
+  'duvet (1 person)': 'duvet (1 person)',
+  'duvet (2 person)': 'duvet (2 person)',
+  'suit  (2 pieces)': 'suit  (2 pieces)',
+  'suit  (3 pieces)': 'suit  (3 pieces)',
+  'BUSINESS ORDER': 'BUSINESS ORDER',
+  'SPECIAL OFFER': 'SPECIAL OFFER',
+  'SPECIAL ORDER': 'SPECIAL ORDER'
+
+
 };

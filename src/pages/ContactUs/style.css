@@ -5,10 +5,10 @@
 
 .contact-form-wrapper {
   width: 50%;
-  background: #c1c1c1b8!important;
+  background: #c9ff04b8!important;
 }
 .fancy-bg {
-  background: linear-gradient(to left, #4ecc9d, #73ecf9);
+  background: linear-gradient(to left, hsl(249, 100%, 54%), #0400f7);
 }
 .contact-record .key {
   font-weight: 600;
@@ -32,5 +32,5 @@
 }
 .map-wrapper {
   height: 275px!important;
-  background: red;
+  background: white;
 }

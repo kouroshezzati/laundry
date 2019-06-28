@@ -505,7 +505,7 @@
     "price": 105,
     "category": {
       "id": 5252,
-      "name": "ESPECIAL OFFER"
+      "name": "SPECIAL OFFER"
     },
     "type": "expensive"
   },
@@ -515,7 +515,7 @@
   "price": 22.00,
   "category": {
     "id": 5333,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -525,7 +525,7 @@
   "price": 9.95,
   "category": {
     "id": 5454,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -535,7 +535,7 @@
   "price": 5.95,
   "category": {
     "id": 5555,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -545,7 +545,7 @@
   "price": 7.95,
   "category": {
     "id": 5656,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -555,7 +555,7 @@
   "price": 9.95,
   "category": {
     "id": 5757,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -565,17 +565,17 @@
   "price": 14.95,
   "category": {
     "id": 5858,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
 {
   "id": 59,
-  "name": "BLOUSE (2 PIECES)",
+  "name": "BLOUSE (3 PIECES)",
   "price": 9.95,
   "category": {
     "id": 5959,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -585,7 +585,7 @@
   "price": 18.50,
   "category": {
     "id": 6060,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },
@@ -595,7 +595,7 @@
   "price": 22.50,
   "category": {
     "id": 6161,
-    "name": "ESPECIAL OFFER"
+    "name": "SPECIAL OFFER"
   },
   "type": "expensive"
 },

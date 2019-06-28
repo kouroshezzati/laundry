@@ -62,7 +62,7 @@ export class DateComponent extends Component {
               <div className="col-md-6 mb-2">
                 <NavLink className="nav-button" to="/">
                   <Button fullWidth color="secondary" variant="contained">
-                    {t('Home')}
+                    {t('Back to home page')}
                   </Button>
                 </NavLink>
               </div>

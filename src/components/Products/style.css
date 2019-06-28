@@ -10,7 +10,10 @@
   margin-top: 10px;
 }
 .total-price {
-  font-weight: 700;
-  height: 43px;
-  background-color: #dcdcdc !important;
+  font-weight: 1000;
+  font-height: 900;
+  height: 40px;
+  background-color: #cecece !important;
+  color:rgb(255, 30, 0)
+   
 }
