@@ -13,8 +13,12 @@ export class index extends Component {
     this.props.fetchProducts();
   }
 
+  handleDescriptionChange = e => {
+    this.props.setDescription(e.target.value);
+  };
+
   render() {
-    const { t, selectedProducts } = this.props;
+    const { t, selectedProducts, description } = this.props;
     let selectedProductNumbers = 0;
     _.map(selectedProducts, value => {
       selectedProductNumbers += value;
@@ -25,6 +29,18 @@ export class index extends Component {
         <div className="main-section align-content-center flex-wrap fancy-bg">
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
             <ProductList />
+            <div className="form-group m-2">
+              <label style={{ fontWeight: 700 }} htmlFor="description">
+                {t('Add description')}
+              </label>
+              <textarea
+                defaultValue={description}
+                id="description"
+                placeholder={t('Description')}
+                className="form-control"
+                onBlur={this.handleDescriptionChange}
+              />
+            </div>
             <div className="mt-2 row ">
               <div className="col-md-6 mb-2">
                 <NavLink className="nav-button" to="/date">

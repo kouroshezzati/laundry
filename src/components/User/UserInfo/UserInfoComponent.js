@@ -26,23 +26,35 @@ const theme = createMuiTheme({
 export class UserInfo extends Component {
   constructor(props) {
     super(props);
+    this.username = React.createRef();
+    this.firstName = React.createRef();
+    this.lastName = React.createRef();
+    this.country = React.createRef();
+    this.city = React.createRef();
+    this.apartment = React.createRef();
+    this.companyName = React.createRef();
     this.email = React.createRef();
-    this.mobile = React.createRef();
+    this.phone = React.createRef();
     this.address = React.createRef();
-    this.zipcode = React.createRef();
+    this.zip = React.createRef();
     this.username = React.createRef();
   }
 
   onSubmit = event => {
     event.preventDefault();
-    const { user, userUpdate, onSaveHandler } = this.props;
+    const { userUpdate, onSaveHandler } = this.props;
     userUpdate({
-      id: user._id,
-      email: this.email.current.value,
       username: this.username.current.value,
-      mobile: this.mobile.current.value,
+      firstName: this.firstName.current.value,
+      lastName: this.lastName.current.value,
+      country: this.country.current.value,
+      city: this.city.current.value,
+      apartment: this.apartment.current.value,
+      companyName: this.companyName.current.value,
+      email: this.email.current.value,
+      phone: this.phone.current.value,
       address: this.address.current.value,
-      zipcode: this.zipcode.current.value
+      zip: this.zip.current.value
     });
     if (typeof onSaveHandler === 'function') {
       onSaveHandler(true);
@@ -50,12 +62,44 @@ export class UserInfo extends Component {
   };
 
   render() {
-    const { t, user } = this.props;
-    const { username, email, mobile, address, zipcode } = user;
+    const {
+      t,
+      firstName,
+      lastName,
+      country,
+      city,
+      apartment,
+      email,
+      username,
+      phone,
+      address,
+      zip,
+      companyName
+    } = this.props;
     return (
       <div className="m-2">
         <form onSubmit={this.onSubmit}>
           <div className="row">
+            <div className="form-group col-md-6">
+              <input
+                defaultValue={firstName}
+                className={classnames('form-control')}
+                required
+                ref={this.firstName}
+                placeholder={t('First name')}
+                type="text"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                defaultValue={lastName}
+                className={classnames('form-control')}
+                required
+                ref={this.lastName}
+                placeholder={t('Last name')}
+                type="text"
+              />
+            </div>
             <div className="form-group col-md-6">
               <input
                 defaultValue={username}
@@ -78,22 +122,23 @@ export class UserInfo extends Component {
               />
             </div>
             <div className="form-group col-md-6">
-              <input
-                required
-                defaultValue={mobile}
-                ref={this.mobile}
+              <select
+                defaultValue={country}
                 className={classnames('form-control')}
-                placeholder={t('Mobile')}
-                type="mobile"
-              />
+                required
+                ref={this.country}
+                placeholder={t('Country')}
+              >
+                <option>Netherlands</option>
+              </select>
             </div>
             <div className="form-group col-md-6">
               <input
-                required
-                defaultValue={zipcode}
+                defaultValue={city}
                 className={classnames('form-control')}
-                ref={this.zipcode}
-                placeholder={t('Zip code')}
+                required
+                ref={this.city}
+                placeholder={t('City')}
                 type="text"
               />
             </div>
@@ -104,6 +149,45 @@ export class UserInfo extends Component {
                 className={classnames('form-control')}
                 ref={this.address}
                 placeholder={t('Address')}
+                type="text"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                defaultValue={apartment}
+                className={classnames('form-control')}
+                ref={this.apartment}
+                placeholder={t('Apartment')}
+                type="text"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                required
+                defaultValue={phone}
+                ref={this.phone}
+                className={classnames('form-control')}
+                placeholder={t('Mobile')}
+                type="phone"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                required
+                defaultValue={zip}
+                className={classnames('form-control')}
+                ref={this.zip}
+                placeholder={t('Zip code')}
+                type="text"
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                required
+                defaultValue={companyName}
+                className={classnames('form-control')}
+                ref={this.companyName}
+                placeholder={t('Company name')}
                 type="text"
               />
             </div>

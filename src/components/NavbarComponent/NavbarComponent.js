@@ -22,6 +22,28 @@ const styles = theme => ({
   }
 });
 
+export const LogoComponent = props => {
+  const { location, onScrollToTopHandler } = props;
+  return (
+    <React.Fragment>
+      {location.pathname !== '/' && (
+        <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
+          <img className="main-logo" alt="bubbles online lundry" src={logo} />
+        </NavLink>
+      )}
+      {location.pathname === '/' && (
+        <a
+          onClick={e => onScrollToTopHandler()}
+          className="navbar-brand js-scroll-trigger"
+          href="#page-top"
+        >
+          <img className="main-logo" alt="bubbles online lundry" src={logo} />
+        </a>
+      )}
+    </React.Fragment>
+  );
+};
+
 class NavBarComponent extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +52,7 @@ class NavBarComponent extends Component {
   }
 
   componentDidMount() {
-    const {hash} = this.props.location;
+    const { hash } = this.props.location;
     if (hash) {
       ste(hash);
     }
@@ -93,7 +115,7 @@ class NavBarComponent extends Component {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
     if (jwt) {
-      return <NavbarLoggedIn  />;
+      return <NavbarLoggedIn />;
     }
     return (
       <nav
@@ -107,31 +129,6 @@ class NavBarComponent extends Component {
         id="mainNav"
       >
         <div className="container">
-          {location.pathname !== '/' && (
-            <NavLink
-              className="nav-link navbar-brand js-scroll-trigger"
-              to="/"
-            >
-              <img
-                className="main-logo"
-                alt="bubbles online lundry"
-                src={logo}
-              />
-            </NavLink>
-          )}
-          {location.pathname === '/' && (
-            <a
-              onClick={this.scrollToTop.bind(this)}
-              className="navbar-brand js-scroll-trigger"
-              href="#page-top"
-            >
-              <img
-                className="main-logo"
-                alt="bubbles online lundry"
-                src={logo}
-              />
-            </a>
-          )}
           <button
             onClick={this.toggleShow.bind(this)}
             className="navbar-toggler navbar-toggler-right"
@@ -150,6 +147,10 @@ class NavBarComponent extends Component {
           >
             <ul className="navbar-nav ml-auto">
               <InnerSections {...this.props} />
+              <LogoComponent
+                onScrollToTopHandler={this.scrollToTop}
+                location={location}
+              />
               <li className="nav-item">
                 <NavLink
                   className="nav-link js-scroll-trigger"

@@ -20,6 +20,7 @@ import InnerSections from './InnerSections';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
 import { translate } from 'react-i18next';
+import { LogoComponent } from './NavbarComponent';
 
 const styles = theme => ({
   button: {
@@ -108,33 +109,10 @@ class NavbarLoggedIn extends Component {
         id="mainNav"
       >
         <div className="container">
-          {location.pathname !== '/' && (
-            <React.Fragment>
-              <NavLink
-                className="nav-link navbar-brand js-scroll-trigger"
-                to="/"
-              >
-                <img
-                  className="main-logo"
-                  alt="bubbles online lundry"
-                  src={logo}
-                />
-              </NavLink>
-            </React.Fragment>
-          )}
-          {location.pathname === '/' && (
-            <a
-              onClick={this.scrollToTop.bind(this)}
-              className="navbar-brand js-scroll-trigger"
-              href="#page-top"
-            >
-              <img
-                className="main-logo"
-                alt="bubbles online lundry"
-                src={logo}
-              />
-            </a>
-          )}
+          <LogoComponent
+            onScrollToTopHandler={this.scrollToTop}
+            location={location}
+          />
           <button
             onClick={this.toggleShow.bind(this)}
             className="navbar-toggler navbar-toggler-right"

@@ -59,7 +59,7 @@ class PriceListComponent extends Component {
                 <List className={classes.fullWidthMenu}>
                   {categorizedProducts.map(_product => (
                     <ListItem button key={_product.id}>
-                      <ListItemText>{t(_product.name.toLowerCase().trim())}</ListItemText>
+                      <ListItemText>{t(String(_product.name).toUpperCase())}</ListItemText>
                       <ListItemSecondaryAction>
                         {_product.price}
                       </ListItemSecondaryAction>

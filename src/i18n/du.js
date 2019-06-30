@@ -151,7 +151,13 @@ export default {
   'First name':'Naam',
   'Last name':'Achter naam',
   'City':'Stad',
-  'info.description':'info.description',
+  'info.description':`Bedwants zijn niet iets waar wij dagelijks aan denken, maar het is wel een feit dat ze in onze
+  dekens, kussen , dekbedden, bankhoezen en in onze kleiding kunnen zitten. Het vervelende van
+  de bedwants in de zojuist genoemde producten is: dat ze je een huiduitslag kunnen bezorgen,
+  kleine rode bulten kunnen geven en ook nog blaren.
+  Een van de manieren waarop u de narigheid van bedwants kunt vermijden is: door u dek
+  bedden en bankcovers tijdig te laten wassen. U zult het optimale resultaat terug zien.
+  Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen`,
   hat:'hat',
   'shirt / polo':'Overhemd / Polo',
   'jacket / blazer':'jas / blazer',

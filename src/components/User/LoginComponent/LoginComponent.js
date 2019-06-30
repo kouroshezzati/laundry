@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import green from '@material-ui/core/colors/green';
 import './style.css';
 import { connect } from 'react-redux';
-import { login } from '../UserActions';
-import { LOGIN_SUCCESS } from '../UserConstants';
+import { login, getCustomer } from '../UserActions';
+import { LOGIN_SUCCESS, GET_CUSTOMER_SUCCESS } from '../UserConstants';
 import { translate } from 'react-i18next';
 
 const styles = theme => ({
@@ -43,15 +43,22 @@ class LoginComponent extends Component {
     if (!_data.email || !_data.password) {
       return;
     }
-    const { login, history, location } = this.props;
+    const { getCustomer, login, history, location } = this.props;
     login(_data.email, _data.password).then(data => {
-      if (data.type === LOGIN_SUCCESS && location.pathname.includes('login')) {
-        history.push('/');
+      if (data.type === LOGIN_SUCCESS) {
+        getCustomer(data.response.userId).then(customerData => {
+          if (
+            customerData.type === GET_CUSTOMER_SUCCESS &&
+            location.pathname.includes('login')
+          ) {
+            history.push('/');
+          }
+        });
       }
     });
   };
-  componentDidMount(){
-    const {jwt, history} = this.props;
+  componentDidMount() {
+    const { jwt, history } = this.props;
     if (jwt) {
       history.push('/');
     }
@@ -68,7 +75,7 @@ class LoginComponent extends Component {
               required
               ref={this.email}
               className="form-control"
-              placeholder={t("Email or Username")}
+              placeholder={t('Email or Username')}
             />
           </div>
           <div className="form-group">
@@ -76,7 +83,7 @@ class LoginComponent extends Component {
               ref={this.password}
               type="password"
               required
-              placeholder={t("Password")}
+              placeholder={t('Password')}
               className="form-control"
             />
             {message && <small style={{ color: 'red' }}>{message}</small>}
@@ -98,7 +105,11 @@ class LoginComponent extends Component {
               </NavLink>
             )}
           </div>
-          <div style={{textAlign: 'center'}}><NavLink to="/forgotten-password">{t('Forgotten password?')}</NavLink></div>
+          <div style={{ textAlign: 'center' }}>
+            <NavLink to="/forgotten-password">
+              {t('Forgotten password?')}
+            </NavLink>
+          </div>
         </form>
       </React.Fragment>
     );
@@ -107,5 +118,5 @@ class LoginComponent extends Component {
 
 export default connect(
   state => ({ ...state.user }),
-  { login }
+  { login, getCustomer }
 )(translate('translations')(withRouter(withStyles(styles)(LoginComponent))));

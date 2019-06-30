@@ -17,7 +17,7 @@ const configureStore = () => {
   return createStore(
     rootReducer,
     load(),
-    compose(applyMiddleware(thunk, api, save(), logger))
+    compose(applyMiddleware(thunk, api, save({debounce: 1000}), logger))
   );
 };
 

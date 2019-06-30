@@ -1,9 +1,5 @@
-export const port = process.env.PORT || 3001;
-export const originAccess = process.env.REACT_APP_ORIGIN || 'http://localhost';
-
+export const API_ROOT = 'https://www.bubblesonline.nl/api';
 export const CALL_API = 'CALL API';
-export const API_ROOT = `http://localhost:3000/api`;
-// export const API_ROOT = `${originAccess}:${port}`;
 
 export const MESSAGE_ADD_SUCCESS = 'MESSAGE_ADD_SUCCESS';
 export const MESSAGE_ADD_FAILURE = 'MESSAGE_ADD_FAILURE';
