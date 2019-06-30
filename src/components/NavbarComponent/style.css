@@ -1,3 +1,16 @@
+.link-style {
+  font-weight: 800;
+  font-size: 1em;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222222 !important;
+  cursor: pointer;
+}
+
+.just-mobile {
+  display: none;
+}
 .submenu-link {
   color: #222222;
   font-size: 1em;
@@ -180,7 +193,10 @@ button.button-submenu i.fa {
   display: none;
 }
 @media (max-width: 991px) {
-  .tiny-logo{
+  .just-mobile {
+    display: block;
+  }
+  .tiny-logo {
     display: block;
     height: 60px;
   }

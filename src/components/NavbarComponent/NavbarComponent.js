@@ -177,7 +177,6 @@ class NavBarComponent extends Component {
                   {t('contact')}
                 </NavLink>
               </li>
-
               <li className="nav-item">
                 <Dropdown autoOpen>
                   <Dropdown.Toggle
@@ -257,7 +256,6 @@ class NavBarComponent extends Component {
                   </Dropdown.Menu>
                 </Dropdown>
               </li>
-
               <LogoComponent
                 onScrollToTopHandler={this.scrollToTop}
                 location={location}
@@ -278,6 +276,33 @@ class NavBarComponent extends Component {
                   {t('order now')}
                 </NavLink>
               </li>
+              {jwt && (
+                <li className="just-mobile">
+                  <NavLink
+                    className="nav-link"
+                    to="/user/change_information"
+                  >
+                    {t('Change information')}
+                  </NavLink>
+                </li>
+              )}
+              {jwt && (
+                <li className="just-mobile">
+                  <NavLink className="nav-link" to="/user/my_orders">
+                    {t('My orders')}
+                  </NavLink>
+                </li>
+              )}
+              {jwt && (
+                <li className="just-mobile">
+                  <div
+                    onClick={e => this.handleSignOut()}
+                    className="link-style"
+                  >
+                    {t('Log out')}
+                  </div>
+                </li>
+              )}
             </ul>
           </div>
         </div>
