@@ -133,7 +133,9 @@ class NavBarComponent extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light`,
-          this.state.navbarColor || location.pathname !== '/' ? 'colored' : '',
+          this.state.navbarColor || location.pathname !== '/'
+            ? 'colored'
+            : '',
           location.pathname === '/' ? 'fixed-top' : ''
         )}
         id="mainNav"
@@ -168,7 +170,10 @@ class NavBarComponent extends Component {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/contact/"
+                >
                   {t('contact')}
                 </NavLink>
               </li>
@@ -266,7 +271,10 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link js-scroll-trigger" to="/order/">
+                <NavLink
+                  className="nav-link js-scroll-trigger"
+                  to="/order/"
+                >
                   {t('order now')}
                 </NavLink>
               </li>
@@ -283,34 +291,29 @@ class NavBarComponent extends Component {
               <i className="fa fa-home fa-3x" />
             </Dropdown.Toggle>
             <Dropdown.Menu className="user-submenu">
-              {location.pathname === '/' && (
-                <React.Fragment>
-                  <MenuItem eventKey="1">
-                    <NavLink
-                      className="nav-link js-scroll-trigger"
-                      to="/#about-us"
-                    >
-                      {t('about us')}
-                    </NavLink>
-                  </MenuItem>
-                  <MenuItem eventKey="2">
-                    <NavLink
-                      className="nav-link js-scroll-trigger"
-                      to="/#services"
-                    >
-                      {t('services')}
-                    </NavLink>
-                  </MenuItem>
-                  <MenuItem eventKey="3">
-                    <NavLink
-                      className="nav-link js-scroll-trigger"
-                      to="/#extra-info"
-                    >
-                      {t('information')}
-                    </NavLink>
-                  </MenuItem>
-                </React.Fragment>
-              )}
+              <React.Fragment>
+                <MenuItem eventKey="1">
+                  <NavLink
+                    className="submenu-link"
+                    to="/user/change_information"
+                  >
+                    {t('Change information')}
+                  </NavLink>
+                </MenuItem>
+                <MenuItem eventKey="2">
+                  <NavLink className="submenu-link" to="/user/my_orders">
+                    {t('My orders')}
+                  </NavLink>
+                </MenuItem>
+                <MenuItem eventKey="3">
+                  <div
+                    onClick={e => this.handleSignOut()}
+                    className="submenu-link"
+                  >
+                    {t('Log out')}
+                  </div>
+                </MenuItem>
+              </React.Fragment>
             </Dropdown.Menu>
           </Dropdown>
         )}

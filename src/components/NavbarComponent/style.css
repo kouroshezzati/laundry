@@ -1,3 +1,8 @@
+.submenu-link {
+  color: #222222;
+  font-size: 1em;
+  cursor: pointer;
+}
 .main-logo {
   height: 150px;
   transition: height 0.2s ease-out;
