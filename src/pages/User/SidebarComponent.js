@@ -66,6 +66,22 @@ export class SidebarComponent extends Component {
                     {t('Change information')}
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link js-scroll-trigger"
+                    to={`${match.url}/my_orders`}
+                  >
+                    {t('My orders')}
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link js-scroll-trigger"
+                    to="/"
+                  >
+                    {t('Home')}
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </div>
