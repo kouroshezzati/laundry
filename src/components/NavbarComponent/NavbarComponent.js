@@ -6,12 +6,18 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
-import NavbarLoggedIn from './NavbarLoggedIn';
 import logo from '../../assets/images/logo_65.png';
 import './style.css';
-import InnerSections from './InnerSections';
 import ste from 'scroll-to-element';
 import Language from '../Languages/LanguageComponent';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-scroll';
+import Dropdown, { MenuItem } from '@trendmicro/react-dropdown';
+import '@trendmicro/react-buttons/dist/react-buttons.css';
+import '@trendmicro/react-dropdown/dist/react-dropdown.css';
+
+library.add(faUser);
 
 const styles = theme => ({
   root: {
@@ -23,12 +29,17 @@ const styles = theme => ({
 });
 
 export const LogoComponent = props => {
-  const { location, onScrollToTopHandler } = props;
+  const { location, onScrollToTopHandler, mobile } = props;
+  const logoClassName = mobile ? 'tiny-logo' : 'main-logo';
   return (
     <React.Fragment>
       {location.pathname !== '/' && (
-        <NavLink className="nav-link navbar-brand js-scroll-trigger" to="/">
-          <img className="main-logo" alt="bubbles online lundry" src={logo} />
+        <NavLink to="/">
+          <img
+            className={logoClassName}
+            alt="bubbles online lundry"
+            src={logo}
+          />
         </NavLink>
       )}
       {location.pathname === '/' && (
@@ -37,7 +48,11 @@ export const LogoComponent = props => {
           className="navbar-brand js-scroll-trigger"
           href="#page-top"
         >
-          <img className="main-logo" alt="bubbles online lundry" src={logo} />
+          <img
+            className={logoClassName}
+            alt="bubbles online lundry"
+            src={logo}
+          />
         </a>
       )}
     </React.Fragment>
@@ -104,8 +119,8 @@ class NavBarComponent extends Component {
     if (this.props.location.pathname !== '/') {
       return;
     }
-    const servicesOffset = document.getElementById('services').offsetTop;
-    if (servicesOffset <= window.pageYOffset) {
+    // const servicesOffset = document.getElementById('services').offsetTop;
+    if (300 <= window.pageYOffset) {
       this.setState({ navbarColor: true });
     } else {
       this.setState({ navbarColor: false });
@@ -114,9 +129,6 @@ class NavBarComponent extends Component {
   render() {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
-    if (jwt) {
-      return <NavbarLoggedIn />;
-    }
     return (
       <nav
         className={classnames(
@@ -128,6 +140,7 @@ class NavBarComponent extends Component {
         )}
         id="mainNav"
       >
+        <Language />
         <div className="container">
           <button
             onClick={this.toggleShow.bind(this)}
@@ -139,26 +152,114 @@ class NavBarComponent extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i className="fa fa-bars" />
+            {t('Menu')}
           </button>
+          <div classnames="logo-mobile-wrapper">
+            <LogoComponent
+              mobile
+              onScrollToTopHandler={this.scrollToTop}
+              location={location}
+            />
+          </div>
+          <div className="language-mobile-wrapper">
+            <Language />
+          </div>
           <div
             className={`collapse navbar-collapse ${show}`}
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              <InnerSections {...this.props} />
-              <LogoComponent
-                onScrollToTopHandler={this.scrollToTop}
-                location={location}
-              />
               <li className="nav-item">
                 <NavLink
                   className="nav-link js-scroll-trigger"
                   to="/contact/"
                 >
-                  {t('Contact')}
+                  {t('contact')}
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <Dropdown autoOpen>
+                  <Dropdown.Toggle
+                    btnStyle="link"
+                    title={t('read more')}
+                    className="button-submenu"
+                  />
+                  <Dropdown.Menu>
+                    {location.pathname !== '/' && (
+                      <React.Fragment>
+                        <MenuItem eventKey="1">
+                          <NavLink
+                            className="nav-link js-scroll-trigger"
+                            to="/#services"
+                          >
+                            {t('Services')}
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem eventKey="2">
+                          <NavLink
+                            className="nav-link js-scroll-trigger"
+                            to="/#about-us"
+                          >
+                            {t('About us')}
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem eventKey="3">
+                          <NavLink
+                            className="nav-link js-scroll-trigger"
+                            to="/#extra-info"
+                          >
+                            {t('Information')}
+                          </NavLink>
+                        </MenuItem>
+                      </React.Fragment>
+                    )}
+                    {location.pathname === '/' && (
+                      <React.Fragment>
+                        <MenuItem>
+                          <Link
+                            activeClass="active"
+                            className="nav-link js-scroll-trigger"
+                            to="services"
+                            spy={true}
+                            smooth="easeInOutQuart"
+                            duration={1000}
+                          >
+                            {t('Services')}
+                          </Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link
+                            activeClass="active"
+                            className="nav-link js-scroll-trigger"
+                            to="about-us"
+                            spy={true}
+                            smooth="easeInOutQuart"
+                            duration={1000}
+                          >
+                            {t('About us')}
+                          </Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link
+                            activeClass="active"
+                            className="nav-link js-scroll-trigger"
+                            to="extra-info"
+                            spy={true}
+                            smooth="easeInOutQuart"
+                            duration={1000}
+                          >
+                            {t('Information')}
+                          </Link>
+                        </MenuItem>
+                      </React.Fragment>
+                    )}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+              <LogoComponent
+                onScrollToTopHandler={this.scrollToTop}
+                location={location}
+              />
               <li className="nav-item">
                 <NavLink
                   className="nav-link js-scroll-trigger"
@@ -170,23 +271,102 @@ class NavBarComponent extends Component {
               <li className="nav-item">
                 <NavLink
                   className="nav-link js-scroll-trigger"
-                  to="/register/"
+                  to="/order/"
                 >
-                  {t('register')}
+                  {t('order now')}
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/login/"
-                >
-                  {t('login')}
-                </NavLink>
-              </li>
+              {!jwt && (
+                <React.Fragment>
+                  <li className="just-mobile">
+                    <NavLink
+                      className="nav-link"
+                      to="/login/"
+                    >
+                      {t('login')}
+                    </NavLink>
+                  </li>
+                  <li className="just-mobile">
+                    <NavLink className="nav-link" to="/register/">
+                      {t('register')}
+                    </NavLink>
+                  </li>
+                </React.Fragment>
+              )}
+              {jwt && (
+                <React.Fragment>
+                  <li className="just-mobile">
+                    <NavLink
+                      className="nav-link"
+                      to="/user/change_information"
+                    >
+                      {t('Change information')}
+                    </NavLink>
+                  </li>
+                  <li className="just-mobile">
+                    <NavLink className="nav-link" to="/user/my_orders">
+                      {t('My orders')}
+                    </NavLink>
+                  </li>
+                  <li className="just-mobile">
+                    <div
+                      onClick={e => this.handleSignOut()}
+                      className="link-style"
+                    >
+                      {t('Log out')}
+                    </div>
+                  </li>
+                </React.Fragment>
+              )}
             </ul>
           </div>
         </div>
-        <Language />
+        {!jwt && (
+          <div className="auth-link">
+            <div>
+              <NavLink to="/login/">{t('login')}</NavLink>
+            </div>
+            <div>
+              <NavLink to="/register/">{t('register')}</NavLink>
+            </div>
+          </div>
+        )}
+        {jwt && (
+          <Dropdown className="user-menu-dropdown">
+            <Dropdown.Toggle
+              btnStyle="link"
+              className="button-submenu user-button-icon"
+              noCaret
+            >
+              <i className="fa fa-home fa-3x" />
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="user-submenu">
+              <React.Fragment>
+                <MenuItem eventKey="1">
+                  <NavLink
+                    className="submenu-link"
+                    to="/user/change_information"
+                  >
+                    {t('Change information')}
+                  </NavLink>
+                </MenuItem>
+                <MenuItem eventKey="2">
+                  <NavLink className="submenu-link" to="/user/my_orders">
+                    {t('My orders')}
+                  </NavLink>
+                </MenuItem>
+                <MenuItem eventKey="3">
+                  <div
+                    onClick={e => this.handleSignOut()}
+                    className="submenu-link"
+                  >
+                    {t('Log out')}
+                  </div>
+                </MenuItem>
+              </React.Fragment>
+            </Dropdown.Menu>
+          </Dropdown>
+        )}
       </nav>
     );
   }

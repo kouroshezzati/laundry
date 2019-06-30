@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,7 +13,7 @@ import {
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
 import { translate } from 'react-i18next';
-import {ContactInfo} from '../ContactUsComponent/ContactUsComponent';
+import { ContactInfo } from '../ContactUsComponent/ContactUsComponent';
 
 let FooterComponent = props => {
   // const { t } = props;
@@ -30,7 +31,7 @@ let FooterComponent = props => {
             <FontAwesomeIcon icon={faCcVisa} className="m-1" size="2x" />
             <FontAwesomeIcon icon={faCcAmazonPay} className="m-1" size="2x" />
           </div>
-          <div className="col-md-4"> 
+          <div className="col-md-4">
             <ContactInfo {...props} />
           </div>
           <div className="col-md-4 icons-footer social-icons">
@@ -44,7 +45,24 @@ let FooterComponent = props => {
             <FontAwesomeIcon icon={faWhatsapp} className="m-1" size="2x" />
           </div>
         </div>
+        <div className="links container">
+          <div
+            className="row"
+            style={{
+              margin: '10px 0',
+              paddingTop: '5px',
+              borderTop: '1px solid white'
+            }}
+          >
+            <div className="col-sm-4">
+              <NavLink className="footer-link" to="/contact/">contact</NavLink>
+            </div>
+            <div className="col-sm-4">terms and condition</div>
+            <div className="col-sm-4">privacy policy</div>
+          </div>
+        </div>
       </div>
+
       <div className="container copy-right">
         <p>&copy; 2019.</p>
       </div>

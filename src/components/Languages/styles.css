@@ -1,5 +1,6 @@
 .switch-language-wrapper {
   color: white;
+  position: absolute;
   cursor: pointer;
 }
 .switch-language-wrapper img{

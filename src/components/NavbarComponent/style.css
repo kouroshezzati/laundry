@@ -1,6 +1,38 @@
+nav .auth-link a{
+  color: #ffffff;
+}
+nav .auth-link {
+  position: absolute;
+  right: 20px;
+}
+.link-style {
+  font-weight: 800;
+  font-size: 1em;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222222 !important;
+  cursor: pointer;
+}
+
+.just-mobile {
+  display: none;
+}
+.submenu-link {
+  color: #222222;
+  font-size: 1em;
+  cursor: pointer;
+}
 .main-logo {
   height: 150px;
   transition: height 0.2s ease-out;
+}
+.user-menu-button {
+  font-size: 0.45em !important;
+}
+.user-menu-wrapper {
+  right: 65px;
+  position: absolute;
 }
 #mainNav {
   user-select: none;
@@ -16,7 +48,7 @@
   padding: 0;
 }
 #mainNav.colored .navbar-nav > li {
-  padding: 0;
+  padding: 15px 3px;
 }
 .navbar-icon {
   font-size: 3.2em;
@@ -51,8 +83,37 @@ a.nav-link {
   padding: 8px 10px;
   color: #222222;
 }
+ul.navbar-nav {
+  margin: 0 auto;
+}
+.nav-item button.button-submenu:hover span {
+  border-top: 4px dashed #ffffff !important;
+}
+.nav-item button.button-submenu span {
+  border-top: 4px dashed #ffffff;
+}
+.nav-item button.button-submenu:hover {
+  color: #ffffff;
+}
+.nav-item button.button-submenu {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.17em !important;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-top: 3px;
+}
+
+button.button-submenu i.fa {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.67em !important;
+}
+.user-submenu {
+  left: auto !important;
+  right: 0;
+}
 #mainNav .navbar-nav > li {
-  padding-top: 41px;
+  padding-top: 59px;
 }
 #mainNav .navbar-nav > li > a {
   font-size: 1em;
@@ -132,13 +193,48 @@ a.nav-link {
   font-size: 1.01em;
   color: rgba(255, 255, 255, 0.7);
 }
+.tiny-logo {
+  display: none;
+}
+.language-mobile-wrapper .switch-language-wrapper {
+  display: none;
+}
 @media (max-width: 991px) {
+  .just-mobile {
+    display: block;
+  }
+  .tiny-logo {
+    display: block;
+    height: 60px;
+  }
+  #mainNav .navbar-nav > li {
+    padding-top: 10px;
+  }
+  .user-menu-dropdown {
+    display: none !important;
+  }
+  .language-mobile-wrapper .switch-language-wrapper {
+    display: block;
+    position: relative;
+    top: 0;
+  }
+  .switch-language-wrapper {
+    display: none;
+  }
+  button.button-submenu i.fa {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .nav-item button.button-submenu {
+    color: #222222 !important;
+  }
+  .nav-item button.button-submenu span {
+    display: none;
+  }
   .menuButton .nav-item a.nav-link {
     color: #222222;
   }
   .main-logo {
-    height: 70px;
-    padding-left: 35px;
+    display: none;
   }
   .switch-language-wrapper {
     position: absolute;
