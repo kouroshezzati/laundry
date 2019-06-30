@@ -5,6 +5,10 @@ nav .auth-link {
   position: absolute;
   right: 20px;
 }
+.user-menu-dropdown{
+  position: absolute;
+  right: 20px;
+}
 .link-style {
   font-weight: 800;
   font-size: 1em;
