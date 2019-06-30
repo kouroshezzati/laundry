@@ -1,3 +1,10 @@
+nav .auth-link a{
+  color: #ffffff;
+}
+nav .auth-link {
+  position: absolute;
+  right: 20px;
+}
 .link-style {
   font-weight: 800;
   font-size: 1em;

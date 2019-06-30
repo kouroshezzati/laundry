@@ -70,7 +70,7 @@ export class SidebarComponent extends Component {
             </div>
           </div>
         </nav>
-        <ul className="vh-100 navbar-nav sidebar d-none d-md-block">
+        <ul className="main-section navbar-nav sidebar d-none d-md-block">
           <NavLink
             exact
             className=""

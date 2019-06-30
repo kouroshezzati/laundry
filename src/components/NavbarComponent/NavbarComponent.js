@@ -128,7 +128,7 @@ class NavBarComponent extends Component {
   };
   render() {
     const show = this.state.mnuShow ? 'show' : '';
-    const { t, location , jwt} = this.props;
+    const { t, location, jwt } = this.props;
     return (
       <nav
         className={classnames(
@@ -276,36 +276,61 @@ class NavBarComponent extends Component {
                   {t('order now')}
                 </NavLink>
               </li>
-              {jwt && (
-                <li className="just-mobile">
-                  <NavLink
-                    className="nav-link"
-                    to="/user/change_information"
-                  >
-                    {t('Change information')}
-                  </NavLink>
-                </li>
+              {!jwt && (
+                <React.Fragment>
+                  <li className="just-mobile">
+                    <NavLink
+                      className="nav-link"
+                      to="/login/"
+                    >
+                      {t('login')}
+                    </NavLink>
+                  </li>
+                  <li className="just-mobile">
+                    <NavLink className="nav-link" to="/register/">
+                      {t('register')}
+                    </NavLink>
+                  </li>
+                </React.Fragment>
               )}
               {jwt && (
-                <li className="just-mobile">
-                  <NavLink className="nav-link" to="/user/my_orders">
-                    {t('My orders')}
-                  </NavLink>
-                </li>
-              )}
-              {jwt && (
-                <li className="just-mobile">
-                  <div
-                    onClick={e => this.handleSignOut()}
-                    className="link-style"
-                  >
-                    {t('Log out')}
-                  </div>
-                </li>
+                <React.Fragment>
+                  <li className="just-mobile">
+                    <NavLink
+                      className="nav-link"
+                      to="/user/change_information"
+                    >
+                      {t('Change information')}
+                    </NavLink>
+                  </li>
+                  <li className="just-mobile">
+                    <NavLink className="nav-link" to="/user/my_orders">
+                      {t('My orders')}
+                    </NavLink>
+                  </li>
+                  <li className="just-mobile">
+                    <div
+                      onClick={e => this.handleSignOut()}
+                      className="link-style"
+                    >
+                      {t('Log out')}
+                    </div>
+                  </li>
+                </React.Fragment>
               )}
             </ul>
           </div>
         </div>
+        {!jwt && (
+          <div className="auth-link">
+            <div>
+              <NavLink to="/login/">{t('login')}</NavLink>
+            </div>
+            <div>
+              <NavLink to="/register/">{t('register')}</NavLink>
+            </div>
+          </div>
+        )}
         {jwt && (
           <Dropdown className="user-menu-dropdown">
             <Dropdown.Toggle
