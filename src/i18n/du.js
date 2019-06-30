@@ -104,7 +104,6 @@ export default {
   'sofa cover(three seater)': 'Bank hoes drie zit',
   'curtain per sqm from': 'Gordijnen per m2 vanaf',
   'shirts/polo': 'overhemd/polo',
-  'skirt long': 'rok lang',
   'skirt short silk': 'Rok kort zijde',
   'skirt long silk': 'Rok lang zijde',
   'dress short': 'jurk kort',
@@ -128,9 +127,6 @@ export default {
   Phone: 'Phone',
   'Zip/Postcode': 'Zip/Postcode',
   Apartmant: 'Apartment',
-  City: 'City',
-  'First name': 'First name',
-  'Last name': 'Last name',
   Country: 'Country',
   'dry & clean': 'Stomerij',
   'outer wear': 'Buitenkleding',
@@ -158,7 +154,6 @@ export default {
   Een van de manieren waarop u de narigheid van bedwants kunt vermijden is: door u dek
   bedden en bankcovers tijdig te laten wassen. U zult het optimale resultaat terug zien.
   Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen`,
-  hat:'hat',
   'shirt / polo':'Overhemd / Polo',
   'jacket / blazer':'jas / blazer',
   'suit (2 pieces)':'pakken (2 sets)',

@@ -141,7 +141,9 @@ export default {
   'suit  (3 pieces)': 'suit  (3 pieces)',
   'BUSINESS ORDER': 'BUSINESS ORDER',
   'SPECIAL OFFER': 'SPECIAL OFFER',
-  'SPECIAL ORDER': 'SPECIAL ORDER'
-
+  'SPECIAL ORDER': 'SPECIAL ORDER',
+  Information: 'Information',
+  Menu: 'Menu',
+  'Order now': 'Order now'
 
 };
