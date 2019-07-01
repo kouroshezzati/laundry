@@ -143,7 +143,5 @@ export default {
   'SPECIAL OFFER': 'SPECIAL OFFER',
   'SPECIAL ORDER': 'SPECIAL ORDER',
   Information: 'Information',
-  Menu: 'Menu',
-  'Order now': 'Order now'
-
+  Menu: 'Menu'
 };
