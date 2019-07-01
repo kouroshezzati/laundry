@@ -35,11 +35,11 @@ let ProductOrderComponent = props => {
   return (
     <Paper className={classes.paper}>
       <Table className={classes.table}>
-        <TableHead>
+        <TableHead >
           <TableRow>
-            <TableCell>{t('Name')}</TableCell>
-            <TableCell>{t('Number')}</TableCell>
-            <TableCell>{t('Price')}</TableCell>
+            <TableCell className="label-key">{t('Name')}</TableCell>
+            <TableCell className="label-key">{t('Number')}</TableCell>
+            <TableCell className="label-key">{t('Price')}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
