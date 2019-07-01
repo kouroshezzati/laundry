@@ -14,7 +14,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { formattedDate } from '../../utils/components';
-import { Button } from '@material-ui/core';
+import { Link } from '@material-ui/core';
 const styles = theme => ({
   root: {
     width: '100%'
@@ -45,18 +45,13 @@ let ProductOrderComponent = props => {
         <TableBody>
           {order.products.map(product => (
             <TableRow key={product.id}>
-              <TableCell>{product.name}</TableCell>
+              <TableCell className="label-key">{product.name}</TableCell>
               <TableCell>{product.number}</TableCell>
               <TableCell>{product.price}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      {!order.payed && (
-        <Button fullWidth variant="contained" color="primary">
-          {t('Payment')}
-        </Button>
-      )}
     </Paper>
   );
 };
@@ -67,7 +62,17 @@ ProductOrderComponent = withStyles(styles)(
 class OrderItem extends Component {
   render() {
     const { t, order, classes } = this.props;
-    const id = Math.random();
+    const tagId = Math.random();
+    const date = formattedDate(order.date);
+    const payed = order.payed ? (
+      t('payed')
+    ) : (
+      <a href="javascript:;" onClick={e => e.stopPropagation()} to="payment">
+        {t('payment')}
+      </a>
+    );
+    const amount = order.amount || '-';
+    const transaction = order.transaction || '-';
     return (
       <ExpansionPanel
         style={{
@@ -76,24 +81,46 @@ class OrderItem extends Component {
       >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls={`panel${id}a-content`}
-          id={`panel${id}a-content`}
+          aria-controls={`panel${tagId}a-content`}
+          id={`panel${tagId}a-content`}
         >
           <Typography component={'span'} className={classes.root}>
             <div className="container">
               <div className="row">
-                <div className="col-md-2">{t('Order id')}</div>
-                <div className="col-md-3">{t('Date')}</div>
-                <div className="col-md-2">{t('Transaction')}</div>
-                <div className="col-md-2">{t('Payed')}</div>
-                <div className="col-md-3">{t('Amount')}</div>
-                <div className="col-md-2">{order.id}</div>
-                <div className="col-md-3">{formattedDate(order.date)}</div>
-                <div className="col-md-2">{order.transaction || '-'}</div>
-                <div className="col-md-2">
-                  {order.payed ? t('payed') : t("hasn't payed")}
+                <div className="d-none d-sm-block col-sm-3 label-key">
+                  {t('Date')}
                 </div>
-                <div className="col-md-3">{order.amount || '-'}</div>
+                <div className="d-none d-sm-block col-sm-3 label-key">
+                  {t('Transaction')}
+                </div>
+                <div className="d-none d-sm-block col-sm-3 label-key">
+                  {t('Payed')}
+                </div>
+                <div className="d-none d-sm-block col-sm-3 label-key">
+                  {t('Amount')}
+                </div>
+                <div className="d-none d-sm-block col-sm-3">{date}</div>
+                <div className="d-none d-sm-block col-sm-3">{transaction}</div>
+                <div className="d-none d-sm-block col-sm-3">{payed}</div>
+                <div className="d-none d-sm-block col-sm-3">{amount}</div>
+
+                {/* mobile version */}
+                <div className="d-block d-sm-none col-6 label-key">
+                  {t('Date')}
+                </div>
+                <div className="d-block d-sm-none col-6">{date}</div>
+                <div className="d-block d-sm-none col-6 label-key">
+                  {t('Transaction')}
+                </div>
+                <div className="d-block d-sm-none col-6">{transaction}</div>
+                <div className="d-block d-sm-none col-6 label-key">
+                  {t('Payed')}
+                </div>
+                <div className="d-block d-sm-none col-6">{payed}</div>
+                <div className="d-block d-sm-none col-6 label-key">
+                  {t('Amount')}
+                </div>
+                <div className="d-block d-sm-none col-6">{amount}</div>
               </div>
             </div>
           </Typography>

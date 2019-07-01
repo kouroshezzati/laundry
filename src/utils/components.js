@@ -21,9 +21,9 @@ export const formattedDate = date => {
   let current_datetime = new Date(date);
   let formatted_date =
     current_datetime.getFullYear() +
-    '-' +
+    '/' +
     (current_datetime.getMonth() + 1) +
-    '-' +
+    '/' +
     current_datetime.getDate() +
     ' ' +
     current_datetime.getHours() +

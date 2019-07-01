@@ -57,7 +57,7 @@ const Pager = props => {
   const { name, component: Component } = props;
   return (
     <div className="m-3">
-      <h3 className="mb-3">{name}</h3>
+      <h3 className="mb-3 mt-5 pt-2">{name}</h3>
       <Component />
     </div>
   );
