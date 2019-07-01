@@ -1,23 +1,19 @@
 #info {
-    background-color: #00ff62b7;
-    color: white
+  background-color: #00ff62b7;
+  color: white;
 }
 
 section#info {
-    padding: 50px 0;
-}
-
-.bug1 {
-    height: 300px;
-    width: 500px;
+  padding: 50px 0;
 }
 
 .bug3 {
-    height: 300px;
-    width: 500px;
+  height: 300px;
+  width: 100%;
+  padding: 5px;
 }
-
-.bug2 {
-    height: 300px;
-    width: 500px;
+.bug1 {
+  height: 300px;
+  width: 100%;
+  padding: 5px;
 }
