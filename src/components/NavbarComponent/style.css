@@ -208,9 +208,7 @@ button.button-submenu i.fa {
 .language-mobile-wrapper .switch-language-wrapper {
   display: none;
 }
-.language-mobile-wrapper .switch-language-wrapper img{
-  
-}
+
 @media (max-width: 991px) {
   .just-mobile {
     display: block;
