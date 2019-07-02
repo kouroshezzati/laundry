@@ -11,7 +11,7 @@ export class UserComponent extends Component {
   render() {
     const { match, t } = this.props;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" id="user-admin-panel">
         <div className="row">
           <div className="col-md-2 sidebar-wrapper">
             <SidebarComponent match={match} />

@@ -271,7 +271,7 @@ class NavBarComponent extends Component {
               <li className="nav-item">
                 <NavLink
                   className="nav-link js-scroll-trigger"
-                  to="/order/"
+                  to="/date/"
                 >
                   {t('order now')}
                 </NavLink>

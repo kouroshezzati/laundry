@@ -3,6 +3,10 @@
   padding: 27px 10px;
   max-width: 79%;
 }
+
+#user-admin-panel .sidebar-wrapper ul.main-section{
+  height: 100%;
+}
 .sidebar {
   background-color: rgba(29, 29, 29, 0.897);
   min-width: 19%;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style.css';
-import classnames from 'classnames';
 import ProductList from '../../components/Products/ProductListContainer';
 import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';

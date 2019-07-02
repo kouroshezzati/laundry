@@ -14,10 +14,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { formattedDate } from '../../utils/components';
-import { Link } from '@material-ui/core';
 const styles = theme => ({
   root: {
-    width: '100%'
+    width: '100%',
+    '& .container .row div':{
+      padding: '0 8px !important'
+    }
   },
   paper: {
     marginTop: theme.spacing.unit * 3,
