@@ -322,7 +322,7 @@ class NavBarComponent extends Component {
           </div>
         </div>
         {!jwt && (
-          <div className="auth-link">
+          <div className="auth-link just-desktop">
             <div>
               <NavLink to="/login/">{t('login')}</NavLink>
             </div>
