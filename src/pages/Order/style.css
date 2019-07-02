@@ -21,11 +21,18 @@
   height: 30%;
   width: 30%;
   margin: 0 auto;
-  
-
 }
 .date-label-wrapper {
   padding-top: 15px;
   text-align: center;
   font-weight: 700;
+}
+.float-section{
+  position: fixed;
+  bottom: 0;
+}
+
+#order .sticky .button-controllers-navigator{
+  background: rgba(137, 126, 121, 0.73);
+  border-radius: 5px;
 }
