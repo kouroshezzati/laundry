@@ -21,7 +21,10 @@ export default () => (
       </p>
       <p>
         <b>1.2. Website:</b> de website van Bubbles online, te raadplegen via
-        Bubbles online. nl en alle bijbehorende subdomeinen. <b>1.3. Klant:</b>
+        Bubbles online. nl en alle bijbehorende subdomeinen.
+      </p>
+      <p>
+        <b>1.3. Klant:</b>
         de natuurlijke persoon die niet handelend in uitoefening van beroep of
         bedrijf een Overeenkomst aangaat met Bubbles online en/of zich
         geregistreerd heeft op de Website.
