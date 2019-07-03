@@ -55,10 +55,16 @@ let FooterComponent = props => {
             }}
           >
             <div className="col-sm-4">
-              <NavLink className="footer-link" to="/contact/">contact</NavLink>
+              <NavLink className="footer-link" to="/contact/">
+                contact
+              </NavLink>
             </div>
             <div className="col-sm-4">terms and condition</div>
-            <div className="col-sm-4">privacy policy</div>
+            <div className="col-sm-4">
+              <NavLink className="footer-link" to="/privacy-policy/">
+                privacy policy
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

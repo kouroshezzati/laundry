@@ -45,7 +45,8 @@ export default {
     We can also offer your business different kinds of linen and table cloths for
     rent.
     Offer: for large quantities of wash load we offer 20% discount.`,
-  'business.description.tip': 'Offer: for large quantities of wash load we offer 20% discount.',
+  'business.description.tip':
+    'Offer: for large quantities of wash load we offer 20% discount.',
   'Special order': `Special order`,
   'address.description': `Address:Platina weg 25 2544 EZ S-Gravenhage`,
   'User name': 'Username',
@@ -82,16 +83,16 @@ export default {
   'Change information': 'Change information',
   'My orders': 'My orders',
   'Log out': 'Log out',
-  'Logout': 'Logout',
+  Logout: 'Logout',
   'Company name': 'Company name',
-  'Phone': 'Phone',
+  Phone: 'Phone',
   'Zip/Postcode': 'Zip/Postcode',
-  'Apartmant': 'Apartment',
-  'City': 'City',
+  Apartmant: 'Apartment',
+  City: 'City',
   'First name': 'First name',
   'Last name': 'Last name',
-  'Country': 'Country',
-  'Apartment': 'Apartment',
+  Country: 'Country',
+  Apartment: 'Apartment',
   'dry & clean': 'dry & clean',
   'outer wear': 'outer wear',
   'laundry wash & fold': 'laundry wash & fold',
@@ -120,11 +121,15 @@ export default {
   'quilt one person': 'quilt one person',
   'quilt two person': 'quilt two person',
   'comforter / feather / down (twin)': 'comforter / feather / down (twin)',
-  'comforter feather / down (two person)': 'comforter feather / down (two person)',
-  'comforter feather / down (one person)': 'comforter feather / down (one person)',
+  'comforter feather / down (two person)':
+    'comforter feather / down (two person)',
+  'comforter feather / down (one person)':
+    'comforter feather / down (one person)',
   'comforter wool / syntetic (twin)': 'comforter wool / syntetic (twin)',
-  'comforter wool / syntetic (two person)': 'comforter wool / syntetic (two person)',
-  'comforter wool / syntetic (one person)': 'comforter wool / syntetic (one person)',
+  'comforter wool / syntetic (two person)':
+    'comforter wool / syntetic (two person)',
+  'comforter wool / syntetic (one person)':
+    'comforter wool / syntetic (one person)',
   'over mattress twin': 'over mattress twin',
   'over mattress (two person)': 'over mattress (two person)',
   'over mattress (one person)': 'over mattress (one person)',
@@ -143,5 +148,6 @@ export default {
   'SPECIAL OFFER': 'SPECIAL OFFER',
   'SPECIAL ORDER': 'SPECIAL ORDER',
   Information: 'Information',
-  Menu: 'Menu'
+  Menu: 'Menu',
+  'privacy-policy.message': 'english'
 };

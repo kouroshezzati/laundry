@@ -188,6 +188,6 @@ export default {
 'suit  (3 pieces)':'Pakken (3 sets)',
 'BUSINESS ORDER':'bedrijf bestellen',
 'SPECIAL OFFER':'AANBIEDINGEN',
-'SPECIAL ORDER':'BESTELLEN'
-
+'SPECIAL ORDER':'BESTELLEN',
+  'privacy-policy.message': 'duch'
 };
