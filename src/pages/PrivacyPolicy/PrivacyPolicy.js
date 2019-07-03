@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Page from './index';
+import Page from '../index';
 import { translate } from 'react-i18next';
 import PrivacyPolicyTextDu from './PrivacyPolicyTextDu';
 

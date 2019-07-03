@@ -5,6 +5,8 @@ import { Add, Remove } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import { ADD_PRODUCT, REMOVE_PRODUCT } from './ProductActions';
 import { setProductNumber } from './ProductActions';
+import { translate } from 'react-i18next';
+
 import './style.css';
 
 const styles = theme => ({
@@ -21,6 +23,7 @@ class Product extends Component {
   };
   render() {
     const {
+      t,
       parent,
       name,
       classes,
@@ -29,14 +32,14 @@ class Product extends Component {
       intactProducts
     } = this.props;
     if (parent) {
-      return <li className="list-group-item parent">{name.toUpperCase()}</li>;
+      return <li className="list-group-item parent">{t(name).toUpperCase()}</li>;
     } else {
       const productNumbers = selectedProducts[id] || 0;
       const productPrice =
         intactProducts.find(product => product.id === id).price || 0;
       return (
         <li className="list-group-item">
-          <span className="float-left">{name}</span>
+          <span className="float-left">{t(name.toLowerCase())}</span>
           <span className="float-right product-controllers">
             <Button
               size="small"
@@ -67,9 +70,11 @@ class Product extends Component {
   }
 }
 
-export default withStyles(styles)(
-  connect(
-    state => ({ ...state.products }),
-    { setProductNumber }
-  )(Product)
+export default translate('translations')(
+  withStyles(styles)(
+    connect(
+      state => ({ ...state.products }),
+      { setProductNumber }
+    )(Product)
+  )
 );

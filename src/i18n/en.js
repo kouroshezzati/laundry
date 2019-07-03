@@ -149,5 +149,6 @@ export default {
   'SPECIAL ORDER': 'SPECIAL ORDER',
   Information: 'Information',
   Menu: 'Menu',
-  'privacy-policy.message': 'english'
+  'privacy-policy.message': 'english',
+  'termsandconditions.message': 'english'
 };
