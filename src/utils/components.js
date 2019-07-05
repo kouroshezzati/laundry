@@ -38,8 +38,11 @@ export const SUB = 'SUB';
 export const MUL = 'MUL';
 
 export const multipleCurrency = (number, time) => {
+  if (typeof number !== 'string') {
+    number = String(number);
+  }
   const numbers = number.split('.');
-  if(numbers.length === 1){
+  if (numbers.length === 1) {
     numbers.push('00');
   }
   if (numbers[1].length === 2) {
@@ -49,6 +52,13 @@ export const multipleCurrency = (number, time) => {
 };
 
 export const calc = (operator, a, b) => {
+  if (!a || a === 0 || a === '0') {
+    a = '0.00';
+  }
+  if (!b || b === 0 || b === '0') {
+    b = '0.00';
+  }
+
   const aNumbers = a.split('.');
   const bNumbers = b.split('.');
   let left, right;
@@ -57,7 +67,7 @@ export const calc = (operator, a, b) => {
     right = +aNumbers[1] + +bNumbers[1];
     if (right >= 100) {
       left++;
-      right = String(right / 100).split('.')[1];
+      right = String(right / 100).split('.')[1] || 0;
       right = String(right);
       right = right.length === 1 ? right + '0' : right;
     }
