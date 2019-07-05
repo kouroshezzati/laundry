@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import { translate } from 'react-i18next';
 import ProductList from '../../components/Products/ProductListContainer';
 import Register from '../../components/User/RegisterComponent/RegisterContainer';
@@ -81,23 +82,25 @@ export class InvoiceComponent extends Component {
               <UserInfoForm {...this.props} onSaveHandler={this.saveHandler} />
             )}
             <div className="mt-3 row ">
-              <div className="col-md-6 mb-2">
+              <div className={classnames('mb-2', jwt ? 'col-md-6' : 'col-12')}>
                 <NavLink className="nav-button" to="/order">
                   <Button fullWidth color="secondary" variant="contained">
                     {t('Back to Order')}
                   </Button>
                 </NavLink>
               </div>
-              <div className="col-md-6 mb-2">
-                <Button
-                  fullWidth
-                  onClick={e => this.paymentHandler()}
-                  color="primary"
-                  variant="contained"
-                >
-                  {t('Payment')}
-                </Button>
-              </div>
+              {jwt && (
+                <div className="col-md-6 mb-2">
+                  <Button
+                    fullWidth
+                    onClick={e => this.paymentHandler()}
+                    color="primary"
+                    variant="contained"
+                  >
+                    {t('Payment')}
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>
