@@ -67,9 +67,9 @@ const reducer = (
       }
       let selectedProducts = { ...state.selectedProducts };
       if (ADD_PRODUCT === action.type) {
-        selectedProducts[action.id] = selectedProducts[action.id] + 1;
+        selectedProducts[action.id] += 1;
       } else if (selectedProducts[action.id] > 0) {
-        selectedProducts[action.id] = selectedProducts[action.id] - 1;
+        selectedProducts[action.id] -= 1;
       }
       return { ...state, selectedProducts };
     default:

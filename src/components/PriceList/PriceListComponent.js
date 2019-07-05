@@ -12,7 +12,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import {translate} from 'react-i18next';
+import { translate } from 'react-i18next';
 
 const styles = theme => ({
   root: {
@@ -59,9 +59,11 @@ class PriceListComponent extends Component {
                 <List className={classes.fullWidthMenu}>
                   {categorizedProducts.map(_product => (
                     <ListItem button key={_product.id}>
-                      <ListItemText>{t(String(_product.name).toUpperCase())}</ListItemText>
+                      <ListItemText>
+                        {t(String(_product.name).toUpperCase())}
+                      </ListItemText>
                       <ListItemSecondaryAction>
-                        {_product.price}
+                        &euro; {_product.price}
                       </ListItemSecondaryAction>
                     </ListItem>
                   ))}
@@ -80,4 +82,6 @@ PriceListComponent.propTypes = {
   fetchProducts: PropTypes.func.isRequired
 };
 
-export default translate('translations')(withStyles(styles)(PriceListComponent));
+export default translate('translations')(
+  withStyles(styles)(PriceListComponent)
+);

@@ -8,6 +8,7 @@ import { setProductNumber } from './ProductActions';
 import { translate } from 'react-i18next';
 
 import './style.css';
+import { multipleCurrency } from '../../utils/components';
 
 const styles = theme => ({
   extendedIcon: {
@@ -18,9 +19,14 @@ const styles = theme => ({
 });
 
 class Product extends Component {
-  setNumber = (id, type) => {
-    this.props.setProductNumber(id, type);
+  constructor(props) {
+    super(props);
+    this.state = { sum: 0 };
+  }
+  setNumber = (product, type) => {
+    this.props.setProductNumber(product.id, type);
   };
+
   render() {
     const {
       t,
@@ -31,21 +37,24 @@ class Product extends Component {
       selectedProducts,
       intactProducts
     } = this.props;
+
     if (parent) {
-      return <li className="list-group-item parent">{t(name).toUpperCase()}</li>;
+      return (
+        <li className="list-group-item parent">{t(name).toUpperCase()}</li>
+      );
     } else {
       const productNumbers = selectedProducts[id] || 0;
-      const productPrice =
-        intactProducts.find(product => product.id === id).price || 0;
+      const _product = intactProducts.find(product => product.id === id);
       return (
         <li className="list-group-item">
           <span className="float-left">{t(name.toLowerCase())}</span>
           <span className="float-right product-controllers">
+            <span className="mr-2">&euro; {_product.price}</span>
             <Button
               size="small"
               color="secondary"
               variant="contained"
-              onClick={e => this.setNumber(id, REMOVE_PRODUCT)}
+              onClick={e => this.setNumber(_product, REMOVE_PRODUCT)}
               className={classes.extendedIcon}
             >
               <Remove />
@@ -56,12 +65,12 @@ class Product extends Component {
               color="primary"
               variant="contained"
               className={classes.extendedIcon}
-              onClick={e => this.setNumber(id, ADD_PRODUCT)}
+              onClick={e => this.setNumber(_product, ADD_PRODUCT)}
             >
               <Add />
             </Button>
             <span className="price-wrapper">
-              &euro; {Math.round(productPrice * productNumbers * 100) / 100}
+              &euro; {multipleCurrency(_product.price, productNumbers)}
             </span>
           </span>
         </li>
