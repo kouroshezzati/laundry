@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Page from '../index';
 import { translate } from 'react-i18next';
-import Duch from './Duch';
+import Duch from '../PrivacyPolicy/PrivacyPolicyTextDu';
 
 class TermsAndConditions extends Component {
   render() {
