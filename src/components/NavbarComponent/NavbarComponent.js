@@ -206,9 +206,9 @@ class NavBarComponent extends Component {
                         <MenuItem eventKey="3">
                           <NavLink
                             className="nav-link js-scroll-trigger"
-                            to="/#extra-info"
+                            to="/#special-order"
                           >
-                            {t('Information')}
+                            {t('Special order')}
                           </NavLink>
                         </MenuItem>
                       </React.Fragment>
@@ -243,12 +243,12 @@ class NavBarComponent extends Component {
                           <Link
                             activeClass="active"
                             className="nav-link js-scroll-trigger"
-                            to="extra-info"
+                            to="special-order"
                             spy={true}
                             smooth="easeInOutQuart"
                             duration={1000}
                           >
-                            {t('Information')}
+                            {t('Special order')}
                           </Link>
                         </MenuItem>
                       </React.Fragment>
@@ -269,20 +269,14 @@ class NavBarComponent extends Component {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/date/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/date/">
                   {t('order now')}
                 </NavLink>
               </li>
               {!jwt && (
                 <React.Fragment>
                   <li className="just-mobile">
-                    <NavLink
-                      className="nav-link"
-                      to="/login/"
-                    >
+                    <NavLink className="nav-link" to="/login/">
                       {t('login')}
                     </NavLink>
                   </li>

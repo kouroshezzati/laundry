@@ -47,13 +47,15 @@ const reducer = (
         }
         return value;
       });
-
       let products = _.groupBy(intactProducts, 'category.name');
+      let especialOfferProducts = products['especial offer'];
+      delete products['especial offer'];
       return {
         ...state,
         intactProducts,
         isFetching: false,
-        products
+        products,
+        especialOfferProducts
       };
     case SELECT_CATEGORY:
       return {

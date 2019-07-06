@@ -9,12 +9,7 @@ import Page from '../index';
 import Sticky from 'react-sticky-el';
 
 const ControllerButtons = ({ t, isFormFilled }) => {
-  const orderDescriptionOffset =
-    document.getElementById('order-description') &&
-    document.getElementById('order-description').offsetTop;
-  // const isFloat = orderDescriptionOffset > window.pageYOffset;
   return (
-    // <div className={classnames('container', isFloat ? 'float-section' : '')}>
     <div className="container button-controllers-navigator">
       <div className="mt-2 pt-1 row">
         <div className="col-5 col-sm-6 mb-2">
@@ -66,7 +61,10 @@ export class index extends Component {
     const isFormFilled = selectedProductNumbers > 0;
     return (
       <Page>
-        <div className="main-section align-content-center flex-wrap fancy-bg" id="order">
+        <div
+          className="main-section align-content-center flex-wrap fancy-bg"
+          id="order"
+        >
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
             <ProductList />
             <div className="form-group m-2" id="order-description">

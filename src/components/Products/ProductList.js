@@ -4,6 +4,7 @@ import Product from './Product';
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
 import { multipleCurrency, calc, ADD } from '../../utils/components';
+import { withRouter } from 'react-router-dom';
 
 export class ProductList extends Component {
   render() {
@@ -12,8 +13,12 @@ export class ProductList extends Component {
       invoice,
       t,
       selectedProducts,
-      intactProducts
+      intactProducts,
+      especialOfferProducts,
+      location
     } = this.props;
+    const params = new URLSearchParams(location.search);
+    const type = params.get('type');
     if (invoice) {
       let total = 0;
       return (
@@ -46,6 +51,19 @@ export class ProductList extends Component {
         </div>
       );
     }
+    if (type === 'especial_offer') {
+      return (
+        <div className="row product-list-wrapper">
+          <div className="col-md-12">
+            <ul className="list-group">
+              {especialOfferProducts.map(product => (
+                <Product key={product.id} {...product} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="row product-list-wrapper">
         {_.map(products, (_products, key) => {
@@ -67,6 +85,8 @@ export class ProductList extends Component {
   }
 }
 
-export default translate('translations')(
-  connect(state => ({ ...state.products }))(ProductList)
+export default withRouter(
+  translate('translations')(
+    connect(state => ({ ...state.products }))(ProductList)
+  )
 );
