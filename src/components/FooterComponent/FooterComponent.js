@@ -16,7 +16,7 @@ import { translate } from 'react-i18next';
 import { ContactInfo } from '../ContactUsComponent/ContactUsComponent';
 
 let FooterComponent = props => {
-  // const { t } = props;
+  const { t } = props;
   return (
     <footer>
       <div className="container">
@@ -54,11 +54,16 @@ let FooterComponent = props => {
               borderTop: '1px solid white'
             }}
           >
-            <div className="col-sm-4">
-              <NavLink className="footer-link" to="/contact/">contact</NavLink>
+            <div className="col-sm-6">
+              <NavLink className="footer-link" to="/contact/">
+                {t('contact')}
+              </NavLink>
             </div>
-            <div className="col-sm-4">terms and condition</div>
-            <div className="col-sm-4">privacy policy</div>
+            <div className="col-sm-6">
+              <NavLink className="footer-link" to="/terms-and-conditions/">
+                {t('terms and condtions')}
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

@@ -193,7 +193,7 @@ export class UserInfo extends Component {
             </div>
             <div className="form-group col-md-6">
               <MuiThemeProvider theme={theme}>
-                <Button type="submit" variant="contained" color="primary">
+                <Button fullWidth type="submit" variant="contained" color="primary">
                   {t('Save')}
                 </Button>
               </MuiThemeProvider>

@@ -46,8 +46,13 @@ class RegisterComponent extends Component {
     this.apartment = React.createRef();
     this.zip = React.createRef();
     this.companyName = React.createRef();
-
-    this.state = { snackBar: false, isSubmitted: false, message: '' };
+    this.accept = React.createRef();
+    this.state = {
+      accept: false,
+      snackBar: false,
+      isSubmitted: false,
+      message: ''
+    };
   }
   isZipNumber = () => {
     if (this.zip.current) {
@@ -76,6 +81,7 @@ class RegisterComponent extends Component {
       companyName: this.companyName.current.value
     };
     if (
+      !this.state.accept ||
       !_data.email ||
       !_data.username ||
       !_data.address ||
@@ -267,6 +273,26 @@ class RegisterComponent extends Component {
                   placeholder={t('Company name')}
                   type="text"
                 />
+              </div>
+              <div className="form-group col-md-6">
+                <label>
+                  <input
+                    onChange={e =>
+                      this.setState({ accept: !this.state.accept })
+                    }
+                    type="checkbox"
+                    className="mr-1"
+                  />
+                  {t('I accept these')}{' '}
+                  <NavLink to="/terms-and-conditions">
+                    {t('terms and conditions')}
+                  </NavLink>
+                </label>
+                {!this.state.accept && this.state.isSubmitted && (
+                  <div style={{ color: '#dc3545' }}>
+                    {t('You need to accept the terms and conditions!')}
+                  </div>
+                )}
               </div>
               <div className="form-group col-md-6">
                 <MuiThemeProvider theme={theme}>

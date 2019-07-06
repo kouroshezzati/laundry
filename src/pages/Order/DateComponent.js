@@ -16,6 +16,7 @@ import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
 import Page from '../index';
 import pickupImg from '../../assets/images/pickup.png';
+import { withRouter } from 'react-router-dom';
 
 export const DateTimeComponent = ({
   labelText,
@@ -50,15 +51,22 @@ export class DateComponent extends Component {
   };
 
   render() {
-    const { pickupDate, pickupTime, deliverDate, deliverTime, t } = this.props;
+    const {
+      pickupDate,
+      pickupTime,
+      deliverDate,
+      deliverTime,
+      t,
+      location
+    } = this.props;
     const minTime = setHours(setMinutes(new Date(), 0), 9);
     const maxTime = setHours(setMinutes(new Date(), 0), 17);
     let _pD = pickupDate ? new Date(pickupDate) : undefined;
     let _pT = pickupTime ? new Date(pickupTime) : minTime;
     let _dD = deliverDate ? new Date(deliverDate) : undefined;
     let _dT = deliverTime ? new Date(deliverTime) : minTime;
-
-    console.log(deliverTime, pickupDate);
+    const params = new URLSearchParams(location.search);
+    const type = params.get('type');
     return (
       <Page>
         <div className="main-section align-content-center flex-wrap fancy-bg">
@@ -132,7 +140,14 @@ export class DateComponent extends Component {
                   </Button>
                 )}
                 {deliverDate && (
-                  <NavLink className="nav-button" to="/order">
+                  <NavLink
+                    className="nav-button"
+                    to={
+                      type === 'especial_offer'
+                        ? '/order?type=especial_offer'
+                        : '/order'
+                    }
+                  >
                     <Button
                       disabled={!deliverDate}
                       fullWidth
@@ -157,4 +172,4 @@ DateComponent = connect(
   { setDate }
 )(DateComponent);
 
-export default translate('translations')(DateComponent);
+export default withRouter(translate('translations')(DateComponent));

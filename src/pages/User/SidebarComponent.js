@@ -58,26 +58,27 @@ export class SidebarComponent extends Component {
               id="navbarResponsive"
             >
               <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
+                <li>
                   <NavLink
-                    className="nav-link js-scroll-trigger"
+                    className="nav-link"
                     to={`${match.url}/change_information`}
                   >
                     {t('Change information')}
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                <li>
                   <NavLink
-                    className="nav-link js-scroll-trigger"
+                    className="nav-link"
                     to={`${match.url}/my_orders`}
                   >
                     {t('My orders')}
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                <li>
                   <NavLink
-                    className="nav-link js-scroll-trigger"
+                    className="nav-link"
                     to="/"
+                    exact
                   >
                     {t('Home')}
                   </NavLink>

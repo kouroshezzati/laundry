@@ -11,7 +11,7 @@ export class UserComponent extends Component {
   render() {
     const { match, t } = this.props;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" id="user-admin-panel">
         <div className="row">
           <div className="col-md-2 sidebar-wrapper">
             <SidebarComponent match={match} />
@@ -57,7 +57,7 @@ const Pager = props => {
   const { name, component: Component } = props;
   return (
     <div className="m-3">
-      <h3 className="mb-3">{name}</h3>
+      <h3 className="mb-3 mt-5 pt-2">{name}</h3>
       <Component />
     </div>
   );

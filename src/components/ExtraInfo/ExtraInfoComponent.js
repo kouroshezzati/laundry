@@ -3,8 +3,8 @@ import { translate } from 'react-i18next';
 import { Button } from '@material-ui/core';
 import './style.css';
 import specialoffer from '../ServicesComponent/img/special-offer.gif';
-
-export class extrainfo  extends Component {
+import { NavLink } from 'react-router-dom';
+export class extrainfo extends Component {
   render() {
     const { t } = this.props;
     return (
@@ -18,9 +18,11 @@ export class extrainfo  extends Component {
               <div className="special-offer-message">
                 <h2>{t('SPECIAL OFFER')}</h2>
               </div>
-              <Button variant="contained" color="primary" fullWidth>
-                {t('SPECIAL ORDER')}
-              </Button>
+              <NavLink to="/date?type=especial_offer">
+                <Button variant="contained" color="primary" fullWidth>
+                  {t('SPECIAL ORDER')}
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>
