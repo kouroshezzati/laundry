@@ -40,14 +40,16 @@ class Product extends Component {
 
     if (parent) {
       return (
-        <li className="list-group-item parent">{t(name).toUpperCase()}</li>
+        <li className="list-group-item parent">
+          {t(name.trim().toLowerCase()).toUpperCase()}
+        </li>
       );
     } else {
       const productNumbers = selectedProducts[id] || 0;
       const _product = intactProducts.find(product => product.id === id);
       return (
         <li className="list-group-item">
-          <span className="float-left">{t(name.toLowerCase())}</span>
+          <span className="float-left">{t(name.trim().toLowerCase())}</span>
           <span className="float-right product-controllers">
             <span className="mr-2">&euro; {_product.price}</span>
             <Button

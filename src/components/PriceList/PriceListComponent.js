@@ -52,7 +52,7 @@ class PriceListComponent extends Component {
             <ExpansionPanel key={category}>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography className={classes.heading}>
-                  {t(String(category).toLowerCase()).toUpperCase()}
+                  {t(category.trim().toLowerCase()).toUpperCase()}
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
@@ -60,7 +60,7 @@ class PriceListComponent extends Component {
                   {categorizedProducts.map(_product => (
                     <ListItem button key={_product.id}>
                       <ListItemText>
-                        {t(String(_product.name).toUpperCase())}
+                        {t(_product.name.trim().toLowerCase()).toUpperCase()}
                       </ListItemText>
                       <ListItemSecondaryAction>
                         &euro; {_product.price}

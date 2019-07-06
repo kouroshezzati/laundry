@@ -87,7 +87,6 @@ export default {
   'ski overall': 'ski overall',
   'ironing shirt minimum 4 pcs (per pc)':
     'Strijken shirt minimum 4 stuks(per stuk)',
-
   scarf: 'SJAAL',
   Hat: 'hoed',
   tie: 'Stropdas',
