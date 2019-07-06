@@ -15,22 +15,18 @@ export class StepComponent extends Component {
             <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={basket2} />
                 <p className="step-title">{('STEP 1')}</p>
-                <p>{t('Bag up all your dirty clothes')}</p>
             </div>
             <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={legecy} />
               <p className="step-title">STEP 2</p>
-              <p>{t('We pick up your clothes')}</p>
             </div>
             <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={washi} />
                <p className="step-title">STEP 3</p>
-               <p>{t('We clean your clothes')}</p>
             </div>
             <div className="col-md-3 col-sm-6 step">
               <img alt="laundry" src={step4} />
               <p className="step-title">STEP 4</p>
-              <p>{t('We deliver clean,folded clothes')}</p>
             </div>
           </div>
         </div>

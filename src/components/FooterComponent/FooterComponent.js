@@ -40,9 +40,9 @@ let FooterComponent = props => {
               className="m-1"
               size="2x"
             />
-            <FontAwesomeIcon icon={faInstagram} className="m-1" size="2x" />
+          
             <FontAwesomeIcon icon={faTwitter} className="m-1" size="2x" />
-            <FontAwesomeIcon icon={faWhatsapp} className="m-1" size="2x" />
+            
           </div>
         </div>
         <div className="links container">

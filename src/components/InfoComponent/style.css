@@ -1,6 +1,7 @@
 #info {
-    background-color: #00ff62b7;
+    background-color: #00ff62;
     color: white
+    
 }
 
 section#info {
@@ -20,4 +21,7 @@ section#info {
 .bug2 {
     height: 300px;
     width: 500px;
+}
+.info.description{
+    color:#ffff
 }

@@ -181,7 +181,7 @@ class NavBarComponent extends Component {
                 <Dropdown autoOpen>
                   <Dropdown.Toggle
                     btnStyle="link"
-                    title={t('read more')}
+                    title={t('READ MORE')}
                     className="button-submenu"
                   />
                   <Dropdown.Menu>
@@ -283,12 +283,12 @@ class NavBarComponent extends Component {
                       className="nav-link"
                       to="/login/"
                     >
-                      {t('login')}
+                      {t('LOGIN')}
                     </NavLink>
                   </li>
                   <li className="just-mobile">
                     <NavLink className="nav-link" to="/register/">
-                      {t('register')}
+                      {t('REGISTER')}
                     </NavLink>
                   </li>
                 </React.Fragment>
@@ -324,10 +324,10 @@ class NavBarComponent extends Component {
         {!jwt && (
           <div className="auth-link">
             <div>
-              <NavLink to="/login/">{t('login')}</NavLink>
+              <NavLink to="/login/">{t('LOGIN')}</NavLink>
             </div>
             <div>
-              <NavLink to="/register/">{t('register')}</NavLink>
+              <NavLink to="/register/">{t('REGISTER')}</NavLink>
             </div>
           </div>
         )}

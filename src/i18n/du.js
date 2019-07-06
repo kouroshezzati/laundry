@@ -5,8 +5,8 @@ export default {
   Contact: 'Contact',
   information: 'informatie',
   'ABOUT US': 'OVER ONS',
-  login: 'inlogen',
-  register: 'registreren',
+  LOGIN: 'INLOGEN',
+  REGISTER: 'REGISTREREN',
   PRESS: 'STRIJK SERVICE',
   bedroom: 'Slaapkamer',
   Carpets: 'tapijten',
@@ -21,7 +21,7 @@ export default {
   'ORDER': 'BESTELLEN',
   'aboutus.description': `Ons bedrijf biedt een professionele oplossing voor uw dagelijkse was. We werken met 100%
   groene stroom en gebruiken zoveel mogelijk milieuvriendelijke producten. We bieden u de
-  beste service en prijs voor zowel uw huishoudelijke &amp; zakelijke was.
+  beste service en prijs voor zowel uw huishoudelijke & zakelijke was.
   Onze medewerkers zijn gespecialiseerd in het herkennen van elke soort textiel en
   beschikken over een grote kennis op het gebied van hygiëne.
   Met een kortingskaart waarop u punten kunt verzamelen, belonen we u om zo optimaal
@@ -67,7 +67,7 @@ export default {
   Subject: 'Onderwerpen',
   Message: 'Bericht',
   'Just order right now': 'Bestellen',
-  'Pickup date': 'Ophaaldatum',
+  'Pickup date': 'Ophaal datum',
   'Deliver date': 'Lever datum',
   Order: 'bestellen',
   order: 'bestellen',
@@ -137,7 +137,7 @@ export default {
   'CARPET CLEANING': 'TAPIJT REINIGEN',
   'TEXTILES': 'TEXTIEL',
   'About us': 'OVERONS',
-  'PRICES INCLUSIVE V.A.T': 'PRIJZEN ZIJN INCLUSIEF B.T.W',
+  'PRICES INCLUDING VAT': 'PRIJZEN ZIJN INCLUSIEF BTW',
   'laundry wash & fold': 'Wasserij wassen en vouwen',
   'Bag up all your dirty clothes': 'Pak al je vuile kleren op',
   'We pick up your clothes':'We pakken je kleren op',
@@ -153,7 +153,7 @@ export default {
   kleine rode bulten kunnen geven en ook nog blaren.
   Een van de manieren waarop u de narigheid van bedwants kunt vermijden is: door u dek
   bedden en bankcovers tijdig te laten wassen. U zult het optimale resultaat terug zien.
-  Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen`,
+  Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen.`,
   'shirt / polo':'Overhemd / Polo',
   'jacket / blazer':'jas / blazer',
   'suit (2 pieces)':'pakken (2 sets)',
@@ -188,6 +188,13 @@ export default {
 'suit  (3 pieces)':'Pakken (3 sets)',
 'BUSINESS ORDER':'bedrijf bestellen',
 'SPECIAL OFFER':'AANBIEDINGEN',
-'SPECIAL ORDER':'BESTELLEN'
-
+'SPECIAL ORDER':'BESTELLEN',
+Information: 'Informatie',
+Menu: 'Menu',
+'order now': 'Bestellen',
+'DID YOU KNOW':'WIST U DAT?',
+'Pickup time':'Ophaal tijd',
+'Deliver time':'Lever tijd',
+'READ MORE':'MEER INFO',
+'privacy policy':'Algemene voorwaarden'
 };

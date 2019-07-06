@@ -6,8 +6,8 @@ export default {
   information: 'information',
   'About us': 'About us',
   'about us': 'about us',
-  login: 'login',
-  Login: 'Login',
+  LOGIN: 'LOGIN',
+  LOGIN: 'LOGIN',
   register: 'register',
   Register: 'Register',
   Press: 'Press',
@@ -21,9 +21,9 @@ export default {
   'Pick up & Drop Time': 'Pick up & Drop Time',
   'Offers & subscription': 'Offers & subscription',
   'Delivery Charges': 'Delivery Charges',
-  'Order now': 'Order now',
+  'order now':'Order now',
   'aboutus.description': `Our company offers professional solution for your daily laundry and dry cleaning, using ECO
-  friendly products where possible. We offer best service and prices for household &amp;
+  friendly products where possible. We offer best service and prices for household &
   businesses. We make sure each client gets an individual laundry load.
   Our biggest priority is to get the best results for your laundry. We offer our clients a discount
   card to make sure our offer is best value for money. We make sure to pick up and deliver
@@ -106,7 +106,7 @@ export default {
   by porfesional since the correct tempruter and correct wash detergent
   is essential to get the best results.
   our recomendation is 2 times a year wash for, pillow, comforter ,
-  over mattress and sofa covers`,
+  over mattress and sofa covers.`,
   'silk / top': 'Zijde / Top',
   'jacket / blazer': 'jacket / blazer',
   'suit (2 pieces)': 'suit (2 pieces)',
@@ -144,6 +144,12 @@ export default {
   'SPECIAL ORDER': 'SPECIAL ORDER',
   Information: 'Information',
   Menu: 'Menu',
-  'Order now': 'Order now'
+  'ORDER NOW': 'Order now',
+  'DID YOU KNOW':'DID YOU KNOW',
+  'Pickup time':'Pickup time',
+  'Deliver time':'Deliver time',
+  'PRICES INCLUDING VAT':'PRICES INCLUDING VAT',
+  'READ MORE':'READ MORE',
+  'privacy policy':'privacy policy'
 
 };
