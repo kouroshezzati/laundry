@@ -1,7 +1,6 @@
 #info {
-    background-color: #00ff62;
-    color: white
-    
+  background-color: #1d703d;
+  color: white;
 }
 
 section#info {
@@ -19,9 +18,12 @@ section#info {
   padding: 5px;
 }
 .bug2 {
-    height: 300px;
-    width: 500px;
+  height: 300px;
+  width: 500px;
 }
-.info.description{
-    color:#ffff
+.info.description {
+  color: #ffff;
+}
+.info p {
+  text-align: justify;
 }
