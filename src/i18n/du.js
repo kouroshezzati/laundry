@@ -170,8 +170,10 @@ export default {
   'comforter feather / down (two person)': 'Donsdeken (twee personen)',
   'comforter feather / down (one person)': 'Donsdeken (één persoon)',
   'comforter wool / syntetic (twin)': 'Wollendeken synthetisch tweeling',
-  'comforter wool / syntetic (two person)': 'Wollendeken synthetisch (twee personen)',
-  'comforter wool / syntetic (one person)': 'Wollendeken synthetisch (een persoon)',
+  'comforter wool / syntetic (two person)':
+    'Wollendeken synthetisch (twee personen)',
+  'comforter wool / syntetic (one person)':
+    'Wollendeken synthetisch (een persoon)',
   'over mattress twin': 'Over Matras Tweeling',
   'over mattress (two person)': 'Over Matras dik (2 personen)',
   'over mattress (one person)': 'Over Matras dik (1 persoon)',
@@ -236,5 +238,10 @@ export default {
   'SPECIAL OFFER': 'AANBIEDINGEN',
   'SPECIAL ORDER': 'BESTELLEN',
   'privacy-policy.message': 'duch',
-  'termsandcondtions.message': 'duch'
+  'termsandcondtions.message': 'duch',
+  'We also offer after opening hours urgent delivery, please contact us.':
+    'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
+  'Monday to Saturday 9am to 18.00':
+    'Maandag tot zaterdag 9:00 tot Zaterdag 18:00',
+  'Areas': 'Reigo'
 };

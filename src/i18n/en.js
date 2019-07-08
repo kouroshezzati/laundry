@@ -157,5 +157,9 @@ export default {
   'READ MORE': 'READ MORE',
   'privacy policy': 'privacy policy',
   'privacy-policy.message': 'english',
-  'termsandconditions.message': 'english'
+  'termsandconditions.message': 'english',
+  'We also offer after opening hours urgent delivery, please contact us.':
+    'We also offer after opening hours urgent delivery, please contact us.',
+  'Monday to Saturday 9am to 18.00': 'Monday to Saturday 9am to 18.00',
+  Areas: 'Areas'
 };

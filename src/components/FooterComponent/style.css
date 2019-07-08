@@ -37,6 +37,16 @@ footer ul li a.active {
 .bank-icons{
   text-align: left;
 }
+.bank-icons img {
+  height: 35px;
+  width: 58px;
+  padding: 2px;
+  border-radius: 5px;
+}
+.bank-icons p{
+  padding: 3px;
+  font-size: 1em;
+}
 .social-icons{
   text-align: right;
 }
