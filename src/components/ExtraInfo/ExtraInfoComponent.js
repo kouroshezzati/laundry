@@ -27,9 +27,9 @@ export class SpecialOffer extends Component {
                 <h2>{t('SPECIAL OFFER')}</h2>
                 <div className="row mt-4 mb-5">
                   {especialOfferProducts.map(offer => (
-                    <div className="col-6 mt-1 mb-1">
+                    <div key={offer.id} className="col-6 mt-1 mb-1">
                       <span className="offer-name float-left">{t(offer.name.toLowerCase())}</span>
-                      <span className="offer-price float-right">{offer.price}</span>
+                      <span className="offer-price float-right">&euro;{offer.price}</span>
                     </div>
                   ))}
                 </div>

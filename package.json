@@ -61,7 +61,7 @@
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "ie 6-10"
+      "ie 6-11"
     ],
     "development": [
       "last 1 chrome version",

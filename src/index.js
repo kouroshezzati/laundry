@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/stable';
+import './utils/assign_polyfill';
 
 const pickTheme = createMuiTheme({
   typography: {
