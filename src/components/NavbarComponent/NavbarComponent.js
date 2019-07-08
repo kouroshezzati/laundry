@@ -247,6 +247,19 @@ class NavBarComponent extends Component {
                             spy={true}
                             smooth="easeInOutQuart"
                             duration={1000}
+                            
+                            >
+                            {t('did you know?')}
+                          </Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link
+                            activeClass="active"
+                            className="nav-link js-scroll-trigger"
+                            to="special-order"
+                            spy={true}
+                            smooth="easeInOutQuart"
+                            duration={1000}
                           >
                             {t('Special order')}
                           </Link>

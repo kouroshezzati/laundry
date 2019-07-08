@@ -499,16 +499,6 @@
     },
       "type": "cheap"
   },
-  {
-    "id": 52,
-    "name": "Carpet",
-    "price": 105,
-    "category": {
-      "id": 5252,
-      "name": "SPECIAL OFFER"
-    },
-    "type": "expensive"
-  },
 {
   "id": 53,
   "name": "LAUNDRY WASH & FOLD (10 KG)",

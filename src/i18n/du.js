@@ -155,7 +155,6 @@ export default {
   Een van de manieren waarop u de narigheid van bedwants kunt vermijden is: door u dek
   bedden en bankcovers tijdig te laten wassen. U zult het optimale resultaat terug zien.
   Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen.`,
-  'shirt / polo': 'Overhemd / Polo',
   'jacket / blazer': 'jas / blazer',
   'suit (2 pieces)': 'pakken (2 sets)',
   hat: 'hoed',

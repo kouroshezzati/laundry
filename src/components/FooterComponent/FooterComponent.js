@@ -15,6 +15,7 @@ import {
 import { translate } from 'react-i18next';
 import { ContactInfo } from '../ContactUsComponent/ContactUsComponent';
 
+
 let FooterComponent = props => {
   const { t } = props;
   return (
@@ -25,8 +26,10 @@ let FooterComponent = props => {
             <FontAwesomeIcon icon={faCcPaypal} className="m-1" size="2x" />
             <FontAwesomeIcon
               icon={faCcMastercard}
+            
               className="m-1"
               size="2x"
+              
             />
             <FontAwesomeIcon icon={faCcVisa} className="m-1" size="2x" />
             <FontAwesomeIcon icon={faCcAmazonPay} className="m-1" size="2x" />
@@ -61,7 +64,7 @@ let FooterComponent = props => {
             </div>
             <div className="col-sm-6">
               <NavLink className="footer-link" to="/terms-and-conditions/">
-                {t('terms and condtions')}
+                {t('privacy policy')}
               </NavLink>
             </div>
           </div>

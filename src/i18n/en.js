@@ -36,8 +36,8 @@ export default {
   'offers.description': `10 % Discount for our first time users Gold Member Pearl Member`,
   'delivery.description': `Free Delivery Above 22.oo Euro`,
   'business.description': `BUBBLES is specialized in cleaning and managing linen for Restaurants, Hotels,
-    Casino’s . ( Linen bed sheets, table cloths, kitchen towels )
-    Our wash processes is done in most environment friendly way, with quality
+    Casino’s.Linen bed sheets, table cloths,kitchen towels,
+    Our wash processes is done in most environment friendly way,with quality
     Control on each individual wash load.
     The main characteristics of BUBBLES are professionalism, speed and reliability.
     BUBBLES provide your business with pick up &amp; drop of service and will make
