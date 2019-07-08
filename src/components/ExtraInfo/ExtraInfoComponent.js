@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { Button } from '@material-ui/core';
 import './style.css';
 import specialoffer from '../ServicesComponent/img/special-offer.gif';
 import { NavLink } from 'react-router-dom';
-export class extrainfo extends Component {
+import { fetchProducts } from '../PriceList/PriceListActions';
+export class SpecialOffer extends Component {
+  componentDidMount() {
+    const { especialOfferProducts, fetchProducts } = this.props;
+    if (especialOfferProducts.length === 0) {
+      fetchProducts();
+    }
+  }
   render() {
-    const { t } = this.props;
+    const { t, especialOfferProducts } = this.props;
     return (
       <section id="special-order">
         <div className="container">
@@ -15,8 +23,16 @@ export class extrainfo extends Component {
               <img alt="laundry" src={specialoffer} />
             </div>
             <div className="col-md-6">
-              <div className="special-offer-message">
+              <div className="special-offer-message container">
                 <h2>{t('SPECIAL OFFER')}</h2>
+                <div className="row mt-4 mb-5">
+                  {especialOfferProducts.map(offer => (
+                    <div className="col-6 mt-1 mb-1">
+                      <span className="offer-name float-left">{t(offer.name.toLowerCase())}</span>
+                      <span className="offer-price float-right">{offer.price}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <NavLink to="/date?type=especial_offer">
                 <Button variant="contained" color="primary" fullWidth>
@@ -31,4 +47,9 @@ export class extrainfo extends Component {
   }
 }
 
-export default translate('translations')(extrainfo);
+SpecialOffer = connect(
+  state => ({ ...state.products }),
+  { fetchProducts }
+)(SpecialOffer);
+
+export default translate('translations')(SpecialOffer);

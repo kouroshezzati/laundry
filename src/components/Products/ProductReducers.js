@@ -20,7 +20,8 @@ const reducer = (
     intactProducts: [],
     selectedCategory: [],
     selectedProducts: {},
-    productNumberAdded: []
+    productNumberAdded: [],
+    especialOfferProducts: []
   },
   action
 ) => {
@@ -39,7 +40,12 @@ const reducer = (
         addProductMessage: action.response
       };
     case PRODUCTS_FAILURE:
-      return { ...state, isFetching: false, products: [] };
+      return {
+        ...state,
+        isFetching: false,
+        products: [],
+        especialOfferProducts: []
+      };
     case PRODUCTS_SUCCESS:
       let intactProducts = _.map(action.response, (value, index) => {
         if (!value.type) {

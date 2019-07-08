@@ -7,7 +7,6 @@ export default {
   'About us': 'About us',
   'about us': 'about us',
   LOGIN: 'LOGIN',
-  LOGIN: 'LOGIN',
   register: 'register',
   Register: 'Register',
   Press: 'Press',
