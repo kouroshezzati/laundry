@@ -162,8 +162,7 @@ export default {
   'Pickup time': 'Ophaal tijd',
   'Deliver time': 'Lever tijd',
   'READ MORE': 'MEER INFO',
-  'privacy policy': `Algemene voorwaarden'
-  Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen`,
+  'privacy policy': `Algemene voorwaarden`,
   'shirt / polo': 'Overhemd / Polo',
   'jacket / blazer': 'jas / blazer',
   'suit (2 pieces)': 'pakken (2 sets)',
