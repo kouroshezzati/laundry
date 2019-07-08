@@ -1,6 +1,6 @@
 #info {
-    background-color: #00ff62;
-    color: white
+    background-color: #ffa600;
+    color: rgb(255, 255, 255)
     
 }
 
@@ -23,5 +23,5 @@ section#info {
     width: 500px;
 }
 .info.description{
-    color:#ffff
+    color:rgb(32, 32, 32)
 }
