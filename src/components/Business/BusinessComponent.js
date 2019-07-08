@@ -3,6 +3,7 @@ import { translate } from 'react-i18next';
 import { Button } from '@material-ui/core';
 import './style.css';
 import galoo from '../ServicesComponent/img/galoo.jpg';
+import {NavLink} from 'react-router-dom';
 
 export class BusinessComponent extends Component {
   render() {
@@ -17,16 +18,14 @@ export class BusinessComponent extends Component {
             <div className="col-md-6">
               <div className="business-message">
                 <h2>{t('BUSINESSES')}</h2>
-                <p>
-                  {t('business.description')}
-                </p>
-                <h5>
-                {t('business.description.tip')}
-                </h5>
+                <p>{t('business.description')}</p>
+                <h5>{t('business.description.tip')}</h5>
               </div>
-              <Button variant="contained" color="primary" fullWidth>
-                {t('BUSINESS ORDER')}
-              </Button>
+              <NavLink to="/contact/">
+                <Button variant="contained" color="primary" fullWidth>
+                  {t('BUSINESS ORDER')}
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>

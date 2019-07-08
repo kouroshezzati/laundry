@@ -169,7 +169,7 @@ class NavBarComponent extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
+              <li className="nav-item ml-2 mr-2">
                 <NavLink
                   className="nav-link js-scroll-trigger"
                   to="/contact/"
@@ -289,10 +289,7 @@ class NavBarComponent extends Component {
               {!jwt && (
                 <React.Fragment>
                   <li className="just-mobile">
-                    <NavLink
-                      className="nav-link"
-                      to="/login/"
-                    >
+                    <NavLink className="nav-link" to="/login/">
                       {t('LOGIN')}
                     </NavLink>
                   </li>

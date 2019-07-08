@@ -5,3 +5,10 @@
 .special-offer-img-wrapper img {
   width: 100%;
 }
+
+@media (max-width: 768px){
+  .special-offer-message h2{
+    text-align: center;
+    margin: 20px;
+  }
+}

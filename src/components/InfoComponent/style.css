@@ -1,7 +1,6 @@
 #info {
-    background-color: #ffa600;
-    color: rgb(255, 255, 255)
-    
+  background-color: #1d703d;
+  color: white;
 }
 
 section#info {
@@ -19,9 +18,17 @@ section#info {
   padding: 5px;
 }
 .bug2 {
-    height: 300px;
-    width: 500px;
+  height: 300px;
+  width: 500px;
 }
+.info.description {
+  color: #ffff;
+}
+<<<<<<< HEAD
 .info.description{
     color:rgb(32, 32, 32)
+=======
+.info p {
+  text-align: justify;
+>>>>>>> a70581f0eb633f88dbf6d9ae4cc3137f4240dc52
 }

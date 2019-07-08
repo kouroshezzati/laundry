@@ -51,7 +51,7 @@ export class ProductList extends Component {
         </div>
       );
     }
-    if (type === 'especial_offer') {
+    if (type === 'especial_offer' && especialOfferProducts) {
       return (
         <div className="row product-list-wrapper">
           <div className="col-md-12">
@@ -63,6 +63,8 @@ export class ProductList extends Component {
           </div>
         </div>
       );
+    } else if (type === 'especial_offer' && !especialOfferProducts) {
+      return <React.Fragment />;
     }
     return (
       <div className="row product-list-wrapper">

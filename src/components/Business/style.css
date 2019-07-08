@@ -1,5 +1,5 @@
 #business {
-  background: #ff9900;
+  background: #b66e02;
   color: #fff;
 }
 #business h5 {
@@ -12,11 +12,20 @@
   text-align: center;
   padding-bottom: 10px;
 }
- 
+
 .business-img-wrapper img {
   width: 100%;
 }
 
 .business-message {
   margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  #business h2 {
+    text-align: center;
+  }
+  #business p {
+    text-align: justify;
+  }
 }
