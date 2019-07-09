@@ -40,8 +40,9 @@ footer ul li a.active {
 .bank-icons img {
   height: 35px;
   width: 58px;
-  padding: 2px;
+  padding: 1px;
   border-radius: 5px;
+  margin: 1px 4px;
 }
 .bank-icons p{
   padding: 3px;
