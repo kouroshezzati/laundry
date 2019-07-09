@@ -268,7 +268,7 @@ export default () => (
     <b>Bubbles online Platina weg 25</b>
     <b>2544 EZ, Denhaag </b><br></br>
     <b>telefoon: 0626142889</b><br></br>
-    <b>e-mail: Info@Bubbles online.nl</b><br></br>
+    <b>e-mail: info@bubblesonline.nl</b><br></br>
     <b>KvK-nummer: 74639757 </b><br></br>
     <b>btw-nummer: Nl072877054B02</b><br></br>
   </div>
