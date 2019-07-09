@@ -43,3 +43,10 @@ section.about-us {
   padding: 35px 0;
   background: linear-gradient(to left, #0300d1, #4d24ff);
 }
+
+@media (max-width: 768px){
+  .description{
+    text-align: justify;
+    word-spacing: -2px;
+  }
+}

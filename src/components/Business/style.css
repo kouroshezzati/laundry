@@ -25,7 +25,8 @@
   #business h2 {
     text-align: center;
   }
-  /* #business p { */
-    /* text-align: justify; */
-  /* } */
+  #business p {
+    text-align: justify;
+    word-spacing: -2px;
+  }
 }

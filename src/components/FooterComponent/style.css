@@ -18,7 +18,7 @@ footer ul li a {
   font-size: 12px;
   color: rgba(255, 255, 255);
 }
-.footer-link{
+.footer-link {
   color: white;
 }
 footer ul li a:hover,
@@ -31,10 +31,10 @@ footer ul li a.active {
 .copy-right {
   margin-top: 20px;
 }
-.icons-footer{
+.icons-footer {
   font-size: 0.9em;
 }
-.bank-icons{
+.bank-icons {
   text-align: left;
 }
 .bank-icons img {
@@ -44,17 +44,36 @@ footer ul li a.active {
   border-radius: 5px;
   margin: 1px 4px;
 }
-.bank-icons p{
+.bank-icons p {
   padding: 3px;
   font-size: 1em;
 }
-.social-icons{
+.social-icons {
   text-align: right;
 }
 
-@media (max-width: 768px){
-  .bank-icons, .social-icons{
+.payment-text-wrapper {
+  width: 300px;
+  margin-top: 23px;
+}
+
+.payment-wrapper {
+  position: absolute;
+  bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .bank-icons,
+  .social-icons {
     text-align: center;
     padding: 10px 0;
+  }
+  .payment-text-wrapper {
+    width: auto;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  .payment-wrapper {
+    position: relative;
   }
 }

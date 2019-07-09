@@ -22,8 +22,17 @@ let FooterComponent = props => {
     <footer>
       <div className="container">
         <div className="row">
+          <div className="mb-4 col-md-4 d-block d-md-none">
+            <img
+              style={{ height: '120px' }}
+              alt="bubblesonlie laundry"
+              src={logo}
+            />
+            <ContactInfo {...props} />
+          </div>
+
           <div className="col-md-4 icons-footer bank-icons">
-            <div style={{ width: '300px', marginTop: '23px' }}>
+            <div className="payment-text-wrapper">
               <p>{t('Monday to Saturday 9am to 18.00')}</p>
               <p className="mt-1">
                 {t(
@@ -31,7 +40,7 @@ let FooterComponent = props => {
                 )}
               </p>
             </div>
-            <div style={{ position: 'absolute', bottom: '10px' }}>
+            <div className="payment-wrapper">
               <p
                 className="mt-1"
                 style={{ fontSize: '1.1em', fontWeight: '500' }}
@@ -52,7 +61,7 @@ let FooterComponent = props => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 d-none d-md-block">
             <img
               style={{ height: '120px' }}
               alt="bubblesonlie laundry"
