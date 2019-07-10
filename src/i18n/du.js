@@ -235,6 +235,6 @@ export default {
   'BUSINESS ORDER': 'bedrijf bestellen',
   'SPECIAL OFFER': 'AANBIEDINGEN',
   'SPECIAL ORDER': 'BESTELLEN',
-  'privacy-policy.message': 'duch',
-  'termsandcondtions.message': 'duch'
+  'privacy policy': 'Algemene voorwaarden'
+  
 };
