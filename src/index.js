@@ -1,11 +1,11 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App/App.js';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import 'react-app-polyfill/ie9';
-import 'react-app-polyfill/stable';
 
 const pickTheme = createMuiTheme({
   typography: {

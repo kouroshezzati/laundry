@@ -7,7 +7,6 @@ export default {
   'About us': 'About us',
   'about us': 'about us',
   LOGIN: 'LOGIN',
-  LOGIN: 'LOGIN',
   register: 'register',
   Register: 'Register',
   Press: 'Press',
@@ -156,6 +155,10 @@ export default {
   'PRICES INCLUDING VAT': 'PRICES INCLUDING VAT',
   'READ MORE': 'READ MORE',
   'privacy policy': 'privacy policy',
-  
-  
+  'privacy-policy.message': 'english',
+  'termsandconditions.message': 'english',
+  'We also offer after opening hours urgent delivery, please contact us.':
+    'We also offer after opening hours urgent delivery, please contact us.',
+  'Monday to Saturday 9am to 18.00': 'Monday to Saturday 9am to 18.00',
+  Areas: 'Areas'
 };

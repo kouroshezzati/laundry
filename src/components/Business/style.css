@@ -27,5 +27,6 @@
   }
   #business p {
     text-align: justify;
+    word-spacing: -2px;
   }
 }

@@ -47,14 +47,14 @@ export class InvoiceComponent extends Component {
               {pickupDate && (
                 <div className="col-md-6">
                   {`${t('Pickup date')}: ${moment(pickupDate).format(
-                    'MMMM D, YYYY h:mm A'
+                    'MMMM D, YYYY HH:mm'
                   )}`}
                 </div>
               )}
               {deliverDate && (
                 <div className="col-md-6">
                   {`${t('Deliver date')}: ${moment(deliverDate).format(
-                    'MMMM D, YYYY h:mm A'
+                    'MMMM D, YYYY HH:mm'
                   )}`}
                 </div>
               )}

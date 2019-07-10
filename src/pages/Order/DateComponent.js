@@ -65,6 +65,8 @@ export class DateComponent extends Component {
     let _pT = pickupTime ? new Date(pickupTime) : minTime;
     let _dD = deliverDate ? new Date(deliverDate) : undefined;
     let _dT = deliverTime ? new Date(deliverTime) : minTime;
+    const minDateDeliverTime = new Date(_pD);
+    minDateDeliverTime.setDate(minDateDeliverTime.getDate() + 1);
     const params = new URLSearchParams(location.search);
     const type = params.get('type');
     return (
@@ -105,7 +107,7 @@ export class DateComponent extends Component {
                   labelText={t('Deliver date')}
                   dateType={DELIVER_DATE}
                   selected={_dD}
-                  minDate={_pD}
+                  minDate={minDateDeliverTime}
                   dateFormat="MMMM d, yyyy"
                   onSetDateHandler={this.setDate}
                 />

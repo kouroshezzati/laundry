@@ -20,8 +20,14 @@ import {
   MY_ORDER_REQUEST,
   MY_ORDER_SUCCESS
 } from '../../components/OrderList/OrderListActions';
-
-export default (state = { pickupTime: '', deliverTime: '' }, action) => {
+const deliverTime = new Date();
+const pickupTime = new Date();
+deliverTime.setHours(9, 0, 0);
+pickupTime.setHours(9, 0, 0);
+export default (
+  state = { pickupTime: '', deliverTime: '', deliverTime, pickupTime },
+  action
+) => {
   switch (action.type) {
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
@@ -49,17 +55,37 @@ export default (state = { pickupTime: '', deliverTime: '' }, action) => {
         isFetching: false
       };
     case PICKUP_DATE:
+      const _pD = new Date(action.date);
+      const _pT = state.pickupTime;
+      _pD.setHours(_pT.getHours(), _pT.getMinutes(), _pT.getSeconds());
       return {
         ...state,
-        pickupDate: action.date.toString(),
+        pickupDate: _pD,
         deliverDate: undefined
       };
     case DELIVER_DATE:
-      return { ...state, deliverDate: action.date.toString() };
+      const _dD = new Date(action.date);
+      const _dT = state.deliverTime;
+      _dD.setHours(_dT.getHours(), _dT.getMinutes(), _dT.getSeconds());
+      return { ...state, deliverDate: _dD };
     case DELIVER_TIME:
-      return { ...state, deliverTime: action.date.toString() };
+      const deliverDate = new Date(state.deliverDate);
+      const _deliverTime = new Date(action.date);
+      deliverDate.setHours(
+        _deliverTime.getHours(),
+        _deliverTime.getMinutes(),
+        _deliverTime.getSeconds()
+      );
+      return { ...state, deliverTime: action.date, deliverDate };
     case PICKUP_TIME:
-      return { ...state, pickupTime: action.date };
+      const pickupDate = new Date(state.pickupDate);
+      const _pickupTime = new Date(action.date);
+      pickupDate.setHours(
+        _pickupTime.getHours(),
+        _pickupTime.getMinutes(),
+        _pickupTime.getSeconds()
+      );
+      return { ...state, pickupTime: action.date, pickupDate };
     case MY_ORDER_FAILURE:
     case MY_ORDER_REQUEST:
     case MY_ORDER_SUCCESS:

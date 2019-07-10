@@ -13,3 +13,6 @@
     margin: 20px;
   }
 }
+.offer-price, .offer-name {
+  font-weight: 600;
+}
