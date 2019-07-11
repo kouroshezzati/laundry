@@ -211,6 +211,14 @@ class NavBarComponent extends Component {
                             {t('Special order')}
                           </NavLink>
                         </MenuItem>
+                        <MenuItem eventKey="3">
+                          <NavLink
+                            className="nav-link js-scroll-trigger"
+                            to="/#info"
+                          >
+                            {t('Did you know?')}
+                          </NavLink>
+                        </MenuItem>
                       </React.Fragment>
                     )}
                     {location.pathname === '/' && (
@@ -247,21 +255,20 @@ class NavBarComponent extends Component {
                             spy={true}
                             smooth="easeInOutQuart"
                             duration={1000}
-                            
-                            >
-                            {t('Did you know?')}
+                          >
+                            {t('Special order')}
                           </Link>
                         </MenuItem>
                         <MenuItem>
                           <Link
                             activeClass="active"
                             className="nav-link js-scroll-trigger"
-                            to="special-order"
+                            to="info"
                             spy={true}
                             smooth="easeInOutQuart"
                             duration={1000}
                           >
-                            {t('Special order')}
+                            {t('Did you know?')}
                           </Link>
                         </MenuItem>
                       </React.Fragment>
@@ -289,10 +296,7 @@ class NavBarComponent extends Component {
               {!jwt && (
                 <React.Fragment>
                   <li className="just-mobile">
-                    <NavLink
-                      className="nav-link"
-                      to="/login/"
-                    >
+                    <NavLink className="nav-link" to="/login/">
                       {t('LOGIN')}
                     </NavLink>
                   </li>

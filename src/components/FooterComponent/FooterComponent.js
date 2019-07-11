@@ -1,11 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookSquare,
-  faTwitter
-} from '@fortawesome/free-brands-svg-icons';
 import { translate } from 'react-i18next';
 import { ContactInfo } from '../ContactUsComponent/ContactUsComponent';
 import masterCardImg from './img/mastercard.png';
@@ -15,6 +10,9 @@ import visaImg from './img/visa.png';
 import pinImg from './img/pin.gif';
 import americanExpressImg from './img/american-express.png';
 import logo from '../../assets/images/logo_65.png';
+import facebook from './img/facebook.png';
+import twitter from './img/twitter.png';
+
 let FooterComponent = props => {
   const { t } = props;
   return (
@@ -69,7 +67,7 @@ let FooterComponent = props => {
             <ContactInfo {...props} />
           </div>
           <div className="col-md-4">
-            <h5 className="mt-2 mb-1">{t('Areas')}</h5>
+            <h5 className="mt-3 mb-1">{t('Areas')}</h5>
             <div>Den haag</div>
             <div>Leidschendam / Voorburg</div>
             <div>Wassenaar</div>
@@ -95,12 +93,8 @@ let FooterComponent = props => {
               </NavLink>
             </div>
             <div className="col-md-4 icons-footer">
-              <FontAwesomeIcon
-                icon={faFacebookSquare}
-                className="m-1"
-                size="2x"
-              />
-              <FontAwesomeIcon icon={faTwitter} className="m-1" size="2x" />
+              <img src={facebook} alt="laundry dry and clean" />
+              <img src={twitter} alt="laundry dry and clean" />
             </div>
             <div className="col-sm-4">
               <NavLink className="footer-link" to="/terms-and-conditions/">

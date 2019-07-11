@@ -31,6 +31,12 @@ footer ul li a.active {
 .copy-right {
   margin-top: 20px;
 }
+.icons-footer img {
+  height: 32px;
+  width: 32px;
+  margin: 0 6px;
+  background: white;
+}
 .icons-footer {
   font-size: 0.9em;
 }

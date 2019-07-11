@@ -203,9 +203,8 @@ export default {
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
   'Monday to Saturday 9am to 18.00':
     'Maandag tot zaterdag 9:00 tot Zaterdag 18:00',
-  'Areas': 'Reigo',
   'Back to home page':'Hoofdmenu',
   'back to Date':'Terug / Datum',
   'I accept these':'Ik ga akkoord met de',
-  'terms-and-conditions':'Algemene voorwaarden'
+  'terms and conditions':'Algemene voorwaarden'
 };

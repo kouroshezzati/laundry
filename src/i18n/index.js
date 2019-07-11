@@ -12,9 +12,9 @@ i18n.use(LanguageDetector).init({
       translations: duWords
     }
   },
-  fallbackLng: 'en',
+  fallbackLng: 'du',
   debug: true,
-
+  lng: 'du',
   ns: ['translations'],
   defaultNS: 'translations',
 
