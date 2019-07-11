@@ -5,7 +5,7 @@
 
 .contact-form-wrapper {
   width: 90%;
-  background: #ff9204!important;
+  background: #ff9204 !important;
   font-weight: 600;
 }
 .fancy-bg {
@@ -33,6 +33,6 @@
   }
 }
 .map-wrapper {
-  height: 275px!important;
+  height: 275px !important;
   background: white;
 }

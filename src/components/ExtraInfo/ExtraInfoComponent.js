@@ -36,7 +36,7 @@ export class SpecialOffer extends Component {
                           {t(offer.name.toLowerCase())}
                         </div>
                         <div className="offer-price col-3">
-                          &euro;{offer.price}
+                          <span className="mr-1">&euro;</span>{offer.price}
                         </div>
                       </div>
                     </div>

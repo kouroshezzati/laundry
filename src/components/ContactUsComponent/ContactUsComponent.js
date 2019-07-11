@@ -13,6 +13,8 @@ import { API_ROOT } from '../../constants/index.js';
 import './style.css';
 import Snackbar from '../../utils/Snackbar/SnackbarComponent';
 import { translate } from 'react-i18next';
+import twitter from '../FooterComponent/img/twitter.png';
+import facebook from '../FooterComponent/img/facebook.png';
 
 const styles = theme => ({
   margin: {
@@ -132,7 +134,7 @@ export class ContactUsComponent extends Component {
 }
 
 export const ContactInfo = props => {
-  const { t } = props;
+  const { t, displayIcons } = props;
   return (
     <div className="tact-information">
       <div className="contact-record">
@@ -159,6 +161,12 @@ export const ContactInfo = props => {
           <a href="Tel:+31 626 142 889">+31 626 142 889</a>
         </span>
       </div>
+      {displayIcons && (
+        <div className="contact-record">
+          <img src={facebook} alt="laundry dry and clean" />
+          <img src={twitter} alt="laundry dry and clean" />
+        </div>
+      )}
     </div>
   );
 };

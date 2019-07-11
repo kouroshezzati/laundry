@@ -48,9 +48,11 @@ export class index extends Component {
                   {/* <div className="map-wrapper">
                     <MyMapComponent isMarkerShown />
                   </div> */}
-                  <h3 className="text-center mt-4 mb-3">{t('Please contact us.')}</h3>
+                  <h3 className="text-center mt-4 mb-3">
+                    {t('Please contact us.')}
+                  </h3>
                   <div>
-                    <ContactInfo {...this.props} />
+                    <ContactInfo displayIcons {...this.props} />
                   </div>
                 </div>
               </div>
