@@ -139,7 +139,7 @@ export const ContactInfo = props => {
         <span className="key">{t('Address')}:</span>
         <span className="value">Platina weg 25 </span>
         <br />
-        2544 EZ - S-Gravenhage
+        <span className="value">2544 EZ - S-Gravenhage</span>
       </div>
       <div className="contact-record">
         <span className="key">{t('Kvk nummer')}:</span>

@@ -37,6 +37,7 @@ const MyMapComponent = compose(
 
 export class index extends Component {
   render() {
+    const { t } = this.props;
     return (
       <Page>
         <div className="main-section align-content-center flex-wrap fancy-bg">
@@ -47,7 +48,10 @@ export class index extends Component {
                   {/* <div className="map-wrapper">
                     <MyMapComponent isMarkerShown />
                   </div> */}
-                  <ContactInfo {...this.props} />
+                  <h3 className="text-center mt-4 mb-3">{t('Please contact us.')}</h3>
+                  <div>
+                    <ContactInfo {...this.props} />
+                  </div>
                 </div>
               </div>
               <div className="col-md-6">

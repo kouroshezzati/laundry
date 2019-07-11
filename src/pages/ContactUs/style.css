@@ -4,8 +4,9 @@
 }
 
 .contact-form-wrapper {
-  width: 50%;
+  width: 90%;
   background: #ff9204!important;
+  font-weight: 600;
 }
 .fancy-bg {
   background: linear-gradient(to left, hsl(249, 100%, 54%), #0400f7);
@@ -15,6 +16,7 @@
 }
 .contact-record .value {
   padding-left: 9px;
+  color: #fff;
 }
 @media (min-width: 768px) {
   .contact-information {
