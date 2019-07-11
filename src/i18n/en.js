@@ -39,7 +39,7 @@ export default {
     Our wash processes is done in most environment friendly way,with quality
     Control on each individual wash load.
     The main characteristics of BUBBLES are professionalism, speed and reliability.
-    BUBBLES provide your business with pick up &amp; drop of service and will make
+    BUBBLES provide your business with pick up & drop of service and will make
     sure you have your products on time.
     We can also offer your business different kinds of linen and table cloths for
     rent.
@@ -99,13 +99,13 @@ export default {
   scarf: 'scarf',
   'info.description': `Bed bugs are not something that we think of every day ,
   but the fact is that they can be in our bed covers, pillow
-  quilts , sofa covers & in our clothing , it can give you skin rash
-  small red bumps , surrounded by blisters or hives;
+  quilts,sofa covers & in our clothing,it can give you skin rash
+  small red bumps,surrounded by blisters or hives;
   one of the ways that you can get rid of them
-  we recommend to have your bed covers, Sofa covers washed
+  we recommend to have your bed covers,Sofa covers washed
   by porfesional since the correct tempruter and correct wash detergent
   is essential to get the best results.
-  our recomendation is 2 times a year wash for, pillow, comforter ,
+  our recomendation is 2 times a year wash for,pillow,comforter ,
   over mattress and sofa covers.`,
   'silk / top': 'Zijde / Top',
   'jacket / blazer': 'jacket / blazer',
