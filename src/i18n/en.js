@@ -42,8 +42,7 @@ export default {
     BUBBLES provide your business with pick up & drop of service and will make
     sure you have your products on time.
     We can also offer your business different kinds of linen and table cloths for
-    rent.
-    Offer: for large quantities of wash load we offer 20% discount.`,
+    rent.`,
   'business.description.tip':
     'Offer: for large quantities of wash load we offer 20% discount.',
   'Special order': `Special order`,
@@ -56,8 +55,7 @@ export default {
   Mobile: 'Mobile',
   Address: 'Address',
   address: 'address',
-  Telephone: 'Telephone',
-  telephone: 'Telephone',
+  Tel: 'Tel',
   Submit: 'Submit',
   Home: 'Home',
   'The passwords are not the same': 'The passwords are not the same',
@@ -99,13 +97,13 @@ export default {
   scarf: 'scarf',
   'info.description': `Bed bugs are not something that we think of every day ,
   but the fact is that they can be in our bed covers, pillow
-  quilts,sofa covers & in our clothing,it can give you skin rash
-  small red bumps,surrounded by blisters or hives;
+  quilts, sofa covers & in our clothing,it can give you skin rash
+  small red bumps, surrounded by blisters or hives;
   one of the ways that you can get rid of them
-  we recommend to have your bed covers,Sofa covers washed
+  we recommend to have your bed covers, Sofa covers washed
   by porfesional since the correct tempruter and correct wash detergent
   is essential to get the best results.
-  our recomendation is 2 times a year wash for,pillow,comforter ,
+  our recomendation is 2 times a year wash for, pillow, comforter ,
   over mattress and sofa covers.`,
   'silk / top': 'Zijde / Top',
   'jacket / blazer': 'jacket / blazer',
@@ -154,11 +152,15 @@ export default {
   'Deliver time': 'Deliver time',
   'PRICES INCLUDING VAT': 'PRICES INCLUDING VAT',
   'READ MORE': 'READ MORE',
-  'privacy policy': 'privacy policy',
+  'Privacy policy': 'Privacy policy',
   'privacy-policy.message': 'english',
   'termsandconditions.message': 'english',
   'We also offer after opening hours urgent delivery, please contact us.':
     'We also offer after opening hours urgent delivery, please contact us.',
   'Monday to Saturday 9am to 18.00': 'Monday to Saturday 9am to 18.00',
-  Areas: 'Areas'
+  Areas: 'Areas',
+  'Back to home page':'Back to home page',
+  'back to Date':'back to Date',
+ 'I accept these':'I accept these',
+ 'terms-and-conditions':'terms-and-conditions'
 };

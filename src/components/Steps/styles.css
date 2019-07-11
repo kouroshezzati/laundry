@@ -4,13 +4,13 @@
   padding-bottom: 20px;
 }
 .step img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   max-width: 270px;
 }
 .step .step-title{
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 2px;
 }
 @media (max-width: 768px) {

@@ -249,7 +249,7 @@ class NavBarComponent extends Component {
                             duration={1000}
                             
                             >
-                            {t('did you know?')}
+                            {t('Did you know?')}
                           </Link>
                         </MenuItem>
                         <MenuItem>

@@ -15,7 +15,6 @@ import visaImg from './img/visa.png';
 import pinImg from './img/pin.gif';
 import americanExpressImg from './img/american-express.png';
 import logo from '../../assets/images/logo_65.png';
-
 let FooterComponent = props => {
   const { t } = props;
   return (
@@ -72,14 +71,13 @@ let FooterComponent = props => {
           <div className="col-md-4">
             <h5 className="mt-2 mb-1">{t('Areas')}</h5>
             <div>Den haag</div>
-            <div>leidschendam / voorburg</div>
-            <div>wassenaar</div>
-            <div>voorschoten</div>
-            <div>wateringen</div>
-            <div>nootdorp</div>
-            <div>leiden</div>
-            <div>zoetermeer</div>
-            <div>leiden</div>
+            <div>Leidschendam / Voorburg</div>
+            <div>Wassenaar</div>
+            <div>Voorschoten</div>
+            <div>Wateringen</div>
+            <div>Nootdorp</div>
+            <div>Leiden</div>
+            <div>Zoetermeer</div>
           </div>
         </div>
         <div className="links container">
@@ -93,7 +91,7 @@ let FooterComponent = props => {
           >
             <div className="col-sm-4">
               <NavLink className="footer-link" to="/contact/">
-                {t('contact')}
+                {t('Contact')}
               </NavLink>
             </div>
             <div className="col-md-4 icons-footer">
@@ -106,7 +104,7 @@ let FooterComponent = props => {
             </div>
             <div className="col-sm-4">
               <NavLink className="footer-link" to="/terms-and-conditions/">
-                {t('privacy policy')}
+                {t('Privacy policy')}
               </NavLink>
             </div>
           </div>
@@ -114,7 +112,7 @@ let FooterComponent = props => {
       </div>
 
       <div className="container copy-right">
-        <p>bubblesonlie&copy; 2019.</p>
+        <p>Bubblesonlie &copy; 2019.</p>
       </div>
     </footer>
   );

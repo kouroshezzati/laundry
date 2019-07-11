@@ -1,5 +1,5 @@
 #business {
-  background: #ff8019;
+  background: linear-gradient(to left, #ff8d2f, #ff7300);
   color: #fff;
 }
 #business h5 {
@@ -10,7 +10,7 @@
 
 .business-img-wrapper {
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .business-img-wrapper img {

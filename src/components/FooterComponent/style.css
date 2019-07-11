@@ -1,8 +1,8 @@
 footer {
   padding: 25px 0;
   text-align: center;
-  color: rgba(255, 255, 255);
-  background-color: black;
+  color: rgb(235, 252, 251);
+  background: linear-gradient(to left, #01012b, #000000);
 }
 
 footer p {
@@ -16,10 +16,10 @@ footer ul {
 
 footer ul li a {
   font-size: 12px;
-  color: rgba(255, 255, 255);
+  color: rgb(0, 217, 255);
 }
 .footer-link {
-  color: white;
+  color: rgb(251, 255, 255);
 }
 footer ul li a:hover,
 footer ul li a:focus,

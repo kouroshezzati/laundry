@@ -11,7 +11,6 @@ export default {
   bedroom: 'Slaapkamer',
   Carpets: 'tapijten',
   'price list': 'prijslijst',
-  'special order': 'speciale bestelling',
   LAUNDRY: 'WASSERIJ',
   'DRY CLEAN': 'STOMERIJ',
   'HOUSE HOLD': 'WONING',
@@ -27,8 +26,7 @@ export default {
   Met een kortingskaart waarop u punten kunt verzamelen, belonen we u om zo optimaal
   mogelijk te genieten van het bedrag dat u betaalt. Wij verzekeren u dat wij uw was op tijd
   komen ophalen, en uw schone was op tijd bezorgen.
-  Voor vragen verzoeken wij u contact met ons op te nemen.
-  .`,
+  Voor vragen verzoeken wij u contact met ons op te nemen.`,
   'pickup.description': `Maandag tot zaterdag 9:00 tot Zaterdag 18:00
   Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons
   op.`,
@@ -46,7 +44,7 @@ export default {
     Het is ook mogelijk om tafellinnen en bedlinnen te huren.`,
   'business.description.tip':
     'ACTIE: voor het reinigen van grote partijen geldt een korting van 20%.',
-  'Special order': 'Speciale bestelling',
+  'Special order': 'Aanbiedingen',
   'address.description': `adres Omschrijving`,
   'User name': 'Gebruikersnaam',
   Username: 'Gebruikersnaam',
@@ -55,14 +53,13 @@ export default {
   'Confirm the password': 'Bevestig het wachtwoord',
   Mobile: 'mobiel',
   Address: 'Adres',
-  Telephone: 'telefoon',
-  telephone: 'telefoon',
+  Tel: 'Tel',
   Submit: 'voorleggen',
   Home: 'HOME',
   'The passwords are not the same': 'De wachtwoorden zijn niet hetzelfde',
   'email.privacy': `We'll never share your email with anyone else.`,
   'Email or Username': 'E-mail of gebruikersnaam',
-  'Forgotten password?': 'Vergeten wachtwoord?',
+  'Forgotten password?': 'Wachtwoord vergeten ?',
   Back: 'Terug',
   Name: 'Naam',
   Subject: 'Onderwerpen',
@@ -124,7 +121,7 @@ export default {
   'My orders': 'My orders',
   'Log out': 'Log out',
   Logout: 'Logout',
-  'Company name': 'Company name',
+  'Company name': 'Bedrijf naam ',
   Phone: 'Phone',
   'Zip/Postcode': 'Zip/Postcode',
   Apartmant: 'Apartment',
@@ -137,7 +134,7 @@ export default {
   'ABOVE 22,00 EURO': 'VAN AF 22,00 EURO',
   'CARPET CLEANING': 'TAPIJT REINIGEN',
   TEXTILES: 'TEXTIEL',
-  'About us': 'OVERONS',
+  'About us': 'OVER ONS',
   'PRICES INCLUDING VAT': 'PRIJZEN ZIJN INCLUSIEF BTW',
   'laundry wash & fold': 'Wasserij wassen en vouwen',
   'Bag up all your dirty clothes': 'Pak al je vuile kleren op',
@@ -162,7 +159,7 @@ export default {
   'Pickup time': 'Ophaal tijd',
   'Deliver time': 'Lever tijd',
   'READ MORE': 'MEER INFO',
-  'privacy policy': `Algemene voorwaarden`,
+  'Privacy policy': `Algemene voorwaarden`,
   'shirt / polo': 'Overhemd / Polo',
   'jacket / blazer': 'jas / blazer',
   'suit (2 pieces)': 'pakken (2 sets)',
@@ -206,5 +203,9 @@ export default {
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
   'Monday to Saturday 9am to 18.00':
     'Maandag tot zaterdag 9:00 tot Zaterdag 18:00',
-  'Areas': 'Reigo'
+  'Areas': 'Reigo',
+  'Back to home page':'Hoofdmenu',
+  'back to Date':'Terug / Datum',
+  'I accept these':'Ik ga akkoord met de',
+  'terms-and-conditions':'Algemene voorwaarden'
 };
