@@ -160,5 +160,6 @@ export default {
   'We also offer after opening hours urgent delivery, please contact us.':
     'We also offer after opening hours urgent delivery, please contact us.',
   'Monday to Saturday 9am to 18.00': 'Monday to Saturday 9am to 18.00',
-  Areas: 'Areas'
+  Areas: 'Areas',
+  'I accept these': 'I accept these'
 };

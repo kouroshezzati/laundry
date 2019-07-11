@@ -206,5 +206,6 @@ export default {
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
   'Monday to Saturday 9am to 18.00':
     'Maandag tot zaterdag 9:00 tot Zaterdag 18:00',
-  'Areas': 'Reigo'
+  Areas: 'Reigo',
+  'I accept these': '!I accept these'
 };
