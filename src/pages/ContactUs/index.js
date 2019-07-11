@@ -43,10 +43,10 @@ export class index extends Component {
           <div className="contact-form-wrapper form-wrapper m-2 mx-auto p-2">
             <div className="row">
               <div className="col-md-6">
-                <div className="text-center contact-us-log">
-                  <div className="map-wrapper">
+                <div className="contact-us-log">
+                  {/* <div className="map-wrapper">
                     <MyMapComponent isMarkerShown />
-                  </div>
+                  </div> */}
                   <ContactInfo {...this.props} />
                 </div>
               </div>

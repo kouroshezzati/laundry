@@ -70,7 +70,7 @@ let FooterComponent = props => {
             <ContactInfo {...props} />
           </div>
           <div className="col-md-4">
-            <h5 className="mt-2 mb-1">{t('Areas')}</h5>
+            <h5 className="mt-3 mb-1">{t('Areas')}</h5>
             <div>Den haag</div>
             <div>leidschendam / voorburg</div>
             <div>wassenaar</div>

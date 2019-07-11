@@ -13,7 +13,8 @@ import { API_ROOT } from '../../constants/index.js';
 import './style.css';
 import Snackbar from '../../utils/Snackbar/SnackbarComponent';
 import { translate } from 'react-i18next';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 const styles = theme => ({
   margin: {
     fontSize: 14
@@ -132,28 +133,31 @@ export class ContactUsComponent extends Component {
 }
 
 export const ContactInfo = props => {
-  const { t, contactUs } = props;
+  const { t } = props;
   return (
-    <div
-      className={classnames(
-        contactUs ? 'contact-information' : '',
-        'text-center'
-      )}
-    >
+    <div className="tact-information">
       <div className="contact-record">
         <span className="key">{t('Address')}:</span>
-        <span className="value">Platina weg 25 </span><br></br>2544 EZ - S-Gravenhage
+        <span className="value">Platina weg 25 </span>
+        <br />
+        2544 EZ - S-Gravenhage
       </div>
       <div className="contact-record">
         <span className="key">{t('Kvk nummer')}:</span>
-        <span className="value">74639757</span><br></br>
+        <span className="value">74639757</span>
+      </div>
+      <div className="contact-record">
         <span className="key">{t('BTW Nummer')}:</span>
-        <span className="value">NL 072877054B02</span><br></br>
-        <span className="value">Email: Info@bubblesonline.nl</span>
+        <span className="value">NL 072877054B02</span>
+      </div>
+      <div className="contact-record">
+        <span className="key">{t('Email')}:</span>
+        <span className="value">info@bubblesonline.nl</span>
       </div>
       <div className="contact-record">
         <span className="key">{t('telephone')}:</span>
         <span className="value">
+          {/* <FontAwesomeIcon icon={faPhone} /> */}
           <a href="tel:+31 626 142 889">+31 626 142 889</a>
         </span>
       </div>
