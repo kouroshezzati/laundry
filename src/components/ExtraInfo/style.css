@@ -1,18 +1,26 @@
-#special-order{ 
-  background-color:  #66ff33
-  ;
+#special-order {
+  background-color: #66ff33;
 }
 
 .special-offer-img-wrapper img {
   width: 100%;
+  height: 100%;
 }
 
-@media (max-width: 768px){
-  .special-offer-message h2{
+@media (max-width: 768px) {
+  .special-offer-message h2 {
     text-align: center;
     margin: 20px;
   }
 }
-.offer-price, .offer-name {
+.offer-price {
+  font-weight: 700;
+}
+.offer-name {
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  #special-order > .container {
+    min-width: 768px;
+  }
 }

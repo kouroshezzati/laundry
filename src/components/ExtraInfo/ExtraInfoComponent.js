@@ -19,15 +19,18 @@ export class SpecialOffer extends Component {
       <section id="special-order">
         <div className="container">
           <div className="row">
-            <div className="col-md-5 special-offer-img-wrapper">
+            <div className="col-12 col-md-5 special-offer-img-wrapper">
               <img alt="laundry" src={specialoffer} />
             </div>
-            <div className="col-md-7">
+            <div className="col-12 col-md-7">
               <div className="special-offer-message container">
                 <h2 className="text-center">{t('SPECIAL OFFER')}</h2>
                 <div className="row mt-1 mb-2">
                   {especialOfferProducts.map(offer => (
-                    <div key={offer.id} className="col-md-6 col-12 mt-1 mb-1">
+                    <div
+                      key={offer.id}
+                      className="col-md-6 col-12 mt-1 mb-1"
+                    >
                       <div className="row">
                         <div className="offer-name col-9">
                           {t(offer.name.toLowerCase())}
