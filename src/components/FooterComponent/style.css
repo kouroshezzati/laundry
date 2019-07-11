@@ -35,6 +35,7 @@ footer ul li a.active {
   height: 32px;
   width: 32px;
   margin: 0 6px;
+  background: white;
 }
 .icons-footer {
   font-size: 0.9em;
