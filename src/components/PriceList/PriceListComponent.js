@@ -62,7 +62,7 @@ class PriceListComponent extends Component {
                       <ListItemText>
                         {t(_product.name.trim().toLowerCase()).toUpperCase()}
                       </ListItemText>
-                      <ListItemSecondaryAction>
+                      <ListItemSecondaryAction style={{width: '60px'}}>
                         &euro; {_product.price}
                       </ListItemSecondaryAction>
                     </ListItem>

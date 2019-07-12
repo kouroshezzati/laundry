@@ -29,9 +29,7 @@ export default {
   your laundry on time .
   Please do not hesitate to contact us for further information. 
   `,
-  'pickup.description': `Monday to Saturday 9am to 18.00
-                    we also offer after opening hours urgent delivery, please contact us.
-                    `,
+  'pickup.description': `Monday to Saturday 9am to 18.00 we also offer after opening hours urgent delivery, please contact us.`,
   'offers.description': `10 % Discount for our first time users Gold Member Pearl Member`,
   'delivery.description': `Free Delivery Above 22.oo Euro`,
   'business.description': `BUBBLES is specialized in cleaning and managing linen for Restaurants, Hotels,

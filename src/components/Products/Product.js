@@ -51,7 +51,9 @@ class Product extends Component {
         <li className="list-group-item">
           <span className="float-left">{t(name.trim().toLowerCase())}</span>
           <span className="float-right product-controllers">
-            <span className="mr-2">&euro; {_product.price}</span>
+            <span style={{ width: '60px' }} className="mr-2 text-left">
+              &euro; {_product.price}
+            </span>
             <Button
               size="small"
               color="secondary"
