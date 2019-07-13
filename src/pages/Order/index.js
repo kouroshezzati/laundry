@@ -12,14 +12,14 @@ const ControllerButtons = ({ t, isFormFilled }) => {
   return (
     <div className="container button-controllers-navigator">
       <div className="mt-2 pt-1 row">
-        <div className="col-5 col-sm-6 mb-2">
+        <div className="col-12 col-sm-6 mb-2">
           <NavLink className="nav-button" to="/date">
             <Button fullWidth color="secondary" variant="contained">
               {t('back to Date')}
             </Button>
           </NavLink>
         </div>
-        <div className="col-7 col-sm-6">
+        <div className="col-12 col-sm-6">
           {!isFormFilled && (
             <Button disabled fullWidth variant="contained">
               {t('Check out')}
