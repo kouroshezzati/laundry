@@ -152,7 +152,7 @@ class NavBarComponent extends Component {
           >
             {t('Menu')}
           </button>
-          <div classnames="logo-mobile-wrapper">
+          <div style={{ marginRight: '15px' }}>
             <LogoComponent
               mobile
               onScrollToTopHandler={this.scrollToTop}

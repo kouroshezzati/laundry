@@ -24,10 +24,7 @@ const deliverTime = new Date();
 const pickupTime = new Date();
 deliverTime.setHours(9, 0, 0);
 pickupTime.setHours(9, 0, 0);
-export default (
-  state = { pickupTime: '', deliverTime: '', deliverTime, pickupTime },
-  action
-) => {
+export default (state = { deliverTime, pickupTime }, action) => {
   switch (action.type) {
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };

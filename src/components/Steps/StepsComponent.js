@@ -7,7 +7,6 @@ import washi from '../ServicesComponent/img/washi.jpg';
 import step4 from '../ServicesComponent/img/step4.jpg';
 export class StepComponent extends Component {
   render() {
-    const {t} = this.props;
     return (
       <section id="steps">
         <div className="container">

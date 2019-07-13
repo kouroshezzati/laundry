@@ -17,7 +17,7 @@ import { formattedDate } from '../../utils/components';
 const styles = theme => ({
   root: {
     width: '100%',
-    '& .container .row div':{
+    '& .container .row div': {
       padding: '0 8px !important'
     }
   },
@@ -37,7 +37,7 @@ let ProductOrderComponent = props => {
   return (
     <Paper className={classes.paper}>
       <Table className={classes.table}>
-        <TableHead >
+        <TableHead>
           <TableRow>
             <TableCell className="label-key">{t('Name')}</TableCell>
             <TableCell className="label-key">{t('Number')}</TableCell>
@@ -69,9 +69,13 @@ class OrderItem extends Component {
     const payed = order.payed ? (
       t('payed')
     ) : (
-      <a href="javascript:;" onClick={e => e.stopPropagation()} to="payment">
+      <div
+        style={{ cursor: 'pointer' }}
+        onClick={e => e.stopPropagation()}
+        to="payment"
+      >
         {t('payment')}
-      </a>
+      </div>
     );
     const amount = order.amount || '-';
     const transaction = order.transaction || '-';
