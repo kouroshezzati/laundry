@@ -4,6 +4,7 @@ nav .auth-link a{
 nav .auth-link {
   position: absolute;
   right: 40px;
+  top: 16px;
 }
 .user-menu-dropdown{
   position: absolute !important;

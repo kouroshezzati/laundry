@@ -294,7 +294,7 @@ class RegisterComponent extends Component {
                   </div>
                 )}
               </div>
-              <div className="form-group col-md-6">
+              <div className="form-group col-12">
                 <MuiThemeProvider theme={theme}>
                   <Button type="submit" variant="contained" color="primary">
                     {t('Register')}

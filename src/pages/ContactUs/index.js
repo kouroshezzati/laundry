@@ -40,7 +40,7 @@ export class index extends Component {
     const { t } = this.props;
     return (
       <Page>
-        <div className="main-section align-content-center flex-wrap fancy-bg">
+        <div className="main-section align-content-center fancy-bg">
           <div className="contact-form-wrapper form-wrapper m-2 mx-auto p-2">
             <div className="row">
               <div className="col-md-6">

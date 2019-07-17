@@ -41,7 +41,7 @@ export class InvoiceComponent extends Component {
     const { jwt, t, pickupDate, deliverDate } = this.props;
     return (
       <Page>
-        <div className=" d-flex align-content-center flex-wrap fancy-bg">
+        <div className=" d-flex align-content-center fancy-bg">
           <div className="invoice-form-wrapper m-2 mx-auto p-2">
             <div className="row date-information">
               {pickupDate && (

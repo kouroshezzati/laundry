@@ -8,7 +8,7 @@ class TermsAndConditions extends Component {
     const { t } = this.props;
     return (
       <Page>
-        <div className="main-section align-content-center flex-wrap fancy-bg">
+        <div className="main-section align-content-center fancy-bg">
           <div className="article mx-auto p-2">
             {t('termsandconditions.message') === 'english' && <Duch />}
             {t('termsandconditions.message') === 'duch' && <Duch />}
