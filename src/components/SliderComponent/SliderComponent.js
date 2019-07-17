@@ -20,7 +20,7 @@ export const SliderComponent = translate('translations')(
       <header className="masthead">
         <div className="container h-100">
           <div className="row h-100">
-            <div className="header-content mx-auto my-auto text-center">
+            <div className="header-content mx-auto text-center">
               <h2>{t('LAUNDRY PICK UP & DROP OFF')}</h2>
                     <h5>{t('FREE DELIVERY')}</h5><br></br>
                         {t('ABOVE 22,00 EURO')}<br></br>

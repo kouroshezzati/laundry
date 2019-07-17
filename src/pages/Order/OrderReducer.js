@@ -53,7 +53,7 @@ export default (state = { deliverTime, pickupTime }, action) => {
       };
     case PICKUP_DATE:
       const _pD = new Date(action.date);
-      const _pT = state.pickupTime;
+      const _pT = new Date(state.pickupTime);
       _pD.setHours(_pT.getHours(), _pT.getMinutes(), _pT.getSeconds());
       return {
         ...state,
@@ -62,7 +62,7 @@ export default (state = { deliverTime, pickupTime }, action) => {
       };
     case DELIVER_DATE:
       const _dD = new Date(action.date);
-      const _dT = state.deliverTime;
+      const _dT = new Date(state.deliverTime);
       _dD.setHours(_dT.getHours(), _dT.getMinutes(), _dT.getSeconds());
       return { ...state, deliverDate: _dD };
     case DELIVER_TIME:
