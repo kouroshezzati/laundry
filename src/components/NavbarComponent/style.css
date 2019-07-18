@@ -1,4 +1,4 @@
-nav .auth-link a{
+nav .auth-link a {
   color: #ffffff;
 }
 nav .auth-link {
@@ -6,7 +6,7 @@ nav .auth-link {
   right: 40px;
 }
 
-.user-menu-dropdown{
+.user-menu-dropdown {
   position: absolute !important;
   right: 20px;
 }
@@ -55,7 +55,7 @@ nav .auth-link {
 #mainNav.colored .auth-link {
   top: 16px;
 }
-#mainNav.colored .switch-language-wrapper{
+#mainNav.colored .switch-language-wrapper {
   top: 29xp;
 }
 #mainNav.colored .main-logo {
@@ -112,8 +112,8 @@ ul.navbar-nav {
 .nav-item button.button-submenu:hover {
   color: #ffffff;
 }
-.nav-item a.nav-link{
-  width: 149px;
+.nav-item a.nav-link {
+  width: auto;
 }
 .nav-item button.button-submenu {
   color: rgba(255, 255, 255, 0.7);
@@ -130,7 +130,6 @@ button.button-submenu i.fa {
 }
 .user-submenu {
   left: 40px;
-
 }
 #mainNav .navbar-nav > li {
   padding-top: 59px;
@@ -158,6 +157,9 @@ button.button-submenu i.fa {
   color: #fdcc52;
 }
 @media (min-width: 992px) {
+  .nav-item a.nav-link {
+    width: 149;
+  }
   #mainNav {
     border-color: transparent;
     background-color: transparent;
