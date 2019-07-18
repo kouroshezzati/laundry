@@ -112,6 +112,9 @@ ul.navbar-nav {
 .nav-item button.button-submenu:hover {
   color: #ffffff;
 }
+.nav-item a.nav-link{
+  width: 149px;
+}
 .nav-item button.button-submenu {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em !important;

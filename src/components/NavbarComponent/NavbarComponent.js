@@ -169,7 +169,6 @@ class NavBarComponent extends Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink
-                  style={{ minWidth: '147px' }}
                   className="nav-link js-scroll-trigger"
                   to="/contact/"
                 >
