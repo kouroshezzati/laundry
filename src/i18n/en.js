@@ -162,5 +162,6 @@ export default {
   'Back to home page':'Back to home page',
   'back to Date':'back to Date',
  'I accept these':'I accept these',
- 'terms-and-conditions':'terms-and-conditions'
+ 'terms-and-conditions':'terms-and-conditions',
+ 'Please contact us.':'Please contact us.'
 };

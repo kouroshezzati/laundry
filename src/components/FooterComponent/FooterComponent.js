@@ -68,7 +68,7 @@ let FooterComponent = props => {
           </div>
           <div className="col-md-4">
             <h5 className="mt-3 mb-1">{t('Areas')}</h5>
-            <div>Den haag</div>
+            <div>Den Haag</div>
             <div>Leidschendam / Voorburg</div>
             <div>Wassenaar</div>
             <div>Voorschoten</div>
