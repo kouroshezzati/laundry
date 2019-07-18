@@ -4,8 +4,8 @@ nav .auth-link a{
 nav .auth-link {
   position: absolute;
   right: 40px;
-  top: 16px;
 }
+
 .user-menu-dropdown{
   position: absolute !important;
   right: 20px;
@@ -50,6 +50,13 @@ nav .auth-link {
 }
 .big-logo {
   height: 70px;
+}
+
+#mainNav.colored .auth-link {
+  top: 16px;
+}
+#mainNav.colored .switch-language-wrapper{
+  top: 29xp;
 }
 #mainNav.colored .main-logo {
   height: 80px;
