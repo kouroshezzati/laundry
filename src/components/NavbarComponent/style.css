@@ -158,7 +158,7 @@ button.button-submenu i.fa {
 }
 @media (min-width: 992px) {
   .nav-item a.nav-link {
-    width: 149;
+    width: 151px;
   }
   #mainNav {
     border-color: transparent;
