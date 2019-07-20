@@ -68,7 +68,7 @@ class RegisterComponent extends Component {
       apartment: this.apartment.current.value,
       city: this.city.current.value,
       country: this.country.current.value,
-      zip: parseInt(this.zip.current.value, 10),
+      zip: this.zip.current.value,
       phone: this.phone.current.value,
       companyName: this.companyName.current.value
     };
