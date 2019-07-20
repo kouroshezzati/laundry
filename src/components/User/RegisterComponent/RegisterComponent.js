@@ -54,17 +54,9 @@ class RegisterComponent extends Component {
       message: ''
     };
   }
-  isZipNumber = () => {
-    if (this.zip.current) {
-      return !isNaN(this.zip.current.value);
-    }
-    return true;
-  };
+
   onSubmit = event => {
     event.preventDefault();
-    if (!this.isZipNumber()) {
-      return;
-    }
     this.setState({ isSubmitted: true });
     const _data = {
       username: this.username.current.value,
@@ -231,7 +223,6 @@ class RegisterComponent extends Component {
               </div>
               <div className="form-group col-md-6">
                 <input
-                  required
                   className={classnames('form-control')}
                   ref={this.apartment}
                   placeholder={t('Apartment')}
@@ -241,20 +232,11 @@ class RegisterComponent extends Component {
               <div className="form-group col-md-6">
                 <input
                   required
-                  pattern="[0-9]*"
                   className={classnames('form-control')}
                   ref={this.zip}
                   placeholder={t('Zip/Postcode')}
                   type="text"
-                  style={{
-                    border: !this.isZipNumber() ? '1px solid #dc3545' : ''
-                  }}
                 />
-                {!this.isZipNumber() && (
-                  <small style={{ color: '#dc3545' }}>
-                    {t('The zip/postcode must be number!')}
-                  </small>
-                )}
               </div>
               <div className="form-group col-md-6">
                 <input
@@ -267,7 +249,6 @@ class RegisterComponent extends Component {
               </div>
               <div className="form-group col-md-6">
                 <input
-                  required
                   className={classnames('form-control')}
                   ref={this.companyName}
                   placeholder={t('Company name')}
