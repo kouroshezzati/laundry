@@ -128,8 +128,8 @@ button.button-submenu i.fa {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.67em !important;
 }
-.user-submenu {
-  left: 40px;
+.user-menu-dropdown .user-submenu {
+  left: -140px !important;
 }
 #mainNav .navbar-nav > li {
   padding-top: 59px;
