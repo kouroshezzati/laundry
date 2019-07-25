@@ -15,6 +15,7 @@ import Snackbar from '../../utils/Snackbar/SnackbarComponent';
 import { translate } from 'react-i18next';
 import twitter from '../FooterComponent/img/twitter.png';
 import facebook from '../FooterComponent/img/facebook.png';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const styles = theme => ({
   margin: {
@@ -39,14 +40,17 @@ export class ContactUsComponent extends Component {
     this.subject = React.createRef();
     this.body = React.createRef();
     this.state = { snackBar: false };
+    this.recaptchaRef = React.createRef();
   }
+  
   onSubmit = event => {
     event.preventDefault();
     const _data = {
       name: this.name.current.value,
       email: this.email.current.value,
       subject: this.subject.current.value,
-      body: this.body.current.value
+      body: this.body.current.value,
+      recaptchaValue: this.recaptchaRef.current.getValue()
     };
     if (!_data.email || !_data.name || !_data.subject || !_data.body) {
       return;
@@ -122,6 +126,10 @@ export class ContactUsComponent extends Component {
               {t('Back')}
             </NavLink>
           </div>
+          <ReCAPTCHA
+            ref={this.recaptchaRef}
+            sitekey="6LePa68UAAAAAFr7NQQ0PK_6osoAuxW_a8o8Gvvz"
+          />
         </form>
         <Snackbar
           onHandlerClose={e => this.setState({ snackBar: false })}
