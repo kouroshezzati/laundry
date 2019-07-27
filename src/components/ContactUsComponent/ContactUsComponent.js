@@ -50,7 +50,7 @@ export class ContactUsComponent extends Component {
       email: this.email.current.value,
       subject: this.subject.current.value,
       body: this.body.current.value,
-      recaptchaValue: this.recaptchaRef.current.getValue()
+      'g-recaptcha-response': this.recaptchaRef.current.getValue()
     };
     if (!_data.email || !_data.name || !_data.subject || !_data.body) {
       return;
