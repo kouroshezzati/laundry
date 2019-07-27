@@ -56,7 +56,7 @@ export class ContactUsComponent extends Component {
       return;
     }
     axios
-      .post(`${API_ROOT}/contactuses/`, { ..._data })
+      .post(`${API_ROOT}/contactus/`, { ..._data })
       .then(data => {
         this.name.current.value = '';
         this.email.current.value = '';
