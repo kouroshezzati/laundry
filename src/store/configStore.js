@@ -14,10 +14,17 @@ const rootReducer = combineReducers({
 });
 
 const configureStore = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return createStore(
+      rootReducer,
+      load(),
+      compose(applyMiddleware(thunk, api, save({ debounce: 1000 })))
+    );
+  }
   return createStore(
     rootReducer,
     load(),
-    compose(applyMiddleware(thunk, api, save({debounce: 1000}), logger))
+    compose(applyMiddleware(thunk, api, save({ debounce: 1000 }), logger))
   );
 };
 
