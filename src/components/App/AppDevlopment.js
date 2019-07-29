@@ -39,7 +39,10 @@ class App extends Component {
               <Route path="/date/" component={DateComponent} />
               <Route path="/invoice/" component={Invoice} />
               <Route path="/privacy-policy/" component={PrivacyPolicy} />
-              <Route path="/terms-and-conditions/" component={TermsAndConditions} />
+              <Route
+                path="/terms-and-conditions/"
+                component={TermsAndConditions}
+              />
               <PrivateRoute path="/user/" component={User} />
               <Route
                 path="/forgotten-password/"
@@ -49,10 +52,7 @@ class App extends Component {
                 path="/reset-password/"
                 component={ResetPasswordPageComponent}
               />
-              <Route
-               path="/services/:name"
-               component={ServicesComponent}
-              />
+              <Route path="/services/:name" component={ServicesComponent} />
             </Switch>
           </Router>
         </I18nextProvider>

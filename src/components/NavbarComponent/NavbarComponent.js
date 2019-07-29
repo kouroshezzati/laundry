@@ -129,6 +129,8 @@ class NavBarComponent extends Component {
   render() {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
+    //scroll to top in non-home pages
+    location.pathname !== '/' && scroll.scrollToTop();
     return (
       <nav
         className={classnames(
@@ -168,10 +170,7 @@ class NavBarComponent extends Component {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink
-                  className="nav-link js-scroll-trigger"
-                  to="/contact/"
-                >
+                <NavLink className="nav-link js-scroll-trigger" to="/contact/">
                   {t('contact')}
                 </NavLink>
               </li>
