@@ -87,16 +87,16 @@ let FooterComponent = props => {
               borderTop: '1px solid white'
             }}
           >
-            <div className="col-sm-4 m-2">
+            <div className="col-sm-4">
               <NavLink className="footer-link" to="/contact/">
                 {t('Contact')}
               </NavLink>
             </div>
-            <div className="col-md-4 icons-footer">
+            <div className="col-sm-4 icons-footer">
               <img src={facebook} alt="laundry dry and clean" />
               <img src={twitter} alt="laundry dry and clean" />
             </div>
-            <div className="col-sm-4 m-2">
+            <div className="col-sm-4">
               <NavLink className="footer-link" to="/terms-and-conditions/">
                 {t('Privacy policy')}
               </NavLink>

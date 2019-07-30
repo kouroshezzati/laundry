@@ -68,6 +68,11 @@ footer ul li a.active {
   bottom: 10px;
 }
 
+@media (max-width: 575px) {
+  .icons-footer{
+    margin: 8px;
+  }
+}
 @media (max-width: 768px) {
   .bank-icons,
   .social-icons {
