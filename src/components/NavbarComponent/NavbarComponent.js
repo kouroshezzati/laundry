@@ -130,7 +130,7 @@ class NavBarComponent extends Component {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
     //scroll to top in non-home pages
-    location.pathname !== '/' && scroll.scrollToTop();
+    // location.pathname !== '/' && scroll.scrollToTop();
     return (
       <nav
         className={classnames(
