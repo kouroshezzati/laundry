@@ -3,7 +3,7 @@ nav .auth-link a {
 }
 nav .auth-link {
   position: absolute;
-  right: 40px;
+  right: 1%;
 }
 
 .user-menu-dropdown {
@@ -221,7 +221,7 @@ button.button-submenu i.fa {
 .language-mobile-wrapper .switch-language-wrapper {
   display: none;
 }
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .just-mobile {
     display: block;
   }
@@ -231,6 +231,7 @@ button.button-submenu i.fa {
   .tiny-logo {
     display: block;
     height: 60px;
+    margin-right: 15px;
   }
   #mainNav .navbar-nav > li {
     padding-top: 10px;
