@@ -4,7 +4,8 @@ import {
   RESET_ORDER,
   CHANGE_DESCRIPTION,
   DELIVER_TIME,
-  PICKUP_TIME
+  PICKUP_TIME,
+  PAID_ORDER
 } from './OrderConstants';
 import {
   ADD_INVOICE_SUCCESS,
@@ -24,8 +25,25 @@ const deliverTime = new Date();
 const pickupTime = new Date();
 deliverTime.setHours(9, 0, 0);
 pickupTime.setHours(9, 0, 0);
-export default (state = { deliverTime, pickupTime }, action) => {
+export default (
+  state = { deliverTime, pickupTime, paidDeliverDate: {}, paidPickupDate: {} },
+  action
+) => {
   switch (action.type) {
+    case PAID_ORDER:
+      if (
+        !state.paidDeliverDate[action.orderId] ||
+        !state.paidPickupDate[action.orderId]
+      ) {
+        const paidDeliverDate = { [action.orderId]: state.deliverDate };
+        const paidPickupDate = { [action.orderId]: state.pickupDate };
+        return {
+          ...state,
+          paidDeliverDate,
+          paidPickupDate
+        };
+      }
+      return { ...state };
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
     case RESET_ORDER:

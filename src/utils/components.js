@@ -35,7 +35,6 @@ export const formattedDate = date => {
 };
 export const ADD = 'ADD';
 export const SUB = 'SUB';
-export const MUL = 'MUL';
 
 export const multipleCurrency = (number, time) => {
   if (typeof number !== 'string') {

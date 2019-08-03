@@ -10,10 +10,7 @@ import UserInfoForm from '../../components/User/UserInfo/UserInfoContainer';
 import moment from 'moment';
 import { NavLink, withRouter } from 'react-router-dom';
 import Page from '../index';
-import {
-  ADD_ORDER_SUCCESS,
-  ADD_INVOICE_SUCCESS
-} from '../Order/OrderConstants';
+import { ADD_ORDER_SUCCESS } from '../Order/OrderConstants';
 
 export class InvoiceComponent extends Component {
   constructor(props) {
@@ -25,14 +22,11 @@ export class InvoiceComponent extends Component {
   };
 
   paymentHandler = () => {
-    const { resetOrderAndSelectedProducts, addOrder, addInvoice } = this.props;
+    const { addOrder, resetOrderAndSelectedProducts } = this.props;
     addOrder().then(data => {
       if (data.type === ADD_ORDER_SUCCESS) {
-        addInvoice().then(_data => {
-          if (_data.type === ADD_INVOICE_SUCCESS) {
-            resetOrderAndSelectedProducts();
-          }
-        });
+        resetOrderAndSelectedProducts();
+        window.location.href = data.response;
       }
     });
   };
@@ -43,22 +37,7 @@ export class InvoiceComponent extends Component {
       <Page>
         <div className=" d-flex align-content-center fancy-bg">
           <div className="invoice-form-wrapper m-2 mx-auto p-2">
-            <div className="row date-information">
-              {pickupDate && (
-                <div className="col-md-6">
-                  {`${t('Pickup date')}: ${moment(pickupDate).format(
-                    'MMMM D, YYYY HH:mm'
-                  )}`}
-                </div>
-              )}
-              {deliverDate && (
-                <div className="col-md-6">
-                  {`${t('Deliver date')}: ${moment(deliverDate).format(
-                    'MMMM D, YYYY HH:mm'
-                  )}`}
-                </div>
-              )}
-            </div>
+            <DateShow pickupDate={pickupDate} deliverDate={deliverDate} />
             <ProductList invoice />
             {!jwt && (
               <div className="row m-2">
@@ -108,8 +87,27 @@ export class InvoiceComponent extends Component {
     );
   }
 }
-
-const UserInfo = props => {
+export let DateShow = ({ deliverDate, pickupDate, t }) => {
+  return (
+    <div className="row date-information">
+      {pickupDate && (
+        <div className="col-md-6">
+          {`${t('Pickup date')}: ${moment(pickupDate).format(
+            'MMMM D, YYYY HH:mm'
+          )}`}
+        </div>
+      )}
+      {deliverDate && (
+        <div className="col-md-6">
+          {`${t('Deliver date')}: ${moment(deliverDate).format(
+            'MMMM D, YYYY HH:mm'
+          )}`}
+        </div>
+      )}
+    </div>
+  );
+};
+export let UserInfo = props => {
   const {
     username,
     email,
@@ -123,7 +121,8 @@ const UserInfo = props => {
     country,
     city,
     companyName,
-    onHandleEditUserClick
+    onHandleEditUserClick,
+    readOnly
   } = props;
   return (
     <div className="row m-1 user-info">
@@ -171,16 +170,21 @@ const UserInfo = props => {
         <span className="label">{t('Company name')}:</span>
         {companyName}
       </div>
-      <div className="col-md-12">
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={onHandleEditUserClick}
-        >
-          {t('Edit Information')}
-        </Button>
-      </div>
+      {!readOnly && (
+        <div className="col-md-12">
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={onHandleEditUserClick}
+          >
+            {t('Edit Information')}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
+
+UserInfo = translate('translations')(UserInfo);
+DateShow = translate('translations')(DateShow);
 export default withRouter(translate('translations')(InvoiceComponent));

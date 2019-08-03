@@ -12,6 +12,7 @@ import Register from '../../pages/Register/';
 import Login from '../../pages/Login/';
 import Order from '../../pages/Order/OrderContainer';
 import Invoice from '../../pages/Invoice/InvoiceContainer';
+import OrderInvoiceComponent from '../../pages/Invoice/OrderInvoiceComponent';
 import User from '../../pages/User/UserComponent';
 import DateComponent from '../../pages/Order/DateComponent';
 import ForgottenPasswordPage from '../../pages/ForgottenPassword/ForgottenPasswordPageComponent';
@@ -37,7 +38,8 @@ class App extends Component {
               <Route path="/login/" component={Login} />
               <Route path="/order/" component={Order} />
               <Route path="/date/" component={DateComponent} />
-              <Route path="/invoice/" component={Invoice} />
+              <Route exact path="/invoice" component={Invoice} />
+              <Route path="/invoice/:orderId" component={OrderInvoiceComponent} />
               <Route path="/privacy-policy/" component={PrivacyPolicy} />
               <Route
                 path="/terms-and-conditions/"

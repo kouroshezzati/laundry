@@ -11,9 +11,15 @@
 }
 .total-price {
   font-weight: 1000;
-  font-height: 900;
   height: 40px;
   background-color: #cecece !important;
-  color:rgb(255, 30, 0)
-   
+  color: rgb(255, 30, 0);
+}
+.total-price .paid-stamp {
+  margin-left: 10%;
+}
+.total-price .paid-stamp img {
+  height: 100%;
+  transform: rotate(-20deg);
+  position: absolute;
 }

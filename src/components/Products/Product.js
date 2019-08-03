@@ -35,7 +35,8 @@ class Product extends Component {
       classes,
       id,
       selectedProducts,
-      intactProducts
+      intactProducts,
+      readOnly
     } = this.props;
 
     if (parent) {
@@ -54,28 +55,32 @@ class Product extends Component {
             <span style={{ width: '60px' }} className="mr-2 text-left">
               &euro; {_product.price}
             </span>
-            <Button
-              size="small"
-              color="secondary"
-              variant="contained"
-              onClick={e => this.setNumber(_product, REMOVE_PRODUCT)}
-              className={classes.extendedIcon}
-            >
-              <Remove />
-            </Button>
-            <span>{productNumbers}</span>
-            <Button
-              size="small"
-              color="primary"
-              variant="contained"
-              className={classes.extendedIcon}
-              onClick={e => this.setNumber(_product, ADD_PRODUCT)}
-            >
-              <Add />
-            </Button>
-            <span className="price-wrapper">
-              &euro; {multipleCurrency(_product.price, productNumbers)}
-            </span>
+            {!readOnly && (
+              <React.Fragment>
+                <Button
+                  size="small"
+                  color="secondary"
+                  variant="contained"
+                  onClick={e => this.setNumber(_product, REMOVE_PRODUCT)}
+                  className={classes.extendedIcon}
+                >
+                  <Remove />
+                </Button>
+                <span>{productNumbers}</span>
+                <Button
+                  size="small"
+                  color="primary"
+                  variant="contained"
+                  className={classes.extendedIcon}
+                  onClick={e => this.setNumber(_product, ADD_PRODUCT)}
+                >
+                  <Add />
+                </Button>
+                <span className="price-wrapper">
+                  &euro; {multipleCurrency(_product.price, productNumbers)}
+                </span>
+              </React.Fragment>
+            )}
           </span>
         </li>
       );

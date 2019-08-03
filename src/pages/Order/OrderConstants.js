@@ -18,3 +18,4 @@ export const RESET_ORDER = 'RESET_ORDER';
 
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION';
 
+export const PAID_ORDER = 'PAID_ORDER';
