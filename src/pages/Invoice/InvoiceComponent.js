@@ -22,10 +22,9 @@ export class InvoiceComponent extends Component {
   };
 
   paymentHandler = () => {
-    const { addOrder, resetOrderAndSelectedProducts } = this.props;
+    const { addOrder } = this.props;
     addOrder().then(data => {
       if (data.type === ADD_ORDER_SUCCESS) {
-        resetOrderAndSelectedProducts();
         window.location.href = data.response;
       }
     });
