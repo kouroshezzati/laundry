@@ -27,7 +27,6 @@ const reducer = (
   },
   action
 ) => {
-  console.log(state, action.type);
   switch (action.type) {
     case PAID_ORDER:
       if (!state.paidSelectedProducts[action.orderId]) {
