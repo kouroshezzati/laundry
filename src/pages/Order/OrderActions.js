@@ -5,7 +5,10 @@ import {
   ADD_ORDER_FAILURE,
   RESET_ORDER,
   CHANGE_DESCRIPTION,
-  PAID_ORDER
+  GET_PAYMENT_SUCCESS,
+  GET_PAYMENT_FAILURE,
+  GET_PAYMENT_REQUEST,
+  RESET_PAYMENT
 } from './OrderConstants';
 import _ from 'lodash';
 import { RESET_SELECTED_PRODUCTS } from '../../components/Products/ProductConstants';
@@ -22,7 +25,7 @@ export const setDescription = description => ({
 
 export const addOrder = () => (dispatch, getState) => {
   const { id } = getState().user;
-  const { description } = getState().order;
+  const { description, pickupDate, deliverDate } = getState().order;
   const { selectedProducts } = getState().products;
   let invoices = [];
   _.map(selectedProducts, (number, productId) => {
@@ -34,7 +37,13 @@ export const addOrder = () => (dispatch, getState) => {
       types: [ADD_ORDER_REQUEST, ADD_ORDER_SUCCESS, ADD_ORDER_FAILURE],
       config: {
         url: `${API_ROOT}/AddOrder`,
-        data: { customerId: id, invoices, description },
+        data: {
+          customerId: id,
+          invoices,
+          description,
+          pickup_date: pickupDate,
+          deliver_date: deliverDate
+        },
         method: 'post'
       }
     }
@@ -46,7 +55,18 @@ export const resetOrderAndSelectedProducts = () => dispatch => {
   dispatch({ type: RESET_SELECTED_PRODUCTS });
 };
 
-export const paidOrder = orderId => ({
-  type: PAID_ORDER,
-  orderId
-});
+export const getPayment = id => dispatch => {
+  return dispatch({
+    [CALL_API]: {
+      types: [GET_PAYMENT_REQUEST, GET_PAYMENT_SUCCESS, GET_PAYMENT_FAILURE],
+      config: {
+        url: `${API_ROOT}/payment/webhook/${id}`,
+        method: 'post'
+      }
+    }
+  });
+};
+
+export const resetPayment = () => ({
+  type: RESET_PAYMENT
+})

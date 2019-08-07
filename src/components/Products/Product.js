@@ -36,7 +36,8 @@ class Product extends Component {
       id,
       selectedProducts,
       intactProducts,
-      readOnly
+      readOnly,
+      orderProductNumber
     } = this.props;
 
     if (parent) {
@@ -55,6 +56,14 @@ class Product extends Component {
             <span style={{ width: '60px' }} className="mr-2 text-left">
               &euro; {_product.price}
             </span>
+            {readOnly && (
+              <React.Fragment>
+                <span>{orderProductNumber}</span>
+                <span className="text-left price-wrapper">
+                  &euro; {multipleCurrency(_product.price, orderProductNumber)}
+                </span>
+              </React.Fragment>
+            )}
             {!readOnly && (
               <React.Fragment>
                 <Button

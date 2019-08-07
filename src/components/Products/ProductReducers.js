@@ -12,7 +12,6 @@ import {
   ADD_PRODUCT_SUCCESS,
   RESET_SELECTED_PRODUCTS
 } from './ProductConstants';
-import { PAID_ORDER } from '../../pages/Order/OrderConstants';
 
 const reducer = (
   state = {
@@ -22,18 +21,11 @@ const reducer = (
     selectedCategory: [],
     selectedProducts: {},
     productNumberAdded: [],
-    especialOfferProducts: [],
-    paidSelectedProducts: {}
+    especialOfferProducts: []
   },
   action
 ) => {
   switch (action.type) {
-    case PAID_ORDER:
-      if (!state.paidSelectedProducts[action.orderId]) {
-        const paidSelectedProducts = { [action.orderId]: state.selectedProducts };
-        return { ...state, paidSelectedProducts };
-      }
-      return { ...state };
     case RESET_SELECTED_PRODUCTS:
       return { ...state, selectedProducts: {} };
     case ADD_PRODUCT_SUCCESS:

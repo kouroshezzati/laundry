@@ -14,12 +14,13 @@ export class ProductList extends Component {
       invoice,
       t,
       orderInvoice,
-      paidSelectedProducts,
       selectedProducts,
       intactProducts,
       especialOfferProducts,
       location,
-      orderId
+      orderSelectedProducts,
+      orderPrice,
+      orderStatus
     } = this.props;
     const params = new URLSearchParams(location.search);
     const type = params.get('type');
@@ -76,7 +77,7 @@ export class ProductList extends Component {
         >
           <div key={Math.random()} className="col-md-12">
             <ul className="list-group" style={{ boxShadow: '1px 1px 2px' }}>
-              {_.map(paidSelectedProducts[orderId], (selectedValue, id) => {
+              {_.map(orderSelectedProducts, (selectedValue, id) => {
                 id = parseInt(id, 10);
                 const _product = intactProducts.find(
                   value => value.id === id && selectedValue
@@ -84,20 +85,24 @@ export class ProductList extends Component {
                 if (!_product) {
                   return <React.Fragment key={id} />;
                 }
-                total = calc(
-                  ADD,
-                  total,
-                  multipleCurrency(_product.price, selectedValue || 0)
+                return (
+                  <Product
+                    readOnly
+                    orderProductNumber={selectedValue}
+                    key={id}
+                    {..._product}
+                  />
                 );
-                return <Product readOnly key={id} {..._product} />;
               })}
               <li className="list-group-item total-price">
                 <span>
-                  {`${t('Total amount')}: `}&euro; {total}
+                  {`${t('Total amount')}: `}&euro; {orderPrice}
                 </span>
-                <span className="paid-stamp">
-                  <img alt="laudry clean and dry" src={paid} />
-                </span>
+                {orderStatus === 'paid' && (
+                  <span className="paid-stamp">
+                    <img alt="laudry clean and dry" src={paid} />
+                  </span>
+                )}
               </li>
             </ul>
           </div>

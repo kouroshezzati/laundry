@@ -5,7 +5,10 @@ import {
   CHANGE_DESCRIPTION,
   DELIVER_TIME,
   PICKUP_TIME,
-  PAID_ORDER
+  GET_PAYMENT_FAILURE,
+  GET_PAYMENT_SUCCESS,
+  GET_PAYMENT_REQUEST,
+  RESET_PAYMENT
 } from './OrderConstants';
 import {
   ADD_INVOICE_SUCCESS,
@@ -26,24 +29,28 @@ const pickupTime = new Date();
 deliverTime.setHours(9, 0, 0);
 pickupTime.setHours(9, 0, 0);
 export default (
-  state = { deliverTime, pickupTime, paidDeliverDate: {}, paidPickupDate: {} },
+  state = {
+    deliverTime,
+    pickupTime,
+    pickupDate: '',
+    deliverDate: '',
+    paidDeliverDate: {},
+    paidPickupDate: {}
+  },
   action
 ) => {
+  if (!state.payment) {
+    state.payment = { metadata: {} };
+  }
   switch (action.type) {
-    case PAID_ORDER:
-      if (
-        !state.paidDeliverDate[action.orderId] ||
-        !state.paidPickupDate[action.orderId]
-      ) {
-        const paidDeliverDate = { [action.orderId]: state.deliverDate };
-        const paidPickupDate = { [action.orderId]: state.pickupDate };
-        return {
-          ...state,
-          paidDeliverDate,
-          paidPickupDate
-        };
-      }
-      return { ...state };
+    case RESET_PAYMENT:
+      return { ...state, payment: { metadata: {} } };
+    case GET_PAYMENT_FAILURE:
+      return { ...state, isFetching: false };
+    case GET_PAYMENT_SUCCESS:
+      return { ...state, payment: action.response };
+    case GET_PAYMENT_REQUEST:
+      return { ...state, isFetching: true };
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
     case RESET_ORDER:
