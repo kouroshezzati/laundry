@@ -21,14 +21,16 @@ class OrderInvoiceComponent extends Component {
     if (!jwt || payment.metadata.length === 0) {
       history.push('/');
     }
-    //redirect to invoice page for failure payment
-    if (payment.statue !== 'paied') {
-      history.push('/invoice');
-      return;
-    }
+
     if (orderId) {
-      getPayment(orderId);
-      resetOrderAndSelectedProducts();
+      getPayment(orderId).then(data => {
+        //redirect to invoice page for failure payment
+        if (data.response.status !== 'paid') {
+          history.push('/invoice');
+          return;
+        }
+        resetOrderAndSelectedProducts();
+      });
     }
   }
   render() {
@@ -40,7 +42,6 @@ class OrderInvoiceComponent extends Component {
       selectedProducts
     } = payment.metadata;
     const { status } = payment;
-    console.log(payment);
     const { orderId } = match.params;
 
     return (
