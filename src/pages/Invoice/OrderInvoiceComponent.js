@@ -18,16 +18,15 @@ class OrderInvoiceComponent extends Component {
       resetPayment
     } = this.props;
     resetPayment();
-    if (!jwt || payment.metadata.length === 0) {
-      history.push('/');
+    if (!jwt) {
+      return history.push('/');
     }
 
     if (orderId) {
       getPayment(orderId).then(data => {
         //redirect to invoice page for failure payment
         if (data.response.status !== 'paid') {
-          history.push('/invoice');
-          return;
+          return history.push('/invoice');
         }
         resetOrderAndSelectedProducts();
       });
@@ -35,6 +34,9 @@ class OrderInvoiceComponent extends Component {
   }
   render() {
     const { match, payment } = this.props;
+    if (!payment || !payment.metadata) {
+      return <React.Fragment />;
+    }
     const {
       deliver_date,
       pickup_date,

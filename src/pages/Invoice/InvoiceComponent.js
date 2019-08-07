@@ -21,6 +21,13 @@ export class InvoiceComponent extends Component {
     this.setState({ editUserInfo: false });
   };
 
+  componentDidMount() {
+    const { history, selectedProducts } = this.props;
+    if (Object.keys(selectedProducts).length === 0) {
+      history.push('order');
+    }
+  }
+
   paymentHandler = () => {
     const { addOrder } = this.props;
     addOrder().then(data => {

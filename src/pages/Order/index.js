@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import ProductList from '../../components/Products/ProductListContainer';
 import Button from '@material-ui/core/Button';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import { translate } from 'react-i18next';
 import Page from '../index';
@@ -45,7 +45,11 @@ const ControllerButtons = ({ t, isFormFilled }) => {
 
 export class index extends Component {
   componentDidMount() {
-    this.props.fetchProducts();
+    const { history, fetchProducts, deliverDate, pickupDate } = this.props;
+    if (!deliverDate || !pickupDate) {
+      return history.push('/date');
+    }
+    fetchProducts();
   }
 
   handleDescriptionChange = e => {
@@ -61,10 +65,7 @@ export class index extends Component {
     const isFormFilled = selectedProductNumbers > 0;
     return (
       <Page>
-        <div
-          className="main-section align-content-center fancy-bg"
-          id="order"
-        >
+        <div className="main-section align-content-center fancy-bg" id="order">
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
             <ProductList />
             <div className="form-group m-2" id="order-description">
@@ -89,4 +90,4 @@ export class index extends Component {
   }
 }
 
-export default translate('translations')(index);
+export default withRouter(translate('translations')(index));
