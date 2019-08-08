@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
-import { register } from '../UserActions';
+import * as UserActions from '../UserActions';
 import {
   withStyles,
   MuiThemeProvider,
@@ -13,7 +13,7 @@ import green from '@material-ui/core/colors/green';
 import './style.css';
 import { translate } from 'react-i18next';
 import Snackbar from '../../../utils/Snackbar/SnackbarComponent';
-import { REGISTER_SUCCESS } from '../UserConstants';
+import { REGISTER_SUCCESS, LOGIN_SUCCESS } from '../UserConstants';
 
 const styles = theme => ({
   margin: {
@@ -83,28 +83,26 @@ class RegisterComponent extends Component {
     ) {
       return;
     }
-    const { register, t, location } = this.props;
-    if (location.pathname !== '/register/') {
-      return register({ ..._data });
-    }
+    const { register, t, location, login, getCustomer, history } = this.props;
     register({ ..._data }).then(data => {
       if (data.type === REGISTER_SUCCESS) {
-        this.username.current.value = '';
-        this.email.current.value = '';
-        this.password.current.value = '';
-        this.confirm_password.current.value = '';
-        this.firstName.current.value = '';
-        this.lastName.current.value = '';
-        this.address.current.value = '';
-        this.apartment.current.value = '';
-        this.city.current.value = '';
-        this.country.current.value = '';
-        this.zip.current.value = '';
-        this.phone.current.value = '';
-        this.companyName.current.value = '';
-        this.setState({
-          snackBar: true,
-          message: t('You have been registered successfuly!')
+        login(_data.email, _data.password).then(loginData => {
+          if (loginData.type === LOGIN_SUCCESS) {
+            getCustomer(loginData.response.userId).then(customerData => {
+              if (location.pathname === '/register/') {
+                this.setState({
+                  snackBar: true,
+                  message: t('You have been registered successfuly!')
+                });
+                return history.push('/');
+              }
+            });
+          } else {
+            this.setState({
+              snackBar: true,
+              message: t('login failed, login later again')
+            });
+          }
         });
       } else {
         this.setState({ snackBar: true, message: t(data.message) });
@@ -302,5 +300,5 @@ class RegisterComponent extends Component {
 
 export default connect(
   state => ({}),
-  { register }
+  { ...UserActions }
 )(translate('translations')(withStyles(styles)(withRouter(RegisterComponent))));

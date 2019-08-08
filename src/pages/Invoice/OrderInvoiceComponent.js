@@ -13,7 +13,6 @@ class OrderInvoiceComponent extends Component {
     const {
       resetOrderAndSelectedProducts,
       getPayment,
-      payment,
       history,
       resetPayment
     } = this.props;
