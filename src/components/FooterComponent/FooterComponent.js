@@ -110,7 +110,7 @@ let FooterComponent = props => {
       </div>
 
       <div className="container copy-right">
-        <p>Bubblesonlie &copy; 2019.</p>
+        <p>Bubblesonline &copy; 2019.</p>
       </div>
     </footer>
   );
