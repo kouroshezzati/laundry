@@ -5,6 +5,7 @@ import * as orderActions from '../Order/OrderActions';
 import ProductList from '../../components/Products/ProductListContainer';
 import Page from '../index';
 import { UserInfo, DateShow } from './InvoiceComponent';
+import { GET_PAYMENT_FAILURE } from '../Order/OrderConstants';
 
 class OrderInvoiceComponent extends Component {
   componentDidMount() {
@@ -23,6 +24,9 @@ class OrderInvoiceComponent extends Component {
 
     if (orderId) {
       getPayment(orderId).then(data => {
+        if (data.type === GET_PAYMENT_FAILURE) {
+          return;
+        }
         //redirect to invoice page for failure payment
         if (data.response.status !== 'paid') {
           return history.push('/invoice');

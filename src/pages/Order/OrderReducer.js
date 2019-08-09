@@ -28,14 +28,16 @@ const deliverTime = new Date();
 const pickupTime = new Date();
 deliverTime.setHours(9, 0, 0);
 pickupTime.setHours(9, 0, 0);
+const pickupDate = new Date();
+const deliverDate = new Date();
+deliverDate.setDate(deliverDate.getDate() + 1);
+
 export default (
   state = {
     deliverTime,
     pickupTime,
-    pickupDate: '',
-    deliverDate: '',
-    paidDeliverDate: {},
-    paidPickupDate: {}
+    deliverDate,
+    pickupDate
   },
   action
 ) => {
@@ -80,11 +82,18 @@ export default (
       const _pD = new Date(action.date);
       const _pT = new Date(state.pickupTime);
       _pD.setHours(_pT.getHours(), _pT.getMinutes(), _pT.getSeconds());
-      return {
-        ...state,
-        pickupDate: _pD,
-        deliverDate: undefined
-      };
+      const _currentDeliverDate = new Date(state.deliverDate);
+      if (_currentDeliverDate.getDate() <= _pD.getDate()) {
+        const _deliverDate = new Date();
+        _deliverDate.setDate(_pD.getDate() + 1);
+        return {
+          ...state,
+          pickupDate: _pD,
+          deliverDate: _deliverDate
+        };
+      } else {
+        return { ...state, pickupDate: _pD };
+      }
     case DELIVER_DATE:
       const _dD = new Date(action.date);
       const _dT = new Date(state.deliverTime);
