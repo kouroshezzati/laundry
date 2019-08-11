@@ -197,7 +197,7 @@ export const ContactInfo = props => {
         <span className="value">info@bubblesonline.nl</span>
       </div>
       <div className="contact-record">
-        <span className="key">{t('TEL')}:</span>
+        <span className="key">{t('Tel')}:</span>
         <span className="value">
           <a href="Tel:+31 626 142 889">+31 626 142 889</a>
         </span>
