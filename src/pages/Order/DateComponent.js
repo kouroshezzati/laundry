@@ -71,7 +71,7 @@ export class DateComponent extends Component {
     const type = params.get('type');
     return (
       <Page>
-        <div className="main-section align-content-center flex-wrap fancy-bg">
+        <div className="main-section align-content-center fancy-bg">
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
             <div className="row">
               <img alt="laundry" className="pickup-img" src={pickupImg} />

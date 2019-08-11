@@ -133,9 +133,7 @@ class NavBarComponent extends Component {
       <nav
         className={classnames(
           `navbar navbar-expand-lg navbar-light`,
-          this.state.navbarColor || location.pathname !== '/'
-            ? 'colored'
-            : '',
+          this.state.navbarColor || location.pathname !== '/' ? 'colored' : '',
           location.pathname === '/' ? 'fixed-top' : ''
         )}
         id="mainNav"
@@ -154,7 +152,7 @@ class NavBarComponent extends Component {
           >
             {t('Menu')}
           </button>
-          <div classnames="logo-mobile-wrapper">
+          <div style={{ marginRight: '15px' }}>
             <LogoComponent
               mobile
               onScrollToTopHandler={this.scrollToTop}
@@ -171,6 +169,7 @@ class NavBarComponent extends Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink
+                  style={{ minWidth: '147px' }}
                   className="nav-link js-scroll-trigger"
                   to="/contact/"
                 >
@@ -310,10 +309,7 @@ class NavBarComponent extends Component {
               {jwt && (
                 <React.Fragment>
                   <li className="just-mobile">
-                    <NavLink
-                      className="nav-link"
-                      to="/user/change_information"
-                    >
+                    <NavLink className="nav-link" to="/user/change_information">
                       {t('Change information')}
                     </NavLink>
                   </li>

@@ -4,7 +4,7 @@ export default {
   contact: 'contact',
   Contact: 'Contact',
   information: 'informatie',
-  'ABOUT US': 'OVER ONS',
+  'ABOUT US': 'Over ons',
   LOGIN: 'INLOGEN',
   REGISTER: 'REGISTREREN',
   PRESS: 'STRIJK SERVICE',
@@ -202,10 +202,23 @@ export default {
   'We also offer after opening hours urgent delivery, please contact us.':
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
   'Monday to Saturday 9am to 18.00':
-    'Maandag tot zaterdag 9:00 tot Zaterdag 18:00',
-  'Back to home page':'Hoofdmenu',
-  'back to Date':'Terug / Datum',
-  'I accept these':'Ik ga akkoord met de',
-  'terms and conditions':'Algemene voorwaarden',
-  'Please contact us.':'Neem contact met ons op'
+    'Maandag t/m zaterdag 9:00 tot Zaterdag 18:00',
+  'Back to home page': 'Hoofdmenu',
+  'back to Date': 'Terug / Datum',
+  'I accept these': 'Ik ga akkoord met de',
+  'terms and conditions': 'Algemene voorwaarden',
+  'Please contact us.': 'Neem contact met ons op',
+  'BTW Nummer': 'BTW Nummer',
+  TEL: 'TEL',
+  'Payment methods': 'Payment methods',
+  'Did you know?': 'Did you know?',
+  'blouse (2 pieces)': 'blouse (2 pieces)',
+  vest: 'vest',
+  blouse: 'blouse',
+  'blanket (one person)': 'blanket (one person)',
+  'quilt twin': 'quilt twin',
+  'blanket (two person)': 'blanket (two person)',
+  'Add description': 'Add description',
+  Description: 'Description',
+  'Total amount': 'Total amount'
 };

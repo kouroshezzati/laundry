@@ -7,6 +7,7 @@ export default {
   'About us': 'About us',
   'about us': 'about us',
   LOGIN: 'LOGIN',
+  Login: 'Login',
   register: 'register',
   Register: 'Register',
   Press: 'Press',
@@ -29,9 +30,7 @@ export default {
   your laundry on time .
   Please do not hesitate to contact us for further information. 
   `,
-  'pickup.description': `Monday to Saturday 9am to 18.00
-                    we also offer after opening hours urgent delivery, please contact us.
-                    `,
+  'pickup.description': `Monday to Saturday 9am to 18.00 we also offer after opening hours urgent delivery, please contact us.`,
   'offers.description': `10 % Discount for our first time users Gold Member Pearl Member`,
   'delivery.description': `Free Delivery Above 22.oo Euro`,
   'business.description': `BUBBLES is specialized in cleaning and managing linen for Restaurants, Hotels,
@@ -162,6 +161,18 @@ export default {
   'Back to home page':'Back to home page',
   'back to Date':'back to Date',
  'I accept these':'I accept these',
- 'terms-and-conditions':'terms-and-conditions',
- 'Please contact us.':'Please contact us.'
+ 'terms and conditions':'terms and conditions',
+ 'Please contact us.':'Please contact us.',
+  'BTW Nummer': 'BTW Nummer',
+  TEL: 'TEL',
+  'Payment methods': 'Payment methods',
+  'Did you know?': 'Did you know?',
+  'blouse (2 pieces)': 'blouse (2 pieces)',
+  vest: 'vest',
+  blouse: 'blouse',
+  'blanket (one person)': 'blanket (one person)',
+  'quilt twin': 'quilt twin',
+  'blanket (two person)': 'blanket (two person)',
+  'Add description': 'Add description',
+  Description: 'Description'
 };

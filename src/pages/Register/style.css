@@ -2,4 +2,5 @@
   background-color: white;
   border: 1px solid gray;
   border-radius: 3px;
+  min-width: 80%;
 }

@@ -7,7 +7,7 @@ export class index extends Component {
   render() {
     return (
       <Page>
-        <div className="main-section d-flex align-content-center flex-wrap fancy-bg">
+        <div className="main-section d-flex align-content-center fancy-bg">
           <div className="login-form-wrapper mx-auto p-2">
             <LoginComponent />
           </div>
