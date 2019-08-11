@@ -4,7 +4,7 @@ export default {
   contact: 'contact',
   Contact: 'Contact',
   information: 'informatie',
-  'ABOUT US': 'OVER ONS',
+  'ABOUT US': 'Over ons',
   LOGIN: 'INLOGEN',
   REGISTER: 'REGISTREREN',
   PRESS: 'STRIJK SERVICE',
@@ -149,9 +149,9 @@ export default {
   dekens, kussen , dekbedden, bankhoezen en in onze kleiding kunnen zitten. Het vervelende van
   de bedwants in de zojuist genoemde producten is: dat ze je een huiduitslag kunnen bezorgen,
   kleine rode bulten kunnen geven en ook nog blaren.
-  Een van de manieren waarop u de narigheid van bedwants kunt vermijden is: door u dek
+  Een van de manieren waarop u de narigheid van bedwants kunt vermijden is: door uw dek
   bedden en bankcovers tijdig te laten wassen. U zult het optimale resultaat terug zien.
-  Onze aanbeveling is om u kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen.`,
+  Onze aanbeveling is om uw kussen, dekbed, matrashoes en bankhoes 2 keer per jaar te wassen.`,
   Information: 'Informatie',
   Menu: 'Menu',
   'order now': 'Bestellen',
@@ -202,11 +202,12 @@ export default {
   'We also offer after opening hours urgent delivery, please contact us.':
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
   'Monday to Saturday 9am to 18.00':
-    'Maandag tot zaterdag 9:00 tot Zaterdag 18:00',
+    'Maandag t/m zaterdag 9:00 tot Zaterdag 18:00',
   'Back to home page': 'Hoofdmenu',
   'back to Date': 'Terug / Datum',
   'I accept these': 'Ik ga akkoord met de',
   'terms and conditions': 'Algemene voorwaarden',
+  'Please contact us.': 'Neem contact met ons op',
   'BTW Nummer': 'BTW Nummer',
   TEL: 'TEL',
   'Payment methods': 'Payment methods',
