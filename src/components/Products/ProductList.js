@@ -5,6 +5,7 @@ import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
 import { multipleCurrency, calc, ADD } from '../../utils/components';
 import { withRouter } from 'react-router-dom';
+import paid from '../../assets/images/paid.jpg';
 
 export class ProductList extends Component {
   render() {
@@ -12,15 +13,19 @@ export class ProductList extends Component {
       products,
       invoice,
       t,
+      orderInvoice,
       selectedProducts,
       intactProducts,
       especialOfferProducts,
-      location
+      location,
+      orderSelectedProducts,
+      orderPrice,
+      orderStatus
     } = this.props;
     const params = new URLSearchParams(location.search);
     const type = params.get('type');
+    let total = 0;
     if (invoice) {
-      let total = 0;
       return (
         <div
           className="row product-list-wrapper"
@@ -50,8 +55,7 @@ export class ProductList extends Component {
           </div>
         </div>
       );
-    }
-    if (type === 'especial_offer' && especialOfferProducts) {
+    } else if (type === 'especial_offer' && especialOfferProducts) {
       return (
         <div className="row product-list-wrapper">
           <div className="col-md-12">
@@ -65,6 +69,45 @@ export class ProductList extends Component {
       );
     } else if (type === 'especial_offer' && !especialOfferProducts) {
       return <React.Fragment />;
+    } else if (orderInvoice) {
+      return (
+        <div
+          className="row product-list-wrapper"
+          style={{ marginBottom: '20px' }}
+        >
+          <div key={Math.random()} className="col-md-12">
+            <ul className="list-group" style={{ boxShadow: '1px 1px 2px' }}>
+              {_.map(orderSelectedProducts, (selectedValue, id) => {
+                id = parseInt(id, 10);
+                const _product = intactProducts.find(
+                  value => value.id === id && selectedValue
+                );
+                if (!_product) {
+                  return <React.Fragment key={id} />;
+                }
+                return (
+                  <Product
+                    readOnly
+                    orderProductNumber={selectedValue}
+                    key={id}
+                    {..._product}
+                  />
+                );
+              })}
+              <li className="list-group-item total-price">
+                <span>
+                  {`${t('Total amount')}: `}&euro; {orderPrice}
+                </span>
+                {orderStatus === 'paid' && (
+                  <span className="paid-stamp">
+                    <img alt="laudry clean and dry" src={paid} />
+                  </span>
+                )}
+              </li>
+            </ul>
+          </div>
+        </div>
+      );
     }
     return (
       <div className="row product-list-wrapper">

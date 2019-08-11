@@ -26,8 +26,8 @@ export const sendResetPasswordCode = email => {
     [CALL_API]: {
       types: [FORGOTTEN_REQUEST, FORGOTTEN_SUCCESS, FORGOTTEN_FAILURE],
       config: {
-        url: `${API_ROOT}/auth/forgot-password`,
-        data: { email, url: `http://bubbelsonline.nl/reset-password/` },
+        url: `${API_ROOT}/Customers/reset`,
+        data: { email },
         method: 'post'
       }
     }
@@ -43,9 +43,12 @@ export const resetPassword = data => {
         RESET_PASSWORD_FAILURE
       ],
       config: {
-        url: `${API_ROOT}/auth/reset-password`,
-        data: { ...data },
-        method: 'post'
+        url: `${API_ROOT}/Customers/reset-password`,
+        data: { newPassword: data.password },
+        method: 'post',
+        headers: {
+          Authorization: data.code
+        }
       }
     }
   };

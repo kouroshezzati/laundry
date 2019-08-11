@@ -12,6 +12,7 @@ import americanExpressImg from './img/american-express.png';
 import logo from '../../assets/images/logo_65.png';
 import facebook from './img/facebook.png';
 import twitter from './img/twitter.png';
+import Languages from '../Languages/LanguageComponent';
 
 let FooterComponent = props => {
   const { t } = props;
@@ -67,8 +68,11 @@ let FooterComponent = props => {
             <ContactInfo {...props} />
           </div>
           <div className="col-md-4">
-            <h5 className="mt-3 mb-1">{t('Areas')}</h5>
-            <div>Den Haag</div>
+            <div className="m-3 footer-language-wrapper">
+              <Languages />
+            </div>
+            <h5 className=" mb-1">{t('Areas')}</h5>
+            <div>Den haag</div>
             <div>Leidschendam / Voorburg</div>
             <div>Wassenaar</div>
             <div>Voorschoten</div>
@@ -92,7 +96,7 @@ let FooterComponent = props => {
                 {t('Contact')}
               </NavLink>
             </div>
-            <div className="col-md-4 icons-footer">
+            <div className="col-sm-4 icons-footer">
               <img src={facebook} alt="laundry dry and clean" />
               <img src={twitter} alt="laundry dry and clean" />
             </div>
@@ -106,7 +110,7 @@ let FooterComponent = props => {
       </div>
 
       <div className="container copy-right">
-        <p>Bubblesonlie &copy; 2019.</p>
+        <p>Bubblesonline &copy; 2019.</p>
       </div>
     </footer>
   );

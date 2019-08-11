@@ -3,11 +3,12 @@ import {
   ADD_ORDER_REQUEST,
   ADD_ORDER_SUCCESS,
   ADD_ORDER_FAILURE,
-  ADD_INVOICE_FAILURE,
-  ADD_INVOICE_REQUEST,
-  ADD_INVOICE_SUCCESS,
   RESET_ORDER,
-  CHANGE_DESCRIPTION
+  CHANGE_DESCRIPTION,
+  GET_PAYMENT_SUCCESS,
+  GET_PAYMENT_FAILURE,
+  GET_PAYMENT_REQUEST,
+  RESET_PAYMENT
 } from './OrderConstants';
 import _ from 'lodash';
 import { RESET_SELECTED_PRODUCTS } from '../../components/Products/ProductConstants';
@@ -24,32 +25,25 @@ export const setDescription = description => ({
 
 export const addOrder = () => (dispatch, getState) => {
   const { id } = getState().user;
-  const { description } = getState().order;
+  const { description, pickupDate, deliverDate } = getState().order;
+  const { selectedProducts } = getState().products;
+  let invoices = [];
+  _.map(selectedProducts, (number, productId) => {
+    if (!number) return;
+    invoices.push({ number, productId });
+  });
   return dispatch({
     [CALL_API]: {
       types: [ADD_ORDER_REQUEST, ADD_ORDER_SUCCESS, ADD_ORDER_FAILURE],
       config: {
-        url: `${API_ROOT}/Orders`,
-        data: { customerId: id, date: new Date(), description },
-        method: 'post'
-      }
-    }
-  });
-};
-
-export const addInvoice = () => (dispatch, getState) => {
-  const { orderId } = getState().order;
-  const { selectedProducts } = getState().products;
-  const data = _.map(selectedProducts, (number, productId) => ({
-    number,
-    productId
-  }));
-  return dispatch({
-    [CALL_API]: {
-      types: [ADD_INVOICE_REQUEST, ADD_INVOICE_SUCCESS, ADD_INVOICE_FAILURE],
-      config: {
-        url: `${API_ROOT}/Orders/${orderId}/Invoices`,
-        data: data,
+        url: `${API_ROOT}/AddOrder`,
+        data: {
+          customerId: id,
+          invoices,
+          description,
+          pickup_date: pickupDate,
+          deliver_date: deliverDate
+        },
         method: 'post'
       }
     }
@@ -60,3 +54,19 @@ export const resetOrderAndSelectedProducts = () => dispatch => {
   dispatch({ type: RESET_ORDER });
   dispatch({ type: RESET_SELECTED_PRODUCTS });
 };
+
+export const getPayment = id => dispatch => {
+  return dispatch({
+    [CALL_API]: {
+      types: [GET_PAYMENT_REQUEST, GET_PAYMENT_SUCCESS, GET_PAYMENT_FAILURE],
+      config: {
+        url: `${API_ROOT}/payment/webhook/${id}`,
+        method: 'post'
+      }
+    }
+  });
+};
+
+export const resetPayment = () => ({
+  type: RESET_PAYMENT
+})

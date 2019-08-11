@@ -15,6 +15,7 @@ import Snackbar from '../../utils/Snackbar/SnackbarComponent';
 import { translate } from 'react-i18next';
 import twitter from '../FooterComponent/img/twitter.png';
 import facebook from '../FooterComponent/img/facebook.png';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const styles = theme => ({
   margin: {
@@ -38,30 +39,61 @@ export class ContactUsComponent extends Component {
     this.name = React.createRef();
     this.subject = React.createRef();
     this.body = React.createRef();
-    this.state = { snackBar: false };
+    this.state = {
+      snackBar: false,
+      snackbarMessage: '',
+      submitted: false,
+      recaptch: ''
+    };
+    this.recaptchaRef = React.createRef();
   }
+
   onSubmit = event => {
     event.preventDefault();
+    this.setState({
+      submitted: true,
+      recaptch: this.recaptchaRef.current.getValue()
+    });
     const _data = {
       name: this.name.current.value,
       email: this.email.current.value,
       subject: this.subject.current.value,
-      body: this.body.current.value
+      body: this.body.current.value,
+      'g-recaptcha-response': this.recaptchaRef.current.getValue()
     };
-    if (!_data.email || !_data.name || !_data.subject || !_data.body) {
+
+    if (
+      !_data.email ||
+      !_data.name ||
+      !_data.subject ||
+      !_data.body ||
+      !_data['g-recaptcha-response']
+    ) {
       return;
     }
     axios
-      .post(`${API_ROOT}/contactuses/`, { ..._data })
+      .post(`${API_ROOT}/contactus/`, { ..._data })
       .then(data => {
         this.name.current.value = '';
         this.email.current.value = '';
         this.subject.current.value = '';
         this.body.current.value = '';
-        this.setState({ snackBar: true });
+        this.setState({
+          snackBar: true,
+          snackbarMessage: 'Your message has been sent'
+        });
       })
       .catch(err => {
-        console.log(err);
+        let msg = 'Something went wrong!';
+        if (err.response && err.response.data && err.response.data.message) {
+          msg = err.response.data.message;
+        } else if (err.message) {
+          msg = err.message;
+        }
+        this.setState({
+          snackBar: true,
+          snackbarMessage: msg
+        });
       });
   };
   render() {
@@ -122,10 +154,19 @@ export class ContactUsComponent extends Component {
               {t('Back')}
             </NavLink>
           </div>
+          <ReCAPTCHA
+            ref={this.recaptchaRef}
+            sitekey="6LePa68UAAAAAFr7NQQ0PK_6osoAuxW_a8o8Gvvz"
+          />
+          {this.state.submitted && !this.state.recaptch && (
+            <div style={{ color: 'yellow', fontWeight: 700 }}>
+              Please select recaptcha
+            </div>
+          )}
         </form>
         <Snackbar
           onHandlerClose={e => this.setState({ snackBar: false })}
-          snackbarMessage="Your message has been sent"
+          snackbarMessage={this.state.snackbarMessage}
           isSnackbarOpen={this.state.snackBar}
         />
       </React.Fragment>

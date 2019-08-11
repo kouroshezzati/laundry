@@ -1,12 +1,12 @@
-nav .auth-link a{
+nav .auth-link a {
   color: #ffffff;
 }
 nav .auth-link {
   position: absolute;
-  right: 40px;
-  top: 16px;
+  right: 1%;
 }
-.user-menu-dropdown{
+
+.user-menu-dropdown {
   position: absolute !important;
   right: 20px;
 }
@@ -50,6 +50,13 @@ nav .auth-link {
 }
 .big-logo {
   height: 70px;
+}
+
+#mainNav.colored .auth-link {
+  top: 16px;
+}
+#mainNav.colored .switch-language-wrapper {
+  top: 29xp;
 }
 #mainNav.colored .main-logo {
   height: 80px;
@@ -105,6 +112,9 @@ ul.navbar-nav {
 .nav-item button.button-submenu:hover {
   color: #ffffff;
 }
+.nav-item a.nav-link {
+  width: auto;
+}
 .nav-item button.button-submenu {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em !important;
@@ -118,9 +128,8 @@ button.button-submenu i.fa {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.67em !important;
 }
-.user-submenu {
-  left: 40px;
-
+.user-menu-dropdown .user-submenu {
+  left: -140px !important;
 }
 #mainNav .navbar-nav > li {
   padding-top: 59px;
@@ -148,6 +157,9 @@ button.button-submenu i.fa {
   color: #fdcc52;
 }
 @media (min-width: 992px) {
+  .nav-item a.nav-link {
+    width: 151px;
+  }
   #mainNav {
     border-color: transparent;
     background-color: transparent;
@@ -209,7 +221,7 @@ button.button-submenu i.fa {
 .language-mobile-wrapper .switch-language-wrapper {
   display: none;
 }
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .just-mobile {
     display: block;
   }
@@ -219,6 +231,7 @@ button.button-submenu i.fa {
   .tiny-logo {
     display: block;
     height: 60px;
+    margin-right: 15px;
   }
   #mainNav .navbar-nav > li {
     padding-top: 10px;

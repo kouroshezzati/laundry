@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classnames from 'classnames'
+import classnames from 'classnames';
 import { withRouter } from 'react-router-dom';
 import {
   withStyles,
@@ -38,16 +38,20 @@ class ForgetPasswordComponent extends Component {
   }
   onSubmit = event => {
     event.preventDefault();
-    this.setState({isSubmitted: true});
+    this.setState({ isSubmitted: true });
     const params = new URLSearchParams(this.props.location.search);
     const code = params.get('code');
     const password = this.password.current.value;
     const passwordConfirmation = this.confirm_password.current.value;
-    if(!code){
-    this.setState({message: 'There is no private code!'});
-    return;
-  }
-    if(!password || !passwordConfirmation || password !== passwordConfirmation){
+    if (!code) {
+      this.setState({ message: 'There is no private code!' });
+      return;
+    }
+    if (
+      !password ||
+      !passwordConfirmation ||
+      password !== passwordConfirmation
+    ) {
       this.setState({ message: 'Enter a password!' });
       return;
     }
@@ -74,7 +78,7 @@ class ForgetPasswordComponent extends Component {
       this.state.isSubmitted &&
       this.password.current.value !== this.confirm_password.current.value
     );
-  }
+  };
   render() {
     const { classes, t } = this.props;
     const { message } = this.state;
