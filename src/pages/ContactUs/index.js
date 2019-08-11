@@ -4,36 +4,7 @@ import ContactComponent, {
 } from '../../components/ContactUsComponent/ContactUsComponent';
 import './style.css';
 import { translate } from 'react-i18next';
-// import { compose, withProps } from 'recompose';
-// import {
-//   withScriptjs,
-//   withGoogleMap,
-//   GoogleMap,
-//   Marker
-// } from 'react-google-maps';
 import Page from '../index';
-
-// const MyMapComponent = compose(
-//   withProps({
-//     googleMapURL:
-//       'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDoPYVlg5Vd2z_-AIaBNC0UcB-OoKXE1Fo',
-//     loadingElement: <div style={{ height: `100%` }} />,
-//     containerElement: <div style={{ height: `100%` }} />,
-//     mapElement: <div style={{ height: `100%` }} />
-//   }),
-//   withScriptjs,
-//   withGoogleMap
-// )(props => (
-//   <GoogleMap
-//     style={{ height: '100%' }}
-//     defaultZoom={8}
-//     defaultCenter={{ lat: 52.052048, lng: 4.254743 }}
-//   >
-//     {props.isMarkerShown && (
-//       <Marker position={{ lat: 52.052048, lng: 4.254743 }} />
-//     )}
-//   </GoogleMap>
-// ));
 
 export class index extends Component {
   render() {
