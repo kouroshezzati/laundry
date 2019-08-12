@@ -89,26 +89,24 @@ class LoginComponent extends Component {
             {message && <small style={{ color: 'red' }}>{message}</small>}
           </div>
           <div className="form-group">
-            <MuiThemeProvider theme={theme}>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.margin}
-              >
-                {t('Login')}
-              </Button>
-            </MuiThemeProvider>
-            {location.pathname.includes('login') && (
-              <NavLink className="float-right" to="/">
-                {t('Home')}
+            <div className="float-left">
+              <MuiThemeProvider theme={theme}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  className={classes.margin}
+                >
+                  {t('Login')}
+                </Button>
+              </MuiThemeProvider>
+            </div>
+            <div style={{ paddingTop: '6px', float: 'right' }}>
+              <NavLink to="/forgotten-password">
+                {t('Forgotten password?')}
               </NavLink>
-            )}
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <NavLink to="/forgotten-password">
-              {t('Forgotten password?')}
-            </NavLink>
+            </div>
+            <br style={{ both: 'clear' }} />
           </div>
         </form>
       </React.Fragment>
