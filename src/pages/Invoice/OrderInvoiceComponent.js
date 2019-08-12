@@ -15,7 +15,8 @@ class OrderInvoiceComponent extends Component {
       resetOrderAndSelectedProducts,
       getPayment,
       history,
-      resetPayment
+      resetPayment,
+      id
     } = this.props;
     resetPayment();
     if (!jwt) {
@@ -23,7 +24,7 @@ class OrderInvoiceComponent extends Component {
     }
 
     if (orderId) {
-      getPayment(orderId).then(data => {
+      getPayment(orderId, id).then(data => {
         if (data.type === GET_PAYMENT_FAILURE) {
           return;
         }
