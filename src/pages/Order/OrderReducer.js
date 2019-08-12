@@ -56,7 +56,7 @@ export default (
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
     case RESET_ORDER:
-      return { ...state, pickupDate: '', deliverDate: '', orderId: undefined };
+      return { ...state, pickupDate, deliverDate, orderId: undefined };
     case ADD_INVOICE_SUCCESS:
       return {
         ...state,
