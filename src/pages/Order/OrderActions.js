@@ -55,13 +55,14 @@ export const resetOrderAndSelectedProducts = () => dispatch => {
   dispatch({ type: RESET_SELECTED_PRODUCTS });
 };
 
-export const getPayment = id => dispatch => {
+export const getPayment = (id, customerId) => dispatch => {
+
   return dispatch({
     [CALL_API]: {
       types: [GET_PAYMENT_REQUEST, GET_PAYMENT_SUCCESS, GET_PAYMENT_FAILURE],
       config: {
-        url: `${API_ROOT}/payment/webhook/${id}`,
-        method: 'post'
+        url: `${API_ROOT}/PaidOrder/${id}/${customerId}`,
+        method: 'get'
       }
     }
   });
