@@ -38,16 +38,16 @@ class OrderInvoiceComponent extends Component {
   }
   render() {
     const { match, payment } = this.props;
-    if (!payment || !payment.metadata) {
+    if (!payment) {
       return <React.Fragment />;
     }
     const {
       deliver_date,
       pickup_date,
       price,
-      selectedProducts
-    } = payment.metadata;
-    const { status } = payment;
+      selectedProducts,
+      status
+    } = payment;
     const { orderId } = match.params;
 
     return (
