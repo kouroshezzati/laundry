@@ -119,7 +119,11 @@ export class ProductList extends Component {
                   <Product name={key} parent />
                 )}
                 {_products.map(product => (
-                  <Product key={product.id} {...product} />
+                  <Product
+                    number={selectedProducts[product.id] || 0}
+                    key={product.id}
+                    {...product}
+                  />
                 ))}
               </ul>
             </div>
