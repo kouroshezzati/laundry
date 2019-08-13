@@ -6,7 +6,10 @@ import './style.css';
 
 export default withRouter(function index(props) {
   const { location } = props;
-  if (!['/order/', '/invoice/'].includes(location.pathname)) {
+  if (
+    !location.pathname.includes('order') &&
+    !location.pathname.includes('invoice')
+  ) {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 0);

@@ -44,7 +44,13 @@ export class ProductList extends Component {
                   total,
                   multipleCurrency(_product.price, value || 0)
                 );
-                return <Product key={id} {..._product} />;
+                return (
+                  <Product
+                    number={selectedProducts[id] || 0}
+                    key={id}
+                    {..._product}
+                  />
+                );
               })}
               <li className="list-group-item total-price">
                 <span>
@@ -87,6 +93,7 @@ export class ProductList extends Component {
                 }
                 return (
                   <Product
+                    number={selectedProducts[id] || 0}
                     readOnly
                     orderProductNumber={selectedValue}
                     key={id}
