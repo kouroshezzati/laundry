@@ -15,7 +15,7 @@ import { ADD_ORDER_SUCCESS } from '../Order/OrderConstants';
 export class InvoiceComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { editUserInfo: false };
+    this.state = { editUserInfo: false, redirectUrl: '' };
   }
   saveHandler = isSave => {
     this.setState({ editUserInfo: false });
@@ -33,6 +33,7 @@ export class InvoiceComponent extends Component {
     addOrder().then(data => {
       if (data.type === ADD_ORDER_SUCCESS) {
         window.location.href = data.response;
+        this.setState({ redirectUrl: data.response });
       }
     });
   };
@@ -84,6 +85,18 @@ export class InvoiceComponent extends Component {
                   >
                     {t('Payment')}
                   </Button>
+                </div>
+              )}
+              {this.state.redirectUrl && (
+                <div className="text-center col-12">
+                  <span>
+                    {t('if your wont be redirected in five seconds, ')}
+                  </span>
+                  <span>
+                    <a href={this.state.redirectUrl}>
+                      {t('click on this link.')}
+                    </a>
+                  </span>
                 </div>
               )}
             </div>

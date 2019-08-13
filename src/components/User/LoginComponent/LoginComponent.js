@@ -65,7 +65,7 @@ class LoginComponent extends Component {
   }
 
   render() {
-    const { classes, t, message, location } = this.props;
+    const { classes, t, message } = this.props;
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit} id="form2">

@@ -56,7 +56,6 @@ export const resetOrderAndSelectedProducts = () => dispatch => {
 };
 
 export const getPayment = (id, customerId) => dispatch => {
-
   return dispatch({
     [CALL_API]: {
       types: [GET_PAYMENT_REQUEST, GET_PAYMENT_SUCCESS, GET_PAYMENT_FAILURE],
