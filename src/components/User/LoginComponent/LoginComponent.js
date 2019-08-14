@@ -53,6 +53,9 @@ class LoginComponent extends Component {
           ) {
             history.push('/');
           }
+          setTimeout(() => {
+            window.scrollTo(0, 0);
+          }, 0);
         });
       }
     });
