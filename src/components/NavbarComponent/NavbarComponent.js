@@ -6,7 +6,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
-import logo from '../../assets/images/logo_65.png';
+import logo from '../../assets/images/bubblesonline_main_logo.png';
 import './style.css';
 import ste from 'scroll-to-element';
 import Language from '../Languages/LanguageComponent';
