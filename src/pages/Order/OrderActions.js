@@ -23,7 +23,7 @@ export const setDescription = description => ({
   description
 });
 
-export const addOrder = () => (dispatch, getState) => {
+export const addOrder = lang => (dispatch, getState) => {
   const { id } = getState().user;
   const { description, pickupDate, deliverDate } = getState().order;
   const { selectedProducts } = getState().products;
@@ -32,11 +32,12 @@ export const addOrder = () => (dispatch, getState) => {
     if (!number) return;
     invoices.push({ number, productId });
   });
+  lang = lang === 'du' ? lang : 'en';
   return dispatch({
     [CALL_API]: {
       types: [ADD_ORDER_REQUEST, ADD_ORDER_SUCCESS, ADD_ORDER_FAILURE],
       config: {
-        url: `${API_ROOT}/AddOrder`,
+        url: `${API_ROOT}/AddOrder?lang=${lang}`,
         data: {
           customerId: id,
           invoices,
@@ -69,4 +70,4 @@ export const getPayment = (id, customerId) => dispatch => {
 
 export const resetPayment = () => ({
   type: RESET_PAYMENT
-})
+});

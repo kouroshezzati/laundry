@@ -29,8 +29,8 @@ export class InvoiceComponent extends Component {
   }
 
   paymentHandler = () => {
-    const { addOrder } = this.props;
-    addOrder().then(data => {
+    const { addOrder, i18n } = this.props;
+    addOrder(i18n.language).then(data => {
       if (data.type === ADD_ORDER_SUCCESS) {
         window.location.href = data.response;
         this.setState({ redirectUrl: data.response });
