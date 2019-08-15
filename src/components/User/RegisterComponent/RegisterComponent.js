@@ -149,9 +149,9 @@ class RegisterComponent extends Component {
                   placeholder={t('User name')}
                 />
                 {this.state.error && this.state.username && (
-                  <small style={{ color: '#dc3545' }} className="form-text">
+                  <div style={{ color: '#dc3545' }} className="form-text">
                     {this.state.username[0]}
-                  </small>
+                  </div>
                 )}
               </div>
               <div className="form-group col-md-6">
@@ -168,9 +168,9 @@ class RegisterComponent extends Component {
                 </small>
 
                 {this.state.error && this.state.email && (
-                  <small style={{ color: '#dc3545' }} className="form-text">
+                  <div style={{ color: '#dc3545' }} className="form-text">
                     {this.state.email[0]}
-                  </small>
+                  </div>
                 )}
               </div>
               <div className="form-group col-md-6">
