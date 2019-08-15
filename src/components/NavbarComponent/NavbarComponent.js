@@ -50,6 +50,7 @@ export const LogoComponent = props => {
         >
           <img
             className={logoClassName}
+            style={{marginRight: '10px'}}
             alt="bubbles online lundry"
             src={logo}
           />
