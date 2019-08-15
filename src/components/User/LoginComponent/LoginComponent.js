@@ -10,7 +10,11 @@ import green from '@material-ui/core/colors/green';
 import './style.css';
 import { connect } from 'react-redux';
 import { login, getCustomer } from '../UserActions';
-import { LOGIN_SUCCESS, GET_CUSTOMER_SUCCESS } from '../UserConstants';
+import {
+  LOGIN_SUCCESS,
+  GET_CUSTOMER_SUCCESS,
+  LOGIN_FAILURE
+} from '../UserConstants';
 import { translate } from 'react-i18next';
 
 const styles = theme => ({
@@ -33,6 +37,7 @@ class LoginComponent extends Component {
     super(props);
     this.email = React.createRef();
     this.password = React.createRef();
+    this.state = { errorMessage: '' };
   }
   onSubmit = event => {
     event.preventDefault();
@@ -57,6 +62,12 @@ class LoginComponent extends Component {
             window.scrollTo(0, 0);
           }, 0);
         });
+      } else if (data.type === LOGIN_FAILURE) {
+        if (typeof data.error === 'string') {
+          this.setState({ errorMessage: data.error });
+        } else {
+          this.setState({ errorMessage: data.error.message });
+        }
       }
     });
   };
@@ -68,7 +79,7 @@ class LoginComponent extends Component {
   }
 
   render() {
-    const { classes, t, message } = this.props;
+    const { classes, t } = this.props;
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit} id="form2">
@@ -89,7 +100,11 @@ class LoginComponent extends Component {
               placeholder={t('Password')}
               className="form-control"
             />
-            {message && <small style={{ color: 'red' }}>{message}</small>}
+            {this.state.errorMessage && (
+              <div style={{ color: 'red', textAlign: 'center' }}>
+                {this.state.errorMessage}
+              </div>
+            )}
           </div>
           <div className="form-group">
             <div className="float-left">
