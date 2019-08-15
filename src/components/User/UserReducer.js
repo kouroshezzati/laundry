@@ -50,7 +50,7 @@ export default (state = {}, action) => {
     case LOGIN_FAILURE:
     case GET_CUSTOMER_FAILURE:
     case REGISTER_FAILURE:
-      return { ...state, isFetching: false, ...action };
+      return { ...state, isFetching: false };
     case UPDATE_USER_REQUEST:
     case FORGOTTEN_REQUEST:
     case LOGIN_REQUEST:

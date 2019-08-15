@@ -105,7 +105,10 @@ class RegisterComponent extends Component {
           }
         });
       } else {
-        this.setState({ snackBar: true, message: t(data.message) });
+        this.setState({
+          error: true,
+          ...data.error.details.messages
+        });
       }
     });
   };
@@ -145,6 +148,11 @@ class RegisterComponent extends Component {
                   ref={this.username}
                   placeholder={t('User name')}
                 />
+                {this.state.error && this.state.username && (
+                  <small style={{ color: '#dc3545' }} className="form-text">
+                    {this.state.username[0]}
+                  </small>
+                )}
               </div>
               <div className="form-group col-md-6">
                 <input
@@ -158,6 +166,12 @@ class RegisterComponent extends Component {
                 <small id="emailHelp" className="form-text text-muted">
                   {t('email.privacy')}
                 </small>
+
+                {this.state.error && this.state.email && (
+                  <small style={{ color: '#dc3545' }} className="form-text">
+                    {this.state.email[0]}
+                  </small>
+                )}
               </div>
               <div className="form-group col-md-6">
                 <input
@@ -280,8 +294,8 @@ class RegisterComponent extends Component {
                   </Button>
                 </MuiThemeProvider>
                 {location.pathname === '/register/' && (
-                  <NavLink className="float-right" to="/">
-                    {t('Home')}
+                  <NavLink className="float-right" to="/login/">
+                    {t('login')}
                   </NavLink>
                 )}
               </div>
