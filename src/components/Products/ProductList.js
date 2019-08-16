@@ -67,7 +67,11 @@ export class ProductList extends Component {
           <div className="col-md-12">
             <ul className="list-group">
               {especialOfferProducts.map(product => (
-                <Product key={product.id} {...product} />
+                <Product
+                  number={selectedProducts[product.id] || 0}
+                  key={product.id}
+                  {...product}
+                />
               ))}
             </ul>
           </div>
