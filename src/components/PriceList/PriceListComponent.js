@@ -9,9 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './style.css';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
 import { translate } from 'react-i18next';
 
 const styles = theme => ({
@@ -57,16 +54,19 @@ class PriceListComponent extends Component {
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <List className={classes.fullWidthMenu}>
-                  {categorizedProducts.map(_product => (
-                    <ListItem button key={_product.id}>
-                      <ListItemText>
-                        {t(_product.name.trim().toLowerCase()).toUpperCase()}
-                      </ListItemText>
-                      <ListItemSecondaryAction style={{width: '60px'}}>
-                        &euro; {_product.price}
-                      </ListItemSecondaryAction>
-                    </ListItem>
-                  ))}
+                  <div className="row">
+                    {categorizedProducts.map(_product => (
+                      <div className="col-12 product-item" button key={_product.id}>
+                        <div className="product-name">
+                          {t(_product.name.trim().toLowerCase()).toUpperCase()}
+                        </div>
+                        <div className="product-price">
+                          &euro; {_product.price}
+                        </div>
+                        <br style={{ clear: 'both' }} />
+                      </div>
+                    ))}
+                  </div>
                 </List>
               </ExpansionPanelDetails>
             </ExpansionPanel>
