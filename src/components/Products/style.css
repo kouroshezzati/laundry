@@ -4,7 +4,7 @@
   text-align: center;
 }
 .price-wrapper {
-  min-width: 80px !important;
+  min-width: 72px !important;
 }
 .product-list-wrapper {
   margin-top: 10px;
@@ -22,4 +22,9 @@
   height: 100%;
   transform: rotate(-20deg);
   position: absolute;
+}
+
+.list-group-item .float-left {
+  color: #541515;
+  font-weight: 700;
 }

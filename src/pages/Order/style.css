@@ -36,3 +36,8 @@
   background: rgba(104, 104, 119, 0.73);
   border-radius: 5px;
 }
+@media (max-width: 567px) {
+  .order-form-wrapper {
+    width: 100%;
+  }
+}
