@@ -79,12 +79,12 @@ footer ul li a.active {
   top: auto;
 }
 .footer-language-wrapper .switch-language-wrapper .active-lang img {
-  height: 38px;
-  width: 41px;
+  /* height: 38px; */
+  /* width: 41px; */
 }
 .footer-language-wrapper .switch-language-wrapper img {
-  height: 28px;
-  width: 35px;
+  /* height: 28px;
+  width: 35px; */
 }
 @media (max-width: 768px) {
   .bank-icons,

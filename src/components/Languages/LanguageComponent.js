@@ -17,14 +17,14 @@ export class LanguageComponent extends Component {
           className={i18n.language === 'en-US' ? 'active-lang' : ''}
           onClick={e => this.changeLanguageTo('en-US')}
         >
-          <img alt="laundry" src={enImg} />
+          <img title="English" alt="English" src={enImg} />
         </span>
         {' '}
         <span
           className={i18n.language === 'du' ? 'active-lang' : ''}
           onClick={e => this.changeLanguageTo('du')}
         >
-          <img alt="laundry" src={duImg} />
+          <img title="Duch" alt="Duch" src={duImg} />
         </span>
       </div>
     );
