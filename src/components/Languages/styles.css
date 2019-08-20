@@ -4,9 +4,8 @@
   cursor: pointer;
 }
 .switch-language-wrapper img{
-  /* height: 17px;
-  width: 22px;
-  border-radius: 3px; */
+  height: 20px;
+  width: 30px;
 }
 .switch-language-wrapper .active-lang{
   font-weight: 700;
