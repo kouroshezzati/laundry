@@ -28,9 +28,7 @@ const ControllerButtons = ({ t, isFormFilled }) => {
           {isFormFilled && (
             <NavLink
               onClick={e => {
-                setTimeout(() => {
-                  window.scrollTo(0, 0);
-                }, 0);
+                window.scrollTo(0, 0);
               }}
               className="nav-button"
               to="/invoice"

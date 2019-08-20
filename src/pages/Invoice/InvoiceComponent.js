@@ -68,20 +68,13 @@ export class InvoiceComponent extends Component {
               />
             )}
             {this.state.editUserInfo && (
-              <UserInfoForm
-                {...this.props}
-                onSaveHandler={this.saveHandler}
-              />
+              <UserInfoForm {...this.props} onSaveHandler={this.saveHandler} />
             )}
             <div className="mt-3 row ">
-              <div
-                className={classnames('mb-2', jwt ? 'col-md-6' : 'col-12')}
-              >
+              <div className={classnames('mb-2', jwt ? 'col-md-6' : 'col-12')}>
                 <NavLink
                   onClick={e => {
-                    setTimeout(() => {
-                      window.scrollTo(0, 0);
-                    }, 0);
+                    window.scrollTo(0, 0);
                   }}
                   className="nav-button"
                   to="/order"
