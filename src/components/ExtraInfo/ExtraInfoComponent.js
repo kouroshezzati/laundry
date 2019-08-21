@@ -29,7 +29,7 @@ export class SpecialOffer extends Component {
                   {especialOfferProducts.map(offer => (
                     <div
                       key={offer.id}
-                      className="col-md-6 col-12 mt-1 mb-1"
+                      className="col-12 mt-1 mb-1"
                     >
                       <div className="row">
                         <div className="offer-name col-9">

@@ -1,14 +1,15 @@
-#special-order{ 
+#special-order {
   background: linear-gradient(to left, #00d18b, #24ff41);
-  ;
 }
 
 .special-offer-img-wrapper img {
   width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 768px) {
+  .special-offer-img-wrapper img {
+    width: 80%;
+  }
   .special-offer-message h2 {
     text-align: center;
     margin: 20px;
