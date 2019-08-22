@@ -6,7 +6,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { signout } from '../User/UserActions';
-import logo from '../../assets/images/logo_65.png';
+import logo from '../../assets/images/bubblesonline_main_logo.png';
 import './style.css';
 import ste from 'scroll-to-element';
 import Language from '../Languages/LanguageComponent';
@@ -50,6 +50,7 @@ export const LogoComponent = props => {
         >
           <img
             className={logoClassName}
+            style={{marginLeft: '10px'}}
             alt="bubbles online lundry"
             src={logo}
           />
@@ -129,8 +130,6 @@ class NavBarComponent extends Component {
   render() {
     const show = this.state.mnuShow ? 'show' : '';
     const { t, location, jwt } = this.props;
-    //scroll to top in non-home pages
-    // location.pathname !== '/' && scroll.scrollToTop();
     return (
       <nav
         className={classnames(

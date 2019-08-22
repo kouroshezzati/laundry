@@ -24,12 +24,19 @@
     bottom: 0;
   }
 }
+
 @media (max-width: 768px) {
   .contact-form-wrapper {
     width: 80%;
   }
   .contact-us-log img {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 567px) {
+  .contact-form-wrapper {
+    width: 98%;
   }
 }
 .map-wrapper {

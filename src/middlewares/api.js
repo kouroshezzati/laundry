@@ -53,6 +53,6 @@ export default store => next => action => {
   return callApi(callAPI)
     .then(response => next(actionWith({ response, type: successType })))
     .catch(error =>
-      next(actionWith({ type: failureType, message: error.message }))
+      next(actionWith({ type: failureType, error }))
     );
 };

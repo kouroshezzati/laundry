@@ -78,14 +78,7 @@ footer ul li a.active {
   position: relative;
   top: auto;
 }
-.footer-language-wrapper .switch-language-wrapper .active-lang img {
-  height: 38px;
-  width: 41px;
-}
-.footer-language-wrapper .switch-language-wrapper img {
-  height: 28px;
-  width: 35px;
-}
+
 @media (max-width: 768px) {
   .bank-icons,
   .social-icons {

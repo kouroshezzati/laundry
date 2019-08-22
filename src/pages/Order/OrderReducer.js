@@ -56,7 +56,15 @@ export default (
     case CHANGE_DESCRIPTION:
       return { ...state, description: action.description };
     case RESET_ORDER:
-      return { ...state, pickupDate: '', deliverDate: '', orderId: undefined };
+      const newPickupDate = new Date();
+      const newDeliverDate = new Date();
+      newDeliverDate.setDate(newDeliverDate.getDate() + 1);
+      return {
+        ...state,
+        pickupDate: newPickupDate,
+        deliverDate: newDeliverDate,
+        orderId: undefined
+      };
     case ADD_INVOICE_SUCCESS:
       return {
         ...state,

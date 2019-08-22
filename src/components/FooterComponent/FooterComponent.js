@@ -9,7 +9,7 @@ import paypalImg from './img/PayPal.jpg';
 import visaImg from './img/visa.png';
 import pinImg from './img/pin.gif';
 import americanExpressImg from './img/american-express.png';
-import logo from '../../assets/images/logo_65.png';
+import logo from '../../assets/images/bubblesonline_main_logo.png';
 import facebook from './img/facebook.png';
 import twitter from './img/twitter.png';
 import Languages from '../Languages/LanguageComponent';
@@ -22,7 +22,7 @@ let FooterComponent = props => {
         <div className="row">
           <div className="mb-4 col-md-4 d-block d-md-none">
             <img
-              style={{ height: '120px' }}
+              style={{ height: '107px' }}
               alt="bubblesonlie laundry"
               src={logo}
             />
@@ -61,17 +61,14 @@ let FooterComponent = props => {
           </div>
           <div className="col-md-4 d-none d-md-block">
             <img
-              style={{ height: '120px' }}
+              style={{ height: '107px' }}
               alt="bubblesonlie laundry"
               src={logo}
             />
             <ContactInfo {...props} />
           </div>
           <div className="col-md-4">
-            <div className="m-3 footer-language-wrapper">
-              <Languages />
-            </div>
-            <h5 className=" mb-1">{t('Areas')}</h5>
+            <h5 className="mb-3 mt-3">{t('Areas')}</h5>
             <div>Den haag</div>
             <div>Leidschendam / Voorburg</div>
             <div>Wassenaar</div>
@@ -80,6 +77,9 @@ let FooterComponent = props => {
             <div>Nootdorp</div>
             <div>Leiden</div>
             <div>Zoetermeer</div>
+            <div className="m-3 footer-language-wrapper">
+              <Languages />
+            </div>
           </div>
         </div>
         <div className="links container">

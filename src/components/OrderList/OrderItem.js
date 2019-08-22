@@ -13,7 +13,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { formattedDate } from '../../utils/components';
+import { formattedDate, multipleCurrency } from '../../utils/components';
 const styles = theme => ({
   root: {
     width: '100%',
@@ -28,7 +28,8 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit * 2
   },
   table: {
-    marginBottom: '1em'
+    marginBottom: '1em',
+    '& td, th': { padding: '4px 10px', minWidth: '80px' }
   }
 });
 
@@ -41,6 +42,7 @@ let ProductOrderComponent = props => {
           <TableRow>
             <TableCell className="label-key">{t('Name')}</TableCell>
             <TableCell className="label-key">{t('Number')}</TableCell>
+            <TableCell className="label-key">{t('Price of unit')}</TableCell>
             <TableCell className="label-key">{t('Price')}</TableCell>
           </TableRow>
         </TableHead>
@@ -49,7 +51,10 @@ let ProductOrderComponent = props => {
             <TableRow key={product.id}>
               <TableCell className="label-key">{product.name}</TableCell>
               <TableCell>{product.number}</TableCell>
-              <TableCell>{product.price}</TableCell>
+              <TableCell>&euro; {product.price}</TableCell>
+              <TableCell>
+                &euro; {multipleCurrency(product.number, product.price)}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -66,19 +71,7 @@ class OrderItem extends Component {
     const { t, order, classes } = this.props;
     const tagId = Math.random();
     const date = formattedDate(order.date);
-    const payed = order.payed ? (
-      t('payed')
-    ) : (
-      <div
-        style={{ cursor: 'pointer' }}
-        onClick={e => e.stopPropagation()}
-        to="payment"
-      >
-        {t('payment')}
-      </div>
-    );
     const amount = order.amount || '-';
-    const transaction = order.transaction || '-';
     return (
       <ExpansionPanel
         style={{
@@ -93,40 +86,34 @@ class OrderItem extends Component {
           <Typography component={'span'} className={classes.root}>
             <div className="container">
               <div className="row">
-                <div className="d-none d-sm-block col-sm-3 label-key">
+                <div className="d-none d-sm-block col-sm-4 label-key">
+                  {t('ID')}
+                </div>
+                <div className="d-none d-sm-block col-sm-4 label-key">
                   {t('Date')}
                 </div>
-                <div className="d-none d-sm-block col-sm-3 label-key">
-                  {t('Transaction')}
-                </div>
-                <div className="d-none d-sm-block col-sm-3 label-key">
-                  {t('Payed')}
-                </div>
-                <div className="d-none d-sm-block col-sm-3 label-key">
+                <div className="d-none d-sm-block col-sm-4 label-key">
                   {t('Amount')}
                 </div>
-                <div className="d-none d-sm-block col-sm-3">{date}</div>
-                <div className="d-none d-sm-block col-sm-3">{transaction}</div>
-                <div className="d-none d-sm-block col-sm-3">{payed}</div>
-                <div className="d-none d-sm-block col-sm-3">{amount}</div>
+                <div className="d-none d-sm-block col-sm-4">{order.id}</div>
+                <div className="d-none d-sm-block col-sm-4">{date}</div>
+                <div className="d-none d-sm-block col-sm-4">
+                  &euro; {amount}
+                </div>
 
                 {/* mobile version */}
+                <div className="d-block d-sm-none col-6 label-key">
+                  {t('ID')}
+                </div>
+                <div className="d-block d-sm-none col-6">{order.id}</div>
                 <div className="d-block d-sm-none col-6 label-key">
                   {t('Date')}
                 </div>
                 <div className="d-block d-sm-none col-6">{date}</div>
                 <div className="d-block d-sm-none col-6 label-key">
-                  {t('Transaction')}
-                </div>
-                <div className="d-block d-sm-none col-6">{transaction}</div>
-                <div className="d-block d-sm-none col-6 label-key">
-                  {t('Payed')}
-                </div>
-                <div className="d-block d-sm-none col-6">{payed}</div>
-                <div className="d-block d-sm-none col-6 label-key">
                   {t('Amount')}
                 </div>
-                <div className="d-block d-sm-none col-6">{amount}</div>
+                <div className="d-block d-sm-none col-6">&euro; {amount}</div>
               </div>
             </div>
           </Typography>

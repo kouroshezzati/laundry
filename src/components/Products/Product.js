@@ -23,8 +23,8 @@ class Product extends Component {
     super(props);
     this.state = { sum: 0 };
   }
-  setNumber = (product, type) => {
-    this.props.setProductNumber(product.id, type);
+  setNumber = (id, type) => {
+    this.props.setProductNumber(id, type);
   };
 
   render() {
@@ -34,12 +34,11 @@ class Product extends Component {
       name,
       classes,
       id,
-      selectedProducts,
-      intactProducts,
+      price,
       readOnly,
+      number,
       orderProductNumber
     } = this.props;
-
     if (parent) {
       return (
         <li className="list-group-item parent">
@@ -47,20 +46,18 @@ class Product extends Component {
         </li>
       );
     } else {
-      const productNumbers = selectedProducts[id] || 0;
-      const _product = intactProducts.find(product => product.id === id);
       return (
         <li className="list-group-item">
           <span className="float-left">{t(name.trim().toLowerCase())}</span>
           <span className="float-right product-controllers">
             <span style={{ width: '60px' }} className="mr-2 text-left">
-              &euro; {_product.price}
+              &euro; {price}
             </span>
             {readOnly && (
               <React.Fragment>
                 <span>{orderProductNumber}</span>
                 <span className="text-left price-wrapper">
-                  &euro; {multipleCurrency(_product.price, orderProductNumber)}
+                  &euro; {multipleCurrency(price, orderProductNumber)}
                 </span>
               </React.Fragment>
             )}
@@ -70,23 +67,23 @@ class Product extends Component {
                   size="small"
                   color="secondary"
                   variant="contained"
-                  onClick={e => this.setNumber(_product, REMOVE_PRODUCT)}
+                  onClick={e => this.setNumber(id, REMOVE_PRODUCT)}
                   className={classes.extendedIcon}
                 >
                   <Remove />
                 </Button>
-                <span>{productNumbers}</span>
+                <span>{number}</span>
                 <Button
                   size="small"
                   color="primary"
                   variant="contained"
                   className={classes.extendedIcon}
-                  onClick={e => this.setNumber(_product, ADD_PRODUCT)}
+                  onClick={e => this.setNumber(id, ADD_PRODUCT)}
                 >
                   <Add />
                 </Button>
                 <span className="price-wrapper">
-                  &euro; {multipleCurrency(_product.price, productNumbers)}
+                  &euro; {multipleCurrency(price, number)}
                 </span>
               </React.Fragment>
             )}
@@ -100,7 +97,7 @@ class Product extends Component {
 export default translate('translations')(
   withStyles(styles)(
     connect(
-      state => ({ ...state.products }),
+      state => ({}),
       { setProductNumber }
     )(Product)
   )

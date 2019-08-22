@@ -44,7 +44,13 @@ export class ProductList extends Component {
                   total,
                   multipleCurrency(_product.price, value || 0)
                 );
-                return <Product key={id} {..._product} />;
+                return (
+                  <Product
+                    number={selectedProducts[id] || 0}
+                    key={id}
+                    {..._product}
+                  />
+                );
               })}
               <li className="list-group-item total-price">
                 <span>
@@ -61,7 +67,11 @@ export class ProductList extends Component {
           <div className="col-md-12">
             <ul className="list-group">
               {especialOfferProducts.map(product => (
-                <Product key={product.id} {...product} />
+                <Product
+                  number={selectedProducts[product.id] || 0}
+                  key={product.id}
+                  {...product}
+                />
               ))}
             </ul>
           </div>
@@ -87,6 +97,7 @@ export class ProductList extends Component {
                 }
                 return (
                   <Product
+                    number={selectedProducts[id] || 0}
                     readOnly
                     orderProductNumber={selectedValue}
                     key={id}
@@ -119,7 +130,11 @@ export class ProductList extends Component {
                   <Product name={key} parent />
                 )}
                 {_products.map(product => (
-                  <Product key={product.id} {...product} />
+                  <Product
+                    number={selectedProducts[product.id] || 0}
+                    key={product.id}
+                    {...product}
+                  />
                 ))}
               </ul>
             </div>

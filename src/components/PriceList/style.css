@@ -1,0 +1,13 @@
+.product-name {
+  float: left;
+  color: black;
+}
+.product-price {
+  float: right;
+  min-width: 60px;
+}
+.product-item {
+  border-bottom: 1px solid #b3b3b3;
+  padding-bottom: 10px;
+  padding-top: 8px;
+}

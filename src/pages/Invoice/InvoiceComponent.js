@@ -10,12 +10,13 @@ import UserInfoForm from '../../components/User/UserInfo/UserInfoContainer';
 import moment from 'moment';
 import { NavLink, withRouter } from 'react-router-dom';
 import Page from '../index';
-import { ADD_ORDER_SUCCESS } from '../Order/OrderConstants';
+import { ADD_ORDER_SUCCESS, ADD_ORDER_FAILURE } from '../Order/OrderConstants';
+import SnackbarComponent from '../../utils/Snackbar/SnackbarComponent';
 
 export class InvoiceComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { editUserInfo: false };
+    this.state = { editUserInfo: false, redirectUrl: '', snackBar: false };
   }
   saveHandler = isSave => {
     this.setState({ editUserInfo: false });
@@ -29,10 +30,13 @@ export class InvoiceComponent extends Component {
   }
 
   paymentHandler = () => {
-    const { addOrder } = this.props;
-    addOrder().then(data => {
+    const { addOrder, i18n } = this.props;
+    addOrder(i18n.language).then(data => {
       if (data.type === ADD_ORDER_SUCCESS) {
         window.location.href = data.response;
+        this.setState({ redirectUrl: data.response });
+      } else if (data.type === ADD_ORDER_FAILURE) {
+        this.setState({ snackBar: true, message: data.error });
       }
     });
   };
@@ -68,7 +72,13 @@ export class InvoiceComponent extends Component {
             )}
             <div className="mt-3 row ">
               <div className={classnames('mb-2', jwt ? 'col-md-6' : 'col-12')}>
-                <NavLink className="nav-button" to="/order">
+                <NavLink
+                  onClick={e => {
+                    window.scrollTo(0, 0);
+                  }}
+                  className="nav-button"
+                  to="/order"
+                >
                   <Button fullWidth color="secondary" variant="contained">
                     {t('Back to Order')}
                   </Button>
@@ -86,9 +96,26 @@ export class InvoiceComponent extends Component {
                   </Button>
                 </div>
               )}
+              {this.state.redirectUrl && (
+                <div className="text-center col-12">
+                  <span>
+                    {t('if your wont be redirected in five seconds, ')}
+                  </span>
+                  <span>
+                    <a href={this.state.redirectUrl}>
+                      {t('click on this link.')}
+                    </a>
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>
+        <SnackbarComponent
+          onHandlerClose={e => this.setState({ snackBar: false })}
+          snackbarMessage={this.state.message}
+          isSnackbarOpen={this.state.snackBar}
+        />
       </Page>
     );
   }

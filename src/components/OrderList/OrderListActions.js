@@ -4,7 +4,7 @@ export const MY_ORDER_REQUEST = 'MY_ORDER_REQUEST';
 export const MY_ORDER_SUCCESS = 'MY_ORDER_SUCCESS';
 export const MY_ORDER_FAILURE = 'MY_ORDER_FAILURE';
 
-export const RowPerPage = 2;
+export const RowPerPage = 5;
 
 export const getMyOrders = page => (dispatch, getState) => {
   const { id } = getState().user;

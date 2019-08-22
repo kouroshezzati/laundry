@@ -10,7 +10,11 @@ import green from '@material-ui/core/colors/green';
 import './style.css';
 import { connect } from 'react-redux';
 import { login, getCustomer } from '../UserActions';
-import { LOGIN_SUCCESS, GET_CUSTOMER_SUCCESS } from '../UserConstants';
+import {
+  LOGIN_SUCCESS,
+  GET_CUSTOMER_SUCCESS,
+  LOGIN_FAILURE
+} from '../UserConstants';
 import { translate } from 'react-i18next';
 
 const styles = theme => ({
@@ -33,6 +37,7 @@ class LoginComponent extends Component {
     super(props);
     this.email = React.createRef();
     this.password = React.createRef();
+    this.state = { errorMessage: '' };
   }
   onSubmit = event => {
     event.preventDefault();
@@ -53,7 +58,16 @@ class LoginComponent extends Component {
           ) {
             history.push('/');
           }
+          setTimeout(() => {
+            window.scrollTo(0, 0);
+          }, 0);
         });
+      } else if (data.type === LOGIN_FAILURE) {
+        if (typeof data.error === 'string') {
+          this.setState({ errorMessage: data.error });
+        } else {
+          this.setState({ errorMessage: data.error.message });
+        }
       }
     });
   };
@@ -65,7 +79,7 @@ class LoginComponent extends Component {
   }
 
   render() {
-    const { classes, t, message, location } = this.props;
+    const { classes, t } = this.props;
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit} id="form2">
@@ -86,29 +100,31 @@ class LoginComponent extends Component {
               placeholder={t('Password')}
               className="form-control"
             />
-            {message && <small style={{ color: 'red' }}>{message}</small>}
-          </div>
-          <div className="form-group">
-            <MuiThemeProvider theme={theme}>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.margin}
-              >
-                {t('Login')}
-              </Button>
-            </MuiThemeProvider>
-            {location.pathname.includes('login') && (
-              <NavLink className="float-right" to="/">
-                {t('Home')}
-              </NavLink>
+            {this.state.errorMessage && (
+              <div style={{ color: 'red', textAlign: 'center' }}>
+                {this.state.errorMessage}
+              </div>
             )}
           </div>
-          <div style={{ textAlign: 'center' }}>
-            <NavLink to="/forgotten-password">
-              {t('Forgotten password?')}
-            </NavLink>
+          <div className="form-group">
+            <div className="float-left">
+              <MuiThemeProvider theme={theme}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  className={classes.margin}
+                >
+                  {t('Login')}
+                </Button>
+              </MuiThemeProvider>
+            </div>
+            <div style={{ paddingTop: '6px', float: 'right' }}>
+              <NavLink to="/forgotten-password">
+                {t('Forgotten password?')}
+              </NavLink>
+            </div>
+            <br style={{ both: 'clear' }} />
           </div>
         </form>
       </React.Fragment>

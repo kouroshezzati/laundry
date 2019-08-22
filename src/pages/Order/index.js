@@ -26,7 +26,13 @@ const ControllerButtons = ({ t, isFormFilled }) => {
             </Button>
           )}
           {isFormFilled && (
-            <NavLink className="nav-button" to="/invoice">
+            <NavLink
+              onClick={e => {
+                window.scrollTo(0, 0);
+              }}
+              className="nav-button"
+              to="/invoice"
+            >
               <Button
                 disabled={!isFormFilled}
                 fullWidth
