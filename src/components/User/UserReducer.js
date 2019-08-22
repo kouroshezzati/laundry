@@ -35,7 +35,6 @@ export default (state = {}, action) => {
         message: undefined,
         isFetching: false
       };
-    case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       const _state = {
         ...Customer.build({
