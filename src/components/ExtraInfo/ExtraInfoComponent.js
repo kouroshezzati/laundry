@@ -44,7 +44,7 @@ export class SpecialOffer extends Component {
                 </div>
               </div>
               <NavLink to="/date?type=especial_offer">
-                <Button variant="contained" color="primary" fullWidth>
+                <Button variant="contained" color="secondary" fullWidth>
                   {t('SPECIAL ORDER')}
                 </Button>
               </NavLink>

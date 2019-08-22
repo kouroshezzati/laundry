@@ -5,7 +5,7 @@
       "price": 3.50,
       "category": {
         "id": 11,
-        "name": "DRY & CLEAN"
+        "name": "DRY CLEAN"
     },
       "type": "cheap"
   },
@@ -15,7 +15,7 @@
     "price": 4.95,
     "category": {
       "id": 22,
-      "name": "DRY & CLEAN"
+      "name": "DRY CLEAN"
   },
     "type": "cheap"
 },
@@ -25,7 +25,7 @@
   "price": 5.95,
   "category": {
     "id": 33,
-    "name": "DRY & CLEAN"
+    "name": "DRY CLEAN"
 },
   "type": "cheap"
 },
@@ -35,7 +35,7 @@
   "price": 7.95,
   "category": {
     "id": 44,
-    "name": "DRY & CLEAN"
+    "name": "DRY CLEAN"
 },
   "type": "cheap"
 },
@@ -45,7 +45,7 @@
   "price": 9.50,
   "category": {
     "id": 55,
-    "name": "DRY & CLEAN"
+    "name": "DRY CLEAN"
 },
   "type": "cheap"
 },

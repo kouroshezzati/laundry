@@ -49,7 +49,7 @@ nav .auth-link {
   text-align: center;
 }
 .big-logo {
-  height: 70px;
+  height: 1px;
 }
 
 #mainNav.colored .auth-link {
@@ -168,7 +168,7 @@ button.button-submenu i.fa {
     background-color: #0c0c0c7d;
   }
   #mainNav .navbar-brand {
-    color: fade(white, 70%);
+    color: fade(rgb(10, 91, 241), 70%);
   }
   #mainNav .navbar-brand:hover,
   #mainNav .navbar-brand:focus {
@@ -205,6 +205,7 @@ button.button-submenu i.fa {
 .menuButton {
   background: transparent;
   border: none;
+  color:orangered
 }
 .menuButton .nav-item a.nav-link:hover {
   color: #ff8533;

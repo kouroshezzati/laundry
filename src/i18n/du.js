@@ -126,7 +126,7 @@ export default {
   'Zip/Postcode': 'Zip/Postcode',
   Apartmant: 'Apartment',
   Country: 'Country',
-  'dry & clean': 'Stomerij',
+  'dry clean': 'Stomerij',
   'outer wear': 'Buitenkleding',
   'WASH & FOLD': 'WASSEN & VOUWEN',
   'LAUNDRY PICK UP & DROP OFF': 'STOMERIJ & WASSERIJ',
@@ -202,7 +202,7 @@ export default {
   'We also offer after opening hours urgent delivery, please contact us.':
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
   'Monday to Saturday 9am to 18.00':
-    'Maandag t/m zaterdag 9:00 tot Zaterdag 18:00',
+    'Maandag t/m zaterdag 9:00 tot 18:00',
   'Back to home page': 'Hoofdmenu',
   'back to Date': 'Terug / Datum',
   'I accept these': 'Ik ga akkoord met de',
