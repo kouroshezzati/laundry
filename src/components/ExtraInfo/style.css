@@ -10,6 +10,8 @@
 @media (max-width: 768px) {
   .special-offer-img-wrapper img {
     width: 80%;
+    display: block;
+    margin: 0 auto;
   }
   .special-offer-message h2 {
     text-align: center;
