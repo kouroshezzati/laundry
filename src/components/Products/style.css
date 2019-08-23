@@ -24,7 +24,24 @@
   position: absolute;
 }
 
-.list-group-item .float-left {
+.list-group-item .value {
+  float: right;
+}
+.list-group-item .name {
   color: #541515;
   font-weight: 700;
+  float: left;
+}
+@media (max-width: 620px){
+  .list-group-item .value{
+    float: none;
+    text-align: center;
+    display: block;
+  }
+  .list-group-item .name {
+    float: none;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+  }
 }

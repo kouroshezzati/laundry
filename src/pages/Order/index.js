@@ -73,7 +73,9 @@ export class index extends Component {
       <Page>
         <div className="main-section align-content-center fancy-bg" id="order">
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
-            <ProductList />
+            <div className="container-fluid">
+              <ProductList />
+            </div>
             <div className="form-group m-2" id="order-description">
               <label style={{ fontWeight: 700 }} htmlFor="description">
                 {t('Add description')}

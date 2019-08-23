@@ -73,93 +73,95 @@ export class DateComponent extends Component {
       <Page>
         <div className="main-section align-content-center fancy-bg">
           <div className="order-form-wrapper form-wrapper m-2 mx-auto p-2">
-            <div className="row">
-              <img alt="laundry" className="pickup-img" src={pickupImg} />
-            </div>
-            <div className="date-picker-wrapper row">
-              <div className="col-md-6">
-                <DateTimeComponent
-                  labelText={t('Pickup date')}
-                  dateType={PICKUP_DATE}
-                  selected={_pD}
-                  minDate={new Date()}
-                  dateFormat="MMMM d, yyyy"
-                  onSetDateHandler={this.setDate}
-                />
+            <div className="container-fluid">
+              <div className="row">
+                <img alt="laundry" className="pickup-img" src={pickupImg} />
               </div>
-              <div className="col-md-6">
-                <DateTimeComponent
-                  labelText={t('Pickup time')}
-                  dateType={PICKUP_TIME}
-                  selected={_pT}
-                  showTimeSelect
-                  showTimeSelectOnly
-                  timeIntervals={60}
-                  timeFormat="HH:mm"
-                  dateFormat="HH:mm"
-                  minTime={minTime}
-                  maxTime={maxTime}
-                  onSetDateHandler={this.setDate}
-                />
-              </div>
-              <div className="col-md-6">
-                <DateTimeComponent
-                  labelText={t('Deliver date')}
-                  dateType={DELIVER_DATE}
-                  selected={_dD}
-                  minDate={minDateDeliverTime}
-                  dateFormat="MMMM d, yyyy"
-                  onSetDateHandler={this.setDate}
-                />
-              </div>
-              <div className="col-md-6">
-                <DateTimeComponent
-                  labelText={t('Deliver time')}
-                  dateType={DELIVER_TIME}
-                  selected={_dT}
-                  setMin
-                  showTimeSelect
-                  showTimeSelectOnly
-                  timeIntervals={60}
-                  timeFormat="HH:mm"
-                  dateFormat="HH:mm"
-                  minTime={setHours(setMinutes(new Date(), 0), 9)}
-                  maxTime={setHours(setMinutes(new Date(), 0), 17)}
-                  onSetDateHandler={this.setDate}
-                />
-              </div>
-              <div className="col-md-6 mb-2">
-                <NavLink className="nav-button" to="/">
-                  <Button fullWidth color="secondary" variant="contained">
-                    {t('Back to home page')}
-                  </Button>
-                </NavLink>
-              </div>
-              <div className="col-md-6">
-                {!deliverDate && (
-                  <Button disabled fullWidth variant="contained">
-                    {t('Order')}
-                  </Button>
-                )}
-                {deliverDate && (
-                  <NavLink
-                    className="nav-button"
-                    to={
-                      type === 'especial_offer'
-                        ? '/order?type=especial_offer'
-                        : '/order'
-                    }
-                  >
-                    <Button
-                      disabled={!deliverDate}
-                      fullWidth
-                      color="primary"
-                      variant="contained"
-                    >
-                      {t('Order')}
+              <div className="date-picker-wrapper row">
+                <div className="col-md-6">
+                  <DateTimeComponent
+                    labelText={t('Pickup date')}
+                    dateType={PICKUP_DATE}
+                    selected={_pD}
+                    minDate={new Date()}
+                    dateFormat="MMMM d, yyyy"
+                    onSetDateHandler={this.setDate}
+                  />
+                </div>
+                <div className="col-md-6">
+                  <DateTimeComponent
+                    labelText={t('Pickup time')}
+                    dateType={PICKUP_TIME}
+                    selected={_pT}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={60}
+                    timeFormat="HH:mm"
+                    dateFormat="HH:mm"
+                    minTime={minTime}
+                    maxTime={maxTime}
+                    onSetDateHandler={this.setDate}
+                  />
+                </div>
+                <div className="col-md-6">
+                  <DateTimeComponent
+                    labelText={t('Deliver date')}
+                    dateType={DELIVER_DATE}
+                    selected={_dD}
+                    minDate={minDateDeliverTime}
+                    dateFormat="MMMM d, yyyy"
+                    onSetDateHandler={this.setDate}
+                  />
+                </div>
+                <div className="col-md-6">
+                  <DateTimeComponent
+                    labelText={t('Deliver time')}
+                    dateType={DELIVER_TIME}
+                    selected={_dT}
+                    setMin
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={60}
+                    timeFormat="HH:mm"
+                    dateFormat="HH:mm"
+                    minTime={setHours(setMinutes(new Date(), 0), 9)}
+                    maxTime={setHours(setMinutes(new Date(), 0), 17)}
+                    onSetDateHandler={this.setDate}
+                  />
+                </div>
+                <div className="col-md-6 mb-2">
+                  <NavLink className="nav-button" to="/">
+                    <Button fullWidth color="secondary" variant="contained">
+                      {t('Back to home page')}
                     </Button>
                   </NavLink>
-                )}
+                </div>
+                <div className="col-md-6">
+                  {!deliverDate && (
+                    <Button disabled fullWidth variant="contained">
+                      {t('Order')}
+                    </Button>
+                  )}
+                  {deliverDate && (
+                    <NavLink
+                      className="nav-button"
+                      to={
+                        type === 'especial_offer'
+                          ? '/order?type=especial_offer'
+                          : '/order'
+                      }
+                    >
+                      <Button
+                        disabled={!deliverDate}
+                        fullWidth
+                        color="primary"
+                        variant="contained"
+                      >
+                        {t('Order')}
+                      </Button>
+                    </NavLink>
+                  )}
+                </div>
               </div>
             </div>
           </div>

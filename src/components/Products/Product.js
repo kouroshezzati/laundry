@@ -48,8 +48,8 @@ class Product extends Component {
     } else {
       return (
         <li className="list-group-item">
-          <span className="float-left">{t(name.trim().toLowerCase())}</span>
-          <span className="float-right product-controllers">
+          <span className="name">{t(name.trim().toLowerCase())}</span>
+          <span className="value product-controllers">
             <span style={{ width: '60px' }} className="mr-2 text-left">
               &euro; {price}
             </span>
