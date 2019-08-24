@@ -6,8 +6,14 @@ import ProductList from '../../components/Products/ProductListContainer';
 import Page from '../index';
 import { UserInfo, DateShow } from './InvoiceComponent';
 import { GET_PAYMENT_FAILURE } from '../Order/OrderConstants';
+import { Button } from '@material-ui/core';
+import { translate } from 'react-i18next';
 
 class OrderInvoiceComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { tryAgain: false };
+  }
   componentDidMount() {
     const { match, jwt } = this.props;
     const { orderId } = match.params;
@@ -26,6 +32,7 @@ class OrderInvoiceComponent extends Component {
     if (orderId) {
       getPayment(orderId, id).then(data => {
         if (data.type === GET_PAYMENT_FAILURE) {
+          this.setState({ tryAgain: true });
           return;
         }
         //redirect to invoice page for failure payment
@@ -36,8 +43,9 @@ class OrderInvoiceComponent extends Component {
       });
     }
   }
+
   render() {
-    const { match, payment } = this.props;
+    const { match, payment, t } = this.props;
     if (!payment) {
       return <React.Fragment />;
     }
@@ -55,15 +63,34 @@ class OrderInvoiceComponent extends Component {
         <div className="d-flex align-content-center fancy-bg">
           <div className="invoice-form-wrapper m-2 mx-auto p-2">
             <div className="container">
-              <DateShow pickupDate={pickup_date} deliverDate={deliver_date} />
-              <ProductList
-                orderInvoice
-                orderStatus={status}
-                orderId={orderId}
-                orderPrice={price}
-                orderSelectedProducts={selectedProducts}
-              />
-              <UserInfo {...this.props} readOnly />
+              {!this.state.tryAgain && (
+                <React.Fragment>
+                  <DateShow
+                    pickupDate={pickup_date}
+                    deliverDate={deliver_date}
+                  />
+                  <ProductList
+                    orderInvoice
+                    orderStatus={status}
+                    orderId={orderId}
+                    orderPrice={price}
+                    orderSelectedProducts={selectedProducts}
+                  />
+                  <UserInfo {...this.props} readOnly />
+                </React.Fragment>
+              )}
+              {this.state.tryAgain && (
+                <Button
+                  style={{ display: 'block', margin: '0 auto' }}
+                  color="primary"
+                  variant="contained"
+                  onClick={e => {
+                    window.location.reload();
+                  }}
+                >
+                  {t('try again')}
+                </Button>
+              )}
             </div>
           </div>
         </div>
@@ -81,4 +108,4 @@ OrderInvoiceComponent = connect(
   { ...orderActions }
 )(OrderInvoiceComponent);
 
-export default withRouter(OrderInvoiceComponent);
+export default translate('translations')(withRouter(OrderInvoiceComponent));
