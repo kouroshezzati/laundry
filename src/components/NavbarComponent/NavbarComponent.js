@@ -50,7 +50,7 @@ export const LogoComponent = props => {
         >
           <img
             className={logoClassName}
-            style={{marginLeft: '10px'}}
+            style={{ marginLeft: '10px' }}
             alt="bubbles online lundry"
             src={logo}
           />
@@ -331,7 +331,7 @@ class NavBarComponent extends Component {
             <div>
               <NavLink to="/login/">{t('LOGIN')}</NavLink>
             </div>
-            <div>
+            <div style={{ marginTop: '11px' }}>
               <NavLink to="/register/">{t('REGISTER')}</NavLink>
             </div>
           </div>
