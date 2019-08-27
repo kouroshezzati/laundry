@@ -1,3 +1,10 @@
+nav.colored .auth-link a.active {
+  color: #fd7e14;
+}
+nav.colored .auth-link a {
+  color: #222222;
+  font-weight: 600;
+}
 nav .auth-link a {
   color: #ffffff;
 }
@@ -85,7 +92,8 @@ a.nav-link {
   letter-spacing: 1px;
 }
 #mainNav.navbar {
-  padding-bottom: 0px;
+  padding-bottom: 4px;
+  padding-top: 4px;
 }
 #mainNav .navbar-brand {
   margin: 0 auto;
@@ -140,6 +148,21 @@ button.button-submenu i.fa {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+#mainNav.colored .navbar-nav > li > a {
+  color: #222222 !important;
+}
+.colored .nav-item button.button-submenu span {
+  border-top: 4px dashed #222222;
+}
+.colored .nav-item button.button-submenu {
+  color: #222222 !important;
+}
+
+#mainNav.colored .navbar-nav > li > a.active {
+  color: #fd7e14 !important;
+}
+
 #mainNav .navbar-nav > li > a.active {
   color: #adff42 !important;
   font-weight: 900;
@@ -165,7 +188,7 @@ button.button-submenu i.fa {
     background-color: transparent;
   }
   #mainNav.colored {
-    background-color: #0c0c0c7d;
+    background-color: #96c941;
   }
   #mainNav .navbar-brand {
     color: fade(rgb(10, 91, 241), 70%);
