@@ -19,24 +19,24 @@ export class SpecialOffer extends Component {
       <section id="special-order">
         <div className="container">
           <div className="row">
+            <div className="col-12">
+              <h2 className="text-center">{t('SPECIAL OFFER')}</h2>
+            </div>
             <div className="col-12 col-md-5 special-offer-img-wrapper">
               <img alt="laundry" src={specialoffer} />
             </div>
             <div className="col-12 col-md-7">
               <div className="special-offer-message container">
-                <h2 className="text-center">{t('SPECIAL OFFER')}</h2>
                 <div className="row mt-1 mb-2">
                   {especialOfferProducts.map(offer => (
-                    <div
-                      key={offer.id}
-                      className="col-12 mt-1 mb-1"
-                    >
+                    <div key={offer.id} className="col-12 mt-1 mb-1">
                       <div className="row">
                         <div className="offer-name col-9">
                           {t(offer.name.toLowerCase())}
                         </div>
                         <div className="offer-price col-3">
-                          <span className="mr-1">&euro;</span>{offer.price}
+                          <span className="mr-1">&euro;</span>
+                          {offer.price}
                         </div>
                       </div>
                     </div>

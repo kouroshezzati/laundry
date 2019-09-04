@@ -188,7 +188,7 @@ button.button-submenu i.fa {
     background-color: transparent;
   }
   #mainNav.colored {
-    background-color: #96c941;
+    background-color: #96c941ab;
   }
   #mainNav .navbar-brand {
     color: fade(rgb(10, 91, 241), 70%);

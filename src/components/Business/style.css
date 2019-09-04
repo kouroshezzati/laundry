@@ -1,6 +1,8 @@
 #business {
   background: linear-gradient(to left, #ff8d2f, #ff8d21);
   color: #fff;
+  padding-top: 40px;
+  position: relative;
 }
 #business h5 {
   font-size: 1em;
@@ -13,8 +15,17 @@
   padding-bottom: 5px;
 }
 
-.business-img-wrapper img {
+#business .container {
+  color: black;
+  font-size: 1.23em;
+}
+
+#business img {
   width: 100%;
+  position: absolute;
+  height: 100%;
+  opacity: 0.3;
+  top: 0;
 }
 
 .business-message {
