@@ -209,6 +209,7 @@ button.button-submenu i.fa {
     border-color: rgba(34, 34, 34, 0.1);
     background-color: rgb(0, 132, 255);
   }
+  #mainNav.colored button.button-submenu i.fa,
   #mainNav.navbar-shrink .navbar-brand {
     color: #222222;
   }
