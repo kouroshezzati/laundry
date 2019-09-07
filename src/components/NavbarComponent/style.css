@@ -2,7 +2,7 @@ nav.colored .auth-link a.active {
   color: #fd7e14;
 }
 nav.colored .auth-link a {
-  /* color: #222222; */
+  color: #222222;
   font-weight: 600;
 }
 nav .auth-link a {
@@ -36,7 +36,7 @@ nav .auth-link {
 }
 
 .submenu-link {
-  /* color: #222222; */
+  color: #222222;
   font-size: 1em;
   cursor: pointer;
 }
@@ -105,21 +105,29 @@ a.nav-link {
 #mainNav .navbar-toggler {
   font-size: 18px;
   padding: 8px 10px;
-  /* color: #222222; */
+  color: #222222;
   font-weight: 700;
+}
+#mainNav.colored.fixed-top {
+  background-color: rgba(83, 82, 82, 0.67);
+  color: #ffffff;
 }
 ul.navbar-nav {
   margin: 0 auto;
 }
 .nav-item button.button-submenu:hover span {
+  border-top: 4px dashed #222222 !important;
+}
+.fixed-top .nav-item button.button-submenu:hover span {
   border-top: 4px dashed #ffffff !important;
 }
 .nav-item button.button-submenu span {
   border-top: 4px dashed #ffffff;
 }
-.nav-item button.button-submenu:hover {
-  color: #ffffff;
+.fixed-top .nav-item button.button-submenu span {
+  border-top: 4px dashed #ffffff !important;
 }
+
 .nav-item a.nav-link {
   width: auto;
 }
@@ -150,13 +158,13 @@ button.button-submenu i.fa {
 }
 
 #mainNav.colored .navbar-nav > li > a {
-  /* color: #222222 !important; */
+  color: #222222 !important;
 }
 .colored .nav-item button.button-submenu span {
-  /* border-top: 4px dashed #222222; */
+  border-top: 4px dashed #222222;
 }
 .colored .nav-item button.button-submenu {
-  /* color: #222222 !important; */
+  color: #222222 !important;
 }
 
 #mainNav.colored .navbar-nav > li > a.active {
@@ -173,11 +181,16 @@ button.button-submenu i.fa {
 }
 #mainNav .navbar-nav > li > a,
 #mainNav .navbar-nav > li > a:focus {
-  /* color: #222222; */
+  color: #222222;
 }
 #mainNav .navbar-nav > li > a:hover,
 #mainNav .navbar-nav > li > a:focus:hover {
   color: #fdcc52;
+}
+#mainNav.colored.fixed-top .nav-item button.button-submenu,
+#mainNav.colored.fixed-top .navbar-nav > li > a,
+#mainNav.colored.fixed-top .auth-link a {
+  color: #ffffff !important;
 }
 @media (min-width: 992px) {
   .nav-item a.nav-link {
@@ -209,7 +222,7 @@ button.button-submenu i.fa {
     border-color: rgba(34, 34, 34, 0.1);
     background-color: rgb(0, 132, 255);
   }
- 
+
   #mainNav.navbar-shrink .navbar-brand:hover,
   #mainNav.navbar-shrink .navbar-brand:focus {
     color: #fdcc52;
@@ -245,6 +258,9 @@ button.button-submenu i.fa {
   display: none;
 }
 @media (max-width: 992px) {
+  #mainNav.colored.fixed-top {
+    background-color: #96c941 !important;
+  }
   .just-mobile {
     display: block;
   }
