@@ -21,9 +21,12 @@ export const SliderComponent = translate('translations')(
         <div className="container h-100">
           <div className="row h-100">
             <div className="header-content mx-auto text-center">
-              <h2>{t('LAUNDRY PICK UP & DROP OFF')}</h2>
-                    <h5>{t('FREE DELIVERY')}</h5><br></br>
-                        {t('ABOVE 22,00 EURO')}<br></br>
+              <h2>{t('LAUNDRY DRY & CLEAN')}</h2>
+              <h2>{t('PICKUP & DROP OF')}</h2>
+              <h5>{t('FREE DELIVERY')}</h5>
+              <br></br>
+              {t('ABOVE 22,00 EURO')}
+              <br></br>
               <NavLink style={{ color: '#fff' }} to="/date/">
                 <Button
                   variant="contained"
@@ -32,7 +35,8 @@ export const SliderComponent = translate('translations')(
                 >
                   {t('ORDER')}
                 </Button>
-              </NavLink><br></br>
+              </NavLink>
+              <br></br>
               {t('PRICES INCLUDING VAT')}
             </div>
           </div>

@@ -158,11 +158,11 @@ export default {
     'We also offer after opening hours urgent delivery, please contact us.',
   'Monday to Saturday 9am to 18.00': 'Monday to Saturday 9am to 18.00',
   Areas: 'Areas',
-  'Back to home page':'Back to home page',
-  'back to Date':'back to Date',
- 'I accept these':'I accept these',
- 'terms and conditions':'terms and conditions',
- 'Please contact us.':'Please contact us.',
+  'Back to home page': 'Back to home page',
+  'back to Date': 'back to Date',
+  'I accept these': 'I accept these',
+  'terms and conditions': 'terms and conditions',
+  'Please contact us.': 'Please contact us.',
   'BTW Nummer': 'BTW Nummer',
   TEL: 'TEL',
   'Payment methods': 'Payment methods',
@@ -174,5 +174,7 @@ export default {
   'quilt twin': 'quilt twin',
   'blanket (two person)': 'blanket (two person)',
   'Add description': 'Add description',
-  Description: 'Description'
+  Description: 'Description',
+  'LAUNDRY DRY & CLEAN': 'LAUNDRY DRY & CLEAN',
+  'PICKUP & DROP OF': 'PICKUP & DROP OF'
 };

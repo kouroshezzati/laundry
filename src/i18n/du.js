@@ -129,7 +129,8 @@ export default {
   'dry clean': 'Stomerij',
   'outer wear': 'Buitenkleding',
   'WASH & FOLD': 'WASSEN & VOUWEN',
-  'LAUNDRY PICK UP & DROP OFF': 'STOMERIJ & WASSERIJ',
+  'LAUNDRY DRY & CLEAN': 'LAUNDRY DRY & CLEAN',
+  'PICKUP & DROP OF': 'PICKUP & DROP OF',
   'FREE DELIVERY': 'GRATIS OPHALEN EN BEZORGEN',
   'ABOVE 22,00 EURO': 'VAN AF 22,00 EURO',
   'CARPET CLEANING': 'TAPIJT REINIGEN',
@@ -201,8 +202,7 @@ export default {
   'termsandcondtions.message': 'duch',
   'We also offer after opening hours urgent delivery, please contact us.':
     'Wij verrichten uw diensten na openingstijden op verzoek , voor meer informatie neem contact met ons op.',
-  'Monday to Saturday 9am to 18.00':
-    'Maandag t/m zaterdag 9:00 tot 18:00',
+  'Monday to Saturday 9am to 18.00': 'Maandag t/m zaterdag 9:00 tot 18:00',
   'Back to home page': 'Hoofdmenu',
   'back to Date': 'Terug / Datum',
   'I accept these': 'Ik ga akkoord met de',
