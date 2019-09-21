@@ -26,13 +26,15 @@ header.masthead .device-container {
 header.masthead .device-container .screen img {
   border-radius: 3px;
 }
+
+header.masthead .message-wrapper {
+  background-color: #0000006e;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px;
+}
+
 @media (min-width: 992px) {
-  header.masthead .message-wrapper{
-    background-color: #0000006e;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 8px;
-  }
   header.masthead {
     height: 100vh;
     min-height: 775px;
