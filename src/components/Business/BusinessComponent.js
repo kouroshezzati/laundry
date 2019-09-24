@@ -29,15 +29,15 @@ export class BusinessComponent extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
-              <div className="slide-container">
+            <div className="col-12 col-md-6 mb-4">
+              <div className="slide-container pt-1">
                 <Slide {...properties}>
                   {slideImages.map(slide => (
                     <div className="each-slide">
                       <div
                         style={{
                           backgroundImage: `url(${slide})`,
-                          height: '300px',
+                          height: '328px',
                           backgroundSize: 'cover'
                         }}
                       />
@@ -46,7 +46,7 @@ export class BusinessComponent extends Component {
                 </Slide>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <div className="business-message">
                 <p>{t('business.description')}</p>
                 <h5>{t('business.description.tip')}</h5>
