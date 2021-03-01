@@ -3,12 +3,12 @@ import ContactComponent, {
   ContactInfo
 } from '../../components/ContactUsComponent/ContactUsComponent';
 import './style.css';
-import { translate } from 'react-i18next';
+import { useTranslation  } from 'react-i18next';
 import Page from '../index';
 
 export class index extends Component {
   render() {
-    const { t } = this.props;
+    const { t } = useTranslation();
     return (
       <Page>
         <div className="main-section align-content-center fancy-bg">
@@ -38,4 +38,4 @@ export class index extends Component {
   }
 }
 
-export default translate('translations')(index);
+export default index;
